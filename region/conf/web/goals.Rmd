@@ -6,8 +6,8 @@ output: html_document
 library(tidyverse)
 
 ## information from layers.csv
-key <- "pal-scores"
-dir_scenario_gh <- "https://raw.githubusercontent.com/OHI-4site/pal-scores/master/region"
+key <- "tet-scores"
+dir_scenario_gh <- "https://raw.githubusercontent.com/OHI-4site/tet-scores/master/region"
 layers_csv  <- readr::read_csv(file.path(dir_scenario_gh, 'layers.csv'))
 layers_web <- sprintf('http://ohi-science.org/%s/layers.html', key)
 ```
