@@ -430,6 +430,13 @@ AO <- function(layers) {
   trend_years <- (scen_year - 4):(scen_year)
 
   r.trend <- CalculateTrend(status_data = ry, trend_years = trend_years)
+  ## temporary if empty
+  if (dim(r.trend)[1] < 1) {
+    r.trend <- data.frame(region_id = 1,
+                          score = NA,
+                          dimension = "trend")
+  }
+
 
   # return scores
   scores <- rbind(r.status, r.trend) %>%
@@ -676,6 +683,13 @@ NP <- function(scores, layers) {
       min(np_status_current$score, na.rm = TRUE) >= 0,
       max(np_status_current$score, na.rm = TRUE) <= 100
     )
+    ## temporary if empty
+    if (dim(np_status_current)[1] < 1) {
+      np_status_current <- data.frame(region_id = 1,
+                             score = NA,
+                             dimension = "status")
+    }
+
 
     ### trend
 
@@ -683,6 +697,12 @@ NP <- function(scores, layers) {
 
     np_trend <-
       CalculateTrend(status_data = np_status_all, trend_years = trend_years)
+    ## temporary if empty
+    if (dim(np_trend)[1] < 1) {
+      np_trend <- data.frame(region_id = 1,
+                            score = NA,
+                            dimension = "trend")
+    }
 
     ### return scores
     np_scores <- np_status_current %>%
@@ -761,6 +781,12 @@ CS <- function(layers) {
     ))) * 100,
     dimension = 'status') %>%
     ungroup()
+  ## temporary if empty
+  if (dim(status)[1] < 1) {
+    status <- data.frame(region_id = 1,
+                                    score = NA,
+                                    dimension = "status")
+  }
 
   # trend
 
@@ -771,7 +797,12 @@ CS <- function(layers) {
                                                                         rank, na.rm = TRUE)),
               dimension = 'trend') %>%
     dplyr::ungroup()
-
+  ## temporary if empty
+  if (dim(trend)[1] < 1) {
+    trend <- data.frame(region_id = 1,
+                                    score = NA,
+                                    dimension = "trend")
+  }
 
   scores_CS <- rbind(status, trend)  %>%
     dplyr::mutate(goal = 'CS') %>%
@@ -929,7 +960,7 @@ CP <- function(layers) {
     # if no trend score, assign NA
     scores_CP <- dplyr::bind_rows(scores_CP,
                                   d %>%
-                                    dplyr::group_by(rgn_id) %>%
+                                    dplyr::group_by(region_id) %>%
                                     dplyr::summarize(score = NA,
                                               dimension = 'trend'))
   }
@@ -1015,7 +1046,12 @@ TR <- function(layers) {
     dplyr::select(region_id = rgn_id, score = status) %>%
     dplyr::mutate(score = score * 100) %>%
     dplyr::mutate(dimension = 'status')
-
+  ## temporary if empty
+  if (dim(tr_status)[1] < 1) {
+    tr_status <- data.frame(region_id = 1,
+                          score = NA,
+                          dimension = "status")
+  }
 
   # calculate trend
 
@@ -1026,7 +1062,12 @@ TR <- function(layers) {
 
   tr_trend <-
     CalculateTrend(status_data = trend_data, trend_years = trend_years)
-
+  ## temporary if empty
+  if (dim(tr_trend)[1] < 1) {
+    tr_trend <- data.frame(region_id = 1,
+                            score = NA,
+                            dimension = "trend")
+  }
 
   # bind status and trend by rows
   tr_score <- dplyr::bind_rows(tr_status, tr_trend) %>%
@@ -1212,19 +1253,6 @@ ICO <- function(layers) {
     dplyr::mutate('goal' = 'ICO') %>%
     dplyr::select(goal, dimension, region_id, score) %>%
     data.frame()
-
-  # save gapfilling records
-  scores_gf <- scores %>%
-    dplyr::mutate(gapfilled = ifelse(is.na(score) &
-                                !is.na(score_gf), "1", "0")) %>%
-    dplyr::mutate(method = ifelse(
-      is.na(score) &
-        !is.na(score_gf),
-      "UN geopolitical avg. (r2)",
-      NA
-    )) %>%
-    dplyr::select(goal, dimension, region_id, gapfilled, method)
-  write.csv(scores_gf, here("region/temp/ICO_status_trend_gf.csv"), row.names = FALSE)
 
   scores <- scores %>%
     dplyr::mutate(score2 = ifelse(is.na(score), score_gf, score)) %>%
