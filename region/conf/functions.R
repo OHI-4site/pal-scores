@@ -899,98 +899,33 @@ LE <- function(scores, layers) {
 }
 
 ICO <- function(layers) {
+
   scen_year <- layers$data$scenario_year
 
-  rk <-
-    AlignDataYears(layer_nm = "ico_spp_iucn_status", layers_obj = layers) %>%
-    dplyr::select(
-      region_id = rgn_id,
-      sciname,
-      iucn_sid,
-      iucn_cat = category,
-      scenario_year,
-      eval_yr,
-      ico_spp_iucn_status_year
-    ) %>%
-    dplyr::mutate(iucn_cat = as.character(iucn_cat)) %>%
-    dplyr::group_by(region_id, iucn_sid) %>%
-    dplyr::mutate(sample_n = length(na.omit(unique(eval_yr[eval_yr > scen_year-19])))) %>%
-    dplyr::ungroup() %>%
-    dplyr::group_by(sciname, region_id) %>%
-    dplyr::mutate(sample_n = min(sample_n)) %>%
-    dplyr::ungroup()
+  ico_status <-
+    AlignDataYears(layer_nm = "ico_status", layers_obj = layers) %>%
+    dplyr::select(-layer_name, -ico_status_year)
 
-  # lookup for weights status
-  #  LC <- "LOWER RISK/LEAST CONCERN (LR/LC)"
-  #  NT <- "LOWER RISK/NEAR THREATENED (LR/NT)"
-  #  T  <- "THREATENED (T)" treat as "EN"
-  #  VU <- "VULNERABLE (V)"
-  #  EN <- "ENDANGERED (E)"
-  #  LR/CD <- "LOWER RISK/CONSERVATION DEPENDENT (LR/CD)" treat as between VU and NT
-  #  CR <- "VERY RARE AND BELIEVED TO BE DECREASING IN NUMBERS"
-  #  DD <- "INSUFFICIENTLY KNOWN (K)"
-  #  DD <- "INDETERMINATE (I)"
-  #  DD <- "STATUS INADEQUATELY KNOWN-SURVEY REQUIRED OR DATA SOUGHT"
-
-  w.risk_category <-
-    data.frame(
-      iucn_cat = c('LC', 'NT', 'CD', 'VU', 'EN', 'CR', 'EX', 'DD'),
-      risk_score = c(0,  0.2,  0.3,  0.4,  0.6,  0.8,  1, NA)
-    ) %>%
-    dplyr::mutate(status_score = 1 - risk_score) %>%
-    dplyr::mutate(iucn_cat = as.character(iucn_cat))
-
-  ####### status
-  # STEP 1: take mean of subpopulation scores
-  r.status_spp <- rk %>%
-    dplyr::left_join(w.risk_category, by = 'iucn_cat') %>%
-    dplyr::group_by(region_id, sciname, scenario_year, ico_spp_iucn_status_year) %>%
-    dplyr::summarize(spp_mean = mean(status_score, na.rm = TRUE)) %>%
-    dplyr::ungroup()
-
-  # STEP 2: take mean of populations within regions
-  r.status <- r.status_spp %>%
-    dplyr::group_by(region_id, scenario_year, ico_spp_iucn_status_year) %>%
-    dplyr::summarize(status = mean(spp_mean, na.rm = TRUE)) %>%
-    dplyr::ungroup()
-
-  ####### status
-  status <- r.status %>%
-    filter(scenario_year == scen_year) %>%
+  # calculate score
+  ico_score <- ico_status %>%
     mutate(score = status * 100) %>%
-    mutate(dimension = "status") %>%
-    select(region_id, score, dimension)
+    mutate(dimension = "status")
 
-  ####### trend
-  trend_years <- (scen_year - 19):(scen_year)
+  # calculate trend
+  trend_years <- (scen_year - 4):(scen_year)
 
-  # trend calculated with status filtered for species with 2+ iucn evaluations in trend_years
-  r.status_filtered <- rk %>%
-    dplyr::filter(sample_n >= 2) %>%
-    dplyr::left_join(w.risk_category, by = 'iucn_cat') %>%
-    dplyr::group_by(region_id, sciname, scenario_year, ico_spp_iucn_status_year) %>%
-    dplyr::summarize(spp_mean = mean(status_score, na.rm = TRUE)) %>%
-    dplyr::ungroup() %>%
-    dplyr::group_by(region_id, scenario_year, ico_spp_iucn_status_year) %>%
-    dplyr::summarize(status = mean(spp_mean, na.rm = TRUE)) %>%
-    dplyr::ungroup()
+  ico_trend <- CalculateTrend(status_data = ico_score, trend_years = trend_years)
 
-  trend <-
-    CalculateTrend(status_data = r.status_filtered, trend_years = trend_years)
+  #combine trend and score
+  ico_scores <- ico_score %>%
+    filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, score, dimension) %>%
+    rbind(ico_trend) %>%
+    mutate(goal = 'ICO') %>%
+    arrange(goal, dimension, region_id) %>%
+    distinct()
 
-
-  # return scores
-  scores <-  rbind(status, trend) %>%
-    dplyr::mutate('goal' = 'ICO') %>%
-    dplyr::select(goal, dimension, region_id, score) %>%
-    data.frame()
-
-  scores <- scores %>%
-    dplyr::mutate(score2 = ifelse(is.na(score), score_gf, score)) %>%
-    dplyr::select(goal, dimension, region_id, score = score2) %>%
-    data.frame()
-
-  return(scores)
+  return(ico_scores)
 
 }
 
@@ -998,14 +933,14 @@ LSP <- function(layers) {
 
   scen_year <- layers$data$scenario_year
 
-  # pull in lsp status layers and combine
+  # pull in lsp status layer
   lsp_marine <- AlignDataYears(layer_nm = "lsp_offshore", layers_obj = layers) %>%
     dplyr::select(-layer_name)
 
   lsp_land <- AlignDataYears(layer_nm = "lsp_inland", layers_obj = layers) %>%
     dplyr::select(-layer_name)
 
-  # multiply layer status by 100 to get the score - make sure to combine (take the mean)
+  # combine lsp layers
 
   lsp_status <- lsp_marine %>%
     bind_rows(lsp_land) %>%
