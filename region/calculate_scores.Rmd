@@ -54,7 +54,7 @@ ohicore::CheckLayers('layers.csv', 'layers', flds_id = conf$config$layers_id_fie
 layers <- ohicore::Layers('layers.csv', 'layers')
 
 ## select scenario year for the assessment
-scenario_years <- 2019
+scenario_years <- 2020
 layers$data$scenario_year <- scenario_years
 ```
 
