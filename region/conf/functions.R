@@ -1188,23 +1188,32 @@ SPP <- function(layers) {
 
   scen_year <- layers$data$scenario_year
 
-status <- AlignDataYears(layer_nm = "spp_status", layers_obj = layers) %>%
-   dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id,
-                  score) %>%
-  dplyr::mutate(dimension = "status") %>%
-  dplyr::mutate(score = score * 100)
+  # Load conservation scores and calculate status
+  spp_status <- layers$data$spp_status %>%
+    dplyr::filter(year == scen_year) %>%
+    dplyr::filter(!is.na(status)) %>%
+    group_by(region_id) %>%
+    summarize(status = mean(status))
 
-trend <- layers$data$spp_trend %>%
-  dplyr::select(region_id = rgn_id,
-                score) %>%
-  dplyr::mutate(dimension = "trend")
+  # Load trend data and calculate one trend for the region
+  spp_trend <- layers$data$spp_trend %>%
+    dplyr::filter(year == scen_year) %>%
+    group_by(region_id) %>%
+    summarize(trend = mean(score, na.rm=T)) %>% # take the mean trend for the entire region
+    mutate(dimension = "trend",
+           goal = "SPP") %>%
+    rename("score" = "trend")
 
-scores <- rbind(status, trend) %>%
-    dplyr::mutate(goal = 'SPP') %>%
-    dplyr::select(region_id, goal, dimension, score)
+  # Adjust the calculated status to score by incorporating the threshold at which the region would get a zero
+  # If over 75% of all species in the region were critically endangered this would get a score of zero
+  spp_scores <- spp_status %>%
+    mutate(score = 100 * (0.75 - status) / 0.75,
+           dimension = "status",
+           goal = "SPP") %>%
+    dplyr::select(-status) %>%
+    bind_rows(spp_trend)
 
-  return(scores)
+  return(spp_scores)
 }
 
 BD <- function(scores) {
