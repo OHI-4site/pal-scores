@@ -1,386 +1,386 @@
 region_id,sciname,common,status,year
-1,Centropyge bispinosa,Twospined Angelfish,1,2020
-1,Centropyge flavissima,Lemonpeel Angelfish,1,2020
-1,Centropyge fisheri,Hawaiian Flame Angelfish,1,2020
-1,Pomacanthus imperator,Emperor Angelfish,1,2020
-1,Apolemichthys xanthopunctatus,Goldspotted Angelfish,1,2020
-1,Centropyge nigriocellus,Blackspot Angelfish,1,2020
-1,Centropyge loricula,Flame Angel,1,2020
-1,Chaetodon ephippium,Saddle-back Butterflyfish,1,2020
-1,Chaetodon auriga,Threadfin Butterflyfish,1,2020
-1,Chaetodon semeion,Decorated Butterflyfish,1,2020
-1,Chaetodon lineolatus,Lined Butterflyfish,1,2020
-1,Chaetodon citrinellus,Speckled Butterflyfish,1,2020
-1,Chaetodon trifascialis,Triangulate Butterflyfish,0.8,2020
-1,Chaetodon quadrimaculatus,Neonbanded Butterflyfish,1,2020
-1,Forcipiger longirostris,Black Long-nosed Butterflyfish,1,2020
-1,Hemitaurichthys thompsoni,Thompson's Butterflyfish,1,2020
-1,Chaetodon punctatofasciatus,Spotted Belly Butterflyfish,1,2020
-1,Chaetodon meyeri,Scrawled Butterflyfish,1,2020
-1,Chaetodon kleinii,Whitespotted Butterflyfish,1,2020
-1,Hemitaurichthys polylepis,Brushytoothed Butterflyfish,1,2020
-1,Chaetodon lunula,Redstriped Butterflyfish,1,2020
-1,Chaetodon ornatissimus,Ornate Butterflyfish,1,2020
-1,Chaetodon lunulatus,Pacific Pinstriped Butterflyfish,1,2020
-1,Chaetodon ulietensis,Pacific Double-saddled Butterflyfish,1,2020
-1,Forcipiger flavissimus,Big long-nosed Butterflyfish,1,2020
-1,Chaetodon unimaculatus,Teardrop Butterfly Fish,1,2020
-1,Chaetodon vagabundus,Criss-cross Butterflyfish,1,2020
-1,Heniochus acuminatus,Pennant Coral Fish,1,2020
-1,Euprotomicrus bispinatus,Pygmy Shark,1,2020
-1,Alopias superciliosus,Bigeye Thresher,0.6,2020
-1,Carcharhinus amblyrhynchos,Grey Reef Shark,0.8,2020
-1,Prionace glauca,Blue Shark,0.8,2020
-1,Alopias pelagicus,Pelagic Thresher,0.6,2020
-1,Aetobatus narinari,Spotted Eagle Ray,0.8,2020
-1,Carcharodon carcharias,White Shark,0.6,2020
-1,Aetobatus ocellatus,Spotted Eagle Ray,0.6,2020
-1,Triaenodon obesus,Whitetip Reef Shark,0.8,2020
-1,Alopias vulpinus,Common Thresher,0.6,2020
-1,Isurus paucus,Longfin Mako,0.4,2020
-1,Pseudocarcharias kamoharai,Crocodile Shark,1,2020
-1,Galeocerdo cuvier,Tiger Shark,0.8,2020
-1,Pteroplatytrygon violacea,Pelagic Stingray,1,2020
-1,Megachasma pelagios,Megamouth Shark,1,2020
-1,Isurus oxyrinchus,Shortfin Mako,0.4,2020
-1,Mobula alfredi,Reef Manta Ray,0.6,2020
-1,Carcharhinus falciformis,Silky Shark,0.6,2020
-1,Mobula birostris,Giant Manta Ray,0.6,2020
-1,Rhincodon typus,Whale Shark,0.4,2020
-1,Carcharhinus longimanus,Oceanic Whitetip Shark,0.6,2020
-1,Entomacrodus cymatobiotus,Pacific Rockskipper,1,2020
-1,Blenniella gibbifrons,Picture Rockskipper,1,2020
-1,Cirripectes polyzona,Barred Blenny,1,2020
-1,Aspidontus taeniatus,Cleaner Mimic,1,2020
-1,Cirripectes variolosus,Banded Fringe Blenny,1,2020
-1,Cirripectes auritus,Blackflap Blenny,1,2020
-1,Enneapterygius tutuilae,High Hat Triplefin,1,2020
-1,Cirripectes jenningsi,NA,1,2020
-1,Blenniella paula,Blue-dashed Rockskipper,1,2020
-1,Entomacrodus thalassinus,Reef Margin Blenny,1,2020
-1,Omobranchus obliquus,Mangrove Blenny,1,2020
-1,Istiblennius edentulus,Smoothlipped Blenny,1,2020
-1,Exallias brevis,Leopard Blenny,1,2020
-1,Cirripectes quagga,Zebra Blenny,1,2020
-1,Rhabdoblennius rhabdotrachelus,Barchin Blenny,1,2020
-1,Plagiotremus rhinorhynchos,Bluestriped Fangblenny,1,2020
-1,Plagiotremus tapeinosoma,Piano Fangblenny,1,2020
-1,Entomacrodus striatus,Blackspotted Rockskipper,1,2020
-1,Ecsenius midas,Midas Blenny,1,2020
-1,Petroscirtes xestus,Bearded Sabretooth Blenny,1,2020
-1,Conus planorbis,NA,1,2020
-1,Conus miles,NA,1,2020
-1,Conus coronatus,NA,1,2020
-1,Conus pulicarius,Flea Cone,1,2020
-1,Conus lividus,NA,1,2020
-1,Conus pertusus,NA,1,2020
-1,Conus ebraeus,NA,1,2020
-1,Conus auricomus,NA,1,2020
-1,Conus acutangulus,NA,1,2020
-1,Conus bullatus,Bubble Cone,1,2020
-1,Conus sanguinolentus,NA,1,2020
-1,Conus bandanus,NA,1,2020
-1,Conus coffeae,NA,1,2020
-1,Conus mitratus,NA,1,2020
-1,Conus varius,NA,1,2020
-1,Conus tulipa,tulip cone,1,2020
-1,Conus vexillum,NA,1,2020
-1,Conus quercinus,NA,1,2020
-1,Conus obscurus,NA,1,2020
-1,Conus eburneus,NA,1,2020
-1,Conus rattus,NA,1,2020
-1,Conus circumactus,NA,1,2020
-1,Conus retifer,NA,1,2020
-1,Conus imperialis,NA,1,2020
-1,Conus striatus,striated cone,1,2020
-1,Conus canonicus,NA,1,2020
-1,Conus textile,cloth-of-gold cone,1,2020
-1,Conus catus,NA,1,2020
-1,Conus nussatella,NA,1,2020
-1,Conus generalis,NA,1,2020
-1,Conus glans,NA,1,2020
-1,Conus moreleti,NA,1,2020
-1,Conus flavidus,Yellow Pacific cone,1,2020
-1,Conus tessulatus,NA,1,2020
-1,Conus episcopatus,NA,1,2020
-1,Conus frigidus,Frigid Cone,1,2020
-1,Conus sponsalis,Sponsal Cone,1,2020
-1,Conus virgo,NA,1,2020
-1,Conus cylindraceus,Cylindrical Cone,1,2020
-1,Conus emaciatus,False Virgin Cone,1,2020
-1,Conus distans,NA,1,2020
-1,Conus litteratus,NA,1,2020
-1,Conus terebra,NA,1,2020
-1,Conus arenatus,Sand-dusted Cone,1,2020
-1,Conus aulicus,NA,1,2020
-1,Conus geographus,geography cone,1,2020
-1,Conus ferrugineus,NA,1,2020
-1,Conus litoglyphus,NA,1,2020
-1,Conus magnificus,NA,1,2020
-1,Conus chaldaeus,NA,1,2020
-1,Conus leopardus,NA,1,2020
-1,Leptastrea transversa,NA,1,2020
-1,Platygyra carnosus,NA,0.8,2020
-1,Montipora informis,NA,1,2020
-1,Favia pallida,NA,1,2020
-1,Montipora calcarea,NA,0.6,2020
-1,Favia stelligera,NA,0.8,2020
-1,Favia lizardensis,NA,0.8,2020
-1,Plerogyra sinuosa,NA,0.8,2020
-1,Favites halicora,NA,0.8,2020
-1,Favia favus,Head Coral,1,2020
-1,Acropora tortuosa,NA,1,2020
-1,Acropora lutkeni,NA,0.8,2020
-1,Favites complanata,NA,0.8,2020
-1,Montipora incrassata,NA,0.8,2020
-1,Montipora turgescens,NA,1,2020
-1,Platygyra ryukyuensis,NA,0.8,2020
-1,Fungia scutaria,NA,1,2020
-1,Acropora grandis,NA,1,2020
-1,Montipora capitata,NA,0.8,2020
-1,Platygyra pini,NA,1,2020
-1,Montipora aequituberculata,NA,1,2020
-1,Platygyra contorta,NA,1,2020
-1,Montipora peltiformis,NA,0.8,2020
-1,Favia matthaii,NA,0.8,2020
-1,Favites pentagona,NA,1,2020
-1,Montastrea valenciennesi,NA,0.8,2020
-1,Acropora horrida,NA,0.6,2020
-1,Montipora verrucosa,NA,1,2020
-1,Leptastrea bewickensis,NA,0.8,2020
-1,Montipora monasteriata,NA,1,2020
-1,Montipora foveolata,NA,0.8,2020
-1,Acropora microphthalma,NA,1,2020
-1,Platygyra daedalea,Brain Coral,1,2020
-1,Platygyra sinensis,NA,1,2020
-1,Montipora tuberculosa,NA,1,2020
-1,Montipora hoffmeisteri,NA,1,2020
-1,Goniastrea pectinata,NA,1,2020
-1,Leptastrea purpurea,NA,1,2020
-1,Leptastrea pruinosa,NA,1,2020
-1,Favites abdita,NA,0.8,2020
-1,Favites chinensis,NA,0.8,2020
-1,Montastrea curta,NA,1,2020
-1,Abudefduf sordidus,Yellow-banded Sergeant-major,1,2020
-1,Abudefduf vaigiensis,Five-banded Sergeant-major,1,2020
-1,Abudefduf septemfasciatus,Seven-banded Sergeant-major,1,2020
-1,Chromis caudalis,Blue-axil Chromis,1,2020
-1,Epinephelus polyphekadion,Camouflage Grouper,0.6,2020
-1,Epinephelus fuscoguttatus,Brown-marbled Grouper,0.6,2020
-1,Cephalopholis leopardus,Leopard Hind,1,2020
-1,Plectropomus laevis,Blacksaddled Coral Grouper,1,2020
-1,Cephalopholis argus,Peacock Grouper,1,2020
-1,Epinephelus macrospilos,Snubnose Grouper,1,2020
-1,Cephalopholis sonnerati,Tomato Hind,1,2020
-1,Epinephelus hexagonatus,White Speckled Rockcod,1,2020
-1,Epinephelus merra,Honeycomb Grouper,1,2020
-1,Epinephelus retouti,Red-tipped Grouper,1,2020
-1,Gracila albomarginata,Masked Grouper,1,2020
-1,Cephalopholis urodeta,Darkfin Hind,1,2020
-1,Epinephelus melanostigma,One-blotch Grouper,1,2020
-1,Epinephelus spilotoceps,Foursaddle Grouper,1,2020
-1,Epinephelus fasciatus,Blacktip Grouper,1,2020
-1,Epinephelus socialis,Surge Grouper,1,2020
-1,Cephalopholis miniata,Coral Hind,1,2020
-1,Variola louti,Yellow-edged Lyretail,1,2020
-1,Cephalopholis sexmaculata,Six-blotch Hind,1,2020
-1,Epinephelus howlandi,Blacksaddle Grouper,1,2020
-1,Eptatretus carlhubbsi,Giant hagfish,1,2020
-1,Arctides regalis,Royal Spanish Lobster,1,2020
-1,Stereomastis surda,NA,1,2020
-1,Peponocephala electra,Melon-headed Whale,1,2020
-1,Steno bredanensis,Rough-toothed Dolphin,1,2020
-1,Stenella coeruleoalba,Striped Dolphin,1,2020
-1,Ziphius cavirostris,Cuvier's Beaked Whale,1,2020
-1,Physeter macrocephalus,Sperm Whale,0.6,2020
-1,Tursiops truncatus,Common Bottlenose Dolphin,1,2020
-1,Balaenoptera edeni,Bryde's Whale,1,2020
-1,Stenella longirostris,Spinner Dolphin,1,2020
-1,Globicephala macrorhynchus,Short-finned Pilot Whale,1,2020
-1,Megaptera novaeangliae,Humpback Whale,1,2020
-1,Balaenoptera borealis,Sei Whale,0.4,2020
-1,Grampus griseus,Risso's Dolphin,1,2020
-1,Balaenoptera musculus,Blue Whale,0.4,2020
-1,Lagenodelphis hosei,Fraser's Dolphin,1,2020
-1,Balaenoptera acutorostrata,Common Minke Whale,1,2020
-1,Pseudorca crassidens,False Killer Whale,0.8,2020
-1,Feresa attenuata,Pygmy Killer Whale,1,2020
-1,Stenella attenuata,Pantropical Spotted Dolphin,1,2020
-1,Sphoeroides pachygaster,Blunthead Puffer,1,2020
-1,Canthigaster janthinoptera,Honeycomb Toby,1,2020
-1,Canthigaster amboinensis,Spider-eye Puffer,1,2020
-1,Canthigaster solandri,Spotted Sharpnose,1,2020
-1,Lagocephalus lagocephalus,Oceanic Puffer,1,2020
-1,Arothron nigropunctatus,Blackspotted Puffer,1,2020
-1,Lagocephalus sceleratus,Silver-cheeked Toadfish,1,2020
-1,Canthigaster bennetti,Bennett's Sharpnose Puffer,1,2020
-1,Arothron hispidus,White-spotted Puffer,1,2020
-1,Arothron meleagris,Guineafowl Puffer,1,2020
-1,Eretmochelys imbricata,Hawksbill Turtle,0.19999999999999996,2020
-1,Dermochelys coriacea,Leatherback,0.19999999999999996,2020
-1,Caretta caretta,Loggerhead Turtle,0.6,2020
-1,Hydrophis platurus,Yellow-bellied Sea Snake,1,2020
-1,Chelonia mydas,Green Turtle,0.4,2020
-1,Holothuria leucospilota,White Thread Fish,1,2020
-1,Holothuria fuscogilva,NA,0.6,2020
-1,Holothuria hilla,NA,1,2020
-1,Holothuria pervicax,NA,1,2020
-1,Holothuria difficilis,NA,1,2020
-1,Holothuria flavomaculata,NA,1,2020
-1,Actinopyga mauritiana,Surf Redfish,0.6,2020
-1,Holothuria inhabilis,NA,1,2020
-1,Holothuria pardalis,NA,1,2020
-1,Holothuria whitmaei,Black Teatfish,0.4,2020
-1,Holothuria rigida,NA,1,2020
-1,Holothuria fuscocinerea,NA,1,2020
-1,Pearsonothuria graeffei,Blackspotted Sea Cucumber,1,2020
-1,Holothuria atra,Lollyfish,1,2020
-1,Holothuria erinaceaus,NA,1,2020
-1,Labidodemas semperianum,NA,1,2020
-1,Holothuria verrucosa,NA,1,2020
-1,Naso lituratus,Orange Spine Surgeonfish,1,2020
-1,Acanthurus nigricauda,Blackstreak Surgeonfish,1,2020
-1,Naso unicornis,Bluespine Unicornfish,1,2020
-1,Acanthurus leucocheilus,Palelipped Surgeonfish,1,2020
-1,Naso brevirostris,Palefin Unicornfish,1,2020
-1,Ctenochaetus hawaiiensis,Hawaiian Bristletooth,1,2020
-1,Acanthurus triostegus,Convict Surgeonfish,1,2020
-1,Acanthurus xanthopterus,Yellowfin Surgeonfish,1,2020
-1,Acanthurus lineatus,Lined Surgeonfish,1,2020
-1,Naso vlamingii,Bignose Unicornfish,1,2020
-1,Acanthurus guttatus,Whitespotted Surgeonfish,1,2020
-1,Ctenochaetus marginatus,Blue-spotted Bristletooth,1,2020
-1,Acanthurus thompsoni,Thompson's Surgeonfish,1,2020
-1,Acanthurus nigricans,Golden Rim Surgeonfish,1,2020
-1,Acanthurus maculiceps,Spotted-face Surgeonfish,1,2020
-1,Acanthurus pyroferus,Mimic Surgeonfish,1,2020
-1,Acanthurus olivaceus,Orange band Surgeonfish,1,2020
-1,Zebrasoma veliferum,Sailfin Tang,1,2020
-1,Paracanthurus hepatus,Palette Surgeonfish,1,2020
-1,Ctenochaetus cyanocheilus,Short-tail bristle-tooth,1,2020
-1,Zebrasoma scopas,Brushtail Tang,1,2020
-1,Acanthurus achilles,Achilles Tang,1,2020
-1,Acanthurus blochii,Ringtail Surgeonfish,1,2020
-1,Ctenochaetus flavicauda,Whitetail Bristletooth,1,2020
-1,Acanthurus dussumieri,Eyestripe Surgeonfish,1,2020
-1,Acanthurus nigrofuscus,Brown Surgeonfish,1,2020
-1,Naso hexacanthus,Sleek Unicornfish,1,2020
-1,Acanthurus mata,Elongate Surgeonfish,1,2020
-1,Ctenochaetus striatus,Striped Bristletooth,1,2020
-1,Fistularia petimba,Red Cornetfish,1,2020
-1,Fistularia commersonii,Bluespotted Cornetfish,1,2020
-1,Doryrhamphus excisus,Bluestripe Pipefish,1,2020
-1,Choeroichthys sculptus,Sculptured Pipefish,1,2020
-1,Aulostomus chinensis,Chinese Trumpetfish,1,2020
-1,Katsuwonus pelamis,Skipjack Tuna,1,2020
-1,Thunnus albacares,Yellowfin Tuna,0.8,2020
-1,Makaira nigricans,Blue Marlin,0.6,2020
-1,Thunnus alalunga,Albacore Tuna,0.8,2020
-1,Xiphias gladius,Swordfish,1,2020
-1,Kajikia audax,Striped Marlin,0.8,2020
-1,Thunnus obesus,Bigeye Tuna,0.6,2020
-1,Istiophorus platypterus,Sailfish,1,2020
-1,Acanthocybium solandri,Wahoo,1,2020
-1,Coris centralis,NA,1,2020
-1,Cheilinus trilobatus,Tripletail Wrasse,1,2020
-1,Coris gaimard,African clown wrasse,1,2020
-1,Novaculichthys taeniourus,Olive-scribbled wrasse,1,2020
-1,Pseudocheilinus hexataenia,Six-line wrasse,1,2020
-1,Thalassoma amblycephalum,Bluntheaded wrasse,1,2020
-1,Labropsis xanthonota,Wedge-tailed wrasse,1,2020
-1,Thalassoma hardwicke,Six-banded wrasse,1,2020
-1,Bodianus prognathus,NA,1,2020
-1,Halichoeres hortulanus,Checkerboard wrasse,1,2020
-1,Oxycheilinus unifasciatus,Whiteband maori wrasse,1,2020
-1,Thalassoma lutescens,Yellow-brown wrasse,1,2020
-1,Epibulus insidiator,Sling-jaw wrasse,1,2020
-1,Thalassoma quinquevittatum,Five striped surge wrasse,1,2020
-1,Bodianus loxozonus,Blackfin Hogfish,1,2020
-1,Thalassoma purpureum,Purple wrasse,1,2020
-1,Halichoeres pallidus,Pale wrasse,1,2020
-1,Calotomus carolinus,Carolines Parrotfish,1,2020
-1,Scarus globiceps,Globehead Parrotfish,1,2020
-1,Scarus spinus,Greensnout Parrotfish,1,2020
-1,Chlorurus microrhinos,Steephead Parrotfish,1,2020
-1,Scarus psittacus,Common Parrotfish,1,2020
-1,Scarus niger,Dusky Parrotfish,1,2020
-1,Scarus pyrrostethus,Blue Banded Parrotfish,1,2020
-1,Bolbometopon muricatum,Green Humphead Parrotfish,0.6,2020
-1,Scarus oviceps,Blue Parrotfish,1,2020
-1,Pseudocheilinus ocellatus,White-barred Pink Wrasse,1,2020
-1,Hemigymnus fasciatus,Barred thicklip wrasse,1,2020
-1,Thalassoma lunare,Crescent-Tail Wrasse,1,2020
-1,Labroides dimidiatus,Blue-streak cleaner wrasse,1,2020
-1,Stethojulis bandanensis,Red-spot rainbowfish,1,2020
-1,Halichoeres margaritaceus,Pearl-spotted wrasse,1,2020
-1,Halichoeres trimaculatus,Three-spot wrasse,1,2020
-1,Bodianus axillaris,Turncoat hogfish,1,2020
-1,Hologymnosus doliatus,Narrow-banded wrasse,1,2020
-1,Gomphosus varius,Purple club-nosed wrasse,1,2020
-1,Halichoeres melasmapomus,Ocellated wrasse,1,2020
-1,Labroides pectoralis,Gold barrier reef cleaner,1,2020
-1,Pseudocheilinus octotaenia,Eightstripe wrasse,1,2020
-1,Labrichthys unilineatus,Tube-mouth wrasse,1,2020
-1,Cheilinus oxycephalus,Point-head maori wrasse,1,2020
-1,Pseudocheilinus evanidus,Disappearing wrasse,1,2020
-1,Cymolutes praetextatus,Knife razorfish,1,2020
-1,Pseudocoris heteroptera,Torpedo wrasse,1,2020
-1,Macropharyngodon meleagris,Blackspotted wrasse,1,2020
-1,Halichoeres claudia,Claudia's wrasse,1,2020
-1,Iniistius pavo,Indianfish blue razorfish,1,2020
-1,Thalassoma trilobatum,Green-blocked wrasse,1,2020
-1,Pseudodax moluccanus,Chisel-tooth wrasse,1,2020
-1,Bodianus anthioides,Lyre-tail hogfish,1,2020
-1,Anampses caeruleopunctatus,Bluespotted Wrasse,1,2020
-1,Anampses meleagrides,Spotted Wrasse,1,2020
-1,Labroides rubrolabiatus,Redlip cleaner wrasse,1,2020
-1,Labroides bicolor,Two-colour cleaner wrasse,1,2020
-1,Anampses twistii,Yellowbreasted Wrasse,1,2020
-1,Coris aygula,False clownwrasse,1,2020
-1,Scarus tricolor,Tricolour Parrotfish,1,2020
-1,Chlorurus spilurus,Bullethead Parrotfish,1,2020
-1,Scarus rubroviolaceus,Ember Parrotfish,1,2020
-1,Hipposcarus longiceps,Pacific Longnose Parrotfish,1,2020
-1,Scarus frenatus,Bridled Parrotfish,1,2020
-1,Chlorurus frontalis,Tan-faced Parrotfish,1,2020
-1,Gygis alba,Common White Tern,1,2020
-1,Oceanites oceanicus,Wilson's Storm-petrel,1,2020
-1,Nesofregetta fuliginosa,Polynesian Storm-petrel,0.4,2020
-1,Onychoprion lunatus,Grey-backed Tern,1,2020
-1,Anous ceruleus,Blue Noddy,1,2020
-1,Pterodroma neglecta,Kermadec Petrel,1,2020
-1,Pterodroma alba,Phoenix Petrel,0.4,2020
-1,Pterodroma cervicalis,White-necked Petrel,0.6,2020
-1,Pterodroma heraldica,Herald Petrel,1,2020
-1,Pterodroma longirostris,Stejneger's Petrel,0.6,2020
-1,Puffinus bailloni,Tropical Shearwater,1,2020
-1,Puffinus nativitatis,Christmas Shearwater,1,2020
-1,Pterodroma cookii,Cook's Petrel,0.6,2020
-1,Pterodroma inexpectata,Mottled Petrel,0.8,2020
-1,Pterodroma nigripennis,Black-winged Petrel,1,2020
-1,Pterodroma leucoptera,White-winged Petrel,0.6,2020
-1,Pterodroma pycrofti,Pycroft's Petrel,0.6,2020
-1,Pterodroma sandwichensis,Hawaiian Petrel,0.4,2020
-1,Pterodroma solandri,Providence Petrel,0.6,2020
-1,Pterodroma ultima,Murphy's Petrel,0.8,2020
-1,Sula dactylatra,Masked Booby,1,2020
-1,Sula leucogaster,Brown Booby,1,2020
-1,Sula sula,Red-footed Booby,1,2020
-1,Ardenna bulleri,Buller's Shearwater,0.6,2020
-1,Pterodroma brevipes,Collared Petrel,0.6,2020
-1,Phaethon rubricauda,Red-tailed Tropicbird,1,2020
-1,Anous stolidus,Brown Noddy,1,2020
-1,Anous minutus,Black Noddy,1,2020
-1,Fregata ariel,Lesser Frigatebird,1,2020
-1,Phaethon lepturus,White-tailed Tropicbird,1,2020
-1,Ardenna carneipes,Flesh-footed Shearwater,0.8,2020
-1,Ardenna pacifica,Wedge-tailed Shearwater,1,2020
-1,Ardenna tenuirostris,Short-tailed Shearwater,1,2020
-1,Bulweria bulwerii,Bulwer's Petrel,1,2020
-1,Fregata minor,Great Frigatebird,1,2020
-1,Onychoprion fuscatus,Sooty Tern,1,2020
-1,Ardenna grisea,Sooty Shearwater,0.8,2020
-1,Phoebastria nigripes,Black-footed Albatross,0.8,2020
-1,Hydrobates castro,Band-rumped Storm-petrel,1,2020
-1,Hydrobates leucorhous,Leach's Storm-petrel,0.6,2020
-1,Puffinus newelli,Newell's Shearwater,0.19999999999999996,2020
+1,Centropyge bispinosa,Twospined Angelfish,0,2020
+1,Centropyge flavissima,Lemonpeel Angelfish,0,2020
+1,Centropyge fisheri,Hawaiian Flame Angelfish,0,2020
+1,Pomacanthus imperator,Emperor Angelfish,0,2020
+1,Apolemichthys xanthopunctatus,Goldspotted Angelfish,0,2020
+1,Centropyge nigriocellus,Blackspot Angelfish,0,2020
+1,Centropyge loricula,Flame Angel,0,2020
+1,Chaetodon ephippium,Saddle-back Butterflyfish,0,2020
+1,Chaetodon auriga,Threadfin Butterflyfish,0,2020
+1,Chaetodon semeion,Decorated Butterflyfish,0,2020
+1,Chaetodon lineolatus,Lined Butterflyfish,0,2020
+1,Chaetodon citrinellus,Speckled Butterflyfish,0,2020
+1,Chaetodon trifascialis,Triangulate Butterflyfish,0.2,2020
+1,Chaetodon quadrimaculatus,Neonbanded Butterflyfish,0,2020
+1,Forcipiger longirostris,Black Long-nosed Butterflyfish,0,2020
+1,Hemitaurichthys thompsoni,Thompson's Butterflyfish,0,2020
+1,Chaetodon punctatofasciatus,Spotted Belly Butterflyfish,0,2020
+1,Chaetodon meyeri,Scrawled Butterflyfish,0,2020
+1,Chaetodon kleinii,Whitespotted Butterflyfish,0,2020
+1,Hemitaurichthys polylepis,Brushytoothed Butterflyfish,0,2020
+1,Chaetodon lunula,Redstriped Butterflyfish,0,2020
+1,Chaetodon ornatissimus,Ornate Butterflyfish,0,2020
+1,Chaetodon lunulatus,Pacific Pinstriped Butterflyfish,0,2020
+1,Chaetodon ulietensis,Pacific Double-saddled Butterflyfish,0,2020
+1,Forcipiger flavissimus,Big long-nosed Butterflyfish,0,2020
+1,Chaetodon unimaculatus,Teardrop Butterfly Fish,0,2020
+1,Chaetodon vagabundus,Criss-cross Butterflyfish,0,2020
+1,Heniochus acuminatus,Pennant Coral Fish,0,2020
+1,Euprotomicrus bispinatus,Pygmy Shark,0,2020
+1,Alopias superciliosus,Bigeye Thresher,0.4,2020
+1,Carcharhinus amblyrhynchos,Grey Reef Shark,0.2,2020
+1,Prionace glauca,Blue Shark,0.2,2020
+1,Alopias pelagicus,Pelagic Thresher,0.4,2020
+1,Aetobatus narinari,Spotted Eagle Ray,0.2,2020
+1,Carcharodon carcharias,White Shark,0.4,2020
+1,Aetobatus ocellatus,Spotted Eagle Ray,0.4,2020
+1,Triaenodon obesus,Whitetip Reef Shark,0.2,2020
+1,Alopias vulpinus,Common Thresher,0.4,2020
+1,Isurus paucus,Longfin Mako,0.6,2020
+1,Pseudocarcharias kamoharai,Crocodile Shark,0,2020
+1,Galeocerdo cuvier,Tiger Shark,0.2,2020
+1,Pteroplatytrygon violacea,Pelagic Stingray,0,2020
+1,Megachasma pelagios,Megamouth Shark,0,2020
+1,Isurus oxyrinchus,Shortfin Mako,0.6,2020
+1,Mobula alfredi,Reef Manta Ray,0.4,2020
+1,Carcharhinus falciformis,Silky Shark,0.4,2020
+1,Mobula birostris,Giant Manta Ray,0.4,2020
+1,Rhincodon typus,Whale Shark,0.6,2020
+1,Carcharhinus longimanus,Oceanic Whitetip Shark,0.4,2020
+1,Entomacrodus cymatobiotus,Pacific Rockskipper,0,2020
+1,Blenniella gibbifrons,Picture Rockskipper,0,2020
+1,Cirripectes polyzona,Barred Blenny,0,2020
+1,Aspidontus taeniatus,Cleaner Mimic,0,2020
+1,Cirripectes variolosus,Banded Fringe Blenny,0,2020
+1,Cirripectes auritus,Blackflap Blenny,0,2020
+1,Enneapterygius tutuilae,High Hat Triplefin,0,2020
+1,Cirripectes jenningsi,NA,0,2020
+1,Blenniella paula,Blue-dashed Rockskipper,0,2020
+1,Entomacrodus thalassinus,Reef Margin Blenny,0,2020
+1,Omobranchus obliquus,Mangrove Blenny,0,2020
+1,Istiblennius edentulus,Smoothlipped Blenny,0,2020
+1,Exallias brevis,Leopard Blenny,0,2020
+1,Cirripectes quagga,Zebra Blenny,0,2020
+1,Rhabdoblennius rhabdotrachelus,Barchin Blenny,0,2020
+1,Plagiotremus rhinorhynchos,Bluestriped Fangblenny,0,2020
+1,Plagiotremus tapeinosoma,Piano Fangblenny,0,2020
+1,Entomacrodus striatus,Blackspotted Rockskipper,0,2020
+1,Ecsenius midas,Midas Blenny,0,2020
+1,Petroscirtes xestus,Bearded Sabretooth Blenny,0,2020
+1,Conus planorbis,NA,0,2020
+1,Conus miles,NA,0,2020
+1,Conus coronatus,NA,0,2020
+1,Conus pulicarius,Flea Cone,0,2020
+1,Conus lividus,NA,0,2020
+1,Conus pertusus,NA,0,2020
+1,Conus ebraeus,NA,0,2020
+1,Conus auricomus,NA,0,2020
+1,Conus acutangulus,NA,0,2020
+1,Conus bullatus,Bubble Cone,0,2020
+1,Conus sanguinolentus,NA,0,2020
+1,Conus bandanus,NA,0,2020
+1,Conus coffeae,NA,0,2020
+1,Conus mitratus,NA,0,2020
+1,Conus varius,NA,0,2020
+1,Conus tulipa,tulip cone,0,2020
+1,Conus vexillum,NA,0,2020
+1,Conus quercinus,NA,0,2020
+1,Conus obscurus,NA,0,2020
+1,Conus eburneus,NA,0,2020
+1,Conus rattus,NA,0,2020
+1,Conus circumactus,NA,0,2020
+1,Conus retifer,NA,0,2020
+1,Conus imperialis,NA,0,2020
+1,Conus striatus,striated cone,0,2020
+1,Conus canonicus,NA,0,2020
+1,Conus textile,cloth-of-gold cone,0,2020
+1,Conus catus,NA,0,2020
+1,Conus nussatella,NA,0,2020
+1,Conus generalis,NA,0,2020
+1,Conus glans,NA,0,2020
+1,Conus moreleti,NA,0,2020
+1,Conus flavidus,Yellow Pacific cone,0,2020
+1,Conus tessulatus,NA,0,2020
+1,Conus episcopatus,NA,0,2020
+1,Conus frigidus,Frigid Cone,0,2020
+1,Conus sponsalis,Sponsal Cone,0,2020
+1,Conus virgo,NA,0,2020
+1,Conus cylindraceus,Cylindrical Cone,0,2020
+1,Conus emaciatus,False Virgin Cone,0,2020
+1,Conus distans,NA,0,2020
+1,Conus litteratus,NA,0,2020
+1,Conus terebra,NA,0,2020
+1,Conus arenatus,Sand-dusted Cone,0,2020
+1,Conus aulicus,NA,0,2020
+1,Conus geographus,geography cone,0,2020
+1,Conus ferrugineus,NA,0,2020
+1,Conus litoglyphus,NA,0,2020
+1,Conus magnificus,NA,0,2020
+1,Conus chaldaeus,NA,0,2020
+1,Conus leopardus,NA,0,2020
+1,Leptastrea transversa,NA,0,2020
+1,Platygyra carnosus,NA,0.2,2020
+1,Montipora informis,NA,0,2020
+1,Favia pallida,NA,0,2020
+1,Montipora calcarea,NA,0.4,2020
+1,Favia stelligera,NA,0.2,2020
+1,Favia lizardensis,NA,0.2,2020
+1,Plerogyra sinuosa,NA,0.2,2020
+1,Favites halicora,NA,0.2,2020
+1,Favia favus,Head Coral,0,2020
+1,Acropora tortuosa,NA,0,2020
+1,Acropora lutkeni,NA,0.2,2020
+1,Favites complanata,NA,0.2,2020
+1,Montipora incrassata,NA,0.2,2020
+1,Montipora turgescens,NA,0,2020
+1,Platygyra ryukyuensis,NA,0.2,2020
+1,Fungia scutaria,NA,0,2020
+1,Acropora grandis,NA,0,2020
+1,Montipora capitata,NA,0.2,2020
+1,Platygyra pini,NA,0,2020
+1,Montipora aequituberculata,NA,0,2020
+1,Platygyra contorta,NA,0,2020
+1,Montipora peltiformis,NA,0.2,2020
+1,Favia matthaii,NA,0.2,2020
+1,Favites pentagona,NA,0,2020
+1,Montastrea valenciennesi,NA,0.2,2020
+1,Acropora horrida,NA,0.4,2020
+1,Montipora verrucosa,NA,0,2020
+1,Leptastrea bewickensis,NA,0.2,2020
+1,Montipora monasteriata,NA,0,2020
+1,Montipora foveolata,NA,0.2,2020
+1,Acropora microphthalma,NA,0,2020
+1,Platygyra daedalea,Brain Coral,0,2020
+1,Platygyra sinensis,NA,0,2020
+1,Montipora tuberculosa,NA,0,2020
+1,Montipora hoffmeisteri,NA,0,2020
+1,Goniastrea pectinata,NA,0,2020
+1,Leptastrea purpurea,NA,0,2020
+1,Leptastrea pruinosa,NA,0,2020
+1,Favites abdita,NA,0.2,2020
+1,Favites chinensis,NA,0.2,2020
+1,Montastrea curta,NA,0,2020
+1,Abudefduf sordidus,Yellow-banded Sergeant-major,0,2020
+1,Abudefduf vaigiensis,Five-banded Sergeant-major,0,2020
+1,Abudefduf septemfasciatus,Seven-banded Sergeant-major,0,2020
+1,Chromis caudalis,Blue-axil Chromis,0,2020
+1,Epinephelus polyphekadion,Camouflage Grouper,0.4,2020
+1,Epinephelus fuscoguttatus,Brown-marbled Grouper,0.4,2020
+1,Cephalopholis leopardus,Leopard Hind,0,2020
+1,Plectropomus laevis,Blacksaddled Coral Grouper,0,2020
+1,Cephalopholis argus,Peacock Grouper,0,2020
+1,Epinephelus macrospilos,Snubnose Grouper,0,2020
+1,Cephalopholis sonnerati,Tomato Hind,0,2020
+1,Epinephelus hexagonatus,White Speckled Rockcod,0,2020
+1,Epinephelus merra,Honeycomb Grouper,0,2020
+1,Epinephelus retouti,Red-tipped Grouper,0,2020
+1,Gracila albomarginata,Masked Grouper,0,2020
+1,Cephalopholis urodeta,Darkfin Hind,0,2020
+1,Epinephelus melanostigma,One-blotch Grouper,0,2020
+1,Epinephelus spilotoceps,Foursaddle Grouper,0,2020
+1,Epinephelus fasciatus,Blacktip Grouper,0,2020
+1,Epinephelus socialis,Surge Grouper,0,2020
+1,Cephalopholis miniata,Coral Hind,0,2020
+1,Variola louti,Yellow-edged Lyretail,0,2020
+1,Cephalopholis sexmaculata,Six-blotch Hind,0,2020
+1,Epinephelus howlandi,Blacksaddle Grouper,0,2020
+1,Eptatretus carlhubbsi,Giant hagfish,0,2020
+1,Arctides regalis,Royal Spanish Lobster,0,2020
+1,Stereomastis surda,NA,0,2020
+1,Peponocephala electra,Melon-headed Whale,0,2020
+1,Steno bredanensis,Rough-toothed Dolphin,0,2020
+1,Stenella coeruleoalba,Striped Dolphin,0,2020
+1,Ziphius cavirostris,Cuvier's Beaked Whale,0,2020
+1,Physeter macrocephalus,Sperm Whale,0.4,2020
+1,Tursiops truncatus,Common Bottlenose Dolphin,0,2020
+1,Balaenoptera edeni,Bryde's Whale,0,2020
+1,Stenella longirostris,Spinner Dolphin,0,2020
+1,Globicephala macrorhynchus,Short-finned Pilot Whale,0,2020
+1,Megaptera novaeangliae,Humpback Whale,0,2020
+1,Balaenoptera borealis,Sei Whale,0.6,2020
+1,Grampus griseus,Risso's Dolphin,0,2020
+1,Balaenoptera musculus,Blue Whale,0.6,2020
+1,Lagenodelphis hosei,Fraser's Dolphin,0,2020
+1,Balaenoptera acutorostrata,Common Minke Whale,0,2020
+1,Pseudorca crassidens,False Killer Whale,0.2,2020
+1,Feresa attenuata,Pygmy Killer Whale,0,2020
+1,Stenella attenuata,Pantropical Spotted Dolphin,0,2020
+1,Sphoeroides pachygaster,Blunthead Puffer,0,2020
+1,Canthigaster janthinoptera,Honeycomb Toby,0,2020
+1,Canthigaster amboinensis,Spider-eye Puffer,0,2020
+1,Canthigaster solandri,Spotted Sharpnose,0,2020
+1,Lagocephalus lagocephalus,Oceanic Puffer,0,2020
+1,Arothron nigropunctatus,Blackspotted Puffer,0,2020
+1,Lagocephalus sceleratus,Silver-cheeked Toadfish,0,2020
+1,Canthigaster bennetti,Bennett's Sharpnose Puffer,0,2020
+1,Arothron hispidus,White-spotted Puffer,0,2020
+1,Arothron meleagris,Guineafowl Puffer,0,2020
+1,Eretmochelys imbricata,Hawksbill Turtle,0.8,2020
+1,Dermochelys coriacea,Leatherback,0.8,2020
+1,Caretta caretta,Loggerhead Turtle,0.4,2020
+1,Hydrophis platurus,Yellow-bellied Sea Snake,0,2020
+1,Chelonia mydas,Green Turtle,0.6,2020
+1,Holothuria leucospilota,White Thread Fish,0,2020
+1,Holothuria fuscogilva,NA,0.4,2020
+1,Holothuria hilla,NA,0,2020
+1,Holothuria pervicax,NA,0,2020
+1,Holothuria difficilis,NA,0,2020
+1,Holothuria flavomaculata,NA,0,2020
+1,Actinopyga mauritiana,Surf Redfish,0.4,2020
+1,Holothuria inhabilis,NA,0,2020
+1,Holothuria pardalis,NA,0,2020
+1,Holothuria whitmaei,Black Teatfish,0.6,2020
+1,Holothuria rigida,NA,0,2020
+1,Holothuria fuscocinerea,NA,0,2020
+1,Pearsonothuria graeffei,Blackspotted Sea Cucumber,0,2020
+1,Holothuria atra,Lollyfish,0,2020
+1,Holothuria erinaceaus,NA,0,2020
+1,Labidodemas semperianum,NA,0,2020
+1,Holothuria verrucosa,NA,0,2020
+1,Naso lituratus,Orange Spine Surgeonfish,0,2020
+1,Acanthurus nigricauda,Blackstreak Surgeonfish,0,2020
+1,Naso unicornis,Bluespine Unicornfish,0,2020
+1,Acanthurus leucocheilus,Palelipped Surgeonfish,0,2020
+1,Naso brevirostris,Palefin Unicornfish,0,2020
+1,Ctenochaetus hawaiiensis,Hawaiian Bristletooth,0,2020
+1,Acanthurus triostegus,Convict Surgeonfish,0,2020
+1,Acanthurus xanthopterus,Yellowfin Surgeonfish,0,2020
+1,Acanthurus lineatus,Lined Surgeonfish,0,2020
+1,Naso vlamingii,Bignose Unicornfish,0,2020
+1,Acanthurus guttatus,Whitespotted Surgeonfish,0,2020
+1,Ctenochaetus marginatus,Blue-spotted Bristletooth,0,2020
+1,Acanthurus thompsoni,Thompson's Surgeonfish,0,2020
+1,Acanthurus nigricans,Golden Rim Surgeonfish,0,2020
+1,Acanthurus maculiceps,Spotted-face Surgeonfish,0,2020
+1,Acanthurus pyroferus,Mimic Surgeonfish,0,2020
+1,Acanthurus olivaceus,Orange band Surgeonfish,0,2020
+1,Zebrasoma veliferum,Sailfin Tang,0,2020
+1,Paracanthurus hepatus,Palette Surgeonfish,0,2020
+1,Ctenochaetus cyanocheilus,Short-tail bristle-tooth,0,2020
+1,Zebrasoma scopas,Brushtail Tang,0,2020
+1,Acanthurus achilles,Achilles Tang,0,2020
+1,Acanthurus blochii,Ringtail Surgeonfish,0,2020
+1,Ctenochaetus flavicauda,Whitetail Bristletooth,0,2020
+1,Acanthurus dussumieri,Eyestripe Surgeonfish,0,2020
+1,Acanthurus nigrofuscus,Brown Surgeonfish,0,2020
+1,Naso hexacanthus,Sleek Unicornfish,0,2020
+1,Acanthurus mata,Elongate Surgeonfish,0,2020
+1,Ctenochaetus striatus,Striped Bristletooth,0,2020
+1,Fistularia petimba,Red Cornetfish,0,2020
+1,Fistularia commersonii,Bluespotted Cornetfish,0,2020
+1,Doryrhamphus excisus,Bluestripe Pipefish,0,2020
+1,Choeroichthys sculptus,Sculptured Pipefish,0,2020
+1,Aulostomus chinensis,Chinese Trumpetfish,0,2020
+1,Katsuwonus pelamis,Skipjack Tuna,0,2020
+1,Thunnus albacares,Yellowfin Tuna,0.2,2020
+1,Makaira nigricans,Blue Marlin,0.4,2020
+1,Thunnus alalunga,Albacore Tuna,0.2,2020
+1,Xiphias gladius,Swordfish,0,2020
+1,Kajikia audax,Striped Marlin,0.2,2020
+1,Thunnus obesus,Bigeye Tuna,0.4,2020
+1,Istiophorus platypterus,Sailfish,0,2020
+1,Acanthocybium solandri,Wahoo,0,2020
+1,Coris centralis,NA,0,2020
+1,Cheilinus trilobatus,Tripletail Wrasse,0,2020
+1,Coris gaimard,African clown wrasse,0,2020
+1,Novaculichthys taeniourus,Olive-scribbled wrasse,0,2020
+1,Pseudocheilinus hexataenia,Six-line wrasse,0,2020
+1,Thalassoma amblycephalum,Bluntheaded wrasse,0,2020
+1,Labropsis xanthonota,Wedge-tailed wrasse,0,2020
+1,Thalassoma hardwicke,Six-banded wrasse,0,2020
+1,Bodianus prognathus,NA,0,2020
+1,Halichoeres hortulanus,Checkerboard wrasse,0,2020
+1,Oxycheilinus unifasciatus,Whiteband maori wrasse,0,2020
+1,Thalassoma lutescens,Yellow-brown wrasse,0,2020
+1,Epibulus insidiator,Sling-jaw wrasse,0,2020
+1,Thalassoma quinquevittatum,Five striped surge wrasse,0,2020
+1,Bodianus loxozonus,Blackfin Hogfish,0,2020
+1,Thalassoma purpureum,Purple wrasse,0,2020
+1,Halichoeres pallidus,Pale wrasse,0,2020
+1,Calotomus carolinus,Carolines Parrotfish,0,2020
+1,Scarus globiceps,Globehead Parrotfish,0,2020
+1,Scarus spinus,Greensnout Parrotfish,0,2020
+1,Chlorurus microrhinos,Steephead Parrotfish,0,2020
+1,Scarus psittacus,Common Parrotfish,0,2020
+1,Scarus niger,Dusky Parrotfish,0,2020
+1,Scarus pyrrostethus,Blue Banded Parrotfish,0,2020
+1,Bolbometopon muricatum,Green Humphead Parrotfish,0.4,2020
+1,Scarus oviceps,Blue Parrotfish,0,2020
+1,Pseudocheilinus ocellatus,White-barred Pink Wrasse,0,2020
+1,Hemigymnus fasciatus,Barred thicklip wrasse,0,2020
+1,Thalassoma lunare,Crescent-Tail Wrasse,0,2020
+1,Labroides dimidiatus,Blue-streak cleaner wrasse,0,2020
+1,Stethojulis bandanensis,Red-spot rainbowfish,0,2020
+1,Halichoeres margaritaceus,Pearl-spotted wrasse,0,2020
+1,Halichoeres trimaculatus,Three-spot wrasse,0,2020
+1,Bodianus axillaris,Turncoat hogfish,0,2020
+1,Hologymnosus doliatus,Narrow-banded wrasse,0,2020
+1,Gomphosus varius,Purple club-nosed wrasse,0,2020
+1,Halichoeres melasmapomus,Ocellated wrasse,0,2020
+1,Labroides pectoralis,Gold barrier reef cleaner,0,2020
+1,Pseudocheilinus octotaenia,Eightstripe wrasse,0,2020
+1,Labrichthys unilineatus,Tube-mouth wrasse,0,2020
+1,Cheilinus oxycephalus,Point-head maori wrasse,0,2020
+1,Pseudocheilinus evanidus,Disappearing wrasse,0,2020
+1,Cymolutes praetextatus,Knife razorfish,0,2020
+1,Pseudocoris heteroptera,Torpedo wrasse,0,2020
+1,Macropharyngodon meleagris,Blackspotted wrasse,0,2020
+1,Halichoeres claudia,Claudia's wrasse,0,2020
+1,Iniistius pavo,Indianfish blue razorfish,0,2020
+1,Thalassoma trilobatum,Green-blocked wrasse,0,2020
+1,Pseudodax moluccanus,Chisel-tooth wrasse,0,2020
+1,Bodianus anthioides,Lyre-tail hogfish,0,2020
+1,Anampses caeruleopunctatus,Bluespotted Wrasse,0,2020
+1,Anampses meleagrides,Spotted Wrasse,0,2020
+1,Labroides rubrolabiatus,Redlip cleaner wrasse,0,2020
+1,Labroides bicolor,Two-colour cleaner wrasse,0,2020
+1,Anampses twistii,Yellowbreasted Wrasse,0,2020
+1,Coris aygula,False clownwrasse,0,2020
+1,Scarus tricolor,Tricolour Parrotfish,0,2020
+1,Chlorurus spilurus,Bullethead Parrotfish,0,2020
+1,Scarus rubroviolaceus,Ember Parrotfish,0,2020
+1,Hipposcarus longiceps,Pacific Longnose Parrotfish,0,2020
+1,Scarus frenatus,Bridled Parrotfish,0,2020
+1,Chlorurus frontalis,Tan-faced Parrotfish,0,2020
+1,Gygis alba,Common White Tern,0,2020
+1,Oceanites oceanicus,Wilson's Storm-petrel,0,2020
+1,Nesofregetta fuliginosa,Polynesian Storm-petrel,0.6,2020
+1,Onychoprion lunatus,Grey-backed Tern,0,2020
+1,Anous ceruleus,Blue Noddy,0,2020
+1,Pterodroma neglecta,Kermadec Petrel,0,2020
+1,Pterodroma alba,Phoenix Petrel,0.6,2020
+1,Pterodroma cervicalis,White-necked Petrel,0.4,2020
+1,Pterodroma heraldica,Herald Petrel,0,2020
+1,Pterodroma longirostris,Stejneger's Petrel,0.4,2020
+1,Puffinus bailloni,Tropical Shearwater,0,2020
+1,Puffinus nativitatis,Christmas Shearwater,0,2020
+1,Pterodroma cookii,Cook's Petrel,0.4,2020
+1,Pterodroma inexpectata,Mottled Petrel,0.2,2020
+1,Pterodroma nigripennis,Black-winged Petrel,0,2020
+1,Pterodroma leucoptera,White-winged Petrel,0.4,2020
+1,Pterodroma pycrofti,Pycroft's Petrel,0.4,2020
+1,Pterodroma sandwichensis,Hawaiian Petrel,0.6,2020
+1,Pterodroma solandri,Providence Petrel,0.4,2020
+1,Pterodroma ultima,Murphy's Petrel,0.2,2020
+1,Sula dactylatra,Masked Booby,0,2020
+1,Sula leucogaster,Brown Booby,0,2020
+1,Sula sula,Red-footed Booby,0,2020
+1,Ardenna bulleri,Buller's Shearwater,0.4,2020
+1,Pterodroma brevipes,Collared Petrel,0.4,2020
+1,Phaethon rubricauda,Red-tailed Tropicbird,0,2020
+1,Anous stolidus,Brown Noddy,0,2020
+1,Anous minutus,Black Noddy,0,2020
+1,Fregata ariel,Lesser Frigatebird,0,2020
+1,Phaethon lepturus,White-tailed Tropicbird,0,2020
+1,Ardenna carneipes,Flesh-footed Shearwater,0.2,2020
+1,Ardenna pacifica,Wedge-tailed Shearwater,0,2020
+1,Ardenna tenuirostris,Short-tailed Shearwater,0,2020
+1,Bulweria bulwerii,Bulwer's Petrel,0,2020
+1,Fregata minor,Great Frigatebird,0,2020
+1,Onychoprion fuscatus,Sooty Tern,0,2020
+1,Ardenna grisea,Sooty Shearwater,0.2,2020
+1,Phoebastria nigripes,Black-footed Albatross,0.2,2020
+1,Hydrobates castro,Band-rumped Storm-petrel,0,2020
+1,Hydrobates leucorhous,Leach's Storm-petrel,0.4,2020
+1,Puffinus newelli,Newell's Shearwater,0.8,2020
