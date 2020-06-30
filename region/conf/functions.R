@@ -1192,8 +1192,10 @@ SPP <- function(layers) {
   spp_status <- layers$data$spp_status %>%
     dplyr::filter(year == scen_year) %>%
     dplyr::filter(!is.na(status)) %>%
+    group_by(region_id, class) %>% # first find the average status by class
+    summarize(status = mean(status)) %>%
     group_by(region_id) %>%
-    summarize(status = mean(status))
+    summarize(status = mean(status)) # find overall average of the 10 classes
 
   # Load trend data and calculate one trend for the region
   spp_trend <- layers$data$spp_trend %>%
