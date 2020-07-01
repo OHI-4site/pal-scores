@@ -1197,11 +1197,13 @@ SPP <- function(layers) {
     group_by(region_id) %>%
     summarize(status = mean(status)) # find overall average of the 10 classes
 
-  # Load trend data and calculate one trend for the region
+  # Load trend data and calculate score
   spp_trend <- layers$data$spp_trend %>%
     dplyr::filter(year == scen_year) %>%
+    group_by(region_id, class) %>% # first find average score by class
+    summarize(trend = mean(trend_score, na.rm=T)) %>%
     group_by(region_id) %>%
-    summarize(trend = mean(score, na.rm=T)) %>% # take the mean trend for the entire region
+    summarize(trend = mean(trend, na.rm=T)) %>% # find average of the 10 classes
     mutate(dimension = "trend",
            goal = "SPP") %>%
     rename("score" = "trend")
