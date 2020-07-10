@@ -1056,102 +1056,43 @@ CW <- function(layers) {
 
 
 HAB <- function(layers) {
+
   scen_year <- layers$data$scenario_year
 
 
-  extent_lyrs <-
-    c(
-      'hab_mangrove_extent',
-      'hab_seagrass_extent',
-      'hab_saltmarsh_extent',
-      'hab_coral_extent',
-      'hab_seaice_extent',
-      'hab_softbottom_extent'
-    )
-  health_lyrs <-
-    c(
-      'hab_mangrove_health',
-      'hab_seagrass_health',
-      'hab_saltmarsh_health',
-      'hab_coral_health',
-      'hab_seaice_health',
-      'hab_softbottom_health'
-    )
-  trend_lyrs <-
-    c(
-      'hab_mangrove_trend',
-      'hab_seagrass_trend',
-      'hab_saltmarsh_trend',
-      'hab_coral_trend',
-      'hab_seaice_trend',
-      'hab_softbottom_trend'
-    )
+  ## Corals
+  # coral_status <- AlignManyDataYears("hab_coral_status")
+  # coral_trend  <- AlignManyDataYears("hab_coral_trend")
 
-  # get data together:
-  extent <- AlignManyDataYears(extent_lyrs) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, extent = km2) %>%
-    dplyr::mutate(habitat = as.character(habitat))
+  ## Rainforest
+  rainforest_status <- layers$data$hab_rainforest_status %>% # AlignManyDataYears wasn't working
+    dplyr::select(-layer)
 
-  health <- AlignManyDataYears(health_lyrs) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, health) %>%
-    dplyr::mutate(habitat = as.character(habitat))
+  rainforest_trend  <- AlignManyDataYears("hab_rainforest_trend") %>%
+    filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, year = scenario_year, trend)
 
-  trend <- AlignManyDataYears(trend_lyrs) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, trend) %>%
-    dplyr::mutate(habitat = as.character(habitat))
-
-
-  # join and limit to HAB habitats
-  d <- health %>%
-    dplyr::full_join(trend, by = c('region_id', 'habitat')) %>%
-    dplyr::full_join(extent, by = c('region_id', 'habitat')) %>%
-    dplyr::filter(
-      habitat %in% c(
-        'coral',
-        'mangrove',
-        'saltmarsh',
-        'seaice_edge',
-        'seagrass',
-        'soft_bottom'
-      )
-    ) %>%
-    dplyr::mutate(w  = ifelse(!is.na(extent) & extent > 0, 1, NA)) %>%
-    dplyr::filter(!is.na(w))
-
-  if (sum(d$w %in% 1 & is.na(d$trend)) > 0) {
-    warning(
-      "Some regions/habitats have extent data, but no trend data.  Consider estimating these values."
-    )
-  }
-
-  if (sum(d$w %in% 1 & is.na(d$health)) > 0) {
-    warning(
-      "Some regions/habitats have extent data, but no health data.  Consider estimating these values."
-    )
-  }
-
-
-  ## calculate scores
-  status <- d %>%
-    dplyr::group_by(region_id) %>%
-    dplyr::filter(!is.na(health)) %>%
-    dplyr::summarize(score = pmin(1, sum(health) / sum(w)) * 100,
-              dimension = 'status') %>%
+  ## Calculate status
+  hab_status <- coral_status %>%
+    rbind(rainforest_status) %>%
+    group_by(region_id) %>%
+    summarize(status = mean(status)) %>%
+    mutate(dimension = 'status') %>%
     ungroup()
 
-  trend <- d %>%
-    dplyr::group_by(region_id) %>%
-    dplyr::filter(!is.na(trend)) %>%
-    dplyr::summarize(score =  sum(trend) / sum(w),
-              dimension = 'trend')  %>%
-    dplyr::ungroup()
+  ## Trend
+  hab_trend <- coral_trend %>%
+    rbind(rainforest_trend) %>%
+    group_by(region_id) %>%
+    summarize(score = mean(trend)) %>%
+    mutate(dimension = 'trend') %>%
+    ungroup()
 
-  scores_HAB <- rbind(status, trend) %>%
-    dplyr::mutate(goal = "HAB") %>%
-    dplyr::select(region_id, goal, dimension, score)
+  ## Calculate scores
+  hab_score <- hab_status %>%
+    dplyr::select(region_id, score = status, dimension) %>%
+    bind_rows(hab_trend) %>%
+    mutate(goal = "HAB")
 
 
   ## create weights file for pressures/resilience calculations
