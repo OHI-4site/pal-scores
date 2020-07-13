@@ -898,6 +898,55 @@ LE <- function(scores, layers) {
 
 }
 
+RS <- function(layers) {
+
+  scen_year <- layers$data$scenario_year
+
+  ### Function to calculate geometric mean:
+  geometric.mean2 <- function (x, na.rm = TRUE) {
+    if (is.null(nrow(x))) {
+      exp(mean(log(x), na.rm = TRUE))
+    }
+    else {
+      exp(apply(log(x), 2, mean, na.rm = na.rm))
+    }
+  }
+
+  # Research layers
+  rs_lyrs <- c(
+    "rs_employment_status"
+  )
+
+  # Get data together:
+  rs_data <- AlignManyDataYears(rs_lyrs) %>%
+    dplyr::select(-layer_name, -data_year)
+
+  # Calculate the status
+  rs_status <- rs_data %>%
+    group_by(region_id, scenario_year) %>%
+    summarize(status = geometric.mean2(status)) %>%
+    dplyr::mutate(status = status * 100) %>%
+    dplyr::mutate(dimension = "status") %>%
+    dplyr::ungroup()
+
+  # Calculate the trend
+  trend_data <- rs_status %>%
+    filter(!is.na(status))
+
+  trend_years <- (scen_year - 4):(scen_year)
+
+  rs_trend <-
+    CalculateTrend(status_data = trend_data, trend_years = trend_years)
+
+  ## Calculate scores
+  rs_score <- rs_status %>%
+    dplyr::filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, score = status, dimension) %>%
+    bind_rows(rs_trend) %>%
+    dplyr::mutate(goal = "RS") %>%
+    dplyr::select(region_id, goal, dimension, score)
+}
+
 ICO <- function(layers) {
 
   scen_year <- layers$data$scenario_year
