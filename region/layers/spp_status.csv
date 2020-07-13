@@ -346,15 +346,15 @@ region_id,sciname,class,common,status,year
 1,Gygis alba,aves,Common White Tern,0,2020
 1,Oceanites oceanicus,aves,Wilson's Storm-petrel,0,2020
 1,Nesofregetta fuliginosa,aves,Polynesian Storm-petrel,0.6,2020
-1,Onychoprion lunatus,aves,Grey-backed Tern,0,2020
-1,Anous ceruleus,aves,Blue Noddy,0,2020
+1,Onychoprion lunatus,aves,Grey-backed Tern,1,2020
+1,Anous ceruleus,aves,Blue Noddy,1,2020
 1,Pterodroma neglecta,aves,Kermadec Petrel,0,2020
-1,Pterodroma alba,aves,Phoenix Petrel,0.6,2020
+1,Pterodroma alba,aves,Phoenix Petrel,1,2020
 1,Pterodroma cervicalis,aves,White-necked Petrel,0.4,2020
 1,Pterodroma heraldica,aves,Herald Petrel,0,2020
 1,Pterodroma longirostris,aves,Stejneger's Petrel,0.4,2020
 1,Puffinus bailloni,aves,Tropical Shearwater,0,2020
-1,Puffinus nativitatis,aves,Christmas Shearwater,0,2020
+1,Puffinus nativitatis,aves,Christmas Shearwater,1,2020
 1,Pterodroma cookii,aves,Cook's Petrel,0.4,2020
 1,Pterodroma inexpectata,aves,Mottled Petrel,0.2,2020
 1,Pterodroma nigripennis,aves,Black-winged Petrel,0,2020
@@ -370,13 +370,13 @@ region_id,sciname,class,common,status,year
 1,Pterodroma brevipes,aves,Collared Petrel,0.4,2020
 1,Phaethon rubricauda,aves,Red-tailed Tropicbird,0,2020
 1,Anous stolidus,aves,Brown Noddy,0,2020
-1,Anous minutus,aves,Black Noddy,0,2020
+1,Anous minutus,aves,Black Noddy,1,2020
 1,Fregata ariel,aves,Lesser Frigatebird,0,2020
 1,Phaethon lepturus,aves,White-tailed Tropicbird,0,2020
 1,Ardenna carneipes,aves,Flesh-footed Shearwater,0.2,2020
-1,Ardenna pacifica,aves,Wedge-tailed Shearwater,0,2020
+1,Ardenna pacifica,aves,Wedge-tailed Shearwater,1,2020
 1,Ardenna tenuirostris,aves,Short-tailed Shearwater,0,2020
-1,Bulweria bulwerii,aves,Bulwer's Petrel,0,2020
+1,Bulweria bulwerii,aves,Bulwer's Petrel,1,2020
 1,Fregata minor,aves,Great Frigatebird,0,2020
 1,Onychoprion fuscatus,aves,Sooty Tern,0,2020
 1,Ardenna grisea,aves,Sooty Shearwater,0.2,2020
@@ -384,3 +384,128 @@ region_id,sciname,class,common,status,year
 1,Hydrobates castro,aves,Band-rumped Storm-petrel,0,2020
 1,Hydrobates leucorhous,aves,Leach's Storm-petrel,0.4,2020
 1,Puffinus newelli,aves,Newell's Shearwater,0.8,2020
+1,Puffinus lherminieri,aves,Audubon's shearwater,1,2020
+1,Ablennes hians,actinopterygii,Flat Needlefish,0,2020
+1,Acanthurus leucopareius,actinopterygii,Whitebar Surgeonfish,0,2020
+1,Acanthurus nigroris,actinopterygii,Bluelined Surgeonfish,0,2020
+1,Albula glossodonta,actinopterygii,Shortjaw Bonefish,0.4,2020
+1,Aluterus scriptus,actinopterygii,Scribbled Leatherjacket Filefish,0,2020
+1,Amanses scopas,actinopterygii,Broom Filefish,0,2020
+1,Anampses melanurus,actinopterygii,White-spotted Wrasse,0,2020
+1,Aphareus furca,actinopterygii,Small-toothed Jobfish,0,2020
+1,Apolemichthys griffisi,actinopterygii,Griffis Angelfish,0,2020
+1,Aprion virescens,actinopterygii,Green Jobfish,0,2020
+1,Asterropteryx semipunctata,actinopterygii,Star-finned Goby,0,2020
+1,Atule mate,actinopterygii,Yellowtail Scad,0,2020
+1,Bothus mancus,actinopterygii,Flowery Flounder,0,2020
+1,Brotula multibarbata,actinopterygii,Pacific Bearded Brotula,0,2020
+1,Carcharhinus albimarginatus,chondrichthyes,Silvertip Shark,0.4,2020
+1,Caesio caerulaurea,actinopterygii,Blue and Gold Fusilier,0,2020
+1,Cantherhines dumerilii,actinopterygii,Whitespotted Filefish,0,2020
+1,Carangoides ferdau,actinopterygii,Blue Trevally,0,2020
+1,Carcharhinus galapagensis,chondrichthyes,Galapagos Shark,0,2020
+1,Caranx ignobilis,actinopterygii,Giant Trevally,0,2020
+1,Caranx lugubris,actinopterygii,Black Jack,0,2020
+1,Caracanthus maculatus,actinopterygii,Spotted Coral Croucher,0,2020
+1,Caranx melampygus,actinopterygii,Bluefin Trevally,0,2020
+1,Carcharhinus melanopterus,chondrichthyes,Blacktip Reef Shark,0.2,2020
+1,Carangoides orthogrammus,actinopterygii,Island Trevally,0,2020
+1,Cantherhines pardalis,actinopterygii,Honeycomb Filefish,0,2020
+1,Caranx sexfasciatus,actinopterygii,Bigeye Trevally,0,2020
+1,Caesio teres,actinopterygii,Yellow and Blueback Fusilier,0,2020
+1,Chanos chanos,actinopterygii,Milkfish,0,2020
+1,Chaetodon declivis,actinopterygii,Marquesas Butterflyfish,0,2020
+1,Chaetodon flavocoronatus,actinopterygii,Yellow-crowned Butterflyfish,0,2020
+1,Chlorurus sordidus,actinopterygii,Daisy Parrotfish,0,2020
+1,Cheilinus undulatus,actinopterygii,Humphead Wrasse,0.6,2020
+1,Cirrhitops hubbardi,actinopterygii,NA,0,2020
+1,Cirrhitichthys oxycephalus,actinopterygii,Coral Hawkfish,0,2020
+1,Cirrhitus pinnulatus,actinopterygii,Stocky Hawkfish,0,2020
+1,Conger cinereus,actinopterygii,Ashen Conger Eel,0,2020
+1,Dendrochirus biocellatus,actinopterygii,Twospot Turkeyfish,0,2020
+1,Decapterus macarellus,actinopterygii,Mackerel Scad,0,2020
+1,Diodon hystrix,actinopterygii,Spot-fin Porcupinefish,0,2020
+1,Echidna nebulosa,actinopterygii,Snowflake Eel,0,2020
+1,Elagatis bipinnulata,actinopterygii,Rainbow Runner,0,2020
+1,Eviota prasites,actinopterygii,Hairfin Eviota,0,2020
+1,Fusigobius neophytus,actinopterygii,Common Fusegoby,0,2020
+1,Gnathodentex aureolineatus,actinopterygii,Striped Large-eye Bream,0,2020
+1,Gobiodon rivulatus,actinopterygii,Rippled Coralgoby,0,2020
+1,Grammistes sexlineatus,actinopterygii,Goldenstriped Soapfish,0,2020
+1,Gymnothorax flavimarginatus,actinopterygii,Yellow Edged Moray,0,2020
+1,Gymnothorax javanicus,actinopterygii,Giant Moray,0,2020
+1,Gymnothorax meleagris,actinopterygii,Painted Moray,0,2020
+1,Gymnosarda unicolor,actinopterygii,Dogtooth Tuna,0,2020
+1,Gymnothorax undulatus,actinopterygii,Undulated Moray,0,2020
+1,Halichoeres ornatissimus,actinopterygii,Ornate Wrasse,0,2020
+1,Heteropriacanthus cruentatus,actinopterygii,Glasseye Snapper,0,2020
+1,Hologymnosus annulatus,actinopterygii,Narrow-banded rainbowfish,0,2020
+1,Kyphosus cinerascens,actinopterygii,Blue Sea Chub,0,2020
+1,Kyphosus vaigiensis,actinopterygii,Brassy Chub,0,2020
+1,Lethrinus olivaceus,actinopterygii,Longface Emperor,0,2020
+1,Lethrinus xanthochilus,actinopterygii,Yellowlip Emperor,0,2020
+1,Lutjanus bohar,actinopterygii,Two-spot Red Snapper,0,2020
+1,Lutjanus fulvus,actinopterygii,Blacktail Snapper,0,2020
+1,Lutjanus gibbus,actinopterygii,Humpback Red Snapper,0,2020
+1,Lutjanus monostigma,actinopterygii,One-spot Snapper,0,2020
+1,Melichthys niger,actinopterygii,Black Triggerfish,0,2020
+1,Monotaxis grandoculis,actinopterygii,Humpnose Big-eye Bream,0,2020
+1,Mulloidichthys flavolineatus,actinopterygii,Yellowstripe Goatfish,0,2020
+1,Mulloidichthys mimicus,actinopterygii,Mimic goatfish,0,2020
+1,Mulloidichthys vanicolensis,actinopterygii,Yellowfin goatfish,0,2020
+1,Myripristis adusta,actinopterygii,Shadowfin Soldierfish,0,2020
+1,Myripristis amaena,actinopterygii,Brick Soldierfish,0,2020
+1,Myripristis berndti,actinopterygii,Blotcheye Soldierfish,0,2020
+1,Myripristis earlei,actinopterygii,Earle's Soldierfish,0,2020
+1,Myripristis kuntee,actinopterygii,Shoulderbar Soldierfish,0,2020
+1,Myripristis murdjan,actinopterygii,Pinecone Soldierfish,0,2020
+1,Myripristis woodsi,actinopterygii,Whitespot Soldierfish,0,2020
+1,Naso annulatus,actinopterygii,Whitemargin Unicornfish,0,2020
+1,Naso caesius,actinopterygii,Gray Unicornfish,0,2020
+1,Nemateleotris magnifica,actinopterygii,Fire Dartfish,0,2020
+1,Neoniphon opercularis,actinopterygii,Blackfin Squirrelfish,0,2020
+1,Neoniphon sammara,actinopterygii,Sammara Squirrelfish,0,2020
+1,Oxycheilinus digramma,actinopterygii,Cheek-lined Maori wrasse,0,2020
+1,Paracirrhites arcatus,actinopterygii,Arc-eye Hawkfish,0,2020
+1,Parupeneus barberinus,actinopterygii,Dash-and-dot goatfish,0,2020
+1,Parupeneus cyclostomus,actinopterygii,Gold-saddle goatfish,0,2020
+1,Paragobiodon echinocephalus,actinopterygii,Redhead Goby,0,2020
+1,Paracirrhites forsteri,actinopterygii,Blackside Hawkfish,0,2020
+1,Paracirrhites hemistictus,actinopterygii,Whitespot Hawkfish,0,2020
+1,Parupeneus insularis,actinopterygii,Twosaddle goatfish,0,2020
+1,Parupeneus multifasciatus,actinopterygii,Banded Goatfish,0,2020
+1,Pervagor janthinosoma,actinopterygii,Blackbar Filefish,0,2020
+1,Pseudocoris aurantiofasciata,actinopterygii,Rust-banded wrasse,0,2020
+1,Pseudanthias bartlettorum,actinopterygii,Bartlett's Anthias,0,2020
+1,Pseudanthias dispar,actinopterygii,Peach Fairy Basslet,0,2020
+1,Pseudanthias olivaceus,actinopterygii,NA,0,2020
+1,Pseudocoris yamashiroi,actinopterygii,Yamashiro's wrasse,0,2020
+1,Pterois antennata,actinopterygii,Broadbared Lionfish,0,2020
+1,Ptereleotris evides,actinopterygii,Blackfin Dartfish,0,2020
+1,Ptereleotris heteroptera,actinopterygii,Blacktail Goby,0,2020
+1,Pterocaesio marri,actinopterygii,Marr's Fusilier,0,2020
+1,Pterocaesio tile,actinopterygii,Dark-banded Fusilier,0,2020
+1,Ptereleotris zebra,actinopterygii,Chinese Zebra Goby,0,2020
+1,Pygoplites diacanthus,actinopterygii,Royal Angelfish,0,2020
+1,Sargocentron caudimaculatum,actinopterygii,Silverspot Squirrelfish,0,2020
+1,Sargocentron diadema,actinopterygii,Crown Squirrelfish,0,2020
+1,Saurida gracilis,actinopterygii,Gracile Lizardfish,0,2020
+1,Sargocentron microstoma,actinopterygii,Smallmouth Squirrelfish,0,2020
+1,Sargocentron punctatissimum,actinopterygii,Speckled Squirrelfish,0,2020
+1,Sargocentron spiniferum,actinopterygii,Sabre Squirrelfish,0,2020
+1,Sargocentron tiere,actinopterygii,Blue Lined Squirrelfish,0,2020
+1,Scarus altipinnis,actinopterygii,Filament-finned Parrotfish,0,2020
+1,Scarus forsteni,actinopterygii,Forsten's Parrotfish,0,2020
+1,Scarus ghobban,actinopterygii,Blue-barred Parrotfish,0,2020
+1,Scomberoides lysan,actinopterygii,Doublespotted Queenfish,0,2020
+1,Scorpaenodes parvipinnis,actinopterygii,Lowfin Scorpionfish,0,2020
+1,Selar crumenophthalmus,actinopterygii,Bigeye Scad,0,2020
+1,Sebastapistes cyanostigma,actinopterygii,Yellowspotted Scorpionfish,0,2020
+1,Seriola dumerili,actinopterygii,Greater Amberjack,0,2020
+1,Sphyraena barracuda,actinopterygii,Great Barracuda,0,2020
+1,Sphyrna lewini,chondrichthyes,Scalloped Hammerhead,0.8,2020
+1,Sphyrna mokarran,chondrichthyes,Great Hammerhead,0.8,2020
+1,Synodus variegatus,actinopterygii,Variegated Lizardfish,0,2020
+1,Tylosurus crocodilus,actinopterygii,Hound Needlefish,0,2020
+1,Valenciennea strigata,actinopterygii,Golden-head Sleeper-goby,0,2020
+1,Zanclus cornutus,actinopterygii,Moorish Idol,0,2020
