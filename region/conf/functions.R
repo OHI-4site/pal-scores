@@ -914,12 +914,13 @@ RS <- function(layers) {
 
   # Research layers
   rs_lyrs <- c(
-    "rs_employment_status"
+    "rs_employment_status",
+    "rs_sci_papers_status"
   )
 
   # Get data together:
   rs_data <- AlignManyDataYears(rs_lyrs) %>%
-    dplyr::select(-layer_name, -data_year)
+    dplyr::select(-data_year)
 
   # Calculate the status
   rs_status <- rs_data %>%
@@ -931,7 +932,8 @@ RS <- function(layers) {
 
   # Calculate the trend
   trend_data <- rs_status %>%
-    filter(!is.na(status))
+    filter(!is.na(status)) %>%
+    dplyr::select(-dimension)
 
   trend_years <- (scen_year - 4):(scen_year)
 
@@ -945,6 +947,8 @@ RS <- function(layers) {
     bind_rows(rs_trend) %>%
     dplyr::mutate(goal = "RS") %>%
     dplyr::select(region_id, goal, dimension, score)
+
+  return(rs_score)
 }
 
 ICO <- function(layers) {
