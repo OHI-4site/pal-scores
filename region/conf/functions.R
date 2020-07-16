@@ -1046,7 +1046,7 @@ CW <- function(layers) {
 
   scen_year <- layers$data$scenario_year
 
-  ### function to calculate geometric mean:
+  ### Function to calculate geometric mean:
   geometric.mean2 <- function (x, na.rm = TRUE) {
     if (is.null(nrow(x))) {
       exp(mean(log(x), na.rm = TRUE))
@@ -1057,54 +1057,44 @@ CW <- function(layers) {
   }
 
 
-  # layers
-  trend_lyrs <-
-    c('cw_chemical_trend',
-      'cw_nutrient_trend',
-      'cw_trash_trend',
-      'cw_pathogen_trend')
-  prs_lyrs <-
-    c('po_pathogens',
-      'po_nutrients_3nm',
-      'po_chemicals_3nm',
-      'po_trash')
+  # Layers
+  cw_lyrs <- c(
+    'cw_debris_status'
+    )
 
-  # get data together:
-  prs_data <- AlignManyDataYears(prs_lyrs) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, value = pressure_score)
 
-  d_pressures <- prs_data %>%
-    dplyr::mutate(pressure = 1 - value) %>%  # invert pressure
-    dplyr::mutate(pressure = ifelse(pressure == 0 , pressure + 0.01, pressure)) %>% # add small modifier to zeros to
-    dplyr::group_by(region_id) %>%                                                  # prevent zeros with geometric mean
-    dplyr::summarize(score = geometric.mean2(pressure, na.rm = TRUE)) %>% # take geometric mean
-    dplyr::mutate(score = score * 100) %>%
+  # Get data together:
+  cw_data <- AlignManyDataYears(cw_lyrs) %>%
+    dplyr::select(-data_year)
+
+  # Calculate the status
+  cw_status <- cw_data %>%
+    group_by(region_id, scenario_year) %>%
+    summarize(status = geometric.mean2(status)) %>%
+    dplyr::mutate(status = status * 100) %>%
     dplyr::mutate(dimension = "status") %>%
     dplyr::ungroup()
 
+  # Calculate the trend
+  trend_data <- cw_status %>%
+    filter(!is.na(status)) %>%
+    dplyr::select(-dimension)
 
-  # get trend data together:
-  trend_data <- AlignManyDataYears(trend_lyrs) %>%
+  trend_years <- (scen_year - 4):(scen_year)
+
+  cw_trend <-
+    CalculateTrend(status_data = trend_data, trend_years = trend_years)
+
+  ## Calculate scores
+  cw_score <- cw_status %>%
     dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, value = trend)
-
-  d_trends <- trend_data %>%
-    dplyr::mutate(trend = -1 * value)  %>%  # invert trends
-    dplyr::group_by(region_id) %>%
-    dplyr::summarize(score = mean(trend, na.rm = TRUE)) %>%
-    dplyr::mutate(dimension = "trend") %>%
-    dplyr::ungroup()
-
-
-  # return scores
-  scores <- rbind(d_pressures, d_trends) %>%
+    dplyr::select(region_id, score = status, dimension) %>%
+    bind_rows(cw_trend) %>%
     dplyr::mutate(goal = "CW") %>%
-    dplyr::select(region_id, goal, dimension, score) %>%
-    data.frame()
+    dplyr::select(region_id, goal, dimension, score)
 
+  return(cw_score)
 
-  return(scores)
 }
 
 
