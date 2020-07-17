@@ -569,66 +569,67 @@ CP <- function(layers) {
   scen_year <- layers$data$scenario_year
 
   # layers for coastal protection
-  extent_lyrs <-
-    c(
-      'hab_mangrove_extent',
-      'hab_seagrass_extent',
-      'hab_saltmarsh_extent',
-      'hab_coral_extent',
-      'hab_seaice_extent'
-    )
-  health_lyrs <-
-    c(
-      'hab_mangrove_health',
-      'hab_seagrass_health',
-      'hab_saltmarsh_health',
-      'hab_coral_health',
-      'hab_seaice_health'
-    )
-  trend_lyrs <-
-    c(
-      'hab_mangrove_trend',
-      'hab_seagrass_trend',
-      'hab_saltmarsh_trend',
-      'hab_coral_trend',
-      'hab_seaice_trend'
-    )
+  # extent_lyrs <-
+  #   c(
+  #     'hab_mangrove_extent',
+  #     'hab_seagrass_extent',
+  #     'hab_saltmarsh_extent',
+  #     'hab_coral_extent',
+  #     'hab_seaice_extent'
+  #   )
+  # health_lyrs <-
+  #   c(
+  #     'hab_mangrove_health',
+  #     'hab_seagrass_health',
+  #     'hab_saltmarsh_health',
+  #     'hab_coral_health',
+  #     'hab_seaice_health'
+  #   )
+  # trend_lyrs <-
+  #   c(
+  #     'hab_mangrove_trend',
+  #     'hab_seagrass_trend',
+  #     'hab_saltmarsh_trend',
+  #     'cp_coral_trend',
+  #    'hab_seaice_trend'
+  #   )
 
+## 7.17 - simplifying so calculate scores will run
 
-  # get data together:
-  extent <- AlignManyDataYears(extent_lyrs) %>%
-    dplyr::filter(!(habitat %in% "seaice_edge")) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
+  # get data together
+  extent <- layers$data$hab_saltmarsh_extent %>%
+   # dplyr::filter(!(habitat %in% "seaice_edge")) %>%
+   # dplyr::filter(scenario_year == scen_year) %>%
     dplyr::select(region_id = rgn_id, habitat, extent = km2) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
-  health <- AlignManyDataYears(health_lyrs) %>%
-    dplyr::filter(!(habitat %in% "seaice_edge")) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
+  health <- layers$data$hab_saltmarsh_health %>%
+   # dplyr::filter(!(habitat %in% "seaice_edge")) %>%
+   # dplyr::filter(scenario_year == scen_year) %>%
     dplyr::select(region_id = rgn_id, habitat, health) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
-  trend <- AlignManyDataYears(trend_lyrs) %>%
-    dplyr::filter(!(habitat %in% "seaice_edge")) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
+  trend <- layers$data$hab_saltmarsh_trend %>%
+   # dplyr::filter(!(habitat %in% "seaice_edge")) %>%
+   # dplyr::filter(scenario_year == scen_year) %>%
     dplyr::select(region_id = rgn_id, habitat, trend) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
-  ## sum mangrove_offshore + mangrove_inland1km = mangrove to match with extent and trend
-  mangrove_extent <- extent %>%
-    dplyr::filter(habitat %in% c('mangrove_inland1km', 'mangrove_offshore'))
-
-  if (nrow(mangrove_extent) > 0) {
-    mangrove_extent <- mangrove_extent %>%
-      dplyr::group_by(region_id) %>%
-      dplyr::summarize(extent = sum(extent, na.rm = TRUE)) %>%
-      dplyr::mutate(habitat = 'mangrove') %>%
-      dplyr::ungroup()
-  }
-
-  extent <- extent %>%
-    dplyr::filter(!habitat %in% c('mangrove', 'mangrove_inland1km', 'mangrove_offshore')) %>%  #do not use all mangrove
-    rbind(mangrove_extent)  #just the inland 1km and offshore
+  # ## sum mangrove_offshore + mangrove_inland1km = mangrove to match with extent and trend
+  # mangrove_extent <- extent %>%
+  #   dplyr::filter(habitat %in% c('mangrove_inland1km', 'mangrove_offshore'))
+  #
+  # if (nrow(mangrove_extent) > 0) {
+  #   mangrove_extent <- mangrove_extent %>%
+  #     dplyr::group_by(region_id) %>%
+  #     dplyr::summarize(extent = sum(extent, na.rm = TRUE)) %>%
+  #     dplyr::mutate(habitat = 'mangrove') %>%
+  #     dplyr::ungroup()
+  # }
+  #
+  # extent <- extent %>%
+  #   dplyr::filter(!habitat %in% c('mangrove', 'mangrove_inland1km', 'mangrove_offshore')) %>%  #do not use all mangrove
+  #   rbind(mangrove_extent)  #just the inland 1km and offshore
 
   ## join layer data
   d <-  extent %>%
@@ -639,19 +640,19 @@ CP <- function(layers) {
   # because seaice edge is due to ice floating into the environment and does not provide coastal protection
   # for these regions
 
-  floaters <- c(174, 178, 222, 70, 69, 189, 143, 180, 176, 175)
+ # floaters <- c(174, 178, 222, 70, 69, 189, 143, 180, 176, 175)
 
 
-   d <- d %>%
-    dplyr::filter(!(region_id %in% floaters & habitat == "seaice_shoreline"))
+   # d <- d %>%
+   #  dplyr::filter(!(region_id %in% floaters & habitat == "seaice_shoreline"))
 
   ## set ranks for each habitat
   habitat.rank <- c(
-    'coral'            = 4,
-    'mangrove'         = 4,
-    'saltmarsh'        = 3,
-    'seagrass'         = 1,
-    'seaice_shoreline' = 4
+    #'coral'            = 4,
+   # 'mangrove'         = 4,
+    'saltmarsh'        = 3
+   # 'seagrass'         = 1,
+   # 'seaice_shoreline' = 4
   )
 
   ## limit to CP habitats and add rank
@@ -674,7 +675,8 @@ CP <- function(layers) {
 
   # trend
   d_trend <- d %>%
-    dplyr::filter(!is.na(rank) & !is.na(trend) & !is.na(extent))
+    dplyr::filter(!is.na(rank) & !is.na(trend) & !is.na(extent)) %>%
+    dplyr::mutate(trend = ifelse(trend == 2019, 0, 0.25)) # manually make trend 0 so calc scores will run
 
   if (nrow(d_trend) > 0) {
     scores_CP <- dplyr::bind_rows(
