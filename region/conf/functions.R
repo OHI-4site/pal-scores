@@ -1104,8 +1104,15 @@ HAB <- function(layers) {
 
 
   ## Corals
-  # coral_status <- AlignManyDataYears("hab_coral_status")
-  # coral_trend  <- AlignManyDataYears("hab_coral_trend")
+  coral_status <- layers$data$hab_coral_status %>% # AlignManyDataYears wasn't working
+    dplyr::select(-layer) %>%
+    group_by(region_id) %>%
+    summarize(status = mean(status)) %>%  # Average the status in the three zones
+    mutate(habitat = "coral",
+           year = 2020)
+
+  coral_trend  <- layers$data$hab_coral_trend %>% # AlignManyDataYears wasn't working
+    dplyr::select(-layer)
 
   ## Rainforest
   rainforest_status <- layers$data$hab_rainforest_status %>% # AlignManyDataYears wasn't working
@@ -1119,7 +1126,7 @@ HAB <- function(layers) {
   hab_status <- coral_status %>%
     rbind(rainforest_status) %>%
     group_by(region_id) %>%
-    summarize(status = mean(status)) %>%
+    summarize(status = mean(status) * 100) %>% # Average coral status and rainforest status
     mutate(dimension = 'status') %>%
     ungroup()
 
@@ -1127,7 +1134,7 @@ HAB <- function(layers) {
   hab_trend <- coral_trend %>%
     rbind(rainforest_trend) %>%
     group_by(region_id) %>%
-    summarize(score = mean(trend)) %>%
+    summarize(score = mean(trend)) %>% # Average coral trend and rainforest trend
     mutate(dimension = 'trend') %>%
     ungroup()
 
@@ -1138,33 +1145,34 @@ HAB <- function(layers) {
     mutate(goal = "HAB")
 
 
-  ## create weights file for pressures/resilience calculations
-
-  weights <- extent %>%
-    filter(
-      habitat %in% c(
-        'seagrass',
-        'saltmarsh',
-        'mangrove',
-        'coral',
-        'seaice_edge',
-        'soft_bottom'
-      )
-    ) %>%
-    dplyr::filter(extent > 0) %>%
-    dplyr::mutate(boolean = 1) %>%
-    dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
-    dplyr::select(rgn_id = region_id, habitat, boolean, layer)
-
-  write.csv(weights,
-            sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
-            row.names = FALSE)
-
-  layers$data$element_wts_hab_pres_abs <- weights
+  # ## create weights file for pressures/resilience calculations
+  #
+  # weights <- extent %>%
+  #   filter(
+  #     habitat %in% c(
+  #       'seagrass',
+  #       'saltmarsh',
+  #       'mangrove',
+  #       'coral',
+  #       'seaice_edge',
+  #       'soft_bottom'
+  #     )
+  #   ) %>%
+  #   dplyr::filter(extent > 0) %>%
+  #   dplyr::mutate(boolean = 1) %>%
+  #   dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
+  #   dplyr::select(rgn_id = region_id, habitat, boolean, layer)
+  #
+  # write.csv(weights,
+  #           sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
+  #           row.names = FALSE)
+  #
+  # layers$data$element_wts_hab_pres_abs <- weights
 
 
   # return scores
-  return(scores_HAB)
+  return(hab_score)
+
 }
 
 
