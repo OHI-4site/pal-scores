@@ -1,0 +1,44 @@
+---
+title: 'OHI-4site: Palmyra'
+author: "Laura Ingulsrud"
+date: "7/20/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+- goal of project, joint project (logos)
+- map showing location of islands
+- description of location
+- bit of history
+- bit of natural history
+
+# A bit about the OHI 
+- (Feel free to copy and paste from website, etc. Also, this section can be the same in both reports).
+
+# Maybe a quick summary of the overall results and conclusions.
+- paragraph of overall, notable/interesting results
+- flower plot
+- table: quickly describes goal, score, (data?, reference point? trend?)
+
+# Goal: Methods/Results
+- Describe what the goal is measuring in the context of the OHI+ region and why this is relevant. I would also include the goals we are not including. I think the following should provide more on narrative descriptions of goals/models (vs. mathematical models and such...these are good to include, but I wouldn't use these in place of the narrative information).
+
+## Status
+- Data
+- Reference point
+how calculated (narrative of calculation plus, mathematical model)
+
+## Trend
+- Data
+- how calculated
+
+## Results
+
+## Weaknesses
+
+# Future
+- Table describing datasets that would be ideal to collect for future iterations of the OHI assessment.
