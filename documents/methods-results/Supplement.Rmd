@@ -58,12 +58,16 @@ This report is a summary of the methods and results for the Palmyra OHI+ assessm
 <br><br>![TNC logo](images/tnc-logo.svg)
 </div>
 
-<div class = "col-md-5">
+<div class = "col-md-4">
 <br><br>![U of H logo](images/uhm-logo.png)
 </div>
 
-<div class = "col-md-3">
+<div class = "col-md-2">
 <br><br>![Tetiaroa Society](images/TS-logo.png)
+</div>
+
+<div class = "col-md-2">
+<br><br>![CRIOBE logo](images/CRIOBE-logo.jpg)
 </div>
 </div>
 
