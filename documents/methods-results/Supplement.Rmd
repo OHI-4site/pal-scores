@@ -49,8 +49,24 @@ OHI assessments have also been completed at smaller scales. Code, training, and 
 
 This report is a summary of the methods and results for the Palmyra OHI+ assessment, completed in 2020 in partnership with the Palmyra 4site team. The Palmyra OHI+ assessment uses the best-available data to measure progress toward target conditions for benefits provided by the atoll’s marine ecosystems, resulting in benefit-specific and overall health scores on a scale of 0 to 100. 
 
-![](images/ohi-logo.jpg) 
-[insert 4site/TNC logo]
+<div class = "row">
+<div class = "col-md-2">
+<br><br>![OHI logo](images/ohi-logo.jpg)
+</div>
+
+<div class = "col-md-2">
+<br><br>![TNC logo](images/tnc-logo.svg)
+</div>
+
+<div class = "col-md-5">
+<br><br>![U of H logo](images/uhm-logo.png)
+</div>
+
+<div class = "col-md-3">
+<br><br>![Tetiaroa Society](images/TS-logo.png)
+</div>
+</div>
+
 
 ## Location
 
