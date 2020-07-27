@@ -8,7 +8,7 @@ output:
       # in_header: ../ohi_hdr.html # copied from global
     theme: cerulean
     toc: yes
-    toc_depth: 3
+    toc_depth: 1
     toc_float: yes
     number_sections: yes
   pdf_document:
@@ -108,14 +108,147 @@ Rainforest once dominated the atoll, but copra farming, black rats, and deforest
 - Describe what the goal is measuring in the context of the OHI+ region and why this is relevant. I would also include the goals we are not including. I think the following should provide more on narrative descriptions of goals/models (vs. mathematical models and such...these are good to include, but I wouldn't use these in place of the narrative information).
 
 ## Goals Included in Palmyra OHI+ Assessment:
+
 The following goals were included in the Palmyra OHI+ assessment.
 
 ### Biodiversity (BD)
-The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Species (SPP).
+
+People value biodiversity in particular for its existence value. This goal assesses the conservation status of species based on the best available data through two sub-goals: species (SPP) and habitats (HAB). Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for condition of the broad suite of species that depend on them. We calculate each of these subgoals separately and weight them equally when calculating the overall goal score.    
 
 #### Habitats (HAB)
 
+The habitat subgoal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This subgoal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, both terrestrial and marine habitats are included in this assessment.   
+
+**Current Status**  
+
+The habitats subgoal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score. 
+
+*Coral Reefs*   
+
+Three zones were used to calculate the coral reef status: back reef, fore reef, and lagoon. 
+ 
+The following zones were grouped together to form the three reef zones of interest:  
+
+ - Back Reef: Not grouped with any other zone   
+ - Fore Reef: Fore reef, Bank/Shelf, Bank/Shelf Escarpment, and Reef Crest      
+ - Lagoon:    Lagoon and Channel  
+ 
+The benthic habitat mapping study included estimates of live coral cover across the different zones of the reef. Using the groupings above, the total number of observations in each zone was: 
+
+ - Back Reef: 126   
+ - Fore Reef: 169     
+ - Lagoon:    146  
+
+Coral condition is based on the percent of live coral cover in each of the zones. The reference point, or target live coral cover range, for each zone is:   
+
+ - Back Reef: 10-50% live coral cover   
+ - Fore Reef: 50-90% live coral cover 
+ - Lagoon:    10-50% live coral cover   
+ 
+Coral reef status is calculated as the number of data points falling within or above the reference point coral cover range compared to the overall number of data points in each zone of the reef.   
+
+$status~=~ref_{n}~/~total_{n}$   
+
+Where $ref_{n}$ is the number of data points in each zone falling within or above the reference point coral cover range and $total_{n}$ is the total number of data points in each zone.   
+
+*Rainforests*   
+
+The rainforest condition is based on the land area of the rainforest. Invasive coconut palms (*Cocos nucifer*) are limiting the land area that can be occupied by native rainforests. Palmyra has planned coconut palm removal activities, which they hope will increase the land area of native forests. 
+
+The raw data included four vegetation categories native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifer* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis. 
+
+The rainforest habitat status is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed. The reference point is rainforest and coconut palm area in 2001.  
+
+$status = area_{current}~(km^2)~/~area_{potential}~(km^2)$   
+
+The current rainforest area ($area_{current}$) is based on the Burnett, M.W. *et al.* 2019 study where forest is defined as the total area of the *Scaevola* and native forest categories.    
+
+The potential rainforest area ($area_{potential}$) is based on a 2001 satellite image showing approximately 43% of the islands are dominated by coconut plantations and 48.2% of the islands are dominated by other vegetation communities as discussed in the [USGS Terrestrial Management Plan](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf). The remaining 8.8% is assumed to be non-vegetated and is excluded from this analysis. The potential rainforest area is calculated as the land area added once 95% of the historic palm plantations are removed plus the original 48.2% of land area that was dominated by rainforests.  
+
+$area_{potential}~=~area_{added}~(km^2)~+~area_{original}~(km^2)$   
+
+And where   
+
+$area_{added}~=~0.95~*~(0.43~*~2.46~(km^2))$   
+$area_{original}~=~0.482~*~2.46~(km^2)$   
+
+**Trend** 
+
+*Coral Reefs* 
+
+The benthic habitat mapping project used to calculate the current status was the first study of its kind on Palmyra Atoll. As no similar studies have been done previously which estimate historic live coral cover across the different reef zones, an estimate of coral trend was derived from the OHI Global Assessment. The OHI global trend data is calculated as a linear trend in coral condition, on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the global assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia. 
+
+*Rainforests* 
+
+The trend in rainforest condition is based on a linear model to calculate the rate of change in forest area per year using data from 2010-2019. The trend is the five year average change in rainforest area.   
+
+**Data** 
+
+*Coral Reefs* 
+
+Data to calculate the current status of coral reefs was gathered from National Centers for Coastal Ocean Science (NCCOS) benthic habitat mapping project for Palmyra Atoll, completed in 2011. The data is available for download [here](https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/#horizontalTab3).    
+
+Date Downloaded: June 30, 2020
+
+Citation: U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Center for Coastal Ocean Sciences. (2011). Palmyra Habitat Maps [Data file]. Retrieved from https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/
+
+*Rainforests* 
+
+Data to calculate the current status of rainforests was gather from a recent publication on coconut palms in Palmyra completed in 2019. Data were downloaded from Table A1, available [here](https://www.tandfonline.com/doi/figure/10.1080/01431161.2019.1594440?scroll=top&needAccess=true). 
+
+Date Downloaded: July 8, 2020
+
+Citation: Burnett, M.W. *et al.* (2019). "Quantifying coconut palm extent on Pacific islands using spectral textural analysis of very high resolution imagery". *International Journal of Remote Sensing* 40(19): 7329-7355   
+  [Available here](https://www.tandfonline.com/doi/epub/10.1080/01431161.2019.1594440?needAccess=true). 
+  
+2001 Reference Point: The 2001 reference point comes from a satellite image of the island that is discussed in the 2011 Terrestrial Forest Management Plan.  
+
+Citation: Hathaway, S.A., McEachern K., & Fisher, R.N. (2011). "Terrestrial Forest Management Plan for Palmyra Atoll". U.S. Geological Survey Open-File Report 2011-1007.  
+  [Available here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf)  
+  
+There have been no studies using the same methodology to track the area of forests and coconut palm on the island over time. Therefore, data to calculate the trend in rainforest condition is estimated from two additional studies that included some estimate of percent cover of coconut palms and total land area.    
+ 
+2010: The 2010 data is estimated from a study on invasive rats that quantified the percent of land area on each islet occupied by *Cocos nucifera* (Table 1).    
+
+Citation: Lafferty, K.D. et al. (2010). "Stomach nematodes (*Mastophorus muris*) in rats (*Rattus rattus*) are associated with coconut (*Cocos nucifera*) habitat at Palmyra Atoll. *Journal of Parasitology* 96(1): 16-20.   
+  [Available here](https://bioone.org/journals/Journal-of-Parasitology/volume-96/issue-1/GE-2180.1/Stomach-Nematodes-Mastophorus-muris-in-Rats-Rattus-rattus-Are-Associated/10.1645/GE-2180.1.full)   
+  
+2016: The 2016 data is estimated using a U.S. Geological Survey vegetation community mapping project for Palmyra Atoll. Vegetation maps were completed in October 2016 and published in June 2019. Data is available for download [here](https://www.sciencebase.gov/catalog/item/5c66fc5be4b0fe48cb3aca49).   
+
+Date Downloaded: July 2, 2020  
+
+Citation: Struckhoff, M.A., 2019, Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.  
+
 #### Species (SPP)
+
+The species subgoal aims to assess the average condition of species in Palmyra. Both marine and terrestrial species are included in this subgoal.  
+
+**Current Status** 
+
+A list of species occurring in Palmyra was created using IUCN range maps and supplemented with fish and bird lists obtained from The Nature Conservancy for a total of 587 species. Species condition was pulled from the IUCN Red List (IUCN 2020). 
+
+The reference point for the species subgoal is 100% of historically occurring species having a status of "Least Concern".   
+
+The species fall within 10 different taxonomic classes. Since there are not an even number of species in each class, the status is first calculated for each class as the proportion of species in the class with a rank of "Least Concern". 
+
+$class_{status}~=~n_{LC}~/~n_{class}$   
+
+Where $n_{LC}$ is the number of species in each class that have a rank of "Least Concern" and $n_{class}$ is the total number of species in each class. The overall status is then the average of the status score for each class.      
+
+**Trend** 
+
+The species trend is calculated using data the IUCN provides for current and past assessments of species, which we use to estimate annual change in IUCN risk status for each species. 
+
+**Data**
+
+The original species list, species condition and historic assessments are based on the IUCN Red List.    
+
+Date Accessed: June 9, 2020   
+
+Citation: IUCN 2020. IUCN Red List of Threatened Species. Version 2020-1 <www.iucnredlist.org>.  
+
+Additional species lists were provided by Alex Wegmann at The Nature Conservancy on July 8, 2020
+
 
 ### Clean Waters (CW)
 
