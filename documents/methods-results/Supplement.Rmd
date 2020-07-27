@@ -264,11 +264,63 @@ The Habitat Services (HS) goal is made up of two subgoals, Carbon Storage (CS) a
 ### Resource Access Opportunity (RAO)
 
 ### Sense of Place (SP)
-The Sense of Place (SP) goal is made up of two subgoals, Iconic Species (ICO) and Lasting Special Places (LSP).
+
+This goal attempts to capture the aspects of the coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. While there are only a small handful of residents on Palmyra, the island's pristine ecosystems are valued by scientists, researchers, and conservationists among others. This goal is calculated using two equally weighted subgoals: iconic species (ICO) and lasting special places (LSP).   
 
 #### Iconic Species (ICO)
 
+Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., touristic attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihoods or extractive reason). 
+
+A primary iconic species for Palmyra was gathered based on species listed on the U.S. Fish an Wildlife Service webpage for the Palmyra Atoll National Wildlife Refuge. This list was supplemented with species identified as globally iconic (WWF Flagship species and Priority species) or regionally iconic (based upon WWF regional/local priority species and nation-specific lists) from the OHI Global Assessment. A total of 23 species were included in the iconic species list.      
+
+**Current Status**
+
+A category score is assigned to each species based on its IUCN status as follows:  
+    * 'LC' = 1.0, 'NT' = 0.8, 'VU' = 0.6, 'EN' = 0.4, 'CR' = 0.2, 'EX' = 0.0   
+
+The reference point is 100% of species have a status of "Least Concern". The status is found by averaging the IUCN category score for each of the species on the iconic species list.   
+
+**Trend**
+
+The iconic species trend is calculated as a linear change in iconic species status.     
+
+**Data**
+
+A list of iconic species was created based on species listed on the U.S. Fish an Wildlife Service webpage for the Palmyra Atoll National Wildlife Refuge. 
+
+Data Accessed: June 4, 2020   
+
+Citation: U.S. Fish and Wildlife Service. (2016, January 14). Wildlife and Habitat. Retrieved from <https://www.fws.gov/refuge/Palmyra_Atoll/wildlife_and_habitat/index.html> 
+
+Additional iconic species and species status were derived from the IUCN Red List.    
+
+Date Accessed: June 9, 2020   
+
+Citation: IUCN 2020. IUCN Red List of Threatened Species. Version 2020-1 <www.iucnredlist.org>.  
+ 
 #### Lasting Special Places (LSP)
+
+The lasting special places sub-goal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons (TRC 2004). For this subgoal, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true. For Palmyra we are looking at both offshore protected areas, within 3 nautical miles of the shoreline, and inland protected areas. The entire island is considered when considering the percent of inland protected area.   
+
+**Current Status** 
+
+The current status is calculated by averaging the score for protected areas offshore and inland. The reference point is 99% of all offshore and inland areas protected. The status for offshore and inland protected areas is found by comparing the percent of the area protected to the reference point. 
+
+$status_{offshore}~=~pct_{offshore}~/~pct~ref_{offshore}$   
+
+$status_{inland}~=~pct_{inland}~/~pct~ref_{inland}$    
+
+Where $pct_{offshore}$, $pct_{inland}$ is the percent of offshore and inland areas, respectively, that are protected and $pct~ref_{offshore}$, $pct~ref_{inland}$ are the reference point percentages of protected areas offshore and inland, respectively.  
+
+Finally, the status of offshore and inland areas are averaged to find the overall status.  
+
+**Trend**
+
+The trend for lasting special places is calculated as the linear change in percent protected areas over time. 
+
+**Data**
+
+Data was obtained verbally from Alex Wegmann at The Nature Conservancy on June 29, 2020. 
 
 ### Tourism and Recreation (TR)
 
