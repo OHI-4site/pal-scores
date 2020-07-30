@@ -447,6 +447,30 @@ AO <- function(layers) {
 
 
 CS <- function(layers) {
+
+  scen_year <- layers$data$scenario_year
+
+  ## Coastal protection
+  cs_status <- layers$data$hs_carbon_storage_status %>%
+    mutate(dimension = "status",
+           status = status * 100) %>%
+    dplyr::select(-layer)
+
+  ## Trend
+  cs_trend <- layers$data$hab_rainforest_trend %>% # use same layer as habitats subgoal
+    mutate(dimension = "trend") %>%
+    dplyr::select(region_id, score=trend, dimension)
+
+  ## CS scores
+  cs_score <- cs_status %>%
+    dplyr::select(region_id, score=status, dimension) %>%
+    bind_rows(cs_trend) %>%
+    mutate(goal = "CS") %>%
+    dplyr::select(region_id, goal, dimension, score)
+
+  return(cs_score)
+
+  ### OLD - not sure if I need some of this ...
   scen_year <- layers$data$scenario_year
 
   # layers for carbon storage
@@ -559,6 +583,7 @@ CS <- function(layers) {
 
   # return scores
   return(scores_CS)
+
 }
 
 
