@@ -972,7 +972,7 @@ HAB <- function(layers) {
   coral_status <- layers$data$hab_coral_status %>% # AlignManyDataYears wasn't working
     dplyr::select(-layer) %>%
     group_by(region_id) %>%
-    summarize(status = mean(status)) %>%  # Average the status in the three zones
+    summarize(status = weighted.mean(status, area_km)) %>%  # Area weighted average of zone scores
     mutate(habitat = "coral",
            year = 2020)
 
