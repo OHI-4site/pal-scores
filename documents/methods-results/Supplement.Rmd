@@ -125,31 +125,39 @@ The habitats subgoal includes coral reef habitats and rainforest habitats. A sco
 
 *Coral Reefs*   
 
-Three zones were used to calculate the coral reef status: back reef, fore reef, and lagoon. 
+Four zones were used to calculate the coral reef status: back reef, reef crest, fore reef, and lagoon. 
  
 The following zones were grouped together to form the three reef zones of interest:  
 
  - Back Reef: Not grouped with any other zone   
- - Fore Reef: Fore reef, Bank/Shelf, Bank/Shelf Escarpment, and Reef Crest      
- - Lagoon:    Lagoon and Channel  
+ - Reef Crest: Reef Crest and Fore Reef  
+ - Fore Reef: Bank/Shelf and Bank/Shelf Escarpment      
+ - Lagoon: Lagoon and Channel  
+ 
+The fore reef is reassigned to part of the reef crest to better reflect the position of those data points on the reef. The Bank/Shelf and Bank/Shelf Escarpment are then grouped together and renamed as the fore reef with an additional designation to differentiate the western fore reef and the eastern fore reef. 
  
 The benthic habitat mapping study included estimates of live coral cover across the different zones of the reef. Using the groupings above, the total number of observations in each zone was: 
 
- - Back Reef: 126   
- - Fore Reef: 169     
- - Lagoon:    146  
+ - Back Reef:   126  
+ - Reef Crest:  12
+ - Fore Reef W: 65
+ - Fore Reef E: 92
+ - Lagoon:      146  
 
 Coral condition is based on the percent of live coral cover in each of the zones. The reference point, or target live coral cover range, for each zone is:   
 
- - Back Reef: 10-50% live coral cover   
- - Fore Reef: 50-90% live coral cover 
- - Lagoon:    10-50% live coral cover   
- 
+ - Back Reef:  10-50% live coral cover  
+ - Reef Crest: 10-50% live coral cover      
+ - Fore Reef:  50-90% live coral cover     
+ - Lagoon:     10-50% live coral cover       
+
+The western and eastern fore reef both have the same reference point.   
+
 Coral reef status is calculated as the number of data points falling within or above the reference point coral cover range compared to the overall number of data points in each zone of the reef.   
 
 $status~=~ref_{n}~/~total_{n}$   
 
-Where $ref_{n}$ is the number of data points in each zone falling within or above the reference point coral cover range and $total_{n}$ is the total number of data points in each zone.   
+Where $ref_{n}$ is the number of data points in each zone falling within or above the reference point coral cover range and $total_{n}$ is the total number of data points in each zone. The area weighted mean is used to find the overall coral reef habitat status.     
 
 *Rainforests*   
 
