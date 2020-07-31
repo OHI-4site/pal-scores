@@ -161,9 +161,9 @@ Where $ref_{n}$ is the number of data points in each zone falling within or abov
 
 *Rainforests*   
 
-The rainforest condition is based on the land area of the rainforest. Invasive coconut palms (*Cocos nucifer*) are limiting the land area that can be occupied by native rainforests. Palmyra has planned coconut palm removal activities, which they hope will increase the land area of native forests. 
+The rainforest condition is based on the land area of the rainforest. Invasive coconut palms (*Cocos nucifera*) are limiting the land area that can be occupied by native rainforests. Palmyra has planned coconut palm removal activities, which they hope will increase the land area of native forests. 
 
-The raw data included four vegetation categories native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifer* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis. 
+The raw data included four vegetation categories native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifera* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis. 
 
 The rainforest habitat status is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed. The reference point is rainforest and coconut palm area in 2001.  
 
@@ -188,7 +188,7 @@ The benthic habitat mapping project used to calculate the current status was the
 
 *Rainforests* 
 
-The trend in rainforest condition is calculated as the rate of change in forest area per year using data from 2010-2019. The trend is the five year average change in rainforest area.   
+The trend in rainforest condition is calculated as the rate of change in forest area per year using data from 2005-2019. The trend is the five year average change in rainforest area.   
 
 **Data** 
 
@@ -214,8 +214,10 @@ Citation: Burnett, M.W. *et al.* (2019). "Quantifying coconut palm extent on Pac
 Citation: Hathaway, S.A., McEachern K., & Fisher, R.N. (2011). "Terrestrial Forest Management Plan for Palmyra Atoll". U.S. Geological Survey Open-File Report 2011-1007.  
   [Available here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf)  
   
-There have been no studies using the same methodology to track the area of forests and coconut palm on the island over time. Therefore, data to calculate the trend in rainforest condition is estimated from two additional studies that included some estimate of percent cover of coconut palms and total land area.    
- 
+There have been no studies using the same methodology to track the area of forests and coconut palm on the island over time. Therefore, data to calculate the trend in rainforest condition is estimated from three additional studies that included some estimate of percent cover of coconut palms and total land area.    
+
+2005: The 2005 data was obtained from Alex Wegmann at The Nature Conservancy on July 31, 2020. Shapefiles were compiled as part of Alex Wegmann's PhD dissertation.  
+
 2010: The 2010 data is estimated from a study on invasive rats that quantified the percent of land area on each islet occupied by *Cocos nucifera* (Table 1).    
 
 Citation: Lafferty, K.D. et al. (2010). "Stomach nematodes (*Mastophorus muris*) in rats (*Rattus rattus*) are associated with coconut (*Cocos nucifera*) habitat at Palmyra Atoll. *Journal of Parasitology* 96(1): 16-20.   
@@ -307,8 +309,8 @@ The following tree species are included in the mapping project raw data and we h
  - *Heliotropium foertherianum* also known as *Tournefortia argentea*: Native   
  - *Hernandia nymphaeifolia*: Native (not on the lists but *Hernandia sonora* is native)    
  - *Hibiscus tiliaceus*: Nonnative   
- - *Ipomoea*: Native   
- - *Nephrolepis*: Nonnative   
+ - *Ipomoea*: Native but excluded because it's a ground vine not a tree     
+ - *Nephrolepis*: Nonnative, but excluded because it's a fern not a tree  
  - *Pandanus tectorius* updated from *Pandanus fischerianus*: Native  
  - *Phymatosorus scolopendria*: Native 
  - *Pisonia grandis*: Native   
