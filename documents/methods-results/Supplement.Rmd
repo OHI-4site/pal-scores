@@ -188,7 +188,7 @@ The benthic habitat mapping project used to calculate the current status was the
 
 *Rainforests* 
 
-The trend in rainforest condition is calculated as the rate of change in forest area per year using data from 2005-2019. The trend is the five year average change in rainforest area.   
+The trend in rainforest condition is calculated as the rate of change in forest area per year from 2005-2019. The trend is the five year average change in rainforest area. The linear trend is calculated based on rainforest area in 2005, 2010, 2016, and 2019.    
 
 **Data** 
 
@@ -261,6 +261,8 @@ Additional species lists were provided by Alex Wegmann at The Nature Conservancy
 
 ### Clean Waters (CW)
 
+People value marine waters that are free of pollution and debris for aesthetic and health reasons. Although Palmyra has a limited population, people are sensitive to pollution and debris in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. Due to limited data availability, this goal includes two sources of pollution - marine debris and soil contamination. The main source of pollution on the island is marine debris from the fishing aggregation devices and the military history of the island has left a legacy of soil contamination. The overall Clean Waters score is the geometric mean of these two layer scores. This goal scores highest when the contamination level is zero. 
+
 *Marine Debris*   
 
 **Current Status**   
@@ -282,6 +284,88 @@ The trend in marine debris is calculated as the rate of change in the number of 
 **Data**   
 
 Data to calculate the marine debris layer comes from a table of Fishing Aggregation Device (FAD) found ashore on Palmyra Atoll. Data were obtained from Alex Wegmann at The Nature Conservancy on July 8, 2020.   
+
+*Soil Contamination*   
+
+**Current Status**   
+
+The current status is based the observed concentration of each element (mg/kg wet weight). A total of 155 sites were sampled in 2008 and an additional 41 sites were sampled in 2010. At each site concentrations were recorded for 13 elements: antimony (Sb), arsenic (As), chromium (Cr), cobalt (Co), copper (Cu), iron (Fe), lead (Pb), manganese (Mn), nickel (Ni), phosphorus (P), sulfur (S), titanium (Ti), and zinc (Zn). However, only 9 elements are included in the analysis. Iron is generally considered non-toxic and titanium, sulfur, and phosphorus were detected but do not have established TEL or Eco-SSL levels, therefore they will excluded from the analysis.  
+
+Two different reference levels will be used to scale the contamination scores from 0-1. A Threshold Effects Level (TEL) will be used to first scale values from 0 - 0.5. Any observed concentration equal to the TEL will receive a score of 0.5. The TEL are the lower end of values below which harmful impacts are not likely to be observed. The upper end of the scores will be based on the Probable Effect Level (PEL), this represents a value above which harmful impacts are likely to be observed. Any observed concentration above the PEL will be assigned a score of 1.  
+
+*TEL*   
+
+TEL reference levels were assigned based on U.S. Environmental Protection Agency for marine sediments and the lowest established ecological soil screening level (Eco-SSL) for any taxonomic group. TEL and Eco-SSL values (mg/km dry weight) for the most frequently detected contaminants on Palmyra are listed in Table 1 of Struckhoff *et al* 2018.  
+
+Replicated from Table 1 of Struckhoff *e al* 2018. NA indicates a toxicity threshold has not been established.     
+
+| Contaminant | Symbol | TEL   | Eco-SSL |
+|-------------|--------|-------|---------|
+| Antimony    | Sb     | NA    | 78      |
+| Arsenic     | As     | 7.24  | 18      |
+| Chromium    | Cr     | 52.3  | 26      |
+| Colbalt     | Co     | NA    | 13      |
+| Copper      | Cu     | 118.7 | 28      |
+| Lead        | Pb     | 30.24 | 11      |
+| Manganese   | Mn     | NA    | 220     |
+| Nickel      | Ni     | 15.9  | 38      |
+| Zinc        | Zn     | 124   | 46      |. 
+
+TEL levels are used for marine sediments and the lowest Eco-SSL level is used for soil samples. Where no TEL is established, the lowest Eco-SSL is used in its place. The table reports thresholds in mg/kg of dry weight, however most of the samples collected were made on moist samples. Struckoff *et al* 2018 notes:   
+
+"Soil moisture values between 15 and 25% can reduce measured sample concentrations from 70 to 80% relative to lab-confirmed concentrations (U.S. Environmental Protection Agency, 2015). Given that most measurements were made on moist samples, XRF values reported above TELs or SSLs are conservative estimates of threshold exceedance."  
+
+*PEL*   
+
+For soil samples, the Canadian freshwater contamination PELs (mg/kg dry weight) are used, as these are more conservative than the marine contamination levels. Concensus-based freshwater PEL levels were established in 2000. Concentrations were obtained from Table 3 in MacDonald *et al* 2000.   
+
+| Contaminant | Symbol | PEL   | 
+|-------------|--------|-------|
+| Arsenic     | As     | 17    |
+| Chromium    | Cr     | 90    |
+| Copper      | Cu     | 197   |
+| Lead        | Pb     | 91.3  |
+| Nickel      | Ni     | 36    |
+| Zinc        | Zn     | 315   | 
+
+Marine sediment PEL levels (mg/kg of dry weight) are obtained from NOAA guidelines established in 1999. These are called Effect Range Median (ERM) levels, which is the NOAA equivalent of PELs. Concentrations were obtained from Table 1 in the NOAA 1999 guidance. 
+
+| Contaminant | Symbol | PEL   | 
+|-------------|--------|-------|
+| Arsenic     | As     | 70    |
+| Chromium    | Cr     | 370   |
+| Copper      | Cu     | 270   |
+| Lead        | Pb     | 218   |
+| Nickel      | Ni     | 51.6  |
+| Zinc        | Zn     | 410   |
+
+No PELs are available for Antimony, Colbalt, and Manganese. For these we will approximate an upper limit that is one order of magntiude higher than the established TEL or Eco-SSL.  
+
+A status is calculated for each site using the geometric mean of the 9 contaminants. An overall status is then found using an area weighted mean of the site status. This gives high scores to years with greater levels of contamination. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.  
+
+**Trend**   
+
+This the first study on soil contamination done for Palmyra Atoll, although a second study is currently underway. Contamination sources are remnants of military action on the island during World War II. Based on the minimal change in current status from 2008 to 2010, we are assuming that there has been no change in contamination levels. Therefore, a trend of 0 is being used until additional information is obtained.   
+
+**Data**
+
+Data for this layer comes from an elemental soil contamination study completed by U.S. Geological Survey at sites on Palmyra Atoll in 2008 and 2010. Data was published in 2017 and can be accessed [here](https://www.sciencebase.gov/catalog/item/5925b2cae4b0b7ff9fb3ca3d).  
+
+Date Downloaded: July 28, 2020   
+
+Citation: Struckhoff, M.A., Papoulias, D.M., Orazio, C.E., Annis, M.L., Shaver, D.K. and Tillitt, D.E., 2017, Geospatial data of elemental contamination at Palmyra Atoll, 2008 and 2010: U.S. Geological Survey data release, https://doi.org/10.5066/F74F1P00  
+
+The reference levels were obtained from the following sources:  
+
+*TELs and Eco-SSLs*   
+
+Citation: Struckhoff, M.A., Orazio, C.E., Tillitt, D.E., Shaver, D.K., and Papoulias, D.M. (2018). Mapping elemental contamination on Palmyra Atoll National Wildlife Refuge. *Marine Pollution Bulletin*, 128: 97-105. https://doi.org/10.1016/j.marpolbul.2017.12.065.  
+
+*PELs and ERMs*   
+
+Citation: MacDonald, D.D., Ingersol, C.G., and Berger, T.A. (2000). Development and Evaluation of Consensus-Based Sediment Quality Guidelines for Freshwater Contamination. *Archives of Environmental Contamination and Toxicology.* 39:20-31. DOI: 10.1007/s002440010075   
+
+Citation: National Oceanic and Atmospheric Administration. (1999). Sediment Quality Guidelines developed for the National Status and Trend Program. 
 
 ### Habitat Services (HS)
 
@@ -360,7 +444,7 @@ Where $C_{condition}$ is the condition of coral habitats as defined above, $A$ i
 
 The coastal protection trend will use the same data as the coral condition trend calculated for the Biodiversity Habitats sub-goal. 
 
-Coral condition is lacking historic data for all areas of the reef used to estimate current status (fore reef, reef crest, back reef, and lagoon). Therefore, the trend of coral condition will be estimated using the OHI global data. The OHI global trend data is calculated as a linear trend in coral condition, calculated on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. 
+Coral condition is lacking historic data for all areas of the reef used to estimate current status (fore reef, reef crest, back reef, and lagoon). Therefore, the trend of coral condition will be estimated using the OHI global data. The OHI global trend data is calculated as a linear trend in coral condition, calculated on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the global assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia.   
 
 **Data**   
 
@@ -421,6 +505,10 @@ Data for this layer comes from a scientific library containing all scientific pu
 
 ### Resource Access Opportunity (RAO)
 
+This goal is intended to measure access to recreational fishing opportunities on Palmyra Atoll. Access to recreational fishing is mandated within the National Wildlife Refuge by U.S. Fish and Wildlife Service. 
+
+Data for calculating the current status and trend of access to recreational fishing opportunities was not available at the time of this assessment. Therefore, a placeholder with a current status of NA and a trend of 0 will was used.   
+
 ### Sense of Place (SP)
 
 This goal attempts to capture the aspects of the coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. While there are only a small handful of residents on Palmyra, the island's pristine ecosystems are valued by scientists, researchers, and conservationists among others. This goal is calculated using two equally weighted subgoals: iconic species (ICO) and lasting special places (LSP).   
@@ -440,7 +528,7 @@ The reference point is 100% of species have a status of "Least Concern". The sta
 
 **Trend**
 
-The iconic species trend is calculated as a linear change in iconic species status.     
+The iconic species trend is calculated as a linear change in iconic species status from 2014 - 2020.       
 
 **Data**
 
@@ -474,7 +562,7 @@ Finally, the status of offshore and inland areas are averaged to find the overal
 
 **Trend**
 
-The trend for lasting special places is calculated as the linear change in percent protected areas over time. 
+The trend for lasting special places is calculated as the linear change in percent protected areas from 2014 - 2020.    
 
 **Data**
 
@@ -482,8 +570,11 @@ Data was obtained verbally from Alex Wegmann at The Nature Conservancy on June 2
 
 ### Tourism and Recreation (TR)
 
+This goal is intended to measure access to tourism and recreation on Palmyra Atoll. Although the atoll is protected, a limited number of private tourists visit the island each year via boat. 
+
+Data for calculating the current status and trend of tourism and recreation was not available at the time of this assessment. Therefore, a placeholder with a current status of NA and a trend of 0 will was used. 
+
 ## Goals Not Included in Palmyra OHI+ Assessment:
-- List all the goals not included in Palmyra OHI+ and why
 
 The following goals that are typically included in the OHI global assessment were not included in the Palmyra OHI+ assessment:
 
