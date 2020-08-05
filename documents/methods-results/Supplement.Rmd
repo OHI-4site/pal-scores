@@ -112,7 +112,7 @@ The following goals were included in the Palmyra OHI+ assessment.
 
 ### Biodiversity (BD)
 
-People value biodiversity in particular for its existence value. This goal assesses the conservation status of species based on the best available data through two sub-goals: species (SPP) and habitats (HAB). Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for condition of the broad suite of species that depend on them. We calculate each of these subgoals separately and weight them equally when calculating the overall goal score.    
+People value biodiversity in particular for its existence value. This goal assesses the conservation status of species based on the best available data through two sub-goals: species (SPP) and habitats (HAB). Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for condition of the broad suite of species that depend on them. We calculate each of these sub-goals separately and weight them equally when calculating the overall goal score.    
 
 #### Habitats (HAB)
 
