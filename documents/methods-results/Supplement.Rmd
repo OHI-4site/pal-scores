@@ -370,7 +370,7 @@ Citation: National Oceanic and Atmospheric Administration. (1999). Sediment Qual
 
 ### Habitat Services (HS)
 
-The Habitat Services (HS) goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted subgoals, Carbon Storage (CS) and Coastal Protection (CP).   
+The Habitat Services (HS) goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Carbon Storage (CS) and Coastal Protection (CP).   
 
 ####  Carbon Storage (CS) 
 
@@ -429,7 +429,7 @@ The carbon storage trend uses the data from the rainforest trend calculated for 
 
 #### Coastal Protection (CP)
 
-The Coastal Protection sub-goal measures the health of habitats that contribute to coastal protection from storm surge, flooding and sea level rise. In Palmyra, the only coastal protection habitat are coral reefs. We use data on habitat extent in the same manner as Biodiversity: Habitat sub-goal. 
+The Coastal Protection sub-goal measures the health of habitats that contribute to coastal protection from storm surge, flooding and sea level rise. In Palmyra, the only coastal protection habitat are coral reefs. We use data on habitat extent in the same manner as Biodiversity Habitat sub-goal. 
 
 **Current Status**   
 
@@ -580,32 +580,29 @@ Data for calculating the current status and trend of tourism and recreation was 
 The following goals that are typically included in the OHI global assessment were not included in the Palmyra OHI+ assessment:
 
 ### Food Provision (FP)
-The Food Provision (FP) goal is made up of two subgoals, Fisheries (FIS) and Mariculture (MAR).
 
-#### Fisheries (FIS)
+One of the most fundamental services the ocean provides people is the provision of seafood. The Food Provision goal measures the amount of seafood sustainably harvested within an EEZ or region through any means for use primarily in human consumption and thus includes wild-caught commercial fisheries, mariculture, artisanal-scale and recreational fisheries. 
 
-#### Mariculture (MAR)
+Palmyra Atoll supports approximatley 5 full-time employees and a number of visiting researchers and scientists. While sustenance fishing is permitted, it is not a primary source of food for residents on the island and the number of fishing days permitted is minimal. Therefore, this goal was not included in this OHI+ assessment.  
 
 ### Artisanal Fishing Opportunity (AO)
 
+Artisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation and livelihood opportunities for many people around the world, in particular in developing nations (Allison & Ellis 2001). Artisanal fishing refers to fisheries involving households, cooperatives or small firms (as opposed to large, commercial companies) that use relatively small amounts of capital and energy and small fishing vessels (if any), make relatively short fishing trips, and use fish mainly for local consumption or trade. 
+
+This type of fishing activity does not occur on Palmyra Atoll and therefore is not included in the OHI+ assessment. The ability to access sustenance fishing is considered in the Resource Access Opportunities goal.  
+
 ### Natural Products (NP)
 
+In many countries the harvest of non-food natural products is important for local economies and can also be traded internationally. The sustainable harvest of these products is therefore an important component of a healthy ocean. This goal assesses the ability of countries to maximize the sustainable harvest of living marine resources, such as corals, shells, seaweeds, and fish for the aquarium trade. 
+
+This type of harvesting of natural products for sale or trade does not occur on Palmyra Atoll and therefore is not included in this OHI+ assessment.   
+
 ### Livelihoods & Economies (LE)
-The Livelihoods & Economies (LE) goal is made up of two subgoals, Livelihoods (LIV) and Economies (ECO).
 
-#### Livelihoods (LIV)
-
-#### Economies (ECO)
+The jobs and revenue produced from marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal measures both livelihood quantity and job quality.   
 
 
-## Status
-- Data
-- Reference point
-how calculated (narrative of calculation plus, mathematical model)
-
-## Trend
-- Data
-- how calculated
+The typical marine-related jobs, which are included in the livelihoods and economies goal are not relevant to the economy on Palmyra Atoll. The conservation science jobs supported by the island and funds raised to support conservation science are included as part of the Research goal.   
 
 ## Results
 
