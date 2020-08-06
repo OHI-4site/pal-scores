@@ -116,33 +116,25 @@ People value biodiversity in particular for its existence value. This goal asses
 
 #### Habitats (HAB)
 
-The habitat subgoal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This subgoal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, both terrestrial and marine habitats are included in this assessment.   
+The habitat sub-goal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This sub-goal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, both terrestrial and marine habitats are included in this assessment.   
 
 **Current Status**  
 
-The habitats subgoal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score. 
+The habitats sub-goal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score. 
 
 *Coral Reefs*   
 
 Four zones were used to calculate the coral reef status: back reef, reef crest, fore reef, and lagoon. 
  
-The following zones were grouped together to form the three reef zones of interest:  
+The following zones were grouped together to form the four reef zones of interest:  
 
  - Back Reef: Not grouped with any other zone   
  - Reef Crest: Reef Crest and Fore Reef  
  - Fore Reef: Bank/Shelf and Bank/Shelf Escarpment      
  - Lagoon: Lagoon and Channel  
  
-The fore reef is reassigned to part of the reef crest to better reflect the position of those data points on the reef. The Bank/Shelf and Bank/Shelf Escarpment are then grouped together and renamed as the fore reef with an additional designation to differentiate the western fore reef and the eastern fore reef. 
+The fore reef is reassigned to part of the reef crest to better reflect the position of those data points on the reef. The Bank/Shelf and Bank/Shelf Escarpment are then grouped together and renamed as the fore reef with an additional designation to differentiate the western fore reef and the eastern fore reef. Based on a map of Palmyra, the longitude line 162.075 will be used to divide the fore reef into western and eastern. These groupings follow the zones delineated by NOAA in the Coral Reef Ecosystems Monitoring Report for the Pacific Remote Islands Marine National Monument, available [here](https://repository.library.noaa.gov/view/noaa/23421).  
  
-The benthic habitat mapping study included estimates of live coral cover across the different zones of the reef. Using the groupings above, the total number of observations in each zone was: 
-
- - Back Reef:   126  
- - Reef Crest:  12
- - Fore Reef W: 65
- - Fore Reef E: 92
- - Lagoon:      146  
-
 Coral condition is based on the percent of live coral cover in each of the zones. The reference point, or target live coral cover range, for each zone is:   
 
  - Back Reef:  10-50% live coral cover  
@@ -152,11 +144,13 @@ Coral condition is based on the percent of live coral cover in each of the zones
 
 The western and eastern fore reef both have the same reference point.   
 
-Coral reef status is calculated as the number of data points falling within or above the reference point coral cover range compared to the overall number of data points in each zone of the reef.   
+Coral reef status is first calculated for each zone. The status is calculated as the area of the reef zone falling within or above the reference point category divided by the total area of the reef zone, as in the following equation:  
 
-$status~=~ref_{n}~/~total_{n}$   
+$status_{zone}~=~ref_{area}~/~total_{area}$   
 
-Where $ref_{n}$ is the number of data points in each zone falling within or above the reference point coral cover range and $total_{n}$ is the total number of data points in each zone. The area weighted mean is used to find the overall coral reef habitat status.     
+Where $ref_{area}$ is the area of the reef zone falling within or above the reference point category and $total_{area}$ is the total area of the reef zone.   
+
+The overall status score is calculated as the area weighted mean of the status score for each zone.      
 
 *Rainforests*   
 
