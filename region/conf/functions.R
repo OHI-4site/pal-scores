@@ -946,26 +946,31 @@ CW <- function(layers) {
     }
   }
 
+  ## Layers
+  # Debris
+  cw_debris <- layers$data$cw_debris_status %>%
+    mutate(cat = "debris") %>%
+    dplyr::select(-layer)
 
-  # Layers
-  cw_lyrs <- c(
-    'cw_debris_status'
-    )
+  # Soil Contamination
+  cw_sc <- layers$data$cw_contamination_status %>%
+    mutate(cat = "contamination") %>%
+    dplyr::select(-layer)
 
 
-  # Get data together:
-  cw_data <- AlignManyDataYears(cw_lyrs) %>%
-    dplyr::select(-data_year)
+  ## Get data together:
+  cw_data <- cw_debris %>%
+    rbind(cw_sc)
 
-  # Calculate the status
+  ## Calculate the status
   cw_status <- cw_data %>%
-    group_by(region_id, scenario_year) %>%
+    group_by(region_id, year) %>%
     summarize(status = geometric.mean2(status)) %>%
     dplyr::mutate(status = status * 100) %>%
     dplyr::mutate(dimension = "status") %>%
     dplyr::ungroup()
 
-  # Calculate the trend
+  ## Calculate the overall trend
   trend_data <- cw_status %>%
     filter(!is.na(status)) %>%
     dplyr::select(-dimension)
