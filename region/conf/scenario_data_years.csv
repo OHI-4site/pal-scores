@@ -6,6 +6,13 @@ cw_debris_status,2017,2017
 cw_debris_status,2018,2018
 cw_debris_status,2019,2019
 cw_debris_status,2020,2019
+cw_contamination_status, 2014, 2010
+cw_contamination_status, 2015, 2010
+cw_contamination_status, 2016, 2010
+cw_contamination_status, 2017, 2010
+cw_contamination_status, 2018, 2010
+cw_contamination_status, 2019, 2010
+cw_contamination_status, 2020, 2010
 hab_coral_status,2014,2011
 hab_coral_status,2015,2011
 hab_coral_status,2016,2011
