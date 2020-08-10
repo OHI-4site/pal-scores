@@ -597,6 +597,32 @@ TR <- function(layers) {
   return(scores)
 }
 
+RAO <- function(layers) {
+
+  scen_year <- layers$data$scenario_year
+
+  # Calculate status
+  rao_status <- layers$data$rao_status %>%
+    dplyr::mutate(status = status * 100) %>%
+    dplyr::mutate(dimension = "status") %>%
+    dplyr::select(region_id, year, status, dimension)
+
+  # Find trend
+  rao_trend <- layers$data$rao_trend %>%
+    dplyr::mutate(dimension = "trend") %>%
+    dplyr::select(region_id, year, score = trend_score, dimension)
+
+  # Calculate scores
+  rao_score <- rao_status %>%
+    filter(year == scen_year) %>%
+    dplyr::select(region_id, score = status, dimension) %>%
+    bind_rows(rao_trend) %>%
+    dplyr::mutate(goal = "RAO") %>%
+    dplyr::select(region_id, goal, dimension, score)
+
+  return(rao_score)
+
+}
 
 ## Final Scores
 
