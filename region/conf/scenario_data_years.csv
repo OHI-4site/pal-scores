@@ -76,6 +76,34 @@ lsp_offshore,2017,2017
 lsp_offshore,2018,2018
 lsp_offshore,2019,2019
 lsp_offshore,2020,2020
+prs_cc_oa, 2014, 2014
+prs_cc_oa, 2015, 2015
+prs_cc_oa, 2016, 2016
+prs_cc_oa, 2017, 2017
+prs_cc_oa, 2018, 2018
+prs_cc_oa, 2019, 2019
+prs_cc_oa, 2020, 2020
+prs_cc_slr, 2014, 2014
+prs_cc_slr, 2015, 2015
+prs_cc_slr, 2016, 2016
+prs_cc_slr, 2017, 2017
+prs_cc_slr, 2018, 2018
+prs_cc_slr, 2019, 2018
+prs_cc_slr, 2020, 2018
+prs_cc_sst, 2014, 2014
+prs_cc_sst, 2015, 2015
+prs_cc_sst, 2016, 2016
+prs_cc_sst, 2017, 2017
+prs_cc_sst, 2018, 2017
+prs_cc_sst, 2019, 2017
+prs_cc_sst, 2020, 2017
+prs_cc_uv, 2014, 2014
+prs_cc_uv, 2015, 2015
+prs_cc_uv, 2016, 2016
+prs_cc_uv, 2017, 2017
+prs_cc_uv, 2018, 2018
+prs_cc_uv, 2019, 2019
+prs_cc_uv, 2020, 2019
 prs_hd, 2014, 2014
 prs_hd, 2015, 2015
 prs_hd, 2016, 2016
@@ -139,42 +167,6 @@ spp_status,2017,2019
 spp_status,2018,2019
 spp_status,2019,2019
 spp_status,2020,2019
-cc_acid,2012,2012
-cc_acid,2013,2013
-cc_acid,2014,2014
-cc_acid,2015,2015
-cc_acid,2016,2016
-cc_acid,2017,2017
-cc_acid,2018,2018
-cc_acid,2019,2019
-cc_acid,2020,2019
-cc_slr,2012,2011
-cc_slr,2013,2012
-cc_slr,2014,2013
-cc_slr,2015,2014
-cc_slr,2016,2015
-cc_slr,2017,2016
-cc_slr,2018,2017
-cc_slr,2019,2018
-cc_slr,2020,2018
-cc_sst,2012,2011
-cc_sst,2013,2012
-cc_sst,2014,2013
-cc_sst,2015,2014
-cc_sst,2016,2015
-cc_sst,2017,2016
-cc_sst,2018,2017
-cc_sst,2019,2017
-cc_sst,2020,2017
-cc_uv,2012,2011
-cc_uv,2013,2012
-cc_uv,2014,2013
-cc_uv,2015,2014
-cc_uv,2016,2015
-cc_uv,2017,2016
-cc_uv,2018,2017
-cc_uv,2019,2018
-cc_uv,2020,2018
 fp_mpa_coast,2012,2012
 fp_mpa_coast,2013,2013
 fp_mpa_coast,2014,2014
