@@ -992,53 +992,6 @@ FP <- function(layers, scores) {
 }
 
 
-AO <- function(layers) {
-  Sustainability <- 1.0
-
-  scen_year <- layers$data$scenario_year
-
-  r <- AlignDataYears(layer_nm = "ao_access", layers_obj = layers) %>%
-    dplyr::rename(region_id = rgn_id, access = value) %>%
-    na.omit()
-
-  ry <-
-    AlignDataYears(layer_nm = "ao_need", layers_obj = layers) %>%
-    dplyr::rename(region_id = rgn_id, need = value) %>%
-    dplyr::left_join(r, by = c("region_id", "scenario_year"))
-
-  # model
-  ry <- ry %>%
-    dplyr::mutate(Du = (1 - need) * (1 - access)) %>%
-    dplyr::mutate(status = (1 - Du) * Sustainability)
-
-  # status
-  r.status <- ry %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id, status) %>%
-    dplyr::mutate(status = status * 100) %>%
-    dplyr::select(region_id, score = status) %>%
-    dplyr::mutate(dimension = 'status')
-
-  # trend
-
-  trend_years <- (scen_year - 4):(scen_year)
-
-  r.trend <- CalculateTrend(status_data = ry, trend_years = trend_years)
-  ## temporary if empty
-  if (dim(r.trend)[1] < 1) {
-    r.trend <- data.frame(region_id = 1,
-                          score = NA,
-                          dimension = "trend")
-  }
-
-
-  # return scores
-  scores <- rbind(r.status, r.trend) %>%
-    dplyr::mutate(goal = 'AO')
-
-  return(scores)
-}
-
 LIV <- function(layers) {
 
   # NOTE: scripts and related files for calculating these subgoals is located:
