@@ -12,15 +12,20 @@ layer_region_areas  = 'rgn_area'
 
 # pressures & resilience matrices ----
 
-# For goals with elements (e.g., for coastal protection: mangrove, saltmarsh, seagrass), these data layers describe how to weight the contribution of each goal element to calculate the final goal pressure and resilience dimensions.
+# For goals with elements these data layers describe how to weight the contribution of each goal element to calculate the final goal pressure and resilience dimensions.
 # (note: these are .csv files in the layers folder)
-resilience_element = list('CS'  = 'element_wts_cs_km2_x_storage',      # populated in CS() in functions.R
-                          'CP'  = 'element_wts_cp_km2_x_protection',   # populated in CP() in functions.R
-                          'HAB' = 'element_wts_hab_pres_abs')          # populated in HAB() in functions.R
+resilience_element = list('HAB' = 'element_wts_hab_pres_abs'             )
 
-pressures_element  = list('CS'  = 'element_wts_cs_km2_x_storage',      # populated in CS() in functions.R
-                          'CP'  = 'element_wts_cp_km2_x_protection',   # populated in CS() in functions.R
-                          'HAB' = 'element_wts_hab_pres_abs')          # populated in CS() in functions.R
+pressures_element  = list('HAB' = 'element_wts_hab_pres_abs'             )
+
+## If weights for CS and CP are needed uncomment and use this:
+# resilience_element = list('CS'  = 'element_wts_cs_km2_x_storage',      # populated in CS() in functions.R
+#                           'CP'  = 'element_wts_cp_km2_x_protection',   # populated in CP() in functions.R
+#                           'HAB' = 'element_wts_hab_pres_abs')          # populated in HAB() in functions.R
+#
+# pressures_element  = list('CS'  = 'element_wts_cs_km2_x_storage',      # populated in CS() in functions.R
+#                           'CP'  = 'element_wts_cp_km2_x_protection',   # populated in CP() in functions.R
+#                           'HAB' = 'element_wts_hab_pres_abs')          # populated in HAB() in functions.R
 
 
 # constants

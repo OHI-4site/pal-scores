@@ -8,25 +8,26 @@ HAB <- function(layers) {
 
   scen_year <- layers$data$scenario_year
 
-
   ## Corals
-  coral_status <- layers$data$hab_coral_status %>% # AlignManyDataYears wasn't working
-    dplyr::select(-layer) %>%
+  coral_status <- AlignDataYears(layer_nm = 'hab_coral_status', layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
     group_by(region_id) %>%
     summarize(status = weighted.mean(status, area_km)) %>%  # Area weighted average of zone scores
-    mutate(habitat = "coral",
-           year = 2020)
+    mutate(habitat = "coral") %>%
+    dplyr::select(region_id, habitat, status)
 
-  coral_trend  <- layers$data$hab_coral_trend %>% # AlignManyDataYears wasn't working
-    dplyr::select(-layer)
+  coral_trend  <- AlignDataYears(layer_nm = 'hab_coral_trend', layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, trend)
 
   ## Rainforest
-  rainforest_status <- layers$data$hab_rainforest_status %>% # AlignManyDataYears wasn't working
-    dplyr::select(-layer)
+  rainforest_status <- AlignDataYears(layer_nm = 'hab_rainforest_status', layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, status)
 
   rainforest_trend  <- AlignManyDataYears("hab_rainforest_trend") %>%
     filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id, habitat, year = scenario_year, trend)
+    dplyr::select(region_id, habitat, trend)
 
   ## Calculate status
   hab_status <- coral_status %>%
@@ -50,33 +51,22 @@ HAB <- function(layers) {
     bind_rows(hab_trend) %>%
     mutate(goal = "HAB")
 
+  ## Create weights file for pressures/resilience calculations
+  ## This identifies what regions contain what habitats
 
-  # ## create weights file for pressures/resilience calculations
-  #
-  # weights <- extent %>%
-  #   filter(
-  #     habitat %in% c(
-  #       'seagrass',
-  #       'saltmarsh',
-  #       'mangrove',
-  #       'coral',
-  #       'seaice_edge',
-  #       'soft_bottom'
-  #     )
-  #   ) %>%
-  #   dplyr::filter(extent > 0) %>%
-  #   dplyr::mutate(boolean = 1) %>%
-  #   dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
-  #   dplyr::select(rgn_id = region_id, habitat, boolean, layer)
-  #
-  # write.csv(weights,
-  #           sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
-  #           row.names = FALSE)
-  #
-  # layers$data$element_wts_hab_pres_abs <- weights
+  hab_weights <- coral_status %>%
+    rbind(rainforest_status) %>%
+    select(-status) %>%
+    dplyr::mutate(boolean = 1) %>%
+    dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
+    dplyr::select(rgn_id = region_id, habitat, boolean, layer)
 
+  write.csv(hab_weights,
+            sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
+            row.names = FALSE)
 
-  # return scores
+  layers$data$element_wts_hab_pres_abs <- hab_weights
+
   return(hab_score)
 
 }
@@ -174,7 +164,7 @@ CS <- function(layers) {
     dplyr::mutate(rank = habitat.rank[habitat]) %>%
     dplyr::mutate(extent_rank = extent * rank) %>%
     dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
-    dplyr::select(region_id, habitat, extent_rank, layer)
+    dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
 
   write.csv(
     cs_weights,
@@ -246,7 +236,7 @@ CP <- function(layers) {
     dplyr::mutate(rank = habitat.rank[habitat]) %>%
     dplyr::mutate(extent_rank = extent * rank) %>%
     dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
-    dplyr::select(region_id, habitat, extent_rank, layer)
+    dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
 
   write.csv(
     cp_weights,
