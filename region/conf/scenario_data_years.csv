@@ -188,6 +188,20 @@ res_hd_reg, 2017, 2017
 res_hd_reg, 2018, 2018
 res_hd_reg, 2019, 2019
 res_hd_reg, 2020, 2020
+res_sp_mgmt, 2014, 2014
+res_sp_mgmt, 2015, 2015
+res_sp_mgmt, 2016, 2016
+res_sp_mgmt, 2017, 2017
+res_sp_mgmt, 2018, 2018
+res_sp_mgmt, 2019, 2019
+res_sp_mgmt, 2020, 2020
+res_sp_reg, 2014, 2014
+res_sp_reg, 2015, 2015
+res_sp_reg, 2016, 2016
+res_sp_reg, 2017, 2017
+res_sp_reg, 2018, 2018
+res_sp_reg, 2019, 2019
+res_sp_reg, 2020, 2020
 rs_employment_status,2014,2014
 rs_employment_status,2015,2015
 rs_employment_status,2016,2016
