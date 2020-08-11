@@ -223,6 +223,13 @@ spp_status,2017,2019
 spp_status,2018,2019
 spp_status,2019,2019
 spp_status,2020,2019
+tr_status_placeholder, 2014, 2014
+tr_status_placeholder, 2015, 2015
+tr_status_placeholder, 2016, 2016
+tr_status_placeholder, 2017, 2017
+tr_status_placeholder, 2018, 2018
+tr_status_placeholder, 2019, 2019
+tr_status_placeholder, 2020, 2020
 hab_coral_extent,2000,2012
 hab_coral_extent,2001,2012
 hab_coral_extent,2002,2012
