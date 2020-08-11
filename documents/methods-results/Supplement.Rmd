@@ -240,7 +240,7 @@ Where $n_{LC}$ is the number of species in each class that have a rank of "Least
 
 **Trend** 
 
-The species trend is calculated using data the IUCN provides for current and past assessments of species, which were used to estimate annual change in IUCN risk status for each species. 
+The species trend is calculated using data the IUCN provides for current and past assessments of species. Discrete species assessments between 1965-2020 are used to estimate annual change in IUCN risk status for each species. Species trend is evaluated for species with more than two past assessments. Trend for species with less than two past assessments is estimated using the population trend noted in species history information. We then summarize these species trend values for each region using the same general approach used to calculate status.  
 
 **Data**
 
@@ -288,7 +288,7 @@ Two different reference levels will be used to scale the contamination scores fr
 
 *TEL*   
 
-TEL reference levels were assigned based on U.S. Environmental Protection Agency for marine sediments and the lowest established Eco-SSLs for any taxonomic group. TEL and Eco-SSL values (mg/km dry weight) for the most frequently detected contaminants on Palmyra are listed in Table 1 of Struckhoff *et al* 2018.  
+TEL reference levels were assigned based on the TELs established by the U.S. Environmental Protection Agency for marine sediments and the lowest established Eco-SSLs for any taxonomic group. TEL and Eco-SSL values (mg/km dry weight) for the most frequently detected contaminants on Palmyra are listed in Table 1 of Struckhoff *et al* 2018.  
 
 Replicated from Table 1 of Struckhoff *et al* 2018. NA indicates a toxicity threshold has not been established.     
 
