@@ -125,139 +125,71 @@ CS <- function(layers) {
 
   scen_year <- layers$data$scenario_year
 
-  ## Coastal protection
-  cs_status <- layers$data$hs_carbon_storage_status %>%
-    mutate(dimension = "status",
-           status = status * 100) %>%
-    dplyr::select(-layer)
+  ## Gather health, extent, and rank layers
+  # Carbon Storage health (uses status layer)
+  cs_health <- AlignDataYears(layer_nm = 'hs_carbon_storage_status', layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, health = status)
 
-  ## Trend
-  cs_trend <- layers$data$hab_rainforest_trend %>% # use same layer as habitats subgoal
+  # Set habitat rank - only include CS habitats (rainforest)
+  habitat.rank <- c('rainforest' = 4)
+
+  # Rainforest extent
+  cs_extent <- AlignDataYears(layer_nm = "hab_rainforest_extent", layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, extent = km2)
+
+  ## Join layers
+  cs_data <-  cs_extent %>%
+    dplyr::full_join(cs_health, by = c("region_id", "habitat")) %>%
+    dplyr::mutate(rank = habitat.rank[habitat])
+
+  ## Calculate current status from health, extent, and rank
+  cs_status <- cs_data %>%
+    dplyr::group_by(region_id) %>%
+    dplyr::summarize(score = pmin(1, sum(rank * health * extent, na.rm = TRUE) /
+                                    (sum(
+                                      extent * rank, na.rm = TRUE
+                                    ))) * 100) %>%
+    dplyr::mutate(dimension = 'status') %>%
+    ungroup()
+
+  ## Calculate Trend
+  cs_trend <- AlignDataYears(layer_nm = 'hab_rainforest_trend', layers_obj = layers) %>% # use same layer as habitats subgoal
+    filter(scenario_year == scen_year) %>%
     mutate(dimension = "trend") %>%
     dplyr::select(region_id, score=trend, dimension)
 
   ## CS scores
   cs_score <- cs_status %>%
-    dplyr::select(region_id, score=status, dimension) %>%
+    dplyr::select(region_id, score, dimension) %>%
     bind_rows(cs_trend) %>%
     mutate(goal = "CS") %>%
     dplyr::select(region_id, goal, dimension, score)
 
-  return(cs_score)
+  ## Create weights file for pressures/resilience calculations
 
-  ### OLD - not sure if I need some of this ...
-  scen_year <- layers$data$scenario_year
-
-  # layers for carbon storage
-  extent_lyrs <-
-    c('hab_mangrove_extent',
-      'hab_seagrass_extent',
-      'hab_saltmarsh_extent')
-  health_lyrs <-
-    c('hab_mangrove_health',
-      'hab_seagrass_health',
-      'hab_saltmarsh_health')
-  trend_lyrs <-
-    c('hab_mangrove_trend',
-      'hab_seagrass_trend',
-      'hab_saltmarsh_trend')
-
-  # get data together:
-  extent <- AlignManyDataYears(extent_lyrs) %>%
-    dplyr::filter(!(habitat %in% c(
-      "mangrove_inland1km", "mangrove_offshore"
-    ))) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, extent = km2) %>%
-    dplyr::mutate(habitat = as.character(habitat))
-
-  health <- AlignManyDataYears(health_lyrs) %>%
-    dplyr::filter(!(habitat %in% c(
-      "mangrove_inland1km", "mangrove_offshore"
-    ))) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, health) %>%
-    dplyr::mutate(habitat = as.character(habitat))
-
-  trend <- AlignManyDataYears(trend_lyrs) %>%
-    dplyr::filter(!(habitat %in% c(
-      "mangrove_inland1km", "mangrove_offshore"
-    ))) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, trend) %>%
-    dplyr::mutate(habitat = as.character(habitat))
-
-  ## join layer data
-  d <-  extent %>%
-    dplyr::full_join(health, by = c("region_id", "habitat")) %>%
-    dplyr::full_join(trend, by = c("region_id", "habitat"))
-
-  ## set ranks for each habitat
-  habitat.rank <- c('mangrove'         = 139,
-                    'saltmarsh'        = 210,
-                    'seagrass'         = 83)
-
-  ## limit to CS habitats and add rank
-  d <- d %>%
-    dplyr::mutate(rank = habitat.rank[habitat],
-                  extent = ifelse(extent == 0, NA, extent))
-
-  # status
-  status <- d %>%
-    dplyr::filter(!is.na(rank) & !is.na(health) & !is.na(extent)) %>%
-    dplyr::group_by(region_id) %>%
-    dplyr::summarize(score = pmin(1, sum(rank * health * extent, na.rm = TRUE) / (sum(
-      extent * rank, na.rm = TRUE
-    ))) * 100,
-    dimension = 'status') %>%
-    ungroup()
-  ## temporary if empty
-  if (dim(status)[1] < 1) {
-    status <- data.frame(region_id = 1,
-                         score = NA,
-                         dimension = "status")
-  }
-
-  # trend
-
-  trend <- d %>%
-    filter(!is.na(rank) & !is.na(trend) & !is.na(extent)) %>%
-    dplyr::group_by(region_id) %>%
-    dplyr::summarize(score = sum(rank * trend * extent, na.rm = TRUE) / (sum(extent *
-                                                                               rank, na.rm = TRUE)),
-                     dimension = 'trend') %>%
-    dplyr::ungroup()
-  ## temporary if empty
-  if (dim(trend)[1] < 1) {
-    trend <- data.frame(region_id = 1,
-                        score = NA,
-                        dimension = "trend")
-  }
-
-  scores_CS <- rbind(status, trend)  %>%
-    dplyr::mutate(goal = 'CS') %>%
-    dplyr::select(goal, dimension, region_id, score)
-
-
-  ## create weights file for pressures/resilience calculations
-  weights <- extent %>%
+  cs_weights <- cs_extent %>%
     dplyr::filter(extent > 0) %>%
     dplyr::mutate(rank = habitat.rank[habitat]) %>%
     dplyr::mutate(extent_rank = extent * rank) %>%
-    dplyr::mutate(layer = "element_wts_cs_km2_x_storage") %>%
-    dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
+    dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
+    dplyr::select(region_id, habitat, extent_rank, layer)
 
   write.csv(
-    weights,
+    cs_weights,
     sprintf(here("region/temp/element_wts_cs_km2_x_storage_%s.csv"), scen_year),
     row.names = FALSE
   )
 
-  layers$data$element_wts_cs_km2_x_storage <- weights
+  ## Add weights to layers folder
+  add_cs_weights <- cs_weights %>%
+    dplyr::select(-layer)
 
+  layers$data$element_wts_cs_km2_x_storage <- add_cs_weights
 
-  # return scores
-  return(scores_CS)
+  ## Return scores
+  return(cs_score)
 
 }
 
@@ -267,7 +199,7 @@ CP <- function(layers) {
 
   ## Gather health, extent, and rank layers
   # Coastal protection health (uses status layer)
-  health <- AlignDataYears(layer_nm = 'hs_coastal_protection_status', layers_obj = layers) %>%
+  cp_health <- AlignDataYears(layer_nm = 'hs_coastal_protection_status', layers_obj = layers) %>%
     filter(scenario_year == scen_year) %>%
     dplyr::select(region_id, habitat, health = status)
 
@@ -275,13 +207,13 @@ CP <- function(layers) {
   habitat.rank <- c('coral' = 4) # Global uses a rank of 4 for corals
 
   # Coral extent
-  extent <- AlignDataYears(layer_nm = "hab_coral_extent", layers_obj = layers) %>%
+  cp_extent <- AlignDataYears(layer_nm = "hab_coral_extent", layers_obj = layers) %>%
     filter(scenario_year == scen_year) %>%
     dplyr::select(region_id, habitat, extent = km2)
 
   ## Join layers
-  cp_data <-  extent %>%
-    dplyr::full_join(health, by = c("region_id", "habitat")) %>%
+  cp_data <-  cp_extent %>%
+    dplyr::full_join(cp_health, by = c("region_id", "habitat")) %>%
     dplyr::mutate(rank = habitat.rank[habitat])
 
   ## Calculate current status from health, extent, and rank
@@ -309,12 +241,12 @@ CP <- function(layers) {
 
   ## Create weights file for pressures/resilience calculations
 
-  cp_weights <- extent %>%
+  cp_weights <- cp_extent %>%
     dplyr::filter(extent > 0) %>%
     dplyr::mutate(rank = habitat.rank[habitat]) %>%
     dplyr::mutate(extent_rank = extent * rank) %>%
     dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
-    dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
+    dplyr::select(region_id, habitat, extent_rank, layer)
 
   write.csv(
     cp_weights,
@@ -322,7 +254,11 @@ CP <- function(layers) {
     row.names = FALSE
   )
 
-  layers$data$element_wts_cp_km2_x_protection <- cp_weights
+  ## Add weights to layers folder
+  add_cp_weights <- cp_weights %>%
+    dplyr::select(-layer)
+
+  layers$data$element_wts_cp_km2_x_protection <- add_cp_weights
 
   return(cp_score)
 
