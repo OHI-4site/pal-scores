@@ -1,7 +1,17 @@
 ## functions.R.
 ## Each OHI goal model is a separate R function.
 ## The function name is the 2- or 3- letter code for each goal or subgoal;
-## for example, FIS is the Fishing subgoal of Food Provision (FP).
+## for example, ICO is the Iconic Species sub-goal of Sense of Place (SP).
+
+### Function to calculate geometric mean:
+geometric.mean2 <- function (x, na.rm = TRUE) {
+  if (is.null(nrow(x))) {
+    exp(mean(log(x), na.rm = TRUE))
+  }
+  else {
+    exp(apply(log(x), 2, mean, na.rm = na.rm))
+  }
+}
 
 ## Biodiversity goal/subgoals:
 HAB <- function(layers) {
@@ -411,16 +421,6 @@ CW <- function(layers) {
 
   scen_year <- layers$data$scenario_year
 
-  ### Function to calculate geometric mean:
-  geometric.mean2 <- function (x, na.rm = TRUE) {
-    if (is.null(nrow(x))) {
-      exp(mean(log(x), na.rm = TRUE))
-    }
-    else {
-      exp(apply(log(x), 2, mean, na.rm = na.rm))
-    }
-  }
-
   ## Layers
   # Debris
   cw_debris <- AlignDataYears(layer_nm = 'cw_debris_status', layers_obj = layers) %>%
@@ -470,16 +470,6 @@ CW <- function(layers) {
 RS <- function(layers) {
 
   scen_year <- layers$data$scenario_year
-
-  ### Function to calculate geometric mean:
-  geometric.mean2 <- function (x, na.rm = TRUE) {
-    if (is.null(nrow(x))) {
-      exp(mean(log(x), na.rm = TRUE))
-    }
-    else {
-      exp(apply(log(x), 2, mean, na.rm = na.rm))
-    }
-  }
 
   # Research layers
   rs_lyrs <- c(
