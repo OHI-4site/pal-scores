@@ -77,23 +77,24 @@ SPP <- function(layers) {
   scen_year <- layers$data$scenario_year
 
   # Load species status
-  spp_status <- layers$data$spp_status %>%
-    dplyr::select(-layer)
+  spp_status <- AlignDataYears(layer_nm = 'spp_status', layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, status)
 
   # Load trend data and calculate score
-  spp_trend <- layers$data$spp_trend %>%
-    dplyr::select(-layer) %>%
-    mutate(dimension = "trend",
-           goal = "SPP") %>%
-    rename("score" = "trend_score")
+  spp_trend <- AlignDataYears(layer_nm = 'spp_trend', layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
+    mutate(dimension = "trend") %>%
+    dplyr::select(region_id, dimension, score = trend_score)
 
   # Find scores
   spp_scores <- spp_status %>%
     mutate(score = 100 * status,
-           dimension = "status",
-           goal = "SPP") %>%
+           dimension = "status") %>%
     dplyr::select(-status) %>%
-    bind_rows(spp_trend)
+    bind_rows(spp_trend) %>%
+    mutate(goal = "SPP") %>%
+    dplyr::select(region_id, goal, dimension, score)
 
   return(spp_scores)
 }
@@ -422,14 +423,14 @@ CW <- function(layers) {
 
   ## Layers
   # Debris
-  cw_debris <- layers$data$cw_debris_status %>%
+  cw_debris <- AlignDataYears(layer_nm = 'cw_debris_status', layers_obj = layers) %>%
     mutate(cat = "debris") %>%
-    dplyr::select(-layer)
+    dplyr::select(region_id, scenario_year, cat, status)
 
   # Soil Contamination
-  cw_sc <- layers$data$cw_contamination_status %>%
+  cw_sc <- AlignDataYears(layer_nm = 'cw_contamination_status', layers_obj = layers) %>%
     mutate(cat = "contamination") %>%
-    dplyr::select(-layer)
+    dplyr::select(region_id, scenario_year, cat, status)
 
 
   ## Get data together:
@@ -438,7 +439,7 @@ CW <- function(layers) {
 
   ## Calculate the status
   cw_status <- cw_data %>%
-    group_by(region_id, year) %>%
+    group_by(region_id, scenario_year) %>%
     summarize(status = geometric.mean2(status)) %>%
     dplyr::mutate(status = status * 100) %>%
     dplyr::mutate(dimension = "status") %>%
@@ -456,7 +457,7 @@ CW <- function(layers) {
 
   ## Calculate scores
   cw_score <- cw_status %>%
-    dplyr::filter(year == scen_year) %>%
+    dplyr::filter(scenario_year == scen_year) %>%
     dplyr::select(region_id, score = status, dimension) %>%
     bind_rows(cw_trend) %>%
     dplyr::mutate(goal = "CW") %>%
