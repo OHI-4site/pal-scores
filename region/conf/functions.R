@@ -49,7 +49,8 @@ HAB <- function(layers) {
   hab_score <- hab_status %>%
     dplyr::select(region_id, score = status, dimension) %>%
     bind_rows(hab_trend) %>%
-    mutate(goal = "HAB")
+    mutate(goal = "HAB") %>%
+    dplyr::select(region_id, goal, dimension, score)
 
   ## Create weights file for pressures/resilience calculations
   ## This identifies what regions contain what habitats
