@@ -1,6 +1,6 @@
 # region data layers----
 # a list of possible id fields used in datalayers (most will use rgn_id, but not always)
-layers_id_fields    = c('rgn_id', 'region_id', 'cntry_key', 'fao_id', 'fao_saup_id', 'country_id','saup_id','fao_ohi_id')
+layers_id_fields    = c('rgn_id', 'region_id')
 
 # the official list of regions (and corresponding names)
 # (note: this is a .csv file in the layers folder)
