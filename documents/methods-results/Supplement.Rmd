@@ -8,7 +8,7 @@ output:
       # in_header: ../ohi_hdr.html # copied from global
     theme: cerulean
     toc: yes
-    toc_depth: 1
+    toc_depth: 3
     toc_float: yes
     number_sections: yes
   pdf_document:
@@ -23,7 +23,6 @@ Compiled on `r date()`.
 
 library(knitr)
 library(xtable)
-library(pander)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -112,27 +111,31 @@ The following goals were included in the Palmyra OHI+ assessment.
 
 ### Biodiversity (BD)
 
-People value biodiversity in particular for its existence value. This goal assesses the conservation status of species based on the best available data through two subgoals: Species (SPP) and Habitats (HAB). Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for condition of the broad suite of species that depend on them. We calculate each of these subgoals separately and weight them equally when calculating the overall goal score.    
+People value biodiversity in particular for its existence value. This goal assesses the conservation status of species based on the best available data through two sub-goals: Species (SPP) and Habitats (HAB). Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for condition of the broad suite of species that depend on them. We calculate each of these sub-goals separately and weight them equally when calculating the overall goal score.    
 
 #### Habitats (HAB)
 
-The Habitats subgoal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This subgoal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, both terrestrial and marine habitats are included in this assessment.   
+The Habitats sub-goal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This sub-goal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, both terrestrial and marine habitats are included in this assessment.   
 
 **Current Status**  
 
-The Habitats subgoal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score. 
+The Habitats sub-goal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score. 
 
 *Coral Reefs*   
 
 Four zones were used to calculate the coral reef status: back reef, reef crest, fore reef, and lagoon. 
- 
-The following zones were grouped together to form the four reef zones of interest:  
+
+Original raw data included 10 different zones, as shown in the map on the left-hand side. The following zones were grouped together to form the four reef zones of interest, as shown on the map on the right-hand side:    
 
  - Back Reef: Not grouped with any other zone   
  - Reef Crest: Reef Crest and Fore Reef  
  - Fore Reef: Bank/Shelf and Bank/Shelf Escarpment      
  - Lagoon: Lagoon and Channel  
- 
+
+<center>
+![coral_zones_raw](images/coral_zones_raw.png){width=47%} ![coral_zones_reclass](images/coral_zones_reclassified.png){width=47%}  
+</center>
+
 The fore reef is reassigned to part of the reef crest to better reflect the position of those data points on the reef. The Bank/Shelf and Bank/Shelf Escarpment are then grouped together and renamed as the fore reef with an additional designation to differentiate the western fore reef and the eastern fore reef. Based on a map of Palmyra, the longitude line 162.075 will be used to divide the fore reef into western and eastern. These groupings follow the zones delineated by NOAA in the Coral Reef Ecosystems Monitoring Report for the Pacific Remote Islands Marine National Monument, available [here](https://repository.library.noaa.gov/view/noaa/23421).  
  
 Coral condition is based on the percent of live coral cover in each of the zones. The reference point, or target live coral cover range, for each zone is:   
@@ -230,13 +233,19 @@ The Species subgoal aims to assess the average condition of species in Palmyra. 
 
 A list of species occurring in Palmyra was created using IUCN range maps and supplemented with fish and bird lists obtained from The Nature Conservancy for a total of 587 species. Species condition was pulled from the IUCN Red List (IUCN 2020). 
 
-The reference point for the Species subgoal is 100% of historically occurring species having a status of "Least Concern".   
+The reference point for the Species sub-goal is all species have an IUCN status of "Least Concern".   
 
-The species fall within 10 different taxonomic classes. Since there are not an even number of species in each class, the status is first calculated for each class as the proportion of species in the class with a rank of "Least Concern". 
+A 0-1 extinction risk score is assigned to each species based on IUCN conservation status:   
+ 
+  * 'LC' = 0, 'NT' = 0.2, 'CD' = 0.3, 'VU' = 0.4, 'T' = 0.6, 'EN' = 0.6, 'CR' = 0.8, 'EX' = 1.0
 
-$class_{status}~=~n_{LC}~/~n_{class}$   
+The species fall within 10 different taxonomic classes. Since there are not an even number of species in each class, the status is first calculated for each class as the average of the extinction risk scores. The overall status is then found by averaging the extinction risk score of all 10 classes. Finally, the score is rescaled so a risk factor of 0.75 is equal to zero, as in the following equation. 
 
-Where $n_{LC}$ is the number of species in each class that have a rank of "Least Concern" and $n_{class}$ is the total number of species in each class. The overall status is then the average of the status score for each class.      
+$status~=~(0.75~-~mean~risk)~/~0.75$   
+
+Where $mean~risk$ is the average species extinction risk score, found by averaging the mean extinction risk score of all 10 classes. 
+
+This assigns a score of 0 when 75% species are extinct, a level comparable to the five documented mass extinctions (Barnosky et al. 2011) and would constitute a catastrophic loss of biodiversity.      
 
 **Trend** 
 
