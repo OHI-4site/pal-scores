@@ -4,7 +4,7 @@ layers_id_fields    = c('rgn_id', 'region_id', 'cntry_key', 'fao_id', 'fao_saup_
 
 # the official list of regions (and corresponding names)
 # (note: this is a .csv file in the layers folder)
-layer_region_labels = 'rgn_global'
+layer_region_labels = 'rgn_pal'
 
 # the official ocean areas of each region (used to weight each subregions contribution to the region score)
 # (note: this is a .csv file in the layers folder)
