@@ -88,8 +88,12 @@ SPP <- function(layers) {
 
   # Load species status
   spp_status <- AlignDataYears(layer_nm = 'spp_status', layers_obj = layers) %>%
-    filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id, status)
+    filter(scenario_year == scen_year,
+           !is.na(status)) %>%
+    group_by(region_id, class) %>%
+    mutate(class_status = mean(status)) %>%
+    group_by(region_id) %>%
+    summarize(status = mean(class_status))
 
   # Load trend data and calculate score
   spp_trend <- AlignDataYears(layer_nm = 'spp_trend', layers_obj = layers) %>%
@@ -99,7 +103,7 @@ SPP <- function(layers) {
 
   # Find scores
   spp_scores <- spp_status %>%
-    mutate(score = 100 * status,
+    mutate(score = 100*((0.75-status)/0.75),  # Assigns a region score of 0 if 75% of all species were extinct
            dimension = "status") %>%
     dplyr::select(-status) %>%
     bind_rows(spp_trend) %>%
