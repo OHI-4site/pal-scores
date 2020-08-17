@@ -66,7 +66,11 @@ Run this chunk to calculate and save scores as `scores` object and as `scores.cs
 ## calculate scenario scores
 scores <- ohicore::CalculateAll(conf, layers)
 
-## save scores as scores.csv
+## Remove the 'Index' region_id = 0 from scores 
+scores <- scores %>% 
+  dplyr::filter(region_id != 0)
+
+## Save scores as scores.csv
 readr::write_csv(scores, 'scores.csv', na='')
 ```
 
