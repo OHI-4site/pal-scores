@@ -519,19 +519,24 @@ TR <- function(layers) {
   scen_year <- layers$data$scenario_year
 
   # Placeholder Status
-  tr_status <- AlignDataYears(layer_nm = "tr_status_placeholder", layers_obj = layers) %>%
-    dplyr::select(region_id, scenario_year, score = status)
+  tr_status <- AlignDataYears(layer_nm = "tr_status", layers_obj = layers) %>%
+    dplyr::select(region_id, scenario_year, status)
 
-  # Calculate trend - NA for now
-  tr_trend <- data.frame(region_id = 1,
-                         scenario_year = 2020,
-                         score = NA,
-                         dimension = "trend")
+  # Calculate trend
+  trend_data <- tr_status %>%
+    filter(!is.na(status))
+
+  trend_years <- (scen_year - 4):(scen_year)
+
+  tr_trend <-
+    CalculateTrend(status_data = trend_data, trend_years = trend_years)
 
   # Calculate score
   tr_score <- tr_status %>%
     filter(scenario_year == scen_year) %>%
-    mutate(dimension = "status") %>%
+    mutate(score = 100 * status,
+           dimension = "status") %>%
+    dplyr::select(region_id, score, dimension) %>%
     rbind(tr_trend) %>%
     mutate(goal = "TR") %>%
     dplyr::select(region_id, goal, dimension, score)
@@ -545,19 +550,24 @@ RAO <- function(layers) {
   scen_year <- layers$data$scenario_year
 
   # Placeholder status
-  rao_status <- AlignDataYears(layer_nm = "rao_status_placeholder", layers_obj = layers) %>%
-    dplyr::mutate(dimension = "status") %>%
-    dplyr::select(region_id, scenario_year, score = status, dimension)
+  rao_status <- AlignDataYears(layer_nm = "rao_status", layers_obj = layers) %>%
+    dplyr::select(region_id, scenario_year, status)
 
-  # Calculate trend - NA for now
-  rao_trend <- data.frame(region_id = 1,
-                          scenario_year = 2020,
-                          score = NA,
-                          dimension = "trend")
+  # Calculate trend
+  trend_data <- rao_status %>%
+    filter(!is.na(status))
+
+  trend_years <- (scen_year - 4):(scen_year)
+
+  rao_trend <-
+    CalculateTrend(status_data = trend_data, trend_years = trend_years)
 
   # Calculate scores
   rao_score <- rao_status %>%
     filter(scenario_year == scen_year) %>%
+    mutate(score = 100 * status,
+           dimension = "status") %>%
+    dplyr::select(region_id, score, dimension) %>%
     bind_rows(rao_trend) %>%
     dplyr::mutate(goal = "RAO") %>%
     dplyr::select(region_id, goal, dimension, score)
