@@ -119,7 +119,7 @@ The Habitats sub-goal measures the average condition of habitats present on the 
 
 **Current Status**  
 
-The Habitats sub-goal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score.   
+The Habitats sub-goal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score.
 <br>   
 *Coral Reefs*   
 
@@ -133,10 +133,9 @@ Original raw data included 10 different zones, as shown in the map in Figure 4.1
  - Lagoon: Lagoon and Channel  
 
 <center>
-![coral_zones_raw](images/coral_zones_raw.png){width=47%} ![coral_zones_reclass](images/coral_zones_reclassified.png){width=47%}  
+![coral_zones_raw](images/coral_zones_raw.png){width=70%} ![coral_zones_reclass](images/coral_zones_reclassified.png){width=70%}  
 </center>
-***Figure 4.1:** Map A (left) displays coral zones as shown in the raw data and map B (right) shows the coral zones as they have been reclassified for this assessment.*      
-
+***Figure 4.1 Coral zones.** Map A (top) displays coral zones as shown in the raw data and map B (bottom) shows the coral zones as they have been reclassified for this assessment.* <br>     
 The fore reef is reassigned to part of the reef crest to better reflect the position of those data points on the reef. The Bank/Shelf and Bank/Shelf Escarpment are then grouped together and renamed as the fore reef with an additional designation to differentiate the western fore reef and the eastern fore reef. Based on a map of Palmyra, the longitude line 162.075 will be used to divide the fore reef into western and eastern. These groupings follow the zones delineated by NOAA in the Coral Reef Ecosystems Monitoring Report for the Pacific Remote Islands Marine National Monument, available [here](https://repository.library.noaa.gov/view/noaa/23421).  
  
 Coral condition is based on the percent of live coral cover in each of the zones. The reference point, or target live coral cover range, for each zone is:   
@@ -151,52 +150,51 @@ The western and eastern fore reef both have the same reference point.
 Coral reef status is first calculated for each zone. The status is calculated as the area of the reef zone falling within or above the reference point category divided by the total area of the reef zone (Equation 4.1).     
 
 $$
-status_{zone}~=~ref_{area}~/~total_{area},  ~~(Eq~4.1) 
+status_{zone}~=~\frac { A_{ref} } { A_{total} },  ~~(Eq~4.1) 
 $$  
 
-Where $ref_{area}$ is the area of the reef zone falling within or above the reference point category and $total_{area}$ is the total area of the reef zone. For the status calculation we adjust the area of the lagoon to include only the area of the lagoon where coral can reasonably grow. Other zones are not area adjusted due to incomplete knowledge and data. In the future adjusting the area of all zones to include only the area where coral can be expected to grow would strengthen this analysis.          
+Where $A_{ref}$ is the area of the reef zone falling within or above the reference point category and $A_{total}$ is the total area of the reef zone. For the status calculation we adjust the area of the lagoon to include only the area of the lagoon where coral can reasonably grow. Other zones are not area adjusted due to incomplete knowledge and data. In the future adjusting the area of all zones to include only the area where coral can be expected to grow would strengthen this analysis.          
 
-The overall status score is calculated as the area weighted mean of the status score for each zone. Here we use the total area of the lagoon.       
+The overall status score is calculated as the area weighted mean of the status score for each zone. Here we use the total area of the lagoon.
 <br>   
-
 *Rainforests*   
 
-The rainforest condition is based on the land area of the rainforest. Invasive coconut palms (*Cocos nucifera*) are limiting the land area that can be occupied by native rainforests. Palmyra has planned coconut palm removal activities, which they hope will increase the land area of native forests. 
+The rainforest condition is based on the land area of the rainforest. Invasive coconut palms (*Cocos nucifera*) are limiting the land area that can be occupied by native rainforests. Palmyra has planned coconut palm removal activities, which they hope will increase the land area of native forests.   
 
-The raw data included four vegetation categories: native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifera* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis. 
+The raw data included four vegetation categories: native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifera* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis.   
 
-The rainforest habitat status is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed (Equation 4.2). The reference point is the rainforest and coconut palm area in 2001.  
+The rainforest habitat status is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed (Equation 4.2). The reference point is the rainforest and coconut palm area in 2001.    
 
 $$
-status = area_{current}~(km^2)~/~area_{potential}~(km^2), ~~(Eq~ 4.2) 
+status~=~ \frac { A_{current} } { A_{potential} }, ~~(Eq ~4.2) 
 $$  
 
-The current rainforest area ($area_{current}$) is based on the Burnett, M.W. *et al.* 2019 study where forest is defined as the total area of the *Scaevola* and native forest categories.    
+The current rainforest area ($A_{current}$) km^2^ is based on the Burnett, M.W. *et al.* 2019 study where forest is defined as the total area of the *Scaevola* and native forest categories.    
 
-The potential rainforest area ($area_{potential}$) is based on a 2001 satellite image showing approximately 43% of the islands are dominated by coconut plantations and 48.2% of the islands are dominated by other vegetation communities as discussed in the [USGS Terrestrial Management Plan](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf). The remaining 8.8% is assumed to be non-vegetated and is excluded from this analysis. The potential rainforest area is calculated as the land area added once 95% of the historic palm plantations are removed plus the original 48.2% of land area that was dominated by rainforests (Equations 4.3 - 4.5).     
+The potential rainforest area ($A_{potential}$) km^2^ is based on a 2001 satellite image showing approximately 43% of the islands are dominated by coconut plantations and 48.2% of the islands are dominated by other vegetation communities as discussed in the [USGS Terrestrial Management Plan](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf). The remaining 8.8% is assumed to be non-vegetated and is excluded from this analysis. The total land area ($A_{total}$) used in these calculations (2.46 km^2^) was derived from a study completed in 2000 (referenced in Burnett *et al* 2019), which is the closest land estimate we could obtain to the 2001 satellite image. The potential rainforest area is calculated as the land area added once 95% of the historic palm plantations are removed plus the original 48.2% of land area that was dominated by rainforests (Equations 4.3 - 4.5).     
 
 $$
-area_{potential}~=~area_{added}~(km^2)~+~area_{original}~(km^2) , ~~(Eq 4.3)
+A_{potential}~=~A_{added}~+~A_{original} , ~~(Eq ~4.3)
 $$
 
 And where   
 
 $$
-area_{added}~=~0.95~*~(0.43~*~2.46~(km^2)), ~~(Eq~ 4.4)
+A_{added}~=~0.95~*~(0.43~*~A_{total}), ~~(Eq~ 4.4)
 $$   
 $$
-area_{original}~=~0.482~*~2.46~(km^2), ~~(Eq~4.5)
+A_{original}~=~0.482~*~A_{total}, ~~(Eq~4.5)
 $$   
 
 **Trend** 
 <br>   
 *Coral Reefs* 
 
-The benthic habitat mapping project used to calculate the current status was the first study of its kind on Palmyra Atoll. As no similar studies have been done previously which estimate historic live coral cover across the different reef zones, an estimate of coral trend was derived from the OHI Global Assessment. The OHI global trend data are calculated as a linear trend in coral condition, on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the OHI Global Assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia.   
+The benthic habitat mapping project used to calculate the current status was the first study of its kind on Palmyra Atoll. As no similar studies have been done previously which estimate historic live coral cover across the different reef zones, an estimate of coral trend was derived from the OHI Global Assessment. The OHI global trend data are calculated as a linear trend in coral condition, on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the OHI Global Assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia.
 <br>   
 *Rainforests* 
 
-The trend in rainforest condition is calculated as the rate of change in forest area per year from 2005-2019. The trend is the five year average change in rainforest area. The linear trend is calculated based on rainforest area in 2005, 2010, 2016, and 2019.    
+The trend in rainforest condition is calculated as the rate of change in forest area per year from 2005-2019. The trend is the five year average change in rainforest area. The linear trend is calculated based on rainforest area in 2005, 2010, 2016, and 2019. 
 <br>   
 **Data** 
 <br>   
@@ -206,7 +204,7 @@ Data to calculate the current status of coral reefs were gathered from National 
 
 Date Downloaded: June 30, 2020
 
-Citation: U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Center for Coastal Ocean Sciences. (2011). Palmyra Habitat Maps [Data file]. Retrieved from https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/   
+Citation: U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Center for Coastal Ocean Sciences. (2011). Palmyra Habitat Maps [Data file]. Retrieved from https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/
 <br>   
 *Rainforests* 
 
@@ -248,10 +246,9 @@ A list of species occurring in Palmyra was created using IUCN range maps and sup
 
 The reference point for the Species sub-goal is all species have an IUCN status of "Least Concern".   
 
-Threat weights, were assigned based on the IUCN threat categories status of each species, following the weighting schemes developed by Butchart *et al* (2007) (Table 4.1). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include the Data Deficient classification as assessed species following previously published guidelines for a mid-point approach (Schipper *et al.* 2008; Hoffmann *et al.* 2010).  
-
-
-**Table 4.1. Weights for assessment of species status based on IUCN risk categories.**
+Threat weights, were assigned based on the IUCN threat categories status of each species, following the weighting schemes developed by Butchart *et al* (2007) (Table 4.1). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include the Data Deficient classification as assessed species following previously published guidelines for a mid-point approach (Schipper *et al.* 2008; Hoffmann *et al.* 2010).
+<br>   
+***Table 4.1. Weights for assessment of species status based on IUCN risk categories.***
 
 | Risk Category   | IUCN code | Weight|
 |-----------------|-----------|-------|
@@ -265,16 +262,16 @@ Threat weights, were assigned based on the IUCN threat categories status of each
 The species fall within 10 different taxonomic classes and to avoid over weighting, the status is first calculated for each class as the average of the extinction risk scores. An overall extinction risk status is then found by averaging the extinction risk score of all 10 classes. Finally, the score is rescaled so a risk factor of 0.75 is equal to zero (Equation 4.6).   
 
 $$
-status~=~(0.75~-~mean~risk)~/~0.75, ~~(Eq ~4.6)
+status~=~ \frac { (0.75~-~risk_{avg}) } {0.75}, ~~~~(Eq ~4.6)
 $$   
 
-Where $mean~risk$ is the average species extinction risk score, found by averaging the mean extinction risk score of all 10 classes. 
+Where $risk_avg$ is the average extinction risk score, found by averaging the mean extinction risk score of all 10 classes. 
 
-This assigns a score of 0 when 75% species are extinct, a level comparable to the five documented mass extinctions (Barnosky *et al.* 2011) and would constitute a catastrophic loss of biodiversity.      
+This assigns a score of 0 when 75% species are extinct, a level comparable to the five documented mass extinctions (Barnosky *et al.* 2011) and would constitute a catastrophic loss of biodiversity.
 <br>    
 **Trend** 
 
-The species trend is calculated using data the IUCN provides for current and past assessments of species. Discrete species assessments between 1965-2020 are used to estimate annual change in IUCN risk status for each species. Species trend is evaluated for species with more than two past assessments. Trend for species with less than two past assessments is estimated using the population trend noted in species history information. We then summarize these species trend values for each region using the same general approach used to calculate status.  
+The species trend is calculated using data the IUCN provides for current and past assessments of species. Discrete species assessments between 1965-2020 are used to estimate annual change in IUCN risk status for each species. Species trend is evaluated for species with more than two past assessments. Trend for species with less than two past assessments is estimated using the population trend noted in species history information. We then summarize these species trend values for each region using the same general approach used to calculate status.
 <br>   
 **Data**
 
@@ -284,12 +281,12 @@ Date Accessed: June 9, 2020
 
 Citation: IUCN 2020. IUCN Red List of Threatened Species. Version 2020-1 <www.iucnredlist.org>.  
 
-Additional species lists were provided by Alex Wegmann at The Nature Conservancy on July 8, 2020   
+Additional species lists were provided by Alex Wegmann at The Nature Conservancy on July 8, 2020
 <br>   
 
 ### Clean Waters (CW)
 
-People value marine waters that are free of pollution and debris for aesthetic and health reasons. Although Palmyra has a limited population, people are sensitive to pollution and debris in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. Due to limited data availability, this goal includes two sources of pollution - marine debris and soil contamination. The main source of pollution on the island is marine debris from the fishing aggregation devices (FADs) and the military history of the island has left a legacy of soil contamination. The overall Clean Waters score is the geometric mean of these two layer scores. This goal scores highest when the contamination level is zero.   
+People value marine waters that are free of pollution and debris for aesthetic and health reasons. Although Palmyra has a limited population, people are sensitive to pollution and debris in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. Due to limited data availability, this goal includes two sources of pollution - marine debris and soil contamination. The main source of pollution on the island is marine debris from the fishing aggregation devices (FADs) and the military history of the island has left a legacy of soil contamination. The overall Clean Waters score is the geometric mean of these two layer scores. This goal scores highest when the contamination level is zero.
 <br>   
 *Marine Debris*   
   
@@ -300,12 +297,12 @@ Marine debris current status is calculated based on the number of annual grounde
 The current status is scaled between 0-1 by subtracting the reference point from the number of groundings and then dividing by the reference point (Equation 4.7).     
 
 $$
-status~=~(fad_{y}~-~fad_{reference})/~fad_{reference} ~~(Eq ~4.7)
+status~=~ \frac { (fad_{y}~-~fad_{ref}) } { fad_{ref} }, ~~~(Eq ~4.7)
 $$   
 
-Where $fad_{y}$ is the yearly number of recorded FAD groundings and $fad_{reference}$ is the reference point number of 6 annual FAD groundings.
+Where $fad_{y}$ is the yearly number of recorded FAD groundings and $fad_{ref}$ is the reference point number of 6 annual FAD groundings.  
 
-This gives high scores to years with greater levels of marine debris. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.   
+This gives high scores to years with greater levels of marine debris. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.
 <br>   
 **Trend**   
 
@@ -313,7 +310,7 @@ The trend in marine debris is calculated as the rate of change in the number of 
 <br>   
 **Data**   
 
-Data to calculate the marine debris layer come from a table of FADs found ashore on Palmyra Atoll. Data were obtained from Alex Wegmann at The Nature Conservancy on July 8, 2020.   
+Data to calculate the marine debris layer come from a table of FADs found ashore on Palmyra Atoll. Data were obtained from Alex Wegmann at The Nature Conservancy on July 8, 2020.
 <br>   
 *Soil Contamination*   
   
@@ -325,9 +322,9 @@ Two different reference levels will be used to scale the contamination scores fr
 
 *TEL*   
 
-TEL reference levels were assigned based on the TELs established by the U.S. Environmental Protection Agency for marine sediments and the lowest established Eco-SSLs for any taxonomic group. TEL and Eco-SSL values (mg/km dry weight) for the most frequently detected contaminants on Palmyra (Table 4.2) are replicated from Table 1 of Struckhoff *et al* 2018.  
-
-**Table 4.2. Threshold Effect Levels (TELs) and Ecological soil screening levels (Eco-SSLs) for the main contaminants found in soils around Palmyra. NA indicates a toxicity threshold has not been established.**        
+TEL reference levels were assigned based on the TELs established by the U.S. Environmental Protection Agency for marine sediments and the lowest established Eco-SSLs for any taxonomic group. TEL and Eco-SSL values (mg/km dry weight) for the most frequently detected contaminants on Palmyra (Table 4.2) are replicated from Table 1 of Struckhoff *et al* 2018.
+<br>   
+***Table 4.2. Midpoint reference levels.** Threshold Effect Levels (TELs) and Ecological soil screening levels (Eco-SSLs) for the main contaminants found in soils around Palmyra. NA indicates a toxicity threshold has not been established. These values are used as the midpoint reference levels in the status calculation.*           
 
 | Contaminant | Symbol | TEL   | Eco-SSL |
 |-------------|--------|-------|---------|
@@ -347,9 +344,9 @@ TELs are used for marine sediments and the lowest Eco-SSL is used for soil sampl
 
 *PEL*   
 
-For soil samples, the Canadian freshwater contamination PELs (mg/kg dry weight) are used (Table 4.3), as these are more conservative than the marine contamination levels. Consensus-based freshwater PELs were established in 2000. Concentrations were replicated from Table 3 in MacDonald *et al* 2000.   
-
-**Table 4.3. Freshwater contamination Probable Effect Levels (PELs) for the main contaminants found in soils around Palmyra.**   
+For soil samples, the Canadian freshwater contamination PELs (mg/kg dry weight) are used (Table 4.3), as these are more conservative than the marine contamination levels. Consensus-based freshwater PELs were established in 2000. Concentrations were replicated from Table 3 in MacDonald *et al* 2000.
+<br>   
+***Table 4.3. Soil sample upper reference levels** Freshwater contamination Probable Effect Levels (PELs) for the main contaminants found in soils around Palmyra. These levels are used as the upper reference level for soil samples in the status calculation.*   
 
 | Contaminant | Symbol | PEL   | 
 |-------------|--------|-------|
@@ -360,9 +357,9 @@ For soil samples, the Canadian freshwater contamination PELs (mg/kg dry weight) 
 | Nickel      | Ni     | 36    |
 | Zinc        | Zn     | 315   | 
 
-Marine sediment PELs (mg/kg of dry weight) are obtained from NOAA guidelines established in 1999 (Table 4.4). These are called Effect Range Median (ERM) levels, which is the NOAA equivalent of PELs. Concentrations were obtained from Table 1 in the NOAA 1999 guidance. 
-
-**Table 4.4. Marine sediment Probable Effect Levels (PELs) for the main contaminants found in soils around Palmyra.**   
+Marine sediment PELs (mg/kg of dry weight) are obtained from NOAA guidelines established in 1999 (Table 4.4). These are called Effect Range Median (ERM) levels, which is the NOAA equivalent of PELs. Concentrations were obtained from Table 1 in the NOAA 1999 guidance.
+<br>   
+**Table 4.4. Marine sediment upper reference levels.** Marine sediment Probable Effect Levels (PELs) for the main contaminants found in soils around Palmyra. These levels are used as the upper reference level for marine sediment samples in the status calculation.*   
 
 | Contaminant | Symbol | PEL   | 
 |-------------|--------|-------|
@@ -375,17 +372,24 @@ Marine sediment PELs (mg/kg of dry weight) are obtained from NOAA guidelines est
 
 No PELs are available for Antimony, Colbalt, and Manganese. For these we will approximate an upper limit that is one order of magnitude higher than the established TEL or Eco-SSL.  
 
-A status is calculated for each site using the geometric mean of the 9 contaminants (Equation 4.8). An overall status is then found using an area weighted mean of the site status (Equation 4.9). This gives high scores to years with greater levels of contamination. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.  
+Contaminants are scaled 0-1 using a midpoint level, (TEL or ECO-SSl) and an upper level (PELs) (Equation 4.8). A status is then calculated for each site using the geometric mean of the 9 contaminants (Equation 4.9).  
 
-$$ Geometric~mean ~~(Eq ~4.8) 
+$$
+Scaling~equation ~~(Eq ~4.8)
+$$ 
+<br>
+$$
+Geometric~mean ~~(Eq ~4.9) 
 $$   
+Finally, an overall status is found using an area weighted mean of the site status (Equation 4.10). This gives high scores to years with greater levels of contamination. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.   
 
-$$ Overall~status ~~(Eq ~4.9)
-$$   
+$$ 
+Overall~status ~~(Eq ~4.10)
+$$
 <br>   
 **Trend**   
 
-This the first study on soil contamination done for Palmyra Atoll, although a second study is currently underway. Contamination sources are remnants of military action on the island during World War II. Based on the minimal change in current status from 2008 to 2010, we are assuming that there has been no change in contamination levels. Therefore, a trend of 0 is being used until additional information is obtained.   
+This the first study on soil contamination done for Palmyra Atoll, although a second study is currently underway. Contamination sources are remnants of military action on the island during World War II. Based on the minimal change in current status from 2008 to 2010, we are assuming that there has been no change in contamination levels. Therefore, a trend of 0 is being used until additional information is obtained.
 <br>   
 **Data**
 
@@ -410,7 +414,7 @@ Citation: National Oceanic and Atmospheric Administration. (1999). Sediment Qual
 
 ### Habitat Services (HS)
 
-The Habitat Services (HS) goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Carbon Storage (CS) and Coastal Protection (CP).   
+The Habitat Services (HS) goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Carbon Storage (CS) and Coastal Protection (CP).
 <br>   
 
 ####  Carbon Storage (CS) 
@@ -421,9 +425,9 @@ The Carbon Storage sub-goal measures the health of carbon storing habitats. In P
 
 The Carbon Storage subgoal is based on the percent cover of native tree species on the island. 
 
-The following tree species are included in the mapping project raw data and we have designated if they are native or nonnative (Table 4.5). Category designations were assigned based on species lists found in Tables 1 and 2 of the U.S. Geological Survey 2011 Terrestrial Forest Management Plan for Palmyra Atoll, found [here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf).     
-
-**Table 4.5. Tree species classifications.**   
+The following tree species are included in the mapping project raw data and we have designated if they are native or nonnative (Table 4.5). Category designations were assigned based on species lists found in Tables 1 and 2 of the U.S. Geological Survey 2011 Terrestrial Forest Management Plan for Palmyra Atoll, found [here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf).
+<br>   
+***Table 4.5. Tree species classifications.***   
 
 | Species                      | Classification | 
 |------------------------------|----------------| 
@@ -452,17 +456,17 @@ Unknown tree species and standing water were excluded from the analysis, as were
 
 The reference point for Carbon Storage is 95% of the forest area dominated by native tree species.  
  
-Current status is calculated as the current percent of forest dominated by native trees over the reference point percentage (Equation 4.10).    
+Current status is calculated as the current percent of forest dominated by native trees in year (y) over the reference point percentage (Equation 4.11).    
 
 $$
-status~=~percent~cover~/~reference~point~percent~cover  ~~(Eq ~4.10)
+status~=~ \frac {percent~cover_{y} } {percent~cover_{ref} }~,  ~~~(Eq ~4.11)
 $$
 <br>   
 **Trend**   
 
 The Carbon Storage trend will use the same data as the rainforest condition trend calculated for the Biodiversity: Habitats sub-goal. 
 
-There is a lack of historic data categorizing forests as native or nonnative to the level of detail used in the Carbon Storage status calculation. Therefore, the best estimate for trend is based on the trend in the condition and extent of rainforest habitats. If rainforests are healthy and growing in extent, there will be better opportunities for carbon storage. For details on the methodology for calculating rainforest trend refer to the Biodiversity: Habitats sub-goal.    
+There is a lack of historic data categorizing forests as native or nonnative to the level of detail used in the Carbon Storage status calculation. Therefore, the best estimate for trend is based on the trend in the condition and extent of rainforest habitats. If rainforests are healthy and growing in extent, there will be better opportunities for carbon storage. For details on the methodology for calculating rainforest trend refer to the Biodiversity: Habitats sub-goal.
 <br>   
 **Data**  
 
@@ -483,19 +487,19 @@ The Coastal Protection sub-goal measures the health of habitats that contribute 
 
 The Coastal Protection current status is found using the condition and extent of coral reef habitat. Coral condition is the current condition of coral reef habitat relative to the reference point. This is the same as the coral status calculated in the Biodiversity: Habitats sub-goal. For more information about how the condition of coral reef status is calculated, refer to the methodology for the Biodiversity: Habitats sub-goal. The extent of coral reefs is calculated as the total reef area.   
 
-The Coastal Protection status is calculated as the relative health of the habitats that provide coastal protection weighted by their area and protectiveness rank (Equation 4.11).     
+The Coastal Protection status is calculated as the relative health of the habitats that provide coastal protection weighted by their area and protectiveness rank (Equation 4.12).     
 
 $$
-status~=~(C_{condition}~*~A~*~w)~/~(A~*~w)  ~~(Eq ~4.11) 
+status~=~ \frac { (C~*~A~*~w) } { (A~*~w) }~, ~~~(Eq ~4.12) 
 $$   
 
-Where $C_{condition}$ is the condition of coral habitats as defined above, $A$ is the area of coral reef habitat, and $w$ is the protectiveness rank for coral reefs. Coral reefs are the only habitat included in the Coastal Protection subgoal for Palmyra, so there is no protectiveness rank and the area cancels out. Therefore, the current status for Coastal Protection is equivalent to the coral reef condition calculated in the Biodiversity: Habitats subgoal.   
+Where $C$ is the condition of coral habitats as defined above, $A$ is the area of coral reef habitat, and $w$ is the protectiveness rank for coral reefs. Coral reefs are the only habitat included in the Coastal Protection sub-goal for Palmyra, so the protectiveness rank and area cancels out, leaving the current status for Coastal Protection equivalent to the coral reef condition calculated in the Biodiversity: Habitats sub-goal.
 <br>   
 **Trend**   
 
-The Coastal Protection trend will use the same data as the coral condition trend calculated for the Biodiversity: Habitats subgoal. 
+The Coastal Protection trend will use the same data as the coral condition trend calculated for the Biodiversity: Habitats sub-goal. 
 
-Coral condition is lacking historic data for all areas of the reef used to estimate current status (fore reef, reef crest, back reef, and lagoon). Therefore, the trend of coral condition will be estimated using the OHI global data. The OHI global trend data is calculated as a linear trend in coral condition, calculated on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the OHI Global Assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia.     
+Coral condition is lacking historic data for all areas of the reef used to estimate current status (fore reef, reef crest, back reef, and lagoon). Therefore, the trend of coral condition will be estimated using the OHI global data. The OHI global trend data is calculated as a linear trend in coral condition, calculated on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the OHI Global Assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia.
 <br>   
 **Data**   
 
@@ -507,27 +511,27 @@ Citation: U.S. Department of Commerce, National Oceanic and Atmospheric Administ
 
 ### Research (RS)
 
-This goal attempts to capture the aspects of the marine and terrestrial environment that support scientific research on Palmyra Atoll. Healthy ecosystems on the island support research and advance scientific understanding. The research goal is based on three equally weighted layers: employment, research funding, and scientific publications.   
+This goal attempts to capture the aspects of the marine and terrestrial environment that support scientific research on Palmyra Atoll. Healthy ecosystems on the island support research and advance scientific understanding. The research goal is based on three equally weighted layers: employment, research funding, and scientific publications.
 <br>   
 *Employment*   
 
 **Current Status**   
 
-The employment layer is calculated based on the number of full time equivalent (FTE) positions in conservation science supported by The Nature Conservancy. The reference point for employment is five FTE positions. Status scores are re-scaled to 0-1 by dividing the number of FTE positions by the reference point (Equation 4.12).    
+The employment layer is calculated based on the number of full time equivalent (FTE) positions in conservation science supported by The Nature Conservancy. The reference point for employment is five FTE positions. Status scores are re-scaled to 0-1 by dividing the number of FTE positions by the reference point (Equation 4.13). Any value over one is given a score of 1.     
 
 $$
-status = FTE_{y}~/~ref ~~(Eq ~4.12)
+status~=~ \frac { FTE_{y} } { FTE_{ref} }, ~~(Eq ~4.13)
 $$  
 
-Where $FTE_{y}$ is the number of full-time equivalent positions in year (y) and $ref$ is the reference point.   
+Where $FTE_{y}$ is the number of full-time equivalent positions in year (y) and $FTE_{ref}$ is the FTE positions reference point.     
 <br>   
 **Trend**   
 
-The trend in employment is calculated as the rate of change in the number of full-time equivalent positions from 2014-2020.    
+The trend in employment is calculated as the rate of change in the number of full-time equivalent positions from 2014-2020. 
 <br>   
 **Data**   
 
-Data for this layer were gathered through verbal communication with Alex Wegmann at The Nature Conservancy on July 8, 2020.       
+Data for this layer were gathered through verbal communication with Alex Wegmann at The Nature Conservancy on July 8, 2020.
 <br>     
 *Research Funding*   
 
@@ -541,27 +545,33 @@ Data for this layer were gathered through verbal communication with Alex Wegmann
 
 **Current Status**   
 
-The publications layer is calculated based on the number of scientific studies published about resources on Palmyra each year. The reference point is 10 annual publications. Status scores are re-scaled to 0-1 by dividing the number of scientific publications by the reference point (Equation 4.13).  
+The publications layer is calculated based on the number of scientific studies published about resources on Palmyra each year. The reference point is 10 annual publications. Status scores are re-scaled to 0-1 by dividing the number of scientific publications by the reference point (Equation 4.14).  
 
 $$
-status = publications_{y}~/~ref  ~~(Eq ~4.13)
+status~=~ \frac { pubs_{y} } { pubs_{ref} },  ~~(Eq ~4.14)
 $$  
 
-Where $publications_{y}$ is the number of scientific publications in year (y) and $ref$ is the reference point.  
+Where $pubs_{y}$ is the number of scientific publications in year (y) and $pubs_{ref}$ is the number of publications reference point.
 <br>   
 **Trend**   
 
-The trend in scientific publications is calculated as the rate of change in the number of scientific papers published annually from 2014-2020.  
+The trend in scientific publications is calculated as the rate of change in the number of scientific papers published annually from 2014-2020.
 <br>   
 **Data**
 
-Data for this layer comes from a scientific library containing all scientific publications relating to natural resources on Palmyra Atoll. This scientific library was obtained from Alex Wegmann at The Nature Conservancy on June 17, 2020.   
+Data for this layer comes from a scientific library containing all scientific publications relating to natural resources on Palmyra Atoll. This scientific library was obtained from Alex Wegmann at The Nature Conservancy on June 17, 2020.  
 
 ### Resource Access Opportunity (RAO)
+
+**Update method once the 'zero' score fishing amount is determined**.  
 
 This goal is intended to measure access to recreational fishing opportunities on Palmyra Atoll. Access to recreational fishing is mandated within the National Wildlife Refuge by the U.S. Fish and Wildlife Service. 
 
 Data for calculating the current status and trend of access to recreational fishing opportunities were not available at the time of this assessment. Therefore, a placeholder with a current status of NA and a trend of 0 was used.   
+
+$$
+RAO~status,  ~~(Eq ~4.15)
+$$ 
 
 ### Sense of Place (SP)
 
@@ -575,9 +585,9 @@ A primary iconic species for Palmyra was gathered based on species listed on the
 
 **Current Status**
 
-A score was assigned for each species based on its conservation status (Table 4.6).   
-
-**Table 4.6. Category scores for iconic species based on IUCN conservation status.**   
+A score was assigned for each species based on its conservation status (Table 4.6).
+<br>   
+***Table 4.6. Category scores for iconic species based on IUCN conservation status.***    
 
 | Category        | IUCN code | Weight|
 |-----------------|-----------|-------|
@@ -588,15 +598,15 @@ A score was assigned for each species based on its conservation status (Table 4.
 | Near Threatened |     NT    |  0.8  |
 | Least Concern   |     LC    |  1.0  |   
 
-The reference point is 100% of species have a status of "Least Concern". The status is found by averaging the IUCN category score for each of the species on the iconic species list (Equation 4.14).   
+The reference point is 100% of species have a status of "Least Concern". The status is found by averaging the IUCN category score for each of the species on the iconic species list (Equation 4.16).   
 
 $$
-Iconic Spp. ~~(Eq ~4.14)
+Iconic Spp. ~~(Eq ~4.16)
 $$
 <br>   
 **Trend**
 
-The iconic species trend is calculated as a linear change in iconic species status from 2014 - 2020.      
+The iconic species trend is calculated as a linear change in iconic species status from 2014 - 2020.
 <br>   
 **Data**
 
@@ -615,27 +625,27 @@ Citation: IUCN 2020. IUCN Red List of Threatened Species. Version 2020-1 <www.iu
 
 #### Lasting Special Places (LSP)
 
-The lasting special places subgoal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons (TRC 2004). For this subgoal, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true. For Palmyra we are looking at both offshore protected areas, within three nautical miles of the shoreline, and inland protected areas. The entire island is considered when considering the percent of inland protected area.   
+The lasting special places subgoal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons (TRC 2004). For this subgoal, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true. For Palmyra we are looking at both offshore protected areas, within three nautical miles of the shoreline, and inland protected areas. The entire island is considered when considering the percent of inland protected area.
 <br>   
 **Current Status** 
 
-The current status is calculated by averaging the score for protected areas offshore and inland. The reference point is 99% of all offshore and inland areas protected. The status for offshore and inland protected areas is found by comparing the percentage of the area protected to the reference point (Equations 4.15, 4.16). 
+The current status is calculated by averaging the score for protected areas offshore and inland. The reference point is 99% of all offshore and inland areas protected. The status for offshore and inland protected areas is found by comparing the percentage of the area protected to the reference point (Equations 4.17, 4.18). 
 
 $$
-status_{offshore}~=~pct_{offshore}~/~pct~ref_{offshore}  ~~(Eq ~4.15)
+status_{offshore}~=~ \frac { pa_{offshore} } { pa_{offshore, ref} }, ~~(Eq ~4.17)
 $$   
-
+<br>    
 $$
-status_{inland}~=~pct_{inland}~/~pct~ref_{inland}  ~~(Eq ~4.16)
+status_{inland}~=~ \frac { pa_{inland}} { pa_{inland, ref} },  ~~(Eq ~4.18)
 $$    
 
-Where $pct_{offshore}$, $pct_{inland}$ is the percentage of offshore and inland areas, respectively, that are protected and $pct~ref_{offshore}$, $pct~ref_{inland}$ are the reference point percentages of protected areas offshore and inland, respectively.  
+Where $pa_{offshore}$, $pa_{inland}$ is the percentage of offshore and inland areas, respectively, that is protected and $pa_{offshore,ref}$, $pa_{inland,ref}$ are the reference point percentages of protected areas offshore and inland, respectively.  
 
-Finally, the status of offshore and inland areas are averaged to find the overall status.  
+Finally, the status of offshore and inland areas are averaged to find the overall status.
 <br>   
 **Trend**
 
-The trend for the lasting special places subgoal is calculated as the linear change in percent protected areas from 2014 - 2020.    
+The trend for the lasting special places subgoal is calculated as the linear change in percent protected areas from 2014 - 2020.
 <br>   
 **Data**
 
@@ -643,9 +653,15 @@ Data were obtained verbally from Alex Wegmann at The Nature Conservancy on June 
 
 ### Tourism and Recreation (TR)
 
+**Update methods once 'zero' tourism number is determined**   
+
 This goal is intended to measure access to tourism and recreation on Palmyra Atoll. Although the atoll is protected, a limited number of private tourists visit the island each year via boat. 
 
 Data for calculating the current status and trend of tourism and recreation were not available at the time of this assessment. Therefore, a placeholder with a current status of NA and a trend of 0 was used. 
+
+$$
+TR~status,  ~~(Eq ~4.19)
+$$ 
 
 ## Goals Not Included in Palmyra OHI+ Assessment:
 
@@ -680,12 +696,12 @@ The typical marine-related jobs, which are included in the Livelihoods and Econo
 The pressure score, p, describes the cumulative pressures acting on a goal which suppress the goal score. Pressure scores range from 0 to 1, they are calculated for each goal and include both ecological (pE) and social pressures (pS) (Table 4.7, Figure 4.2), such that:   
 
 $$
-{ p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.17)
+{ p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.20)
 $$
 
-where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions.   
+where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions.
 <br>   
-**Table 4.7. Pressure data and categories.** Description of the stressor data layers used to calculate overall pressure for each goal of the Palmyra assessment. Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories.  
+***Table 4.7. Pressure data and categories.** Description of the stressor data layers used to calculate overall pressure for each goal of the Palmyra assessment. Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories.*   
 
 | Data           | Short Name   | Category  | Subcategory           | Description                                                   | 
 |----------------|--------------|-----------|-----------------------| --------------------------------------------------------------|
@@ -700,19 +716,19 @@ where γ is the relative weight for ecological vs. social pressures and equals 0
 | Habitat destruction     | prs_hd               | ecological  | habitat destruction | Pressure from activities causing destruction of terrestrial and/or marine habitats | 
 | Management              | prs_mgmt             | social      | social              | Social pressure from lack of management of terrestrial and/or marine habitats | 
 <br>   
-**Figure 4.2 Pressure components.** Pressure is calculated using both social and ecological pressures. Ecological pressures include 5 subcategories (fishing pressure, habitat destruction, climate change, water pollution, and alien species).  
-
 <center> 
 ![pressures](images/pressures.png)
 </center>
+<br>
+***Figure 4.2 Pressure components.** Pressure is calculated using both social and ecological pressures. Ecological pressures include 5 subcategories (fishing pressure, habitat destruction, climate change, water pollution, and alien species).*  
 
 ### Ecological Pressures 
 
 We assessed five broad, categories of ecological stressors: fishing pressure, habitat destruction, climate change, water pollution, and alien species introductions. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. Each pressure category may include several stressors. The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress.      
 
-We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.8). Wherever possible we relied on peer-reviewed literature to establish these rankings, and relied on our collective expert judgment in cases with no available literature (Table S28 in Halpern *et al.* 2012). When possible Palmyra specific estimates were made and where no better estimates existed, the global rankings were used.  
+We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.8). Wherever possible we relied on peer-reviewed literature to establish these rankings, and relied on our collective expert judgment in cases with no available literature (Table S28 in Halpern *et al.* 2012). When possible Palmyra specific estimates were made and where no better estimates existed, the global rankings were used.  **Explain some rankings**.
 <br>   
-**Table 4.8 Pressure matrix.** Rank sensitivity of each goal (or, goal element) to each stressor.  
+***Table 4.8 Pressure matrix.** Rank sensitivity of each goal (or, goal element) to each stressor.*  
 
 ```{r pressure matrix, echo=FALSE}
 pressure_matrix <- read.csv(here("region/conf/pressures_matrix.csv"), na.strings=c("","NA"), stringsAsFactors = FALSE) %>%
@@ -725,10 +741,10 @@ kable(pressure_matrix, align = "l")
 ```
 
 
-To estimate the cumulative effect of the ecological pressures, $P_E$, we first determined the cumulative pressure, $p$, within each ecological category, $i$ (e.g., pollution, fishing, etc.):
+To estimate the cumulative effect of the ecological pressures, $P_E$, we first determined the cumulative pressure, $p$, within each ecological category, $i$ (Equation 4.21):      
 
 $$
-{ p }_{ i }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ s }_{ i } }  }{ 3 }, ~~(Eq. ~4.18)
+{ p }_{ i }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ s }_{ i } }  }{ 3 }, ~~(Eq. ~4.21)
 $$
 
 Where $w_i$ is the sensitivity ranks (Table 4.8) describing the relative sensitivity of each goal to each stressor, and $s_i$ is intensity of the stressor in each region on a scale of 0-1. We divided by the maximum weighted intensity that could be achieved by the worst stressor (max = 3.0).
@@ -737,20 +753,20 @@ If $p_i$ > 1.0, we set the value equal to 1.0. This formulation assumes that any
 
 For the goals for which sensitivity ranks were assigned for specific habitats (i.e., goal elements), we calculated the weighted sum of the pressures for only those habitats or sectors that were present in the country.
 
-The overall ecological pressure, $p_E$, acting on each goal and region was calculated as the weighted-average of the pressure scores, $p$, for each category, $i$, with weights set as the maximum rank in each pressure category ($w_{i\_max}$) for each goal, such that:
+The overall ecological pressure, $p_E$, acting on each goal and region was calculated as the weighted-average of the pressure scores, $p$, for each category, $i$, with weights set as the maximum rank in each pressure category ($w_{i\_max}$) for each goal (Equation 4.22):    
 
 $$
-{ p }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (w }_{ i\_ max }*{ p }_{ i }) }  }{ \displaystyle\sum_{ i=1 }^{ N } { { w }_{ i\_ max } }  },  ~~(Eq. ~4.19)
+{ p }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (w }_{ i\_ max }*{ p }_{ i }) }  }{ \displaystyle\sum_{ i=1 }^{ N } { { w }_{ i\_ max } }  },  ~~(Eq. ~4.22)
 $$
 
 Stressors that have no impact drop out rather than being assigned a rank of zero, which would affect the average score.
 
 ### Social Pressures 
 
-Social pressures describe the lack of effectiveness of government and social institutions. For Palmyra, the social pressure we are considering is management. Social stressors are described for each region on a scale of 0 to 1 (with one indicating the highest pressure). Social pressure is then calculated as the average of the social stressors:
+Social pressures describe the lack of effectiveness of government and social institutions. For Palmyra, the social pressure we are considering is management. The pressure score is derived as the inverse of the habitat management resilience score. This considers management of both terrestrial and marine areas. Social stressors are described for each region on a scale of 0 to 1 (with one indicating the highest pressure). For this assessment a single social stressor is used, however, if more stressors were added the overall social pressure would be calculated as the average of the social stressors (Equation 4.23):    
 
 $$
-{ p }_{ S }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ z_{ i } }  }{ N }, ~~(Eq. ~4.20)
+{ p }_{ S }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ z_{ i } }  }{ N }, ~~(Eq. ~4.23)
 $$
 
 where $z_{i}$ are the social pressure measures specific to the goal. Unequal weighting may be appropriate in some cases but for this assessment equal weights are used.   
@@ -761,26 +777,26 @@ A key assumption in our assessment of ecological pressures is that each goal has
 
 ## Resilience 
 
-To calculate resilience for each goal and region, $r$, we assess three resilience categories (Table 4.9, Figure 4.3): ecological integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$.  The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
+To calculate resilience for each goal and region, $r$, we assess three resilience categories (Figure 4.3, Table 4.9): ecological integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$.  The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
 
 $$
-r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, ~~(Eq. ~4.21)
+r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, ~~(Eq. ~4.24)
 $$
 
 We chose $\gamma = 0.5$ so the weight of resilience components that address ecological systems (ecosystem and regulatory) vs. social systems would be equivalent to the proportions used in the model to calculate pressure. 
 <br>   
-**Figure 4.3 Resilience components.** Resilience includes both ecological and social resilience categories. Ecological resilience includes an ecosystem and regulatory category. The regulatory category includes 5 subcategories that mirror the pressure categories (fishing pressure, habitat destruction, climate change, water pollution, and alien species) as well as a goal-specific category.   
-
 <center> 
 ![resilience](images/resilience.png)
 </center>
-
-Each resilience category is composed of 1 or more data layers (Table 4.9) with values scaled from 0-1, reflecting the magnitude of resilience, for each region. Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.9) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.10). This information is used to calculate a score for each resilience category.      
+<br>
+***Figure 4.3 Resilience components.** Resilience includes both ecological and social resilience categories. Ecological resilience includes an ecosystem and regulatory category. The regulatory category includes 5 subcategories that mirror the pressure categories (fishing pressure, habitat destruction, climate change, water pollution, and alien species) as well as a goal-specific category.*
 <br>   
-**Table 4.9. Resilience categories and weights.** The data layers used to calculate resilience for each goal and region for the Palmyra assessment. Each data layer is assigned to an ecological or social category. The ecological category is broken into an ecosystem and regulatory category type.  
+Each resilience category is composed of 1 or more data layers (Table 4.9) with values scaled from 0-1, reflecting the magnitude of resilience, for each region. Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.9) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.10). This information is used to calculate a score for each resilience category.
+<br>   
+***Table 4.9. Resilience categories and weights.** The data layers used to calculate resilience for each goal and region for the Palmyra assessment. Each data layer is assigned to an ecological or social category. The ecological category is broken into an ecosystem and regulatory category type.*     
 
-| Data                   | Short Name   | Category       | Category Type        | Subcategory                  | Weight         | 
-|------------------------|--------------|----------------|----------------------|------------------------------|----------------|
+| Data                           | Short Name   | Category       | Category Type        | Subcategory            | Weight    | 
+|--------------------------------|--------------|----------------|----------------------|------------------------|-----------|
 | Measure of ecological integrity  | res_eco_spp_diversity  | ecological  | ecosystem     | ecological  | 1 |
 | Measure of climate change management | res_cc_mgmt        | ecological  | ecosystem     | regulatory  | 1 |
 | Measure of fishing (offshore) regulations | res_fp_reg    | ecological  | ecosystem     | regulatory  | 0.5 |
@@ -790,7 +806,7 @@ Each resilience category is composed of 1 or more data layers (Table 4.9) with v
 | Measure of alien species regulations | res_sp_reg    | ecological  | ecosystem     | regulatory  | 0.5 |
 | Measure of alien species management  | res_sp_mgmt   | ecological  | ecosystem     | regulatory  | 0.5 |
 <br>   
-**Table 4.10. Resilience matrix.** Describes which goals/sub-goals (and goal elements) are influenced by the resilience data layers.  
+***Table 4.10. Resilience matrix.** Describes which goals/sub-goals (and goal elements) are influenced by the resilience data layers.*     
 
 ```{r resilience-matrix, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 res_matrix <- read.csv(here("region/conf/resilience_matrix.csv"), na.strings="") 
@@ -801,10 +817,37 @@ kable(res_matrix, align = "l")
 
 #### Ecosystem Integrity
 
+Ecosystem integrity, e.g., food web integrity, is measured as relative condition of assessed species in a given location (scores from the species sub-goal were used to estimate ecosystem integrity). For some goals, there is little evidence that our index of ecosystem integrity directly affects the value of the goal (or sub-goal).  In these instances, ecological integrity falls out of the resilience model. For this assessment, we only have one data layer describing ecosystem integrity.   
+  
 #### Regulatory Resilience 
 
-### Social Integrity 
+Regulatory resilience ($Y_R$)  describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. The regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and alien species. For this assessment we use two resilience layers for each pressure category where possible: regulations and management.  
 
+**Insert description of regulatory resilience layers - maybe delete the next paragraph**. 
+
+Weights were based effectiveness of governance. Governance is a function of 1) institutional structures that address the intended objective, 2) a clear process for implementing the institution is in place, and 3) whether the institution has been effective at meeting stated objectives. At global scales it is very difficult to assess these three elements; we usually only had information on whether institutions exist. However, in some cases we had detailed information on institutions that enabled us to assess whether they would contribute to effective management, and thus, increased ocean health. In those latter cases, we gave more weight to those measures (Table 4.9). 
+
+For each region and goal, we calculated a score for each regulatory category, $y_{R, i}$, as a weighted mean of the resilience data layers, $r_{i}$, that influence the goal (Equation 4.25, Table 4.10):  
+
+$$
+y_{R, i}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ r }_{ i } }  }{ \displaystyle\sum _{ i=1 }^{ N }{w_i} },  ~~(Eq. ~4.25) 
+$$
+
+where, $w_i$ is the weight in Table 4.9.
+
+To calculate the overall regulatory resilience, $Y_{R}$, we averaged the scores for each regulatory category.  
+
+### Social Resilience 
+
+Social integrity is intended to describe those processes internal to a community that affect its resilience. It is a function of a wide range of aspects of social structure. Social Integrity per goal for each region, $Y_{S}$, is therefore:
+
+ $$
+ Y_{ S}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { y }_{ S,i } }  }{ N },  ~~(Eq. ~4.26)
+ $$
+ 
+where $y_{S,i}$ are the social integrity measures specific to the goal.
+
+Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. As Palmyra is sparsely populated many of these social resiliences aren't applicable. For this assessment we consider soical resilience to be .... **finish after seaside chat**.   
 
 ## Results
 
