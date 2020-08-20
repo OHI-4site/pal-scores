@@ -1030,20 +1030,22 @@ We chose $\gamma = 0.5$ so the weight of resilience components that address ecol
 <br>
 ***Figure 4.3 Resilience components.** Resilience includes both ecological and social resilience categories. Ecological resilience includes an ecosystem and regulatory category. The regulatory category includes 5 subcategories that mirror the pressure categories (fishing pressure, habitat destruction, climate change, water pollution, and alien species) as well as a goal-specific category.*
 <br>   
-Each resilience category is composed of 1 or more data layers (Table 4.9) with values scaled from 0-1, reflecting the magnitude of resilience, for each region. Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.9) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.10). This information is used to calculate a score for each resilience category.
+Each resilience category is composed of 1 or more data layers (Table 4.9) with values scaled from 0-1, reflecting the magnitude of resilience, for each region. Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.9) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.10). This information is used to calculate a score for each resilience category. A weight of 1 is given to all layers except for climate change management (Table 4.9). As meaningful mitigation of climate pressures is unlikely even with established actions in a Climate Adaptation Plan, this resilience is given a lower weight of 0.5. 
 <br>   
 ***Table 4.9. Resilience categories and weights.** The data layers used to calculate resilience for each goal and region for the Palmyra assessment. Each data layer is assigned to an ecological or social category. The ecological category is broken into an ecosystem and regulatory category type.*     
 
 | Data                           | Short Name   | Category       | Category Type        | Subcategory            | Weight    | 
 |--------------------------------|--------------|----------------|----------------------|------------------------|-----------|
 | Measure of ecological integrity  | res_eco_spp_diversity  | ecological  | ecosystem     | ecological  | 1 |
-| Measure of climate change management | res_cc_mgmt        | ecological  | ecosystem     | regulatory  | 1 |
-| Measure of fishing (offshore) regulations | res_fp_reg    | ecological  | ecosystem     | regulatory  | 0.5 |
-| Measure of fishing (offshore) management  | res_fp_mgmt   | ecological  | ecosystem     | regulatory  | 0.5 |
-| Measure of habitat destruction regulations | res_hd_reg   | ecological  | ecosystem     | regulatory  | 0.5 |
-| Measure of terrestrial and marine habitat management  | res_hd_mgmt   | ecological  | ecosystem     | regulatory  | 0.5 |
-| Measure of alien species regulations | res_sp_reg    | ecological  | ecosystem     | regulatory  | 0.5 |
-| Measure of alien species management  | res_sp_mgmt   | ecological  | ecosystem     | regulatory  | 0.5 |
+| Measure of climate change management | res_cc_mgmt        | ecological  | ecosystem     | regulatory  | 0.5 |
+| Measure of fishing (offshore) regulations | res_fp_reg    | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of fishing (offshore) management  | res_fp_mgmt   | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of habitat destruction regulations | res_hd_reg   | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of alien species regulations | res_sp_reg    | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of alien species management  | res_sp_mgmt   | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of terrestrial and marine habitat management  | res_hd_mgmt   | social  | social    | social  | 1 |
+<br>  
+Resilience layers are only marked in Table 4.10 for goals or goal elements where the corresponding ecological pressure rank is 2 or 3 (refer to Table 4.8). Where the ecological pressures were ranked 1 (refer to Table 4.8), resilience is not counted for that particular goal or goal element. For example, all invasive species pressures were given a rank of 1, therefore, although the two resilience layers are included in the assessment, neither are designated as a resilience for any of the goals or goal elements affected by invasive species.  
 <br>   
 ***Table 4.10. Resilience matrix.** Describes which goals/sub-goals (and goal elements) are influenced by the resilience data layers.*     
 
@@ -1070,7 +1072,7 @@ Management layers are derived for climate change, habitats, fishing, and alien s
  2. Does there exist some sort of monitoring or tracking of the effects of the management plan?   
  3. Has the management plan been effective in changing behaviors or meeting is objectives?   
  
-For ecological pressures where there are both regulation and management resilience, each is given a weight of 0.5 and where only one exists its given a weight of 1 (Table 4.9).   
+A score of one is given for every "Yes" response, a zero given for a "No" response, and 0.5 given if management plans or monitoring programs are "In Development". The overall resilience layer score is the sum over three. Since the inverse of the habitat management resilience is used for a social pressure, we will consider this a social resilience instead of an ecological one.    
 
 For each region and goal, we calculated a score for each regulatory category, $y_{R, i}$, as a weighted mean of the resilience data layers, $r_{i}$, that influence the goal (Equation 4.24, Table 4.10):  
 
@@ -1092,7 +1094,7 @@ Social integrity is intended to describe those processes internal to a community
  
 where $y_{S,i}$ are the social integrity measures specific to the goal.
 
-Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. As Palmyra is sparsely populated many of these social resiliences aren't applicable. For this assessment we consider soical resilience to be .... **finish after seaside chat**.   
+Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. As Palmyra is sparsely populated, many of these social resilience aren't applicable. For this assessment we consider social resilience to be based on general management of Palmyra's ecosystems. We used a lack of management as a social pressure and will use the inverse of this score as our resilience layer. The management layer was derived using the same method as the ecological management resilience layers discussed above.   
 
 ## Results
 
