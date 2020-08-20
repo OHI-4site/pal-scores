@@ -707,11 +707,12 @@ This goal is intended to measure access to recreational fishing opportunities on
 
 **Current Status**   
 
-**Update method once the 'zero' score fishing amount is determined**.    
+Current status is based on the number of fish caught per year compared to the reference point. The reference point is up to 20 fish caught per year for sustenance fishing. The status score is scaled such that any catch three times or more than three times higher than the reference point is given a score of zero (Equation 4.14):       
 
 $$
-RAO~status,  ~~(Eq ~4.14)
+status~=~ \frac { (c_{y}~-~c_{ref,y}) } { s },  ~~(Eq ~4.14)
 $$ 
+where $c_{y}$ is the number of fish caught in year (y), $c_{ref,y}$ is the reference point catch in year (y), and $s$ is the scaling coefficient used to adjust any catch level at or higher than three times the reference point to a score of zero. Any scores higher than one are given a one and any scores lower than zero are given a zero. This method of scoring is based on The Nature Conservancy's management goals to keep fishing at or below the reference point level and reflective of the view that fishing at more than three times the reference point would cause unnecessary damage to the ecosystem.       
 <br>   
 **Trend** 
 
@@ -866,16 +867,17 @@ This goal is intended to measure access to tourism and recreation on Palmyra Ato
 
 **Current Status**   
 
-**Update methods once 'zero' tourism number is determined** 
+Current status is based on the number of private visiting vessels per year compared to the reference point. The reference point is up to 6 visiting vessels per year. The status score is scaled such that any year with vessel visits three times or more than three times higher than the reference point is given a score of zero (Equation 4.18):       
 
 $$
-TR~status,  ~~(Eq ~4.18)
+status~=~ \frac { (v_{y}~-~v_{ref,y}) } { s },  ~~(Eq ~4.18)
 $$
+where $v_{y}$ is the number of private visiting vessels in year (y), $v_{ref,y}$ is the reference point for private visiting vessels in year (y), and $s$ is the scaling coefficient used to adjust any visitation levels at or above three times the reference point to a score of zero. Any scores higher than one are given a one and any scores lower than zero are given a zero. This method of scoring is based on The Nature Conservancy's management goals to keep tourism at or below the reference point level and reflective of the view that having triple the number of private vessels visiting each year would incur undesirable biosecurity risks and/or divert resources away from TNC's core mission.   
 <br>
 **Trend**   
 
 The trend for tourism and recreation is calculated as the rate of change in the number of annual private vessels visiting the island from 2014-2020.
-<br>
+<br>   
 **Data**  
 
 _Status and trend_
