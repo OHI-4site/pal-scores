@@ -1,15 +1,15 @@
-goal,element,res_cc_mgmt,res_eco_spp_diversity,res_fp_mgmt,res_fp_reg,res_hd_mgmt,res_hd_reg,res_sp_mgmt,res_sp_reg,wgi_all
-RAO,,,x,x,x,,,,,x
-RS,,,x,,,x,x,,,x
-CP,coral,x,x,,,x,x,,,x
-CS,rainforest,,x,,,x,x,,,x
-CW,,,,,,,,,,x
-HAB,coral,x,x,,,x,x,,,x
-HAB,rainforest,,x,,,x,x,,,x
-ICO,,x,x,x,x,x,x,,,x
-LSP,,,,,,,,,,x
-SPP,,x,,x,x,x,x,,,x
-TR,,,,,,,,,,x
-,,,,,,,,,,
-,,,,,,,,,,
-,,,,,,,,, ,
+goal,element,res_cc_mgmt,res_eco_spp_diversity,res_fp_mgmt,res_fp_reg,res_hd_reg,res_sp_mgmt,res_sp_reg,res_hd_mgmt
+RAO,,,x,x,x,,,,x
+RS,,,x,,,x,,,x
+CP,coral,x,x,,,x,,,x
+CS,rainforest,,x,,,x,,,x
+CW,,,,,,,,,x
+HAB,coral,x,x,,,x,,,x
+HAB,rainforest,,x,,,x,,,x
+ICO,,x,x,x,x,x,,,x
+LSP,,,,,,,,,x
+SPP,,x,,x,x,x,,,x
+TR,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,, ,
