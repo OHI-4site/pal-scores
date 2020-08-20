@@ -79,11 +79,11 @@ readr::write_csv(scores, 'scores.csv', na='')
 Run this to create flower plots for each region.
 
 ```{r plot, eval=FALSE}
-## source script (to be incorporated into ohicore)
-source('https://raw.githubusercontent.com/OHI-Science/arc/master/circle2016/plot_flower_local.R')
+## Source script 
+source(here("region/conf/flower_plot.R"))
 
 PlotFlower(assessment_name = "Palmyra",
-dir_fig_save    = "reports/figures")
+           dir_fig_save    = "reports/figures")
 ```
 
 
