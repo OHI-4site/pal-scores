@@ -1,10 +1,10 @@
 layer,category,category_type,subcategory,weight
 res_eco_spp_diversity,ecological,ecosystem,ecological,1
-res_cc_mgmt,ecological,regulatory,climate_change,1
-res_fp_mgmt,ecological,regulatory,fishing_pressure,0.5
-res_fp_reg,ecological,regulatory,fishing_pressure,0.5
-res_hd_mgmt,ecological,regulatory,habitat_destruction,0.5
-res_hd_reg,ecological,regulatory,habitat_destruction,0.5
-res_sp_mgmt,ecological,regulatory,alien_species,0.5
-res_sp_reg,ecological,regulatory,alien_species,0.5
+res_cc_mgmt,ecological,regulatory,climate_change,0.5
+res_fp_mgmt,ecological,regulatory,fishing_pressure,1
+res_fp_reg,ecological,regulatory,fishing_pressure,1
+res_hd_mgmt,ecological,regulatory,habitat_destruction,1
+res_hd_reg,ecological,regulatory,habitat_destruction,1
+res_sp_mgmt,ecological,regulatory,alien_species,1
+res_sp_reg,ecological,regulatory,alien_species,1
 wgi_all,social,social,social,1
