@@ -29,25 +29,28 @@ library(ggplot2)
 library(here)
 
 options(knitr.kable.NA = '')
+```
 
-# Data and functions to list data layers in each goal 
-# layers <- read.csv(here("metadata_documentation/layers_eez_base.csv"))
-# targets <- read.csv(here("metadata_documentation/layers_eez_targets.csv"))
-# 
-# # Data layers function
-# data_layers <- function(dimension, goal) { # goal = "ICO"; dimension=c("status", "trend")
-#   st <- targets[targets$goal == goal, ]
-#   st <- st[st$dimension %in% dimension, ]
-# st <- st %>%
-#   select(layer) %>%
-#   unique()
-# st_layers <- filter(layers, layer %in% st$layer) %>%
-#   mutate(web_name = gsub(" ", "_", name)) %>%
-#   mutate(web_name = tolower(web_name)) %>%
-#   mutate(web_name = gsub("/", "", web_name)) %>%
-#   mutate(info = sprintf("[%s](%s#%s) (%s): %s", name, layers_web, web_name, layer, description))
-# cat(paste(st_layers$info, collapse="\n\n"))
-# }
+```{r data-layer-function, include=F, warning=F, message=F}
+# Data and functions to list data layers in each goal
+layers  <- read.csv(here("documents/metadata_documentation/layers_region_base.csv"))
+targets <- read.csv(here("documents/metadata_documentation/layers_region_targets.csv"))
+
+# Data layers function
+data_layers <- function(dimension, goal) { 
+  # goal = "ICO"; dimension=c("status", "trend")
+  
+  st <- targets[targets$goal == goal, ]
+  st <- st[st$dimension %in% dimension, ]
+  
+st <- st %>%
+  select(layer) %>%
+  unique()
+
+st_layers <- filter(layers, layer %in% st$layer) %>% 
+  mutate(info = sprintf("<u>%s</u> (%s): %s", name, layer, description))
+cat(paste(st_layers$info, collapse="\n\n"))
+}
 ```
 
 ***
@@ -217,23 +220,23 @@ The trend in rainforest condition is calculated as the rate of change in forest 
 **Data**   
 
 _Status and trend_
-
+<br>   
 ```{r hab-data-st, results="asis", echo=FALSE}
-#data_layers(goal="HAB", dimension=c("status", "trend"))
+data_layers(goal="HAB", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r hab-data-p, results="asis", echo=FALSE}
-#data_layers(goal="HAB", dimension=c("pressure"))
+data_layers(goal="HAB", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r hab-data-r, results="asis", echo=FALSE}
-#data_layers(goal="HAB", dimension=c("resilience"))
+data_layers(goal="HAB", dimension=c("resilience"))
 ```
-<br> 
+<br>     
 **Data Citations**
 <br>   
 *Coral Reefs* 
@@ -252,12 +255,12 @@ Date Downloaded: July 8, 2020
 
 Citation: Burnett, M.W. *et al.* (2019). "Quantifying coconut palm extent on Pacific islands using spectral textural analysis of very high resolution imagery". *International Journal of Remote Sensing* 40(19): 7329-7355   
   [Available here](https://www.tandfonline.com/doi/epub/10.1080/01431161.2019.1594440?needAccess=true). 
-  
+<br>     
 2001 Reference Point: The 2001 reference point comes from a satellite image of the island that is discussed in the 2011 Terrestrial Forest Management Plan.  
 
 Citation: Hathaway, S.A., McEachern K., & Fisher, R.N. (2011). "Terrestrial Forest Management Plan for Palmyra Atoll". U.S. Geological Survey Open-File Report 2011-1007.  
   [Available here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf)  
-  
+<br>     
 There have been no studies using the same methodology to track the area of forests and coconut palm on the island over time. Therefore, data to calculate the trend in rainforest condition are estimated from three additional studies that included some estimate of percent cover of coconut palms and total land area.    
 
 2005: The 2005 data was obtained from Alex Wegmann at The Nature Conservancy on July 31, 2020. Shapefiles were compiled as part of Alex Wegmann's PhD dissertation.  
@@ -314,19 +317,19 @@ The species trend is calculated using data the IUCN provides for current and pas
 **Data**
 
 _Status and trend_
-
+<br>   
 ```{r spp-data-st, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("status", "trend"))
+data_layers(goal="SPP", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r spp-data-p, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("pressure"))
+data_layers(goal="SPP", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r spp-data-r, results="asis", echo=FALSE}
 #data_layers(goal="SPP", dimension=c("resilience"))
 ```
@@ -447,21 +450,21 @@ This the first study on soil contamination done for Palmyra Atoll, although a se
 **Data**
 
 _Status and trend_
-
+<br>   
 ```{r cw-data-st, results="asis", echo=FALSE}
-#data_layers(goal="CW", dimension=c("status", "trend"))
+data_layers(goal="CW", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r cw-data-p, results="asis", echo=FALSE}
-#data_layers(goal="CW", dimension=c("pressure"))
+data_layers(goal="CW", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r cw-data-r, results="asis", echo=FALSE}
-#data_layers(goal="CW", dimension=c("resilience"))
+data_layers(goal="CW", dimension=c("resilience"))
 ```
 <br> 
 **Data Citations**   
@@ -477,7 +480,7 @@ Data for this layer come from an elemental soil contamination study completed by
 Date Downloaded: July 28, 2020   
 
 Citation: Struckhoff, M.A., Papoulias, D.M., Orazio, C.E., Annis, M.L., Shaver, D.K. and Tillitt, D.E., 2017, Geospatial data of elemental contamination at Palmyra Atoll, 2008 and 2010: U.S. Geological Survey data release, https://doi.org/10.5066/F74F1P00  
-
+<br>   
 The reference levels were obtained from the following sources:  
 
 <u>TELs and Eco-SSLs</u>   
@@ -550,21 +553,21 @@ There is a lack of historic data categorizing forests as native or nonnative to 
 **Data**  
 
 _Status and trend_
-
+<br>   
 ```{r cs-data-st, results="asis", echo=FALSE}
-#data_layers(goal="CS", dimension=c("status", "trend"))
+data_layers(goal="CS", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r cs-data-p, results="asis", echo=FALSE}
-#data_layers(goal="CS", dimension=c("pressure"))
+data_layers(goal="CS", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r cs-data-r, results="asis", echo=FALSE}
-#data_layers(goal="CS", dimension=c("resilience"))
+data_layers(goal="CS", dimension=c("resilience"))
 ```
 <br> 
 **Data Citations**   
@@ -574,7 +577,7 @@ Data for the Carbon Storage status come from tree cover surveys completed as par
 Date Downloaded: July 7, 2020       
 
 Citation: Struckhoff, M.A., 2019, Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.  
-
+<br>   
 The Carbon Storage trend uses the data from the rainforest trend calculated for the Biodiversity: Habitats subgoal. For details on the data used for calculating rainforest trend refer to the Biodiversity: Habitats sub-goal.  
 <br>   
 
@@ -603,19 +606,19 @@ Coral condition is lacking historic data for all areas of the reef used to estim
 **Data**   
 
 _Status and trend_
-
+<br>   
 ```{r cp-data-st, results="asis", echo=FALSE}
-#data_layers(goal="CP", dimension=c("status", "trend"))
+data_layers(goal="CP", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r cp-data-p, results="asis", echo=FALSE}
 #data_layers(goal="CP", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r cp-data-r, results="asis", echo=FALSE}
 #data_layers(goal="CP", dimension=c("resilience"))
 ```
@@ -640,13 +643,13 @@ Current status for the research goal is the average of the layer scores for: emp
 <br>   
 *Employment*  
 
-The employment layer is calculated based on the number of full time equivalent (FTE) positions in conservation science supported by The Nature Conservancy. The reference point for employment is five FTE positions. Status scores are re-scaled to 0-1 by dividing the number of FTE positions by the reference point (Equation 4.12). Any value over one is given a score of 1.     
+The employment layer is calculated based on the number of full time equivalent (FTE) positions in conservation science supported by The Nature Conservancy. The reference point for employment is five FTE positions. Status scores are re-scaled to 0-1 by dividing the number of FTE positions by the reference point (Equation 4.12). Any value over one is given a score of one.     
 
 $$
 status~=~ \frac { FTE_{y} } { FTE_{ref} }, ~~(Eq ~4.12)
 $$  
 
-Where $FTE_{y}$ is the number of full-time equivalent positions in year (y) and $FTE_{ref}$ is the FTE positions reference point.     
+Where $FTE_{y}$ is the number of full-time equivalent positions in year (y) and $FTE_{ref}$ is the FTE positions reference point.
 <br>   
 *Research Funding*   
 
@@ -676,29 +679,31 @@ The trend in scientific publications is calculated as the rate of change in the 
 **Data**   
 
 _Status and trend_
-
+<br>   
 ```{r rs-data-st, results="asis", echo=FALSE}
-#data_layers(goal="RS", dimension=c("status", "trend"))
+data_layers(goal="RS", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r rs-data-p, results="asis", echo=FALSE}
-#data_layers(goal="RS", dimension=c("pressure"))
+data_layers(goal="RS", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r rs-data-r, results="asis", echo=FALSE}
-#data_layers(goal="RS", dimension=c("resilience"))
+data_layers(goal="RS", dimension=c("resilience"))
 ```
 <br>   
 **Data Citations**   
 
 *Employment*   
-Data for this layer were gathered through verbal communication with Alex Wegmann at The Nature Conservancy on July 8, 2020.   
 
+Data for this layer were gathered through verbal communication with Alex Wegmann at The Nature Conservancy on July 8, 2020.
+<br>   
 *Scientific Publications*   
+
 Data for this layer comes from a scientific library containing all scientific publications relating to natural resources on Palmyra Atoll. This scientific library was obtained from Alex Wegmann at The Nature Conservancy on June 17, 2020.  
 
 ### Resource Access Opportunity (RAO)
@@ -712,7 +717,7 @@ Current status is based on the number of fish caught per year compared to the re
 $$
 status~=~ \frac { (c_{y}~-~c_{ref,y}) } { s },  ~~(Eq ~4.14)
 $$ 
-where $c_{y}$ is the number of fish caught in year (y), $c_{ref,y}$ is the reference point catch in year (y), and $s$ is the scaling coefficient used to adjust any catch level at or higher than three times the reference point to a score of zero. Any scores higher than one are given a one and any scores lower than zero are given a zero. This method of scoring is based on The Nature Conservancy's management goals to keep fishing at or below the reference point level and reflective of the view that fishing at more than three times the reference point would cause unnecessary damage to the ecosystem.       
+where $c_{y}$ is the number of fish caught in year (y), $c_{ref,y}$ is the reference point catch in year (y), and $s$ is the scaling coefficient used to adjust any catch level at or higher than three times the reference point to a score of zero. Any scores higher than one are given a one and any scores lower than zero are given a zero. This method of scoring is based on The Nature Conservancy's management goals to keep fishing at or below the reference point level and reflective of the view that fishing at more than three times the reference point would cause unnecessary damage to the ecosystem.
 <br>   
 **Trend** 
 
@@ -721,21 +726,21 @@ The trend for tourism and recreation is calculated as the rate of change in the 
 **Data**   
 
 _Status and trend_
-
+<br>   
 ```{r rao-data-st, results="asis", echo=FALSE}
-#data_layers(goal="RAO", dimension=c("status", "trend"))
+data_layers(goal="RAO", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r rao-data-p, results="asis", echo=FALSE}
-#data_layers(goal="RAO", dimension=c("pressure"))
+data_layers(goal="RAO", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r roa-data-r, results="asis", echo=FALSE}
-#data_layers(goal="RAO", dimension=c("resilience"))
+data_layers(goal="RAO", dimension=c("resilience"))
 ```
 <br>   
 **Data Citations**   
@@ -782,21 +787,21 @@ The iconic species trend is calculated as a linear change in iconic species stat
 **Data**   
 
 _Status and trend_
-
+<br>   
 ```{r ico-data-st, results="asis", echo=FALSE}
-#data_layers(goal="ICO", dimension=c("status", "trend"))
+data_layers(goal="ICO", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r ico-data-p, results="asis", echo=FALSE}
-#data_layers(goal="ICO", dimension=c("pressure"))
+data_layers(goal="ICO", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r ico-data-r, results="asis", echo=FALSE}
-#data_layers(goal="ICO", dimension=c("resilience"))
+data_layers(goal="ICO", dimension=c("resilience"))
 ```
 <br>   
 **Data Citations**   
@@ -806,7 +811,7 @@ A list of iconic species was created based on species listed on the U.S. Fish an
 Data Accessed: June 4, 2020   
 
 Citation: U.S. Fish and Wildlife Service. (2016, January 14). Wildlife and Habitat. Retrieved from <https://www.fws.gov/refuge/Palmyra_Atoll/wildlife_and_habitat/index.html> 
-
+<br>   
 Additional iconic species and species status were derived from the IUCN Red List.    
 
 Date Accessed: June 9, 2020   
@@ -841,24 +846,25 @@ The trend for the lasting special places subgoal is calculated as the linear cha
 **Data**   
 
 _Status and trend_
-
+<br>   
 ```{r lsp-data-st, results="asis", echo=FALSE}
-#data_layers(goal="LSP", dimension=c("status", "trend"))
+data_layers(goal="LSP", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r lsp-data-p, results="asis", echo=FALSE}
-#data_layers(goal="LSP", dimension=c("pressure"))
+data_layers(goal="LSP", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r lsp-data-r, results="asis", echo=FALSE}
-#data_layers(goal="LSP", dimension=c("resilience"))
+data_layers(goal="LSP", dimension=c("resilience"))
 ```
 <br>   
 **Data Citations**   
+
 Data were obtained verbally from Alex Wegmann at The Nature Conservancy on June 29, 2020. 
 
 ### Tourism and Recreation (TR)
@@ -881,21 +887,21 @@ The trend for tourism and recreation is calculated as the rate of change in the 
 **Data**  
 
 _Status and trend_
-
+<br>   
 ```{r tr-data-st, results="asis", echo=FALSE}
-#data_layers(goal="TR", dimension=c("status", "trend"))
+data_layers(goal="TR", dimension=c("status", "trend"))
 ```
-
+<br>   
 _Pressure_
-
+<br>   
 ```{r tr-data-p, results="asis", echo=FALSE}
-#data_layers(goal="TR", dimension=c("pressure"))
+data_layers(goal="TR", dimension=c("pressure"))
 ```
-
+<br>   
 _Resilience_
-
+<br>   
 ```{r tr-data-r, results="asis", echo=FALSE}
-#data_layers(goal="TR", dimension=c("resilience"))
+data_layers(goal="TR", dimension=c("resilience"))
 ```
 <br>   
 **Data Citations**   
