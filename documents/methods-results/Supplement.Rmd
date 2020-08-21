@@ -26,6 +26,7 @@ library(xtable)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(tidyverse)
 library(here)
 
 options(knitr.kable.NA = '')
@@ -117,12 +118,39 @@ Rainforest once dominated the atoll, but copra farming, black rats, and deforest
 
 ***
 
-# Maybe a quick summary of the overall results and conclusions.
-- paragraph of overall, notable/interesting results
-- flower plot
-- table: quickly describes goal, score, (data?, reference point? trend?)
+# Summary Results
+
+The results indicate that Palmyra's marine and coastal resources are supporting most of the goals assessed well, with an overall score of 81 (Figure 3.1). Seven goals/sub-goals scored above a 90, with four goals receiving perfect scores (Lasting Special Places, Research, Resource Access Opportunities, and Tourism and Recreation). The designation of the island and offshore areas as fully protected reflects its importance to The Nature Conservancy and suggests the health of Palmyra's ecosystems is allowing TNC to meet one of their core missions to support research in conservation science. As there is a limited population on Palmyra and very few visitors, fishing and tourism activities are well regulated and managed to meet TNC's goals. 
+
+Four goals/sub-goals scored below 50, Habitats, Habitat Services, Coastal Protection, and Carbon Storage. The Coastal Protection and Carbon Storage sub-goals are closely linked to the habitats sub-goal as they are based on the condition of coral reefs and rainforests, respectively. While Palmyra is often boasted for having pristine coral reefs, there is significant degradation of the back reef and the lagoon which negatively impact the coral habitat score and thus the coastal protection score. Without a concerted effort to restore live coral in the back reef and the lagoon the coral habitat score is likely to remain fairly constant over time. Coconut palm plantations have a significant negative impact on the native rainforest and while management plans to remove these palms and replant native tree species exists, they are not far along. This is the largest contributing factor to the low score for rainforest habitats and thus the carbon storage score. As replacement of coconut palms continues on the island, both of these scores are expected to steadily increase over time.    
+
+<br>   
+![flower_plot](images/flower_Palmyra.png)
+***Figure 3.1 OHI+ Palmyra Results.** Each goal and sub-goal of the Palmyra Ocean Health Index assessment is represented by a petal. The length of the each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.*
+<br>   
+The summary results table (Table 3.1) shows the status, future status, score, and description for each goal and sub-goal included in the assessment. Where *Status* is the current status relative to the reference point; *Future* is the likely future status based on the trend, pressures, and resilience; and *Score* is the final goal or sub-goal score reflected in Figure 3.1.
+<br>   
+***Table 3.1. Summary results for each goal and sub-goal in the Palmyra OHI+ assessment.***
+<br>   
+```{r score-table, echo=F, message=F, warning=F}
+
+goals <- read_csv(here("region/conf/goals.csv")) %>% 
+  dplyr::select(goal, name, description)
+
+scores <- read_csv(here("region/scores.csv")) %>% 
+  filter(dimension == "score" | dimension == "future" | dimension == "status") %>% 
+  dplyr::select(goal,dimension,score) %>% 
+  pivot_wider(id_cols ="goal", names_from = "dimension", values_from = "score") %>% 
+  filter(goal != "Index") %>% 
+  inner_join(.,goals, by = "goal") %>% 
+  dplyr::select(Goal = name, Status = status, Future = future, Score = score, Description = description) %>% 
+  arrange(desc(Score))
+
+kable(scores, align = "l")
+```
 
 ***
+<br>   
 
 # Goals: Methods/Result
 
@@ -168,15 +196,20 @@ Coral condition is based on the percent of live coral cover in each of the zones
 
 The western and eastern fore reef both have the same reference point.   
 
-Coral reef status is first calculated for each zone. The status is calculated as the area of the reef zone falling within or above the reference point category divided by the total area of the reef zone (Equation 4.1).     
+Coral reef status is first calculated for each zone $x_{zone}$. The status is calculated as the area of the reef zone falling within or above the reference point category divided by the total area of the reef zone (Equation 4.1):        
 
 $$
-status_{zone}~=~\frac { A_{ref} } { A_{total} },  ~~(Eq~4.1) 
+x_{zone}~=~\frac { A_{ref} } { A_{total} },  ~~(Eq~4.1) 
 $$  
 
 Where $A_{ref}$ is the area of the reef zone falling within or above the reference point category and $A_{total}$ is the total area of the reef zone. For the status calculation we adjust the area of the lagoon to include only the area of the lagoon where coral can reasonably grow. Other zones are not area adjusted due to incomplete knowledge and data. In the future adjusting the area of all zones to include only the area where coral can be expected to grow would strengthen this analysis.          
 
-The overall status score is calculated as the area weighted mean of the status score for each zone. Here we use the total area of the lagoon.
+The overall status score $x_{coral}$ is calculated as the area weighted mean of the status score for each zone (Equation 4.2). Here we use the total area of the lagoon.   
+
+$$
+x_{coral}~=~\frac { \displaystyle\sum _{ i=1 }^{ N }{ { A }_{ i }{ x }_{ i } } } { \displaystyle\sum _{ i=1 }^{ N } { A }_{ i } },  ~~(Eq~4.2) 
+$$
+where $A_{i}$ is the area of zone $i$ and $x_{i}$ is the status score for each zone $i$ as calculated in Equation 4.1.   
 <br>   
 *Rainforests*   
 
@@ -184,27 +217,27 @@ The rainforest condition is based on the land area of the rainforest. Invasive c
 
 The raw data included four vegetation categories: native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifera* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis.   
 
-The rainforest habitat status is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed (Equation 4.2). The reference point is the rainforest and coconut palm area in 2001.    
+The rainforest habitat status $x_{forest}$ is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed (Equation 4.3). The reference point is the rainforest and coconut palm area in 2001.    
 
 $$
-status~=~ \frac { A_{current} } { A_{potential} }, ~~(Eq ~4.2) 
+x_{forest}~=~ \frac { A_{current} } { A_{potential} }, ~~(Eq ~4.3) 
 $$  
 
 The current rainforest area ($A_{current}$) km^2^ is based on the Burnett, M.W. *et al.* 2019 study where forest is defined as the total area of the *Scaevola* and native forest categories.    
 
-The potential rainforest area ($A_{potential}$) km^2^ is based on a 2001 satellite image showing approximately 43% of the islands are dominated by coconut plantations and 48.2% of the islands are dominated by other vegetation communities as discussed in the [USGS Terrestrial Management Plan](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf). The remaining 8.8% is assumed to be non-vegetated and is excluded from this analysis. The total land area ($A_{total}$) used in these calculations (2.46 km^2^) was derived from a study completed in 2000 (referenced in Burnett *et al* 2019), which is the closest land estimate we could obtain to the 2001 satellite image. The potential rainforest area is calculated as the land area added once 95% of the historic palm plantations are removed plus the original 48.2% of land area that was dominated by rainforests (Equations 4.3 - 4.5).     
+The potential rainforest area ($A_{potential}$) km^2^ is based on a 2001 satellite image showing approximately 43% of the islands are dominated by coconut plantations and 48.2% of the islands are dominated by other vegetation communities as discussed in the [USGS Terrestrial Management Plan](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf). The remaining 8.8% is assumed to be non-vegetated and is excluded from this analysis. The total land area ($A_{total}$) used in these calculations (2.46 km^2^) was derived from a study completed in 2000 (referenced in Burnett *et al* 2019), which is the closest land estimate we could obtain to the 2001 satellite image. The potential rainforest area is calculated as the land area added once 95% of the historic palm plantations are removed plus the original 48.2% of land area that was dominated by rainforests (Equations 4.4 - 4.6).     
 
 $$
-A_{potential}~=~A_{added}~+~A_{original} , ~~(Eq ~4.3)
+A_{potential}~=~A_{added}~+~A_{original} , ~~(Eq ~4.4)
 $$
 
 And where   
 
 $$
-A_{added}~=~0.95~*~(0.43~*~A_{total}), ~~(Eq~ 4.4)
+A_{added}~=~0.95~*~(0.43~*~A_{total}), ~~(Eq~ 4.5)
 $$   
 $$
-A_{original}~=~0.482~*~A_{total}, ~~(Eq~4.5)
+A_{original}~=~0.482~*~A_{total}, ~~(Eq~4.6)
 $$   
 
 **Trend** 
@@ -300,10 +333,10 @@ Threat weights, were assigned based on the IUCN threat categories status of each
 | Critically Endangered | CR  |  0.8  |
 | Extinct         |     EX    |  1.0  |   
   
-The species fall within 10 different taxonomic classes and to avoid over weighting, the status is first calculated for each class as the average of the extinction risk scores. An overall extinction risk status is then found by averaging the extinction risk score of all 10 classes. Finally, the score is rescaled so a risk factor of 0.75 is equal to zero (Equation 4.6).   
+The species fall within 10 different taxonomic classes and to avoid over weighting, the status is first calculated for each class as the average of the extinction risk scores. An overall extinction risk status is then found by averaging the extinction risk score of all 10 classes. Finally, the status $x_{spp}$ is rescaled so a risk factor of 0.75 is equal to zero (Equation 4.7):      
 
 $$
-status~=~ \frac { (0.75~-~risk_{avg}) } {0.75}, ~~~~(Eq ~4.6)
+x_{spp}~=~ \frac { (0.75~-~risk_{avg}) } {0.75}, ~~~~(Eq ~4.7)
 $$   
 
 Where $risk_avg$ is the average extinction risk score, found by averaging the mean extinction risk score of all 10 classes. 
@@ -356,10 +389,10 @@ The current status for the Clean Waters goal is the geometric mean of the status
 
 Marine debris current status is calculated based on the number of annual grounded FADs. The reference point for marine debris is to reduce FAD groundings by 50% of the highest annual recorded number of groundings between 2009-2019. The highest annual groundings occurred in 2016, with 12 groundings, so the reference point will be 6 annual FAD groundings. Any year where six or less FAD groundings were recorded will receive a perfect score.
 
-The current status is scaled between 0-1 by subtracting the reference point from the number of groundings and then dividing by the reference point (Equation 4.7).     
+The current status $x_{debris}$ is scaled between 0-1 by subtracting the reference point from the number of groundings and then dividing by the reference point (Equation 4.8):        
 
 $$
-status~=~ \frac { (fad_{y}~-~fad_{ref}) } { fad_{ref} }, ~~~(Eq ~4.7)
+x_{debris}~=~ \frac { (fad_{y}~-~fad_{ref}) } { fad_{ref} }, ~~~(Eq ~4.8)
 $$   
 
 Where $fad_{y}$ is the yearly number of recorded FAD groundings and $fad_{ref}$ is the reference point number of 6 annual FAD groundings.  
@@ -424,16 +457,16 @@ Marine sediment PELs (mg/kg of dry weight) are obtained from NOAA guidelines est
 
 No PELs are available for Antimony, Colbalt, and Manganese. For these we will approximate an upper limit that is one order of magnitude higher than the established TEL or Eco-SSL.  
 
-Contaminants are scaled 0-1 using a midpoint level, (TEL or ECO-SSl) and an upper level (PELs). A status is then calculated for each site using the geometric mean of the 9 contaminants (Equation 4.8).  
+Contaminants are scaled 0-1 using a midpoint level, (TEL or ECO-SSl) and an upper level (PELs). A status is then calculated for each site $x_{site}$ using the geometric mean of the 9 contaminants (Equation 4.9):    
 $$
-status_{site} = \sqrt [ 9 ]{ As~*~Cr~*~Co~*~Cu~*~Pb~*~Mn~*~Ni~*~Sb~*~Zn ~},  ~~(Eq ~4.8)
+x_{site} = \sqrt [ 9 ]{ As~*~Cr~*~Co~*~Cu~*~Pb~*~Mn~*~Ni~*~Sb~*~Zn ~},  ~~(Eq ~4.9)
 $$ 
-Finally, an overall status is found using an area weighted mean of the site status (Equation 4.9):      
+Finally, an overall status for contamination $x_{cont}$ is found using an area weighted mean of the site status (Equation 4.10):      
 
 $$ 
-status~=~\frac { \displaystyle\sum _{ i=1 }^{ N }{ { A }_{ i }{ s }_{ i } } } { \displaystyle\sum _{ i=1 }^{ N } { A }_{ i } }, ~~(Eq ~4.9)
+x_{cont]~=~\frac { \displaystyle\sum _{ i=1 }^{ N }{ { A }_{ i }{ x }_{ i } } } { \displaystyle\sum _{ i=1 }^{ N } { A }_{ i } }, ~~(Eq ~4.10)
 $$
-where $A_i$ is the area and $s_i$ is the status of contamination for each site $i$.  
+where $A_i$ is the area and $x_i$ is the status of contamination for each site $i$ as calculated in Equation 4.9.     
 
 This gives high scores to years with greater levels of contamination. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.
 <br>   
@@ -538,10 +571,10 @@ Unknown tree species and standing water were excluded from the analysis, as were
 
 The reference point for Carbon Storage is 95% of the forest area dominated by native tree species.  
  
-Current status is calculated as the current percent of forest dominated by native trees in year (y) over the reference point percentage (Equation 4.10).    
+Current status $x_{cs}$ is calculated as the current percent of forest dominated by native trees in year (y) over the reference point percentage (Equation 4.11):       
 
 $$
-status~=~ \frac {percent~cover_{y} } {percent~cover_{ref} }~,  ~~~(Eq ~4.10)
+x_{cs}~=~ \frac {percent~cover_{y} } {percent~cover_{ref} }~,  ~~~(Eq ~4.11)
 $$
 <br>   
 **Trend**   
@@ -589,10 +622,10 @@ The Coastal Protection sub-goal measures the health of habitats that contribute 
 
 The Coastal Protection current status is found using the condition and extent of coral reef habitat. Coral condition is the current condition of coral reef habitat relative to the reference point. This is the same as the coral status calculated in the Biodiversity: Habitats sub-goal. For more information about how the condition of coral reef status is calculated, refer to the methodology for the Biodiversity: Habitats sub-goal. The extent of coral reefs is calculated as the total reef area.   
 
-The Coastal Protection status is calculated as the relative health of the habitats that provide coastal protection weighted by their area and protectiveness rank (Equation 4.11).     
+The Coastal Protection status $x_{cp}$ is calculated as the relative health of the habitats that provide coastal protection weighted by their area and protectiveness rank (Equation 4.12):        
 
 $$
-status~=~ \frac { (C~*~A~*~w) } { (A~*~w) }~, ~~~(Eq ~4.11) 
+x_{cp}~=~ \frac { (C~*~A~*~w) } { (A~*~w) }~, ~~~(Eq ~4.12) 
 $$   
 
 Where $C$ is the condition of coral habitats as defined above, $A$ is the area of coral reef habitat, and $w$ is the protectiveness rank for coral reefs. Coral reefs are the only habitat included in the Coastal Protection sub-goal for Palmyra, so the protectiveness rank and area cancels out, leaving the current status for Coastal Protection equivalent to the coral reef condition calculated in the Biodiversity: Habitats sub-goal.
@@ -643,10 +676,10 @@ Current status for the research goal is the average of the layer scores for: emp
 <br>   
 *Employment*  
 
-The employment layer is calculated based on the number of full time equivalent (FTE) positions in conservation science supported by The Nature Conservancy. The reference point for employment is five FTE positions. Status scores are re-scaled to 0-1 by dividing the number of FTE positions by the reference point (Equation 4.12). Any value over one is given a score of one.     
+The employment layer is calculated based on the number of full time equivalent (FTE) positions in conservation science supported by The Nature Conservancy. The reference point for employment is five FTE positions. Status scores $x_{emp}$ are re-scaled to 0-1 by dividing the number of FTE positions by the reference point (Equation 4.13). Any value over one is given a score of one.     
 
 $$
-status~=~ \frac { FTE_{y} } { FTE_{ref} }, ~~(Eq ~4.12)
+x_{emp}~=~ \frac { FTE_{y} } { FTE_{ref} }, ~~(Eq ~4.13)
 $$  
 
 Where $FTE_{y}$ is the number of full-time equivalent positions in year (y) and $FTE_{ref}$ is the FTE positions reference point.
@@ -656,10 +689,10 @@ Where $FTE_{y}$ is the number of full-time equivalent positions in year (y) and 
 <br>   
 *Scientific Publications*   
 
-The publications layer is calculated based on the number of scientific studies published about resources on Palmyra each year. The reference point is 10 annual publications. Status scores are re-scaled to 0-1 by dividing the number of scientific publications by the reference point (Equation 4.13).  
+The publications layer is calculated based on the number of scientific studies published about resources on Palmyra each year. The reference point is 10 annual publications. Status scores $x_{sci}$ are re-scaled to 0-1 by dividing the number of scientific publications by the reference point (Equation 4.14):     
 
 $$
-status~=~ \frac { pubs_{y} } { pubs_{ref} },  ~~(Eq ~4.13)
+x_{sci}~=~ \frac { pubs_{y} } { pubs_{ref} },  ~~(Eq ~4.14)
 $$  
 
 Where $pubs_{y}$ is the number of scientific publications in year (y) and $pubs_{ref}$ is the number of publications reference point.
@@ -712,10 +745,10 @@ This goal is intended to measure access to recreational fishing opportunities on
 
 **Current Status**   
 
-Current status is based on the number of fish caught per year compared to the reference point. The reference point is up to 20 fish caught per year for sustenance fishing. The status score is scaled such that any catch three times or more than three times higher than the reference point is given a score of zero (Equation 4.14):       
+Current status $x_{rao}$ is based on the number of fish caught per year compared to the reference point. The reference point is up to 20 fish caught per year for sustenance fishing. The status score is scaled such that any catch three times or more than three times higher than the reference point is given a score of zero (Equation 4.15):       
 
 $$
-status~=~ \frac { (c_{y}~-~c_{ref,y}) } { s },  ~~(Eq ~4.14)
+x_{rao}=~ \frac { (c_{y}~-~c_{ref,y}) } { s },  ~~(Eq ~4.15)
 $$ 
 where $c_{y}$ is the number of fish caught in year (y), $c_{ref,y}$ is the reference point catch in year (y), and $s$ is the scaling coefficient used to adjust any catch level at or higher than three times the reference point to a score of zero. Any scores higher than one are given a one and any scores lower than zero are given a zero. This method of scoring is based on The Nature Conservancy's management goals to keep fishing at or below the reference point level and reflective of the view that fishing at more than three times the reference point would cause unnecessary damage to the ecosystem.
 <br>   
@@ -772,10 +805,10 @@ A score was assigned for each species based on its conservation status (Table 4.
 | Near Threatened |     NT    |  0.8  |
 | Least Concern   |     LC    |  1.0  |   
 
-The reference point is 100% of species have a status of "Least Concern". The status is found by averaging the IUCN category score for each of the species on the iconic species list (Equation 4.15).   
+The reference point is 100% of species have a status of "Least Concern". The status $x_{ico}$ is found by averaging the IUCN category score for each of the species on the iconic species list (Equation 4.16):      
 
 $$
-status~=~ \frac { \displaystyle\sum_{ i=EX }^{ LC }{ S_{i}~*~w_{i} }  }{ \displaystyle\sum_{ i=EX }^{ LC }{ S_{i} }  }, ~~(Eq. ~4.15)
+x_{ico}~=~ \frac { \displaystyle\sum_{ i=EX }^{ LC }{ S_{i}~*~w_{i} }  }{ \displaystyle\sum_{ i=EX }^{ LC }{ S_{i} }  }, ~~(Eq. ~4.16)
 $$
 
 where for each IUCN threat category $i$, $S_{i}$ is the number of assessed species and $w_{i}$ is the score (Table 4.6).
@@ -825,14 +858,14 @@ The lasting special places subgoal focuses on geographic locations that hold par
 <br>   
 **Current Status** 
 
-The current status is calculated by averaging the score for protected areas offshore and inland. The reference point is 99% of all offshore and inland areas protected. The status for offshore and inland protected areas is found by comparing the percentage of the area protected to the reference point (Equations 4.16, 4.17). 
+The current status is calculated by averaging the score for protected areas offshore $x_{offshore}$ and inland $x_{inland}$. The reference point is 99% of all offshore and inland areas protected. The status for offshore and inland protected areas is found by comparing the percentage of the area protected to the reference point (Equations 4.17, 4.18):    
 
 $$
-status_{offshore}~=~ \frac { pa_{offshore} } { pa_{offshore, ref} }, ~~(Eq ~4.16)
+x_{offshore}~=~ \frac { pa_{offshore} } { pa_{offshore, ref} }, ~~(Eq ~4.17)
 $$   
 <br>    
 $$
-status_{inland}~=~ \frac { pa_{inland}} { pa_{inland, ref} },  ~~(Eq ~4.17)
+x_{inland}~=~ \frac { pa_{inland}} { pa_{inland, ref} },  ~~(Eq ~4.18)
 $$    
 
 Where $pa_{offshore}$, $pa_{inland}$ is the percentage of offshore and inland areas, respectively, that is protected and $pa_{offshore,ref}$, $pa_{inland,ref}$ are the reference point percentages of protected areas offshore and inland, respectively.  
@@ -873,10 +906,10 @@ This goal is intended to measure access to tourism and recreation on Palmyra Ato
 
 **Current Status**   
 
-Current status is based on the number of private visiting vessels per year compared to the reference point. The reference point is up to 6 visiting vessels per year. The status score is scaled such that any year with vessel visits three times or more than three times higher than the reference point is given a score of zero (Equation 4.18):       
+Current status $x_{tr}$ is based on the number of private visiting vessels per year compared to the reference point. The reference point is up to 6 visiting vessels per year. The status score is scaled such that any year with vessel visits three times or more than three times higher than the reference point is given a score of zero (Equation 4.19):       
 
 $$
-status~=~ \frac { (v_{y}~-~v_{ref,y}) } { s },  ~~(Eq ~4.18)
+x_{tr}~=~ \frac { (v_{y}~-~v_{ref,y}) } { s },  ~~(Eq ~4.19)
 $$
 where $v_{y}$ is the number of private visiting vessels in year (y), $v_{ref,y}$ is the reference point for private visiting vessels in year (y), and $s$ is the scaling coefficient used to adjust any visitation levels at or above three times the reference point to a score of zero. Any scores higher than one are given a one and any scores lower than zero are given a zero. This method of scoring is based on The Nature Conservancy's management goals to keep tourism at or below the reference point level and reflective of the view that having triple the number of private vessels visiting each year would incur undesirable biosecurity risks and/or divert resources away from TNC's core mission.   
 <br>
@@ -941,7 +974,7 @@ The typical marine-related jobs, which are included in the Livelihoods and Econo
 The pressure score, p, describes the cumulative pressures acting on a goal which suppress the goal score. Pressure scores range from 0 to 1, they are calculated for each goal and include both ecological (pE) and social pressures (pS) (Table 4.7, Figure 4.2), such that:   
 
 $$
-{ p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.19)
+{ p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.20)
 $$
 
 where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions.
@@ -986,10 +1019,10 @@ kable(pressure_matrix, align = "l")
 ```
 
 
-To estimate the cumulative effect of the ecological pressures, $P_E$, we first determined the cumulative pressure, $p$, within each ecological category, $i$ (Equation 4.20):      
+To estimate the cumulative effect of the ecological pressures, $P_E$, we first determined the cumulative pressure, $p$, within each ecological category, $i$ (Equation 4.21):      
 
 $$
-{ p }_{ i }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ s }_{ i } }  }{ 3 }, ~~(Eq. ~4.20)
+{ p }_{ i }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ s }_{ i } }  }{ 3 }, ~~(Eq. ~4.21)
 $$
 
 Where $w_i$ is the sensitivity ranks (Table 4.8) describing the relative sensitivity of each goal to each stressor, and $s_i$ is intensity of the stressor in each region on a scale of 0-1. We divided by the maximum weighted intensity that could be achieved by the worst stressor (max = 3.0).
@@ -998,20 +1031,20 @@ If $p_i$ > 1.0, we set the value equal to 1.0. This formulation assumes that any
 
 For the goals for which sensitivity ranks were assigned for specific habitats (i.e., goal elements), we calculated the weighted sum of the pressures for only those habitats or sectors that were present in the country.
 
-The overall ecological pressure, $p_E$, acting on each goal and region was calculated as the weighted-average of the pressure scores, $p$, for each category, $i$, with weights set as the maximum rank in each pressure category ($w_{i\_max}$) for each goal (Equation 4.21):    
+The overall ecological pressure, $p_E$, acting on each goal and region was calculated as the weighted-average of the pressure scores, $p$, for each category, $i$, with weights set as the maximum rank in each pressure category ($w_{i\_max}$) for each goal (Equation 4.22):    
 
 $$
-{ p }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (w }_{ i\_ max }*{ p }_{ i }) }  }{ \displaystyle\sum_{ i=1 }^{ N } { { w }_{ i\_ max } }  },  ~~(Eq. ~4.21)
+{ p }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (w }_{ i\_ max }*{ p }_{ i }) }  }{ \displaystyle\sum_{ i=1 }^{ N } { { w }_{ i\_ max } }  },  ~~(Eq. ~4.22)
 $$
 
 Stressors that have no impact drop out rather than being assigned a rank of zero, which would affect the average score.
 
 ### Social Pressures 
 
-Social pressures describe the lack of effectiveness of government and social institutions. For Palmyra, the social pressure we are considering is management. The pressure score is derived as the inverse of the habitat management resilience score. This considers management of both terrestrial and marine areas. Social stressors are described for each region on a scale of 0 to 1 (with one indicating the highest pressure). We assume that social pressures affect all goals and sub-goals equally (Table 4.8). For this assessment a single social stressor is used, however, if more stressors were added the overall social pressure would be calculated as the average of the social stressors (Equation 4.22):    
+Social pressures describe the lack of effectiveness of government and social institutions. For Palmyra, the social pressure we are considering is management. The pressure score is derived as the inverse of the habitat management resilience score. This considers management of both terrestrial and marine areas. Social stressors are described for each region on a scale of 0 to 1 (with one indicating the highest pressure). We assume that social pressures affect all goals and sub-goals equally (Table 4.8). For this assessment a single social stressor is used, however, if more stressors were added the overall social pressure would be calculated as the average of the social stressors (Equation 4.23):    
 
 $$
-{ p }_{ S }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ z_{ i } }  }{ N }, ~~(Eq. ~4.22)
+{ p }_{ S }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ z_{ i } }  }{ N }, ~~(Eq. ~4.23)
 $$
 
 where $z_{i}$ are the social pressure measures specific to the goal. Unequal weighting may be appropriate in some cases but for this assessment equal weights are used.   
@@ -1025,7 +1058,7 @@ A key assumption in our assessment of ecological pressures is that each goal has
 To calculate resilience for each goal and region, $r$, we assess three resilience categories (Figure 4.3, Table 4.9): ecological integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$.  The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
 
 $$
-r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, ~~(Eq. ~4.23)
+r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, ~~(Eq. ~4.24)
 $$
 
 We chose $\gamma = 0.5$ so the weight of resilience components that address ecological systems (ecosystem and regulatory) vs. social systems would be equivalent to the proportions used in the model to calculate pressure. 
@@ -1080,10 +1113,10 @@ Management layers are derived for climate change, habitats, fishing, and alien s
  
 A score of one is given for every "Yes" response, a zero given for a "No" response, and 0.5 given if management plans or monitoring programs are "In Development". The overall resilience layer score is the sum over three. Since the inverse of the habitat management resilience is used for a social pressure, we will consider this a social resilience instead of an ecological one.    
 
-For each region and goal, we calculated a score for each regulatory category, $y_{R, i}$, as a weighted mean of the resilience data layers, $r_{i}$, that influence the goal (Equation 4.24, Table 4.10):  
+For each region and goal, we calculated a score for each regulatory category, $y_{R, i}$, as a weighted mean of the resilience data layers, $r_{i}$, that influence the goal (Equation 4.25, Table 4.10):  
 
 $$
-y_{R, i}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ r }_{ i } }  }{ \displaystyle\sum _{ i=1 }^{ N }{w_i} },  ~~(Eq. ~4.24) 
+y_{R, i}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ r }_{ i } }  }{ \displaystyle\sum _{ i=1 }^{ N }{w_i} },  ~~(Eq. ~4.25) 
 $$
 
 where, $w_i$ is the weight in Table 4.9.
@@ -1106,7 +1139,19 @@ Ideally, assessments of social resilience would include state and federal level 
 
 ## Weaknesses
 
-***
+*Data quality matrix* 
+
 
 # Future
+
 - Table describing datasets that would be ideal to collect for future iterations of the OHI assessment.
+- sedimentation / soil contamination
+- repeated forest surveys - either extent of native vegetation vs. coconut palm or repeated individual woody strands assessments 
+- repeated coral surveys - live coral cover across the reef, estimates of the extent where coral can reasonably grow in areas that are degraded   
+- more localized ocean acifidication, sst, slr   
+
+# References / Citations 
+
+Do I need to include data citations again if they are already in each data prep section? 
+
+ - Citations for intro and natural history stuff    
