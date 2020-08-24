@@ -126,7 +126,7 @@ Four goals/sub-goals scored below 50, Habitats, Habitat Services, Coastal Protec
 
 <br>   
 ![flower_plot](images/flower_Palmyra.png)
-***Figure 3.1 OHI+ Palmyra Results.** Each goal and sub-goal of the Palmyra Ocean Health Index assessment is represented by a petal. The length of the each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.*
+***Figure 3.1 OHI+ Palmyra Results.** Each goal and sub-goal of the Palmyra Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.*
 <br>   
 The summary results table (Table 3.1) shows the status, future status, score, and description for each goal and sub-goal included in the assessment. Where *Status* is the current status relative to the reference point; *Future* is the likely future status based on the trend, pressures, and resilience; and *Score* is the final goal or sub-goal score reflected in Figure 3.1.
 <br>   
@@ -152,7 +152,7 @@ kable(scores, align = "l")
 ***
 <br>   
 
-# Goals: Methods/Result
+# Methods and Results
 
 ## Goals Included in Palmyra OHI+ Assessment:
 
@@ -333,7 +333,7 @@ Threat weights, were assigned based on the IUCN threat categories status of each
 | Critically Endangered | CR  |  0.8  |
 | Extinct         |     EX    |  1.0  |   
   
-The species fall within 10 different taxonomic classes and to avoid over weighting, the status is first calculated for each class as the average of the extinction risk scores. An overall extinction risk status is then found by averaging the extinction risk score of all 10 classes. Finally, the status $x_{spp}$ is rescaled so a risk factor of 0.75 is equal to zero (Equation 4.7):      
+The species fall within 10 different taxonomic classes and to avoid overweighting, the status is first calculated for each class as the average of the extinction risk scores. An overall extinction risk status is then found by averaging the extinction risk score of all 10 classes. Finally, the status $x_{spp}$ is rescaled so a risk factor of 0.75 is equal to zero (Equation 4.7):      
 
 $$
 x_{spp}~=~ \frac { (0.75~-~risk_{avg}) } {0.75}, ~~~~(Eq ~4.7)
@@ -1002,7 +1002,7 @@ where γ is the relative weight for ecological vs. social pressures and equals 0
 
 ### Ecological Pressures 
 
-We assessed five broad, categories of ecological stressors: fishing pressure, habitat destruction, climate change, water pollution, and alien species introductions. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. Each pressure category may include several stressors. The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress.      
+We assessed five broad categories of ecological stressors: fishing pressure, habitat destruction, climate change, water pollution, and alien species introductions. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. Each pressure category may include several stressors. The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress.      
 
 We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.8). Where appropriate we based these rankings on the global assessment which used peer reviewed literature to establish rank scores. In other cases, like for Research and Resource Access Opportunities we used our collective judgment and input from our partners at The Nature Conservancy.
 <br>   
@@ -1135,12 +1135,29 @@ where $y_{S,i}$ are the social integrity measures specific to the goal.
 
 Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. As Palmyra is sparsely populated, many of these social resilience aren't applicable. For this assessment we consider social resilience to be based on general management of Palmyra's ecosystems. We used a lack of management as a social pressure and will use the inverse of this score as our resilience layer. The management layer was derived using the same method as the ecological management resilience layers discussed above.   
 
-## Results
-
 ## Weaknesses
 
-*Data quality matrix* 
+This OHI+ assessment incorporates 36 layers, constructed from dozens of datasets to calculate status, pressures, and resilience for each goal. The scores calculated in this assessment could be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. In each dimension, a dataset was scored 0.0, 0.5, 1.0, or 'NA' if the dimension is not relevant to the dataset (Table 4.11).     
 
+The spatial dimension evaluates the spatial scale of the data.   
+ 
+ - **Spatial Cover:** Ideally the data would cover the entire region of Palmyra and be localized, rather than estimated from larger spatial regions. A score of 1 is given to data which cover the entire local region, a score 0.5 is given if data are estimated using a neighboring region as a proxy, and a score of 0 is given if data uses a global average.   
+ 
+The temporal dimension assesses how well data matches the timescale needs of the projects.    
+
+ - **Temporal Resolution:** Ideally data would be updated annually. A score of 1 is given to data that are updated annually, a score of 0.5 is given when data are updated on 5-year intervals or less, and a score of 0 is given if data are updated less frequently than 5 years or for static data sources. For habitats data, it is likely that updates every 3-5 years would be sufficient to track any major changes. A score of 1 is given to habitats data that are updated every 3-5 years, a score of 0.5 is given to data that are updated on 10-year intervals or less, and a score of 0 is given to data that are updated less frequently than 10 years or for static data sources.        
+ - **Temporal Span:** Ideally data would span the entire study period (2014 - 2020). A score of 1 is given when data are available every year of the study period, a score of 0.5 is given when data are available for half of the study period, and a score of 0 is given if data span less than half of the study period.     
+ - **Temporal Baseline:** Some goals require comparison to a historic benchmark. A score of 1 is assigned when data are available more than 10 years before the beginning of the study period (i.e. 2004 or earlier), a score of 0.5 is given if data are less than or equal to 10 years (i.e. later than 2004), and a score of 0 is given if no historic data is available.  
+ 
+ The fit dimension evaluates how well data 'fit' the needs of the Palmyra assessment. These measures are rather subjective, sometimes the available data were chosen to fit a
+goal model, while other times, a goal model required modification to accommodate the available data.   
+
+ - **Fit Resolution:** Measures how well the data allowed for detailed exploration of goal status, pressures, or resilience within the broader context. A score of 1 is given for data with a rich breakdown of categories or sectors, a score of 0.5 is given for data with some internal detail, and a score of 0 is assigned where finer-scale divisions are not available.      
+ - **Fit Comprehensiveness:** Measures the degree to which data fully capture the conceptual understanding required by the target calculation. A score of 1 is given for data that inform understanding across the entire system (e.g. species condition was given for the full list of iconic species) and a score of 0.5 is given for data that may represent only a portion of the benefits (e.g. species condition used in the Species sub-goal is limited to a subset of taxa assessed by the IUCN). No scores of 0 were given.
+<br>   
+***Table 4.11. Data Quality Matrix.** Datasets used in the Palmyra OHI+ assessment were evaluated across three dimensions with a score (0, 0.5, or 1) given for each applicable dimension. 'NA' is assigned when a dimension is not relevant to a particular dataset.*      
+
+<br>   
 
 # Future
 
