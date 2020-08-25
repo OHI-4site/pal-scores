@@ -994,18 +994,18 @@ where γ is the relative weight for ecological vs. social pressures and equals 0
 <br>   
 ***Table 4.6. Pressure data and categories.** Description of the stressor data layers used to calculate overall pressure for each goal of the Palmyra assessment. Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories.*   
 
-| Data           | Short Name   | Category  | Subcategory           | Description                                                   | 
-|----------------|--------------|-----------|-----------------------| --------------------------------------------------------------|
-| Ocean acidification     | prs_cc_oa            | ecological  | climate change      | Pressure due to increasing ocean acidification, scaled using biological thresholds | 
-| Sea level rise          | prs_cc-slr           | ecological  | climate change      | Pressure due to rising mean sea level |
-| Sea surface temperature | prs_cc_sst           | ecological  | climate change      | Pressure due to increasing extreme sea surface temperature events | 
-| UV Radiation            |  prs_cc_uv           | ecological  | climate change      | Pressure due to increasing frequency of UV anomalies |
-| Marine debris           | prs_po_debris        | ecological  | pollution           | Measure of marine debris within 3 nm based on number of drifting fishing aggregation devices |
-| Soil contamination      | prs_po_contamination | ecological  | pollution           | Measure of risk from soil contamination within 3 nm of shoreline |
-| Nonindigenous species   | prs_sp_alien         | ecological  | alien species       | Measure of harmful invasive species |
-| Fishing pressure        | prs_fp               | ecological  | fishing pressure    | Pressure due to bycatch from sustenance fishing activities 
-| Habitat destruction     | prs_hd               | ecological  | habitat destruction | Pressure from activities causing destruction of terrestrial and/or marine habitats | 
-| Management              | prs_mgmt             | social      | social              | Social pressure from lack of management of terrestrial and/or marine habitats | 
+| Data           | Category  | Subcategory           | Description                                                   | 
+|----------------|-----------|-----------------------| --------------------------------------------------------------|
+| Ocean acidification     | ecological  | climate change      | Pressure due to increasing ocean acidification, scaled using biological thresholds | 
+| Sea level rise          | ecological  | climate change      | Pressure due to rising mean sea level |
+| Sea surface temperature | ecological  | climate change      | Pressure due to increasing extreme sea surface temperature events | 
+| UV Radiation            | ecological  | climate change      | Pressure due to increasing frequency of UV anomalies |
+| Marine debris           | ecological  | pollution           | Measure of marine debris within 3 nm based on number of drifting fishing aggregation devices |
+| Soil contamination      | ecological  | pollution           | Measure of risk from soil contamination within 3 nm of shoreline |
+| Nonindigenous species   | ecological  | alien species       | Measure of harmful invasive species |
+| Fishing pressure        | ecological  | fishing pressure    | Pressure due to bycatch from sustenance fishing activities 
+| Habitat destruction     | ecological  | habitat destruction | Pressure from activities causing destruction of terrestrial and/or marine habitats | 
+| Management              | social      | social              | Social pressure from lack of management of terrestrial and/or marine habitats | 
 <br>   
 <center> 
 ![pressures](images/pressures.png)
@@ -1038,7 +1038,7 @@ $$
 { p }_{ i }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ s }_{ i } }  }{ 3 }, ~~(Eq. ~4.21)
 $$
 
-Where $w_i$ is the sensitivity ranks (Table 4.8) describing the relative sensitivity of each goal to each stressor, and $s_i$ is intensity of the stressor in each region on a scale of 0-1. We divided by the maximum weighted intensity that could be achieved by the worst stressor (max = 3.0).
+Where $w_i$ is the sensitivity rank (Table 4.8) describing the relative sensitivity of each goal to each stressor, and $s_i$ is intensity of the stressor in each region on a scale of 0-1. We divided by the maximum weighted intensity that could be achieved by the worst stressor (max = 3.0).
 
 If $p_i$ > 1.0, we set the value equal to 1.0. This formulation assumes that any cumulative pressure load greater than the maximum intensity of the worst stressor is equivalent to maximum stressor intensity.
 
@@ -1068,7 +1068,7 @@ A key assumption in our assessment of ecological pressures is that each goal has
 
 ## Resilience 
 
-To calculate resilience for each goal and region, $r$, we assess three resilience categories (Figure 4.3, Table 4.9): ecological integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$.  The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
+Resilience variables help mitigate pressures. To calculate resilience for each goal and region, $r$, we assess three resilience categories (Figure 4.3, Table 4.9): ecological integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$.  The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
 
 $$
 r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, ~~(Eq. ~4.24)
@@ -1086,16 +1086,16 @@ Each resilience category is composed of 1 or more data layers (Table 4.8) with v
 <br>   
 ***Table 4.8. Resilience categories and weights.** The data layers used to calculate resilience for each goal and region for the Palmyra assessment. Each data layer is assigned to an ecological or social category. The ecological category is broken into an ecosystem and regulatory category type.*     
 
-| Data                           | Short Name   | Category       | Category Type        | Subcategory            | Weight    | 
-|--------------------------------|--------------|----------------|----------------------|------------------------|-----------|
-| Measure of ecological integrity  | res_eco_spp_diversity  | ecological  | ecosystem     | ecological  | 1 |
-| Measure of climate change management | res_cc_mgmt        | ecological  | ecosystem     | regulatory  | 0.5 |
-| Measure of fishing (offshore) regulations | res_fp_reg    | ecological  | ecosystem     | regulatory  | 1 |
-| Measure of fishing (offshore) management  | res_fp_mgmt   | ecological  | ecosystem     | regulatory  | 1 |
-| Measure of habitat destruction regulations | res_hd_reg   | ecological  | ecosystem     | regulatory  | 1 |
-| Measure of alien species regulations | res_sp_reg    | ecological  | ecosystem     | regulatory  | 1 |
-| Measure of alien species management  | res_sp_mgmt   | ecological  | ecosystem     | regulatory  | 1 |
-| Measure of terrestrial and marine habitat management  | res_hd_mgmt   | social  | social    | social  | 1 |
+| Data                           | Category       | Category Type        | Subcategory            | Weight    | 
+|--------------------------------|----------------|----------------------|------------------------|-----------|
+| Measure of ecological integrity  | ecological  | ecosystem     | ecological  | 1 |
+| Measure of climate change management | ecological  | ecosystem     | regulatory  | 0.5 |
+| Measure of fishing (offshore) regulations | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of fishing (offshore) management  | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of habitat destruction regulations | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of alien species regulations | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of alien species management  | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of terrestrial and marine habitat management  | social  | social    | social  | 1 |
 <br>  
 Resilience layers are only marked in Table 4.10 for goals or goal elements where the corresponding ecological pressure rank is 2 or 3 (refer to Table 4.8). Where the ecological pressures were ranked 1 (refer to Table 4.8), resilience is not counted for that particular goal or goal element. For example, all invasive species pressures were given a rank of 1, therefore, although the two resilience layers are included in the assessment, neither are designated as a resilience for any of the goals or goal elements affected by invasive species.  
 <br>   
@@ -1110,19 +1110,19 @@ kable(res_matrix, align = "l")
 
 #### Ecosystem Integrity
 
-Ecosystem integrity, e.g., food web integrity, is measured as relative condition of assessed species in a given location (scores from the species sub-goal were used to estimate ecosystem integrity). For some goals, there is little evidence that our index of ecosystem integrity directly affects the value of the goal (or sub-goal). In these instances, ecological integrity falls out of the resilience model. For this assessment, we only have one data layer describing ecosystem integrity.   
+Ecosystem integrity, e.g., food web integrity, is measured as the relative condition of assessed species in a given location (scores from the species sub-goal were used to estimate ecosystem integrity). For some goals, there is little evidence that our index of ecosystem integrity directly affects the value of the goal (or sub-goal). In these instances, ecological integrity falls out of the resilience model. For this assessment, we only have one data layer describing ecosystem integrity.   
   
 #### Regulatory Resilience 
 
 Regulatory resilience ($Y_R$)  describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. The regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and alien species. For this assessment we use two resilience layers for each pressure category where possible: regulations and management.  
 
-Regulation layers are based on if there are established rules to prevent ecological pressures. For alien species, we use the presence of rules to prevent the introduction and spread of invasive species from boats, vessels, and cargo. Fishing and habitat regulations are based on the establishment of protected areas. For fishing resilience, we use presence of marine protected areas and for habitats, we consider both terrestrial protected areas and marine protected areas. Due to the lack of permanent residents, pollution and climate change don't have localized rules and therefore aren't considered as resilience layers.   
+Regulation layers are based on if there are established rules to prevent ecological pressures. For alien species, we use the presence of rules to prevent the introduction and spread of invasive species from boats, vessels, and cargo. Fishing and habitat regulations are based on the establishment of protected areas. For fishing resilience, we use the presence of marine protected areas and for habitats, we consider both terrestrial protected areas and marine protected areas. Due to the lack of permanent residents, pollution and climate change don't have localized rules and therefore aren't considered as resilience layers.   
 
 Management layers are derived for climate change, habitats, fishing, and alien species based on evaluation of three questions:   
 
  1. Is there a management plan?    
  2. Does there exist some sort of monitoring or tracking of the effects of the management plan?   
- 3. Has the management plan been effective in changing behaviors or meeting is objectives?   
+ 3. Has the management plan been effective in changing behaviors or meeting its objectives?   
  
 A score of one is given for every "Yes" response, a zero given for a "No" response, and 0.5 given if management plans or monitoring programs are "In Development". The overall resilience layer score is the sum over three. Since the inverse of the habitat management resilience is used for a social pressure, we will consider this a social resilience instead of an ecological one.    
 
