@@ -793,30 +793,23 @@ data_layers(goal="RAO", dimension=c("resilience"))
 
 Data to inform this layer were obtained via email from Alex Wegmann at The Nature Conservancy and Stephan Kropidlowski from U.S. Fish and Wildlife Service on August 17, 2020.  
 
-### Sense of Place (SP)
+### Sense of Place
 
-This goal attempts to capture the aspects of the coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. While there are only a small handful of residents on Palmyra, the island's pristine ecosystems are valued by scientists, researchers, and conservationists among others. This goal is calculated using two equally weighted sub-goals: iconic species (ICO) and lasting special places (LSP).   
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 96.74</span> 
 
-#### Iconic Species (ICO)
+This goal attempts to capture the aspects of the coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. While there are only a small handful of residents on Palmyra, the island's pristine ecosystems are valued by scientists, researchers, and conservationists, among others, including the general public. This goal is calculated using two equally weighted sub-goals: iconic species and lasting special places.        
 
-Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., touristic attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihoods or extractive reason). 
+#### Iconic Species
 
-A primary iconic species for Palmyra was gathered based on species listed on the U.S. Fish and Wildlife Service webpage for the Palmyra Atoll National Wildlife Refuge. This list was supplemented with species identified as globally iconic (World Wildlife Fund Flagship species and Priority species) or regionally iconic (based upon World Wildlife Fund regional/local priority species and nation-specific lists) from the OHI Global Assessment. A total of 23 species were included in the iconic species list.      
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 93.48</span> 
+
+Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., tourist attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihood or extractive reason).   
+
+A primary iconic species list  for Palmyra was gathered based on species listed on the U.S. Fish and Wildlife Service webpage for the [Palmyra Atoll National Wildlife Refuge](https://www.fws.gov/refuge/palmyra_atoll/). This list was supplemented with species identified as globally iconic (World Wildlife Fund Flagship species and Priority species) or regionally iconic (based upon World Wildlife Fund regional/local priority species and nation-specific lists) from the OHI Global Assessment. A total of 23 species were included in the iconic species list.        
 
 **Current Status**
 
-A score was assigned for each species based on its conservation status (Table 4.6).
-<br>   
-***Table 4.6. Category scores for iconic species based on IUCN conservation status.***    
-
-| Category        | IUCN code | Weight|
-|-----------------|-----------|-------|
-| Extinct         |     EX    |  0.0  |
-| Critically Endangered | CR  |  0.2  |
-| Endangered      |     EN    |  0.4  |
-| Vulnerable      |     VU    |  0.6  |
-| Near Threatened |     NT    |  0.8  |
-| Least Concern   |     LC    |  1.0  |   
+A score was assigned for each species based on its conservation status which is 1- extinction risk based on IUCN data (refer to Table 4.1).   
 
 The reference point is 100% of species have a status of "Least Concern". The status $x_{ico}$ is found by averaging the IUCN category score for each of the species on the iconic species list (Equation 4.16):      
 
@@ -828,7 +821,7 @@ where for each IUCN threat category $i$, $S_{i}$ is the number of assessed speci
 <br>   
 **Trend**
 
-The iconic species trend is calculated as a linear change in iconic species status from 2014 - 2020.
+The trend describes the change in iconic species status over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating the change in species extinction risk from 2014 to 2020.
 <br>   
 **Data**   
 
@@ -850,9 +843,10 @@ _Resilience_
 data_layers(goal="ICO", dimension=c("resilience"))
 ```
 <br>   
+
 **Data Citations**   
 
-A list of iconic species was created based on species listed on the U.S. Fish an Wildlife Service webpage for the Palmyra Atoll National Wildlife Refuge. 
+A list of iconic species was created based on species listed on the U.S. Fish and Wildlife Service webpage for the Palmyra Atoll National Wildlife Refuge. 
 
 Data Accessed: June 4, 2020   
 
@@ -865,9 +859,11 @@ Date Accessed: June 9, 2020
 Citation: IUCN 2020. IUCN Red List of Threatened Species. Version 2020-1 <www.iucnredlist.org>.  
 <br>      
 
-#### Lasting Special Places (LSP)
+#### Lasting Special Places
 
-The lasting special places subgoal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons (TRC 2004). For this subgoal, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true. For Palmyra we are looking at both offshore protected areas, within three nautical miles of the shoreline, and inland protected areas. The entire island is considered when considering the percent of inland protected area.
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 100</span> 
+
+The lasting special places sub-goal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons (TRC 2004). For this sub-goal, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true. For Palmyra we included  offshore protected areas located within three nautical miles of the shoreline and inland protected areas including the entire island. 
 <br>   
 **Current Status** 
 
@@ -887,7 +883,7 @@ Finally, the status of offshore and inland areas are averaged to find the overal
 <br>   
 **Trend**
 
-The trend for the lasting special places subgoal is calculated as the linear change in percent protected areas from 2014 - 2020.
+The trend describes the change in offshore and inland protected areas over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change in the percent of offshore and inland protected areas from 2014 to 2020.
 <br>   
 **Data**   
 
@@ -909,11 +905,14 @@ _Resilience_
 data_layers(goal="LSP", dimension=c("resilience"))
 ```
 <br>   
+
 **Data Citations**   
 
 Data were obtained verbally from Alex Wegmann at The Nature Conservancy on June 29, 2020. 
 
-### Tourism and Recreation (TR)
+### Tourism and Recreation
+
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 100</span> 
 
 This goal is intended to measure access to tourism and recreation on Palmyra Atoll. Although the atoll is protected, a limited number of private tourists visit the island each year via boat.   
 
@@ -928,7 +927,7 @@ where $v_{y}$ is the number of private visiting vessels in year (y), $v_{ref,y}$
 <br>
 **Trend**   
 
-The trend for tourism and recreation is calculated as the rate of change in the number of annual private vessels visiting the island from 2014-2020.
+The trend describes the change in private visiting vessels over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change in the number of visting vessels from 2014 to 2020.
 <br>   
 **Data**  
 
@@ -950,6 +949,7 @@ _Resilience_
 data_layers(goal="TR", dimension=c("resilience"))
 ```
 <br>   
+
 **Data Citations**   
 
 Data to inform this layer were obtained via email from Alex Wegmann at The Nature Conservancy and Stephan Kropidlowski from U.S. Fish and Wildlife Service on August 17, 2020.  
@@ -984,7 +984,7 @@ The typical marine-related jobs, which are included in the Livelihoods and Econo
 
 ## Pressures 
 
-The pressure score, p, describes the cumulative pressures acting on a goal which suppress the goal score. Pressure scores range from 0 to 1, they are calculated for each goal and include both ecological (pE) and social pressures (pS) (Table 4.7, Figure 4.2), such that:   
+The pressure score, p, describes the cumulative pressures acting on a goal which suppress the goal score. Pressure scores range from 0 to 1, they are calculated for each goal and include both ecological (pE) and social pressures (pS) (Table 4.6, Figure 4.2), such that:   
 
 $$
 { p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.20)
@@ -992,7 +992,7 @@ $$
 
 where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions.
 <br>   
-***Table 4.7. Pressure data and categories.** Description of the stressor data layers used to calculate overall pressure for each goal of the Palmyra assessment. Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories.*   
+***Table 4.6. Pressure data and categories.** Description of the stressor data layers used to calculate overall pressure for each goal of the Palmyra assessment. Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories.*   
 
 | Data           | Short Name   | Category  | Subcategory           | Description                                                   | 
 |----------------|--------------|-----------|-----------------------| --------------------------------------------------------------|
@@ -1017,9 +1017,9 @@ where γ is the relative weight for ecological vs. social pressures and equals 0
 
 We assessed five broad categories of ecological stressors: fishing pressure, habitat destruction, climate change, water pollution, and alien species introductions. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. Each pressure category may include several stressors. The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress.      
 
-We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.8). Where appropriate we based these rankings on the global assessment which used peer reviewed literature to establish rank scores. In other cases, like for Research and Resource Access Opportunities we used our collective judgment and input from our partners at The Nature Conservancy.
+We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.7). Where appropriate we based these rankings on the global assessment which used peer reviewed literature to establish rank scores. In other cases, like for Research and Resource Access Opportunities we used our collective judgment and input from our partners at The Nature Conservancy.
 <br>   
-***Table 4.8 Pressure matrix.** Rank sensitivity of each goal (or, goal element) to each stressor.*  
+***Table 4.7 Pressure matrix.** Rank sensitivity of each goal (or, goal element) to each stressor.*  
 
 ```{r pressure matrix, echo=FALSE}
 pressure_matrix <- read.csv(here("region/conf/pressures_matrix.csv"), na.strings=c("","NA"), stringsAsFactors = FALSE) %>%
@@ -1082,9 +1082,9 @@ We chose $\gamma = 0.5$ so the weight of resilience components that address ecol
 <br>
 ***Figure 4.3 Resilience components.** Resilience includes both ecological and social resilience categories. Ecological resilience includes an ecosystem and regulatory category. The regulatory category includes 5 subcategories that mirror the pressure categories (fishing pressure, habitat destruction, climate change, water pollution, and alien species) as well as a goal-specific category.*
 <br>   
-Each resilience category is composed of 1 or more data layers (Table 4.9) with values scaled from 0-1, reflecting the magnitude of resilience, for each region. Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.9) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.10). This information is used to calculate a score for each resilience category. A weight of 1 is given to all layers except for climate change management (Table 4.9). As meaningful mitigation of climate pressures is unlikely even with established actions in a Climate Adaptation Plan, this resilience is given a lower weight of 0.5. 
+Each resilience category is composed of 1 or more data layers (Table 4.8) with values scaled from 0-1, reflecting the magnitude of resilience, for each region. Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.8) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.9). This information is used to calculate a score for each resilience category. A weight of 1 is given to all layers except for climate change management (Table 4.9). As meaningful mitigation of climate pressures is unlikely even with established actions in a Climate Adaptation Plan, this resilience is given a lower weight of 0.5. 
 <br>   
-***Table 4.9. Resilience categories and weights.** The data layers used to calculate resilience for each goal and region for the Palmyra assessment. Each data layer is assigned to an ecological or social category. The ecological category is broken into an ecosystem and regulatory category type.*     
+***Table 4.8. Resilience categories and weights.** The data layers used to calculate resilience for each goal and region for the Palmyra assessment. Each data layer is assigned to an ecological or social category. The ecological category is broken into an ecosystem and regulatory category type.*     
 
 | Data                           | Short Name   | Category       | Category Type        | Subcategory            | Weight    | 
 |--------------------------------|--------------|----------------|----------------------|------------------------|-----------|
@@ -1099,7 +1099,7 @@ Each resilience category is composed of 1 or more data layers (Table 4.9) with v
 <br>  
 Resilience layers are only marked in Table 4.10 for goals or goal elements where the corresponding ecological pressure rank is 2 or 3 (refer to Table 4.8). Where the ecological pressures were ranked 1 (refer to Table 4.8), resilience is not counted for that particular goal or goal element. For example, all invasive species pressures were given a rank of 1, therefore, although the two resilience layers are included in the assessment, neither are designated as a resilience for any of the goals or goal elements affected by invasive species.  
 <br>   
-***Table 4.10. Resilience matrix.** Describes which goals/sub-goals (and goal elements) are influenced by the resilience data layers.*     
+***Table 4.9. Resilience matrix.** Describes which goals/sub-goals (and goal elements) are influenced by the resilience data layers.*     
 
 ```{r resilience-matrix, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 res_matrix <- read.csv(here("region/conf/resilience_matrix.csv"), na.strings="") 
