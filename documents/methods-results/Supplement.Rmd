@@ -990,7 +990,7 @@ $$
 { p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.20)
 $$
 
-where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions.
+where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions. Additional information on the methods used to calculate the pressure score can be found in the [OHI Global Methods](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#532_pressure). 
 <br>   
 ***Table 4.6. Pressure data and categories.** Description of the stressor data layers used to calculate overall pressure for each goal of the Palmyra assessment. Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories.*   
 
@@ -1015,10 +1015,22 @@ where γ is the relative weight for ecological vs. social pressures and equals 0
 
 ### Ecological Pressures 
 
-We assessed five broad categories of ecological stressors: fishing pressure, habitat destruction, climate change, water pollution, and alien species introductions. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. Each pressure category may include several stressors. The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress.      
+We assessed five broad categories of ecological stressors: climate change, fishing pressure, habitat destruction, alien species introductions, and water pollution. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. 
 
-We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.7). Where appropriate we based these rankings on the global assessment which used peer reviewed literature to establish rank scores. In other cases, like for Research and Resource Access Opportunities we used our collective judgment and input from our partners at The Nature Conservancy.
+*Climate Change*
+
+
+*Fishing Pressures* 
+
+*Habitat Destruction*
+
+*Alien Species* 
+
+*Pollution*
+
+The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress.  We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.7). Where appropriate we based these rankings on the global assessment which used peer reviewed literature to establish rank scores. In other cases, like for Research and Resource Access Opportunities we used our collective judgment and input from our partners at The Nature Conservancy.
 <br>   
+
 ***Table 4.7 Pressure matrix.** Rank sensitivity of each goal (or, goal element) to each stressor.*  
 
 ```{r pressure matrix, echo=FALSE}
@@ -1032,35 +1044,9 @@ kable(pressure_matrix, align = "l")
 ```
 
 
-To estimate the cumulative effect of the ecological pressures, $P_E$, we first determined the cumulative pressure, $p$, within each ecological category, $i$ (Equation 4.21):      
-
-$$
-{ p }_{ i }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ s }_{ i } }  }{ 3 }, ~~(Eq. ~4.21)
-$$
-
-Where $w_i$ is the sensitivity rank (Table 4.8) describing the relative sensitivity of each goal to each stressor, and $s_i$ is intensity of the stressor in each region on a scale of 0-1. We divided by the maximum weighted intensity that could be achieved by the worst stressor (max = 3.0).
-
-If $p_i$ > 1.0, we set the value equal to 1.0. This formulation assumes that any cumulative pressure load greater than the maximum intensity of the worst stressor is equivalent to maximum stressor intensity.
-
-For the goals for which sensitivity ranks were assigned for specific habitats (i.e., goal elements), we calculated the weighted sum of the pressures for only those habitats or sectors that were present in the country.
-
-The overall ecological pressure, $p_E$, acting on each goal and region was calculated as the weighted-average of the pressure scores, $p$, for each category, $i$, with weights set as the maximum rank in each pressure category ($w_{i\_max}$) for each goal (Equation 4.22):    
-
-$$
-{ p }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (w }_{ i\_ max }*{ p }_{ i }) }  }{ \displaystyle\sum_{ i=1 }^{ N } { { w }_{ i\_ max } }  },  ~~(Eq. ~4.22)
-$$
-
-Stressors that have no impact drop out rather than being assigned a rank of zero, which would affect the average score.
-
 ### Social Pressures 
 
-Social pressures describe the lack of effectiveness of government and social institutions. For Palmyra, the social pressure we are considering is management. The pressure score is derived as the inverse of the habitat management resilience score. This considers management of both terrestrial and marine areas. Social stressors are described for each region on a scale of 0 to 1 (with one indicating the highest pressure). We assume that social pressures affect all goals and sub-goals equally (Table 4.8). For this assessment a single social stressor is used, however, if more stressors were added the overall social pressure would be calculated as the average of the social stressors (Equation 4.23):    
-
-$$
-{ p }_{ S }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ z_{ i } }  }{ N }, ~~(Eq. ~4.23)
-$$
-
-where $z_{i}$ are the social pressure measures specific to the goal. Unequal weighting may be appropriate in some cases but for this assessment equal weights are used.   
+Social pressures describe the lack of effectiveness of government and social institutions. For Palmyra, the social pressure we are considering is management. The pressure score is derived as the inverse of the habitat management resilience score. This considers management of both terrestrial and marine areas. Social stressors are described for each region on a scale of 0 to 1 (with one indicating the highest pressure). We assume that social pressures affect all goals and sub-goals equally (Table 4.8).    
 
 ### Caveats 
 
@@ -1071,10 +1057,10 @@ A key assumption in our assessment of ecological pressures is that each goal has
 Resilience variables help mitigate pressures. To calculate resilience for each goal and region, $r$, we assess three resilience categories (Figure 4.3, Table 4.9): ecological integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$.  The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
 
 $$
-r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, ~~(Eq. ~4.24)
+r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, ~~(Eq. ~4.21)
 $$
 
-We chose $\gamma = 0.5$ so the weight of resilience components that address ecological systems (ecosystem and regulatory) vs. social systems would be equivalent to the proportions used in the model to calculate pressure. 
+We chose $\gamma = 0.5$ so the weight of resilience components that address ecological systems (ecosystem and regulatory) vs. social systems would be equivalent to the proportions used in the model to calculate pressure. Additional information on the methods used to calculate the resilience score can be found in the [OHI Global Methods](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#533_resilience). 
 <br>   
 <center> 
 ![resilience](images/resilience.png)
@@ -1114,7 +1100,7 @@ Ecosystem integrity, e.g., food web integrity, is measured as the relative condi
   
 #### Regulatory Resilience 
 
-Regulatory resilience ($Y_R$)  describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. The regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and alien species. For this assessment we use two resilience layers for each pressure category where possible: regulations and management.  
+Regulatory resilience describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. The regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and alien species. For this assessment we use two resilience layers for each pressure category where possible: regulations and management.  
 
 Regulation layers are based on if there are established rules to prevent ecological pressures. For alien species, we use the presence of rules to prevent the introduction and spread of invasive species from boats, vessels, and cargo. Fishing and habitat regulations are based on the establishment of protected areas. For fishing resilience, we use the presence of marine protected areas and for habitats, we consider both terrestrial protected areas and marine protected areas. Due to the lack of permanent residents, pollution and climate change don't have localized rules and therefore aren't considered as resilience layers.   
 
@@ -1126,27 +1112,9 @@ Management layers are derived for climate change, habitats, fishing, and alien s
  
 A score of one is given for every "Yes" response, a zero given for a "No" response, and 0.5 given if management plans or monitoring programs are "In Development". The overall resilience layer score is the sum over three. Since the inverse of the habitat management resilience is used for a social pressure, we will consider this a social resilience instead of an ecological one.    
 
-For each region and goal, we calculated a score for each regulatory category, $y_{R, i}$, as a weighted mean of the resilience data layers, $r_{i}$, that influence the goal (Equation 4.25, Table 4.10):  
-
-$$
-y_{R, i}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ r }_{ i } }  }{ \displaystyle\sum _{ i=1 }^{ N }{w_i} },  ~~(Eq. ~4.25) 
-$$
-
-where, $w_i$ is the weight in Table 4.9.
-
-To calculate the overall regulatory resilience, $Y_{R}$, we averaged the scores for each regulatory category.  
-
 ### Social Resilience 
 
-Social integrity is intended to describe those processes internal to a community that affect its resilience. It is a function of a wide range of aspects of social structure. Social Integrity per goal for each region, $Y_{S}$, is therefore:
-
- $$
- Y_{ S}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { y }_{ S,i } }  }{ N },  ~~(Eq. ~4.25)
- $$
- 
-where $y_{S,i}$ are the social integrity measures specific to the goal.
-
-Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. As Palmyra is sparsely populated, many of these social resilience aren't applicable. For this assessment we consider social resilience to be based on general management of Palmyra's ecosystems. We used a lack of management as a social pressure and will use the inverse of this score as our resilience layer. The management layer was derived using the same method as the ecological management resilience layers discussed above.   
+Social integrity is intended to describe those processes internal to a community that affect its resilience. It is a function of a wide range of aspects of social structure. Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms. As Palmyra is sparsely populated, many of these social resilience aren't applicable. For this assessment we consider social resilience to be based on general management of Palmyra's ecosystems. We used a lack of management as a social pressure and will use the inverse of this score as our resilience layer. The management layer was derived using the same method as the ecological management resilience layers discussed above.    
 
 ## Weaknesses
 
@@ -1162,8 +1130,7 @@ The temporal dimension assesses how well data matches the timescale needs of the
  - **Temporal Span:** Ideally data would span the entire study period (2014 - 2020). A score of 1 is given when data are available every year of the study period, a score of 0.5 is given when data are available for half of the study period, and a score of 0 is given if data span less than half of the study period.     
  - **Temporal Baseline:** Some goals require comparison to a historic benchmark. A score of 1 is assigned when data are available more than 10 years before the beginning of the study period (i.e. 2004 or earlier), a score of 0.5 is given if data are less than or equal to 10 years (i.e. later than 2004), and a score of 0 is given if no historic data is available.  
  
- The fit dimension evaluates how well data 'fit' the needs of the Palmyra assessment. These measures are rather subjective, sometimes the available data were chosen to fit a
-goal model, while other times, a goal model required modification to accommodate the available data.   
+ The fit dimension evaluates how well data 'fit' the needs of the Palmyra assessment. These measures are rather subjective, sometimes the available data were chosen to fit a goal model, while other times, a goal model required modification to accommodate the available data.   
 
  - **Fit Resolution:** Measures how well the data allowed for detailed exploration of goal status, pressures, or resilience within the broader context. A score of 1 is given for data with a rich breakdown of categories or sectors, a score of 0.5 is given for data with some internal detail, and a score of 0 is assigned where finer-scale divisions are not available.      
  - **Fit Comprehensiveness:** Measures the degree to which data fully capture the conceptual understanding required by the target calculation. A score of 1 is given for data that inform understanding across the entire system (e.g. species condition is known for nearly all the iconic species) and a score of 0.5 is given for data that may represent only a portion of the benefits (e.g. species condition used in the Species sub-goal is limited to a subset of taxa assessed by the IUCN). No scores of 0 were given.   
