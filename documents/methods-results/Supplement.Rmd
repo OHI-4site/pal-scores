@@ -617,7 +617,8 @@ _Resilience_
 ```{r cs-data-r, results="asis", echo=FALSE}
 data_layers(goal="CS", dimension=c("resilience"))
 ```
-<br> 
+<br>    
+
 **Data Citations**   
 
 Data for the Carbon Storage status come from tree cover surveys completed as part of the U.S. Geological Survey vegetation community mapping project for Palmyra Atoll. Vegetation maps were completed in October 2016 and published in June 2019. The data is available for download [here](https://www.sciencebase.gov/catalog/item/5c66fc5be4b0fe48cb3aca49).    
@@ -626,16 +627,16 @@ Date Downloaded: July 7, 2020
 
 Citation: Struckhoff, M.A., 2019, Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.  
 <br>   
-The Carbon Storage trend uses the data from the rainforest trend calculated for the Biodiversity: Habitats subgoal. For details on the data used for calculating rainforest trend refer to the Biodiversity: Habitats sub-goal.  
-<br>   
 
-#### Coastal Protection (CP)
+#### Coastal Protection
 
-The Coastal Protection sub-goal measures the health of habitats that contribute to coastal protection from storm surge, flooding, and sea level rise. In Palmyra, the only Coastal Protection habitat are coral reefs. We use data on habitat extent in the same manner as the Biodiversity: Habitats sub-goal.   
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 46.77</span> 
+
+The Coastal Protection sub-goal measures the health of habitats that contribute to coastal protection from storm surge, flooding, and sea level rise. In Palmyra, the only Coastal Protection habitat are coral reefs.   
 
 **Current Status**   
 
-The Coastal Protection current status is found using the condition and extent of coral reef habitat. Coral condition is the current condition of coral reef habitat relative to the reference point. This is the same as the coral status calculated in the Biodiversity: Habitats sub-goal. For more information about how the condition of coral reef status is calculated, refer to the methodology for the Biodiversity: Habitats sub-goal. The extent of coral reefs is calculated as the total reef area.   
+The Coastal Protection current status is calculated as the current condition of coral reef habitat relative to the reference point. We calculate status using the method from the  Biodiversity: Habitats sub-goal.   
 
 The Coastal Protection status $x_{cp}$ is calculated as the relative health of the habitats that provide coastal protection weighted by their area and protectiveness rank (Equation 4.12):        
 
@@ -647,9 +648,7 @@ Where $C$ is the condition of coral habitats as defined above, $A$ is the area o
 <br>   
 **Trend**   
 
-The Coastal Protection trend will use the same data as the coral condition trend calculated for the Biodiversity: Habitats sub-goal. 
-
-Coral condition is lacking historic data for all areas of the reef used to estimate current status (fore reef, reef crest, back reef, and lagoon). Therefore, the trend of coral condition will be estimated using the OHI global data. The OHI global trend data is calculated as a linear trend in coral condition, calculated on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the OHI Global Assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia.
+The Coastal Protection trend uses the same data and approach used to calculate the coral condition trend calculated for the Biodiversity: Habitats sub-goal.
 <br>   
 **Data**   
 
