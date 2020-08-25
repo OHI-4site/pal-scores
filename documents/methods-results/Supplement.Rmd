@@ -55,20 +55,19 @@ cat(paste(st_layers$info, collapse="\n\n"))
 ```
 
 ***
+Effective management of marine systems requires quantitative assessments of ocean health. To assess the ocean condition of Palmyra Atoll a collaborative effort was undertaken between The Nature Conservancy’s Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). The Ocean Health Index (OHI) framework was used to assess Palmyra Atoll. Palmyra is a mostly uninhabited island in the Line Islands Archipelago halfway between Hawaii and American Samoa. The island is a National Wildlife Refuge administered by the U.S. Fish and Wildlife Services and was purchased by The Nature Conservancy in 2000. Specifically, we assessed the performance of 7 goals: Biodiversity, Clean Waters, Habitat Services, Research, Resource Access Opportunities, Sense of Place, and Tourism and Recreation. Using best available data and locally relevant reference points, each goal was scored on a scale of 0-100. Goal scores were then averaged to obtain an overall health score for the island. The overall score for Palmyra was 81, with goal scores ranging from 43 for the Habitat Services goal to 100 for the Research, Resource Access Opportunities, and Tourism and Recreation goals.      
 
-# Ocean Health Index (OHI) Global Assessment
+# Applying the Ocean Health Index (OHI) to Palmyra
 
-The Ocean Health Index (OHI) is a scientific framework used to measure how healthy oceans are. Understanding the state of our oceans is a first step towards ensuring they can continue providing humans benefits now and in the future. The Index describes how well we are sustainably managing 10 goals for ocean ecosystems which represent the full suite of benefits that people want and need from the ocean. These goals include: Artisanal Fishing Opportunity, Biodiversity, Carbon Storage, Clean Waters, coastal Livelihoods and Economies, Coastal Protection, Food Provision, Natural Products, Sense of Place, and Tourism and Recreation. Each goal is given a score ranging from 0 to 100, and the full suite of goal scores are then averaged to obtain an overall index score for each region. The global Ocean Health Index (OHI) assesses ocean health for 220 coastal countries and territories and has been conducted every year starting in 2012. For more information about the philosophy of the Ocean Health Index and model development see http://ohi-science.org/ohi-global/. 
+The Ocean Health Index (OHI) is a scientific framework used to measure how healthy oceans are. Understanding the state of our oceans is a first step towards ensuring they will continue to benefit humans now and in the future. The Ocean Health Index was originally launched in 2012, with assessments conducted every year thereafter, to assess the condition of our global oceans.  The global assessment describes how well 220 countries (and some territorial regions) are  sustainably managing 10 goals which represent the full suite of benefits that people want and need from the ocean. These goals include: Artisanal Fishing Opportunity, Biodiversity, Carbon Storage, Clean Waters, coastal Livelihoods and Economies, Coastal Protection, Food Provision, Natural Products, Sense of Place, and Tourism and Recreation.    
 
-OHI assessments have also been completed at smaller scales. Code, training, and support is also provided for independent groups interested in leading their own OHI assessments. These are called independent OHI assessments, or “OHI+ assessments”.
+Each goal is scored from 0 to 100, and the full suite of goal scores are averaged to obtain an overall index score. Goal scores are calculated as the average of current status (current condition relative to a reference point) and likely future status.  Likely future status is the current status modified by the following dimensions: pressures predicted to reduce status (e.g., increasing SST, fishing pressures, invasive species);  resilience variables that mitigate pressures (e.g., effective fishing management, protected areas);  and recent trends in status.     
 
-***
+In addition to the global assessment, OHI assessments have been completed at smaller regional scales for over 36 countries and regions, referred to as OHI+ assessments.  For more information about the philosophy of the Ocean Health Index and model development see http://ohi-science.org/ohi-global/.    
 
-# OHI+ Palmyra Assessment
+To assess the condition of Palmyra Atoll’s ocean resources, an OHI+ assessment was conducted as part of a collaboration between The Nature Conservancy’s Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). Here we report the conclusions from our analysis, and describe how we modified the goal models to reflect locally relevant management concerns.    
 
-## Project Goal
-
-This report is a summary of the methods and results for the Palmyra OHI+ assessment, completed in 2020 in partnership with the Palmyra 4site team. The Palmyra OHI+ assessment uses the best-available data to measure progress toward target conditions for benefits provided by the atoll’s marine ecosystems, resulting in benefit-specific and overall health scores on a scale of 0 to 100. 
+**Add NCEAS logo?**   
 
 <div class = "row">
 <div class = "col-md-2">
@@ -90,8 +89,11 @@ This report is a summary of the methods and results for the Palmyra OHI+ assessm
 <div class = "col-md-2">
 <br><br>![CRIOBE logo](images/CRIOBE-logo.jpg)
 </div>
-</div>
+</div>  
 
+***
+
+# Palmyra Atoll 
 
 ## Location
 
@@ -103,34 +105,32 @@ Palmyra Atoll is located in the Northern Line Islands in the west-central Pacifi
 
 ## History
 
-Palmyra Atoll was sighted in 1798 by an American ship, which did not land; but in 1802, the American ship Palmyra made landfall. The atoll was annexed by the Kingdom of Hawaii in 1862 and by Britain in 1889. In 1898 the United States annexed Palmyra as part of the Hawaiian Islands territory (https://www.britannica.com/place/Palmyra-Atoll). 
+Palmyra Atoll was sighted in 1798 by an American ship, which did not land; but in 1802, the American ship Palmyra made landfall. The atoll was annexed by the Kingdom of Hawaii in 1862 and by Britain in 1889. In 1898 the United States annexed Palmyra as part of the Hawaiian Islands territory (https://www.britannica.com/place/Palmyra-Atoll).    
 
-In the 1940s, the U.S. Navy stationed 6,000 sailors in the atoll. They dredged a seaplane runway which merged the atoll’s two western lagoons into one, and a causeway was built on the remaining reef. The sailors also joined three of the islands into one and built a land plane runway about one mile long, which the U.S. Air Force used until 1961 (https://www.doi.gov/oia/islands/palmyraatoll).
+In the 1940s, the U.S. Navy stationed 6,000 sailors in the atoll. They dredged a seaplane runway which merged the atoll’s two western lagoons into one, and a causeway was built on the remaining reef. The sailors also joined three of the islands into one and built a runway about one mile long, which the U.S. Air Force used until 1961 (https://www.doi.gov/oia/islands/palmyraatoll).   
 
-The Nature Conservancy (TNC) purchased Palmyra Atoll in December 2000 from the Fullard-Leo family to protect its unique ecosystem and establish a center for scientific investigation (https://www.nature.org/en-us/about-us/where-we-work/united-states/hawaii/stories-in-hawaii/palmyra-175-years-of-science/). It was declared a U.S. National Wildlife Refuge in January 2001, and includes submerged lands and associated waters out to 12 nautical miles from the atoll (https://www.fws.gov/refuge/Palmyra_Atoll/about.html). Palmyra was designated part of the Pacific Remote Islands Marine National Monument on January 6, 2009, which includes Palmyra Atoll National Wildlife Refuge within its boundaries, and protects it further out to 50 nautical miles (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/).
+The Nature Conservancy (TNC) purchased Palmyra Atoll in December 2000 from the Fullard-Leo family to protect its unique ecosystem and establish a center for scientific investigation (https://www.nature.org/en-us/about-us/where-we-work/united-states/hawaii/stories-in-hawaii/palmyra-175-years-of-science/). It was declared a U.S. National Wildlife Refuge in January 2001, and includes submerged lands and associated waters out to 12 nautical miles from the atoll (https://www.fws.gov/refuge/Palmyra_Atoll/about.html). Palmyra was designated part of the Pacific Remote Islands Marine National Monument on January 6, 2009, which includes Palmyra Atoll National Wildlife Refuge within its boundaries, and protects it further out to 50 nautical miles (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/).   
 
 
 ## Natural History
 
-Palmyra’s native vegetation supports one of the largest remaining undisturbed stands of Pisonia beach forest in the Pacific, including native varieties of ferns and shrubs. The atoll’s rich intertidal sand and mudflats provide attractive resting and feeding grounds for migratory seabirds and shorebirds. Sooty terns, red- and white-tailed tropicbirds, several species of boobies, great frigate birds, and white terns are some of the common bird species that nest on Palmyra. The second largest red-footed booby colony in the world is found on the atoll, and more than 200 bristle-thighed curlews, whose worldwide population estimate is only 6,000 individuals, spend their winters on Palmyra. Palmyra’s waters are home to stony corals, giant clams, and over 400 species of fish, and are frequented by Pacific bottle-nosed dolphins, spinner dolphins, and melon headed whales. Threatened green and endangered hawksbill turtles are also found within the lagoon and waters surrounding the atoll. Large populations of the world’s largest land invertebrate, the coconut crab, inhabit Palmyra’s forests along with other crabs (https://www.fws.gov/refuge/Palmyra_Atoll/wildlife_and_habitat/index.html).
+Palmyra’s native vegetation supports one of the largest remaining undisturbed stands of Pisonia beach forest in the Pacific, including native varieties of ferns and shrubs. The atoll’s rich intertidal sand and mudflats provide attractive resting and feeding grounds for migratory seabirds and shorebirds. Sooty terns, red- and white-tailed tropicbirds, several species of boobies, great frigate birds, and white terns are some of the common bird species that nest on Palmyra. The second largest red-footed booby colony in the world is found on the atoll, and more than 200 bristle-thighed curlews, whose worldwide population estimate is only 6,000 individuals, spend their winters on Palmyra. Palmyra’s waters are home to stony corals, giant clams, and over 400 species of fish, and are frequented by Pacific bottle-nosed dolphins, spinner dolphins, and melon-headed whales. Threatened green and endangered hawksbill turtles are also found within the lagoon and waters surrounding the atoll. Large populations of the world’s largest land invertebrate, the coconut crab, inhabit Palmyra’s forests along with other crabs (https://www.fws.gov/refuge/Palmyra_Atoll/wildlife_and_habitat/index.html).   
 
-Rainforest once dominated the atoll, but copra farming, black rats, and deforestation by the U.S. military during World War II reduced Palmyra’s rainforest to a few patches. Thick groves of introduced coconut palms took its place, which are ill-suited for seabirds. There was a resurgence of native bird and plant life after rats were eradicated from Palmyra in 2011, and a major native rainforest restoration project is now underway. The aim of this project is to flip forest dominance and restore ecological balance to the atoll, which will maximize the seabird-driven nutrient cycle and increase terrestrial and marine ecosystem resilience to climate change impacts (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/). 
+Rainforest once dominated the atoll, but copra farming, black rats, and deforestation by the U.S. military during World War II reduced Palmyra’s rainforest to a few patches. Thick groves of introduced coconut palms took its place, which are ill-suited for seabirds. There was a resurgence of native bird and plant life after rats were eradicated from Palmyra in 2011, and a major native rainforest restoration project is now underway. The aim of this project is to flip forest dominance and restore ecological balance to the atoll, which will maximize the seabird-driven nutrient cycle and increase terrestrial and marine ecosystem resilience to climate change impacts (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/).   
 
 ***
 
 # Summary Results
 
-The results indicate that Palmyra's marine and coastal resources are supporting most of the goals assessed well, with an overall score of 81 (Figure 3.1). Seven goals/sub-goals scored above a 90, with four goals receiving perfect scores (Lasting Special Places, Research, Resource Access Opportunities, and Tourism and Recreation). The designation of the island and offshore areas as fully protected reflects its importance to The Nature Conservancy and suggests the health of Palmyra's ecosystems is allowing TNC to meet one of their core missions to support research in conservation science. As there is a limited population on Palmyra and very few visitors, fishing and tourism activities are well regulated and managed to meet TNC's goals. 
+The health of the Palmyra atoll is critical to The Nature Conservancy’s core mission to protect endangered marine wilderness and to support research and conservation science.  Palmyra had an overall Ocean Health Index score of 81 (Figure 3.1 and Table 3.1), suggesting the region’s marine and coastal resources are in fairly good condition (Figure 3.1).   Seven goals/sub-goals scored above a 90, with four goals receiving perfect scores (Lasting Special Places, Research, Resource Access Opportunities, and Tourism and Recreation). The designation of the island and offshore areas as fully protected reflects The Nature Conservancy’s commitment to protecting the health of Palmyra's ecosystems. Furthermore,  the population and  visitors allowed on the island are restricted, and fishing and tourism activities are well regulated and managed.   
 
-Four goals/sub-goals scored below 50, Habitats, Habitat Services, Coastal Protection, and Carbon Storage. The Coastal Protection and Carbon Storage sub-goals are closely linked to the habitats sub-goal as they are based on the condition of coral reefs and rainforests, respectively. While Palmyra is often boasted for having pristine coral reefs, there is significant degradation of the back reef and the lagoon which negatively impact the coral habitat score and thus the coastal protection score. Without a concerted effort to restore live coral in the back reef and the lagoon the coral habitat score is likely to remain fairly constant over time. Coconut palm plantations have a significant negative impact on the native rainforest and while management plans to remove these palms and replant native tree species exists, they are not far along. This is the largest contributing factor to the low score for rainforest habitats and thus the carbon storage score. As replacement of coconut palms continues on the island, both of these scores are expected to steadily increase over time.    
+There is room for some improvement, however. The Habitat, Coastal Protection, and Carbon Storage sub-goals scored lower than 50. These sub-goals are closely linked because they depend on the healthy habitats, specifically the condition of coral reefs (Coastal Protection) and rainforests (Carbon Storage). While Palmyra is often lauded for having pristine coral reefs, there is significant degradation of the back reef and the lagoon which negatively impact the coral habitat score and thus the coastal protection score. Without a concerted effort to restore live coral in the back reef and the lagoon the coral habitat score is likely to remain fairly constant over time. Coconut palm plantations have a significant negative impact on the native rainforest and while management plans to remove these palms and replant native tree species exists, they are not far along. This is the largest contributing factor to the low score for rainforest habitats and thus the carbon storage score. As replacement of coconut palms continues on the island, both of these scores are expected to steadily increase over time.        
 
 <br>   
 ![flower_plot](images/flower_Palmyra.png)
 ***Figure 3.1 OHI+ Palmyra Results.** Each goal and sub-goal of the Palmyra Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.*
 <br>   
-The summary results table (Table 3.1) shows the status, future status, score, and description for each goal and sub-goal included in the assessment. Where *Status* is the current status relative to the reference point; *Future* is the likely future status based on the trend, pressures, and resilience; and *Score* is the final goal or sub-goal score reflected in Figure 3.1.
-<br>   
-***Table 3.1. Summary results for each goal and sub-goal in the Palmyra OHI+ assessment.***
+***Table 3.1. Results for each goal and sub-goal in the Palmyra OHI+ assessment.** Goal, and sub-goal, scores, as well as current status and predicted future status. Where 'Status' is the current status relative to the reference point; 'Future' is the likely future status based on the trend, pressures, and resilience; and 'Score' is the final goal or sub-goal score reflected in Figure 3.1.*   
 <br>   
 ```{r score-table, echo=F, message=F, warning=F}
 
@@ -143,7 +143,8 @@ scores <- read_csv(here("region/scores.csv")) %>%
   pivot_wider(id_cols ="goal", names_from = "dimension", values_from = "score") %>% 
   filter(goal != "Index") %>% 
   inner_join(.,goals, by = "goal") %>% 
-  dplyr::select(Goal = name, Status = status, Future = future, Score = score, Description = description) %>% 
+  mutate(parent = c("", "HS", "HS", "", "BD", "", "SP", "SP", "", "", "", "BD", "")) %>% 
+  dplyr::select('Goal/Sub-goal' = name, 'Parent Goal' = parent, Status = status, Future = future, Score = score, Description = description) %>% 
   arrange(desc(Score))
 
 kable(scores, align = "l")
@@ -1137,7 +1138,7 @@ Ideally, assessments of social resilience would include state and federal level 
 
 ## Weaknesses
 
-This OHI+ assessment incorporates 36 layers, constructed from dozens of datasets to calculate status, pressures, and resilience for each goal. The scores calculated in this assessment could be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. In each dimension, a dataset was scored 0.0, 0.5, 1.0, or 'NA' if the dimension is not relevant to the dataset (Table 4.11).     
+This OHI+ assessment incorporates 36 layers, constructed from dozens of datasets to calculate status, pressures, and resilience for each goal. The scores calculated in this assessment could be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. In each dimension, a dataset was scored 0.0, 0.5, 1.0, or 'NA' if the dimension is not relevant to the dataset (Figure 4.4).     
 
 The spatial dimension evaluates the spatial scale of the data.   
  
@@ -1153,10 +1154,12 @@ The temporal dimension assesses how well data matches the timescale needs of the
 goal model, while other times, a goal model required modification to accommodate the available data.   
 
  - **Fit Resolution:** Measures how well the data allowed for detailed exploration of goal status, pressures, or resilience within the broader context. A score of 1 is given for data with a rich breakdown of categories or sectors, a score of 0.5 is given for data with some internal detail, and a score of 0 is assigned where finer-scale divisions are not available.      
- - **Fit Comprehensiveness:** Measures the degree to which data fully capture the conceptual understanding required by the target calculation. A score of 1 is given for data that inform understanding across the entire system (e.g. species condition was given for the full list of iconic species) and a score of 0.5 is given for data that may represent only a portion of the benefits (e.g. species condition used in the Species sub-goal is limited to a subset of taxa assessed by the IUCN). No scores of 0 were given.
+ - **Fit Comprehensiveness:** Measures the degree to which data fully capture the conceptual understanding required by the target calculation. A score of 1 is given for data that inform understanding across the entire system (e.g. species condition is known for nearly all the iconic species) and a score of 0.5 is given for data that may represent only a portion of the benefits (e.g. species condition used in the Species sub-goal is limited to a subset of taxa assessed by the IUCN). No scores of 0 were given.   
 <br>   
-***Table 4.11. Data Quality Matrix.** Datasets used in the Palmyra OHI+ assessment were evaluated across three dimensions with a score (0, 0.5, or 1) given for each applicable dimension. 'NA' is assigned when a dimension is not relevant to a particular dataset.*      
-
+![data_selection_criteria](images/dsc_heatmap_gradient_all.jpg)
+</center>
+<br>  
+***Figure 4.4. Data Selection Criteria.** Datasets used in the Palmyra OHI+ assessment were evaluated across three dimensions with a score (0, 0.5, or 1) given for each applicable dimension. 'NA' is assigned when a dimension is not relevant to a particular dataset.*
 <br>   
 
 # Future
