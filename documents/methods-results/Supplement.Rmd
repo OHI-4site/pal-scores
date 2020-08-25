@@ -679,7 +679,9 @@ Date Downloaded: June 30, 2020
 
 Citation: U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Center for Coastal Ocean Sciences. (2011). Palmyra Habitat Maps [Data file]. Retrieved from https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/   
 
-### Research (RS)
+### Research 
+
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 100</span> 
 
 This goal attempts to capture the aspects of the marine and terrestrial environment that support scientific research on Palmyra Atoll. Healthy ecosystems on the island support research and advance scientific understanding. The research goal is based on three equally weighted layers: employment, research funding, and scientific publications.
 <br>   
@@ -715,13 +717,7 @@ Where $pubs_{y}$ is the number of scientific publications in year (y) and $pubs_
 
 *Employment*   
 
-The trend in employment is calculated as the rate of change in the number of full-time equivalent positions from 2014-2020. 
-<br>  
-*Research Funding*   
-<br>   
-*Scientific Publications*   
-
-The trend in scientific publications is calculated as the rate of change in the number of scientific papers published annually from 2014-2020.
+The trend describes the change in research status over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change research status from 2014 to 2020.
 <br>   
 **Data**   
 
@@ -743,6 +739,7 @@ _Resilience_
 data_layers(goal="RS", dimension=c("resilience"))
 ```
 <br>   
+
 **Data Citations**   
 
 *Employment*   
@@ -753,7 +750,9 @@ Data for this layer were gathered through verbal communication with Alex Wegmann
 
 Data for this layer comes from a scientific library containing all scientific publications relating to natural resources on Palmyra Atoll. This scientific library was obtained from Alex Wegmann at The Nature Conservancy on June 17, 2020.  
 
-### Resource Access Opportunity (RAO)
+### Resource Access Opportunity 
+
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 100</span> 
 
 This goal is intended to measure access to recreational fishing opportunities on Palmyra Atoll. Access to recreational fishing is mandated within the National Wildlife Refuge by the U.S. Fish and Wildlife Service. 
 
@@ -768,7 +767,7 @@ where $c_{y}$ is the number of fish caught in year (y), $c_{ref,y}$ is the refer
 <br>   
 **Trend** 
 
-The trend for tourism and recreation is calculated as the rate of change in the number of annual private vessels visiting the island from 2014-2020.
+The trend describes the change in sustenance fishing over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change in sustenance fishing catch from 2014 to 2020.
 <br>   
 **Data**   
 
