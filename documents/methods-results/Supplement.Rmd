@@ -392,16 +392,18 @@ Citation: IUCN 2020. IUCN Red List of Threatened Species. Version 2020-1 <www.iu
 Additional species lists were provided by Alex Wegmann at The Nature Conservancy on July 8, 2020
 <br>   
 
-### Clean Waters (CW)
+### Clean Waters
 
-People value marine waters that are free of pollution and debris for aesthetic and health reasons. Although Palmyra has a limited population, people are sensitive to pollution and debris in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. Due to limited data availability, this goal includes two sources of pollution - marine debris and soil contamination. The main source of pollution on the island is marine debris from the fishing aggregation devices (FADs) and the military history of the island has left a legacy of soil contamination. The overall Clean Waters score is the geometric mean of these two layer scores. This goal scores highest when the contamination level is zero.
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 58.57</span> 
+
+People value marine waters that are free of pollution and debris for aesthetic and health reasons. Although Palmyra has a limited population, people are sensitive to pollution and debris in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. Due to limited data availability, this goal includes two sources of pollution - marine debris and soil contamination. The main source of pollution on the island is marine debris from fishing aggregation devices (FADs) and the military history of the island has left a legacy of soil contamination. The overall Clean Waters score is the geometric mean of these two layer scores. This goal scores highest when the contamination level is zero.
 <br>   
 **Current Status**   
 The current status for the Clean Waters goal is the geometric mean of the status of the two layers: marine debris and soil contamination.
 <br>   
 *Marine Debris*  
 
-Marine debris current status is calculated based on the number of annual grounded FADs. The reference point for marine debris is to reduce FAD groundings by 50% of the highest annual recorded number of groundings between 2009-2019. The highest annual groundings occurred in 2016, with 12 groundings, so the reference point will be 6 annual FAD groundings. Any year where six or less FAD groundings were recorded will receive a perfect score.
+Marine debris current status is calculated based on the number of annual grounded FADs. The reference point for marine debris is to reduce FAD groundings by 50% of the highest annual recorded number of groundings between 2009 and 2019. The highest annual groundings occurred in 2016, with 12 groundings, making the reference point 6 annual FAD groundings. Any year where six or less FAD groundings were recorded received a perfect score.   
 
 The current status $x_{debris}$ is scaled between 0-1 by subtracting the reference point from the number of groundings and then dividing by the reference point (Equation 4.8):        
 
@@ -411,13 +413,13 @@ $$
 
 Where $fad_{y}$ is the yearly number of recorded FAD groundings and $fad_{ref}$ is the reference point number of 6 annual FAD groundings.  
 
-This gives high scores to years with greater levels of marine debris. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.
+$x_{debris}$ is higher with greater levels of marine debris. $x_{debris}$ is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of $x_{debris}$,    1 - $x_{debris}$.
 <br>   
 *Soil Contamination*   
 
-The current status is based on the observed concentration of each element (mg/kg wet weight). A total of 155 sites were sampled in 2008 and an additional 41 sites were sampled in 2010. At each site concentrations were recorded for 13 elements: antimony (Sb), arsenic (As), chromium (Cr), cobalt (Co), copper (Cu), iron (Fe), lead (Pb), manganese (Mn), nickel (Ni), phosphorus (P), sulfur (S), titanium (Ti), and zinc (Zn). However, only 9 elements are included in the analysis. Iron is generally considered non-toxic and titanium, sulfur, and phosphorus were detected but do not have established Threshold Effects Levels (TELs) or ecological soil screening levels (Eco-SSLs); therefore, they will be excluded from the analysis.  
+The current status is based on the observed concentration of each pollutant (mg/kg wet weight). A total of 155 sites were sampled in 2008 and an additional 41 sites were sampled in 2010. At each site concentrations were recorded for 13 pollutants: antimony (Sb), arsenic (As), chromium (Cr), cobalt (Co), copper (Cu), iron (Fe), lead (Pb), manganese (Mn), nickel (Ni), phosphorus (P), sulfur (S), titanium (Ti), and zinc (Zn). However, only 9 elements are included in the analysis. Iron is generally considered non-toxic and titanium, sulfur, and phosphorus were detected but do not have established Threshold Effects Levels (TELs) or ecological soil screening levels (Eco-SSLs); therefore, they were excluded from the analysis.     
 
-Two different reference levels will be used to scale the contamination scores from 0-1. A TEL will be used to first scale values from 0 - 0.5. Any observed concentration equal to the TEL will receive a score of 0.5. The TEL are the lower end of values below which harmful impacts are not likely to be observed. The upper end of the scores will be based on the Probable Effect Level (PEL); this represents a value above which harmful impacts are likely to be observed. Any observed concentration above the PEL will be assigned a score of 1.  
+Two different reference levels were used to scale the contamination scores from 0-1. A TEL was used to scale values from 0 - 0.5. Any observed concentration equal to the TELreceived a score of 0.5. The TEL are the lower end of values below which harmful impacts are not likely to be observed. The upper end of the scores were based on the Probable Effect Level (PEL); this represents a value above which harmful impacts are likely to be observed. Any observed concentration above the PEL was assigned a score of 1.       
 
 <u>TEL</u>   
 
@@ -469,7 +471,7 @@ Marine sediment PELs (mg/kg of dry weight) are obtained from NOAA guidelines est
 | Nickel      | Ni     | 51.6  |
 | Zinc        | Zn     | 410   |
 
-No PELs are available for Antimony, Colbalt, and Manganese. For these we will approximate an upper limit that is one order of magnitude higher than the established TEL or Eco-SSL.  
+No PELs are available for Antimony, Colbalt, and Manganese. For these we approximated an upper limit that is one order of magnitude higher than the established TEL or Eco-SSL.      
 
 Contaminants are scaled 0-1 using a midpoint level, (TEL or ECO-SSl) and an upper level (PELs). A status is then calculated for each site $x_{site}$ using the geometric mean of the 9 contaminants (Equation 4.9):    
 $$
@@ -478,21 +480,15 @@ $$
 Finally, an overall status for contamination $x_{cont}$ is found using an area weighted mean of the site status (Equation 4.10):      
 
 $$ 
-x_{cont]~=~\frac { \displaystyle\sum _{ i=1 }^{ N }{ { A }_{ i }{ x }_{ i } } } { \displaystyle\sum _{ i=1 }^{ N } { A }_{ i } }, ~~(Eq ~4.10)
+x_{cont}~=~\frac { \displaystyle\sum _{ i=1 }^{ N }{ { A }_{ i }{ x }_{ i } } } { \displaystyle\sum _{ i=1 }^{ N } { A }_{ i } }, ~~(Eq ~4.10)
 $$
 where $A_i$ is the area and $x_i$ is the status of contamination for each site $i$ as calculated in Equation 4.9.     
 
-This gives high scores to years with greater levels of contamination. This status is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this status score, found using 1 - status.
+This gives high $x_{cont}$ values to years with greater levels of contamination. $x_{cont}$ is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this$x_{cont}$,  1 - $x_{cont}$.
 <br>   
 **Trend**
 <br>   
-*Marine Debris*   
-
-The trend in marine debris is calculated as the rate of change in the number of grounded fishing aggregation devices from 2014 - 2020.
-<br>  
-*Soil Contamination*   
-
-This the first study on soil contamination done for Palmyra Atoll, although a second study is currently underway. Contamination sources are remnants of military action on the island during World War II. Based on the minimal change in current status from 2008 to 2010, we are assuming that there has been no change in contamination levels. Therefore, a trend of 0 is being used until additional information is obtained.
+The trend describes the change in clean water status over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change in the clean water status from 2014 to 2020.
 <br>   
 **Data**
 
@@ -513,7 +509,8 @@ _Resilience_
 ```{r cw-data-r, results="asis", echo=FALSE}
 data_layers(goal="CW", dimension=c("resilience"))
 ```
-<br> 
+<br>   
+
 **Data Citations**   
 
 *Marine Debris*   
@@ -526,7 +523,7 @@ Data for this layer come from an elemental soil contamination study completed by
 
 Date Downloaded: July 28, 2020   
 
-Citation: Struckhoff, M.A., Papoulias, D.M., Orazio, C.E., Annis, M.L., Shaver, D.K. and Tillitt, D.E., 2017, Geospatial data of elemental contamination at Palmyra Atoll, 2008 and 2010: U.S. Geological Survey data release, https://doi.org/10.5066/F74F1P00  
+Citation: Struckhoff, M.A., Papoulias, D.M., Orazio, C.E., Annis, M.L., Shaver, D.K. and Tillitt, D.E., 2017, Geospatial data of elemental contamination at Palmyra Atoll, 2008 and 2010: U.S. Geological Survey data release, https://doi.org/10.5066/F74F1P00
 <br>   
 The reference levels were obtained from the following sources:  
 
@@ -541,18 +538,22 @@ Citation: MacDonald, D.D., Ingersol, C.G., and Berger, T.A. (2000). Development 
 
 Citation: National Oceanic and Atmospheric Administration. (1999). Sediment Quality Guidelines developed for the National Status and Trend Program. 
 
-### Habitat Services (HS)
+### Habitat Services
 
-The Habitat Services (HS) goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Carbon Storage (CS) and Coastal Protection (CP).
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 43.35</span> 
+
+The Habitat Services goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Carbon Storage and Coastal Protection.
 <br>   
 
-####  Carbon Storage (CS) 
+####  Carbon Storage
+
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 39.92</span> 
 
 The Carbon Storage sub-goal measures the health of carbon storing habitats. In Palmyra, the only Carbon Storage habitat is the terrestrial rainforest. We use data on habitat extent in the same manner as Biodiversity: Habitats sub-goal. Since only one habitat is included, there are no Carbon Storage weights used in the calculation.  
 
 **Current Status**   
 
-The Carbon Storage subgoal is based on the percent cover of native tree species on the island. 
+The Carbon Storage subgoal is based on the percent cover of native tree species on the island relative to nonnative tree species.   
 
 The following tree species are included in the mapping project raw data and we have designated if they are native or nonnative (Table 4.5). Category designations were assigned based on species lists found in Tables 1 and 2 of the U.S. Geological Survey 2011 Terrestrial Forest Management Plan for Palmyra Atoll, found [here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf).
 <br>   
@@ -583,7 +584,7 @@ The following tree species are included in the mapping project raw data and we h
  
 Unknown tree species and standing water were excluded from the analysis, as were *Ipomoea* and *Nephrolepis* since they are not trees.      
 
-The reference point for Carbon Storage is 95% of the forest area dominated by native tree species.  
+The reference point for Carbon Storage is to have 95% of the forest area dominated by native tree species (and < 5% nonnative trees).      
  
 Current status $x_{cs}$ is calculated as the current percent of forest dominated by native trees in year (y) over the reference point percentage (Equation 4.11):       
 
@@ -595,7 +596,7 @@ $$
 
 The Carbon Storage trend will use the same data as the rainforest condition trend calculated for the Biodiversity: Habitats sub-goal. 
 
-There is a lack of historic data categorizing forests as native or nonnative to the level of detail used in the Carbon Storage status calculation. Therefore, the best estimate for trend is based on the trend in the condition and extent of rainforest habitats. If rainforests are healthy and growing in extent, there will be better opportunities for carbon storage. For details on the methodology for calculating rainforest trend refer to the Biodiversity: Habitats sub-goal.
+There is a lack of historic data categorizing forests as native or nonnative to the level of detail used in the Carbon Storage status calculation. Therefore, the best estimate for trend is based on the trend in the condition and extent of rainforest habitats. If rainforests are healthy and growing in extent, there are better opportunities for carbon storage. For details on the methodology for calculating rainforest trend refer to the Biodiversity: Habitats sub-goal.
 <br>   
 **Data**  
 
