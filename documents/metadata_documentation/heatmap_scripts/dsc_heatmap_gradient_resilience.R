@@ -52,11 +52,16 @@ dsc_res_layers <- ggplot(data = dsc_layers, aes(x = criteria, y = Layer)) +
                        labels = c("Bad","Medium", "Good")) +
   theme_dark()+
   ggtitle("Resilience Data Selection Criteria Scores")+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title = element_blank(),
+  theme(axis.title = element_blank(),
         panel.grid = element_blank(),
         legend.title = element_blank(),
         legend.position = "bottom") +
+  scale_x_discrete(breaks = c("Spatial Cover",
+                              "Temporal Resolution", "Temporal Span", "Temporal Baseline",
+                              "Fit Resolution", "Fit Comprehensiveness", "Overall Score"),
+                   labels = c("Spatial\nCover",
+                              "Temporal\nResolution", "Temporal\nSpan", "Temporal\nBaseline",
+                              "Fit\nResolution", "Fit\nComprehensiveness", "Overall\nScore")) +
   coord_cartesian(expand=FALSE)
 
 ## when saving make sure to save it tall enough so that there's no over lap for the yaxis labels

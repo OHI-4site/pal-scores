@@ -18,11 +18,12 @@ dsc_scores_raw <- googlesheets4::read_sheet("https://docs.google.com/spreadsheet
 ### create list for the proper order that we want it to show up on the graph later
 # layers order: from highest score to lowest
 order_layers_df <- dsc_scores_raw %>%
-  select(Layer,`Average Score` ) %>%
+  mutate(graph_name = paste0(Goal, sep = ": ", Layer)) %>%
+  select(graph_name,`Average Score` ) %>%
   unique()  %>%
   arrange(`Average Score`)
 
-order_layers <- c(order_layers_df$Layer)
+order_layers <- c(order_layers_df$graph_name)
 
 # criteria order: same as in the table
 order_criteria <- c("Spatial Cover",
@@ -31,7 +32,8 @@ order_criteria <- c("Spatial Cover",
 
 ### Now we want to create a df that we can use to make the heatmap, and apply all these orders that we created
 dsc_layers <- dsc_scores_raw %>%
-  dplyr::select(-Goal) %>%
+  mutate(graph_name = paste0(Goal, sep = ": ", Layer)) %>%
+  dplyr::select(Layer = graph_name, 3:9) %>%
   rename("Overall Score" = "Average Score") %>%
   unique() %>%
   gather("criteria", "score", 2:8) %>% # Data is in long format, need it short
@@ -49,11 +51,16 @@ dsc_all_layers <- ggplot(data = dsc_layers, aes(x = criteria, y = Layer)) +
                        breaks = c(0,0.5,1),
                        labels = c("Bad","Medium", "Good")) +
   theme_dark()+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title = element_blank(),
+  theme(axis.title = element_blank(),
         panel.grid = element_blank(),
         legend.title = element_blank(),
         legend.position = "bottom") +
+  scale_x_discrete(breaks = c("Spatial Cover",
+                              "Temporal Resolution", "Temporal Span", "Temporal Baseline",
+                              "Fit Resolution", "Fit Comprehensiveness", "Overall Score"),
+                   labels = c("Spatial\nCover",
+                              "Temporal\nResolution", "Temporal\nSpan", "Temporal\nBaseline",
+                              "Fit\nResolution", "Fit\nComprehensiveness", "Overall\nScore")) +
   coord_cartesian(expand=FALSE)
 
 ## when saving make sure to save it tall enough so that there's no over lap for the yaxis labels
