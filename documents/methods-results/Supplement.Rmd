@@ -55,7 +55,7 @@ cat(paste(st_layers$info, collapse="\n\n"))
 ```
 
 ***
-Effective management of marine systems requires quantitative assessments of ocean health. To assess the ocean condition of Palmyra Atoll a collaborative effort was undertaken between The Nature Conservancy’s Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). The Ocean Health Index (OHI) framework was used to assess Palmyra Atoll. Palmyra is a mostly uninhabited island in the Line Islands Archipelago halfway between Hawaii and American Samoa. The island is a National Wildlife Refuge administered by the U.S. Fish and Wildlife Services and was purchased by The Nature Conservancy in 2000. Specifically, we assessed the performance of 7 goals: Biodiversity, Clean Waters, Habitat Services, Research, Resource Access Opportunities, Sense of Place, and Tourism and Recreation. Using best available data and locally relevant reference points, each goal was scored on a scale of 0-100. Goal scores were then averaged to obtain an overall health score for the island. The overall score for Palmyra was 81, with goal scores ranging from 43 for the Habitat Services goal to 100 for the Research, Resource Access Opportunities, and Tourism and Recreation goals.      
+Effective management of marine systems requires quantitative assessments of ocean health. To assess the ocean condition of Palmyra Atoll a collaborative effort was undertaken between The Nature Conservancy’s (TNC) Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). The Ocean Health Index (OHI) framework was used to assess Palmyra Atoll. Palmyra is a mostly uninhabited island in the Line Islands Archipelago halfway between Hawaii and American Samoa. The island is a National Wildlife Refuge administered by the U.S. Fish and Wildlife Services and was purchased by The Nature Conservancy in 2000. Specifically, we assessed the performance of 7 goals: Biodiversity, Clean Waters, Habitat Services, Research, Resource Access Opportunities, Sense of Place, and Tourism and Recreation. Using best available data and locally relevant reference points, each goal was scored on a scale of 0-100. Goal scores were then averaged to obtain an overall health score for the island. The overall score for Palmyra was 81, with goal scores ranging from 43 for the Habitat Services goal to 100 for the Research, Resource Access Opportunities, and Tourism and Recreation goals.      
 
 # Applying the Ocean Health Index (OHI) to Palmyra
 
@@ -143,7 +143,9 @@ scores <- read_csv(here("region/scores.csv")) %>%
   pivot_wider(id_cols ="goal", names_from = "dimension", values_from = "score") %>% 
   filter(goal != "Index") %>% 
   inner_join(.,goals, by = "goal") %>% 
-  mutate(parent = c("", "HS", "HS", "", "BD", "", "SP", "SP", "", "", "", "BD", "")) %>% 
+  mutate(parent = c("", "Habitat Services", "Habitat Services", "",
+                    "Biodiversity", "", "Sense of Place",
+                    "Sense of Place", "", "", "", "Biodiversity", "")) %>% 
   dplyr::select('Goal/Sub-goal' = name, 'Parent Goal' = parent, Status = status, Future = future, Score = score, Description = description) %>% 
   arrange(desc(Score))
 
@@ -157,25 +159,29 @@ kable(scores, align = "l")
 
 ## Goals Included in Palmyra OHI+ Assessment:
 
-The following goals were included in the Palmyra OHI+ assessment.
+Given that Palmyra is a nearly uninhabited island, several of the OHI goals were not relevant to this region (e.g., Livelihoods and Economies). Furthermore, one of the stated goals of The Nature Conservancy for Palmyra is to serve as a “platform for applied conservation science” (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/), which resulted in the creation of a new goal, Research, which captures the degree to which Palmyra provides access to research opportunities. Given these considerations, we modified the OHI framework to include the following goals (Table 3.1): Sense of Place (comprised of Lasting Special Places and Iconic species sub-goals), Resource Access Opportunities (a modified version of Artisanal Opportunities in the original framework), Research (not included in the original framework), Tourism & Recreation, Biodiversity (comprised of Species Condition and Habitat sub-goals), Clean Waters, and Habitat Services (Coastal Protection and Carbon Storage sub-goals).  
 
-### Biodiversity (BD)
+### Biodiversity
 
-People value biodiversity in particular for its existence value. This goal assesses the conservation status of species based on the best available data through two sub-goals: Species (SPP) and Habitats (HAB). Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for condition of the broad suite of species that depend on them. We calculate each of these sub-goals separately and weight them equally when calculating the overall goal score.    
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 71.51</span>
+
+People value biodiversity for its existence value. This goal assesses the conservation status of species based on the best available data through two sub-goals: Species and Habitats. Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for the condition of the broad suite of species that depend on them. We calculate each of these sub-goals separately and weight them equally when calculating the overall goal score.   
 
 #### Habitats (HAB)
 
-The Habitats sub-goal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This sub-goal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, both terrestrial and marine habitats are included in this assessment.   
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 47.85</span> 
+
+The Habitats sub-goal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This sub-goal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, and the tight linkage between land and ocean environments, both terrestrial and marine habitats are included in this assessment.     
 
 **Current Status**  
 
-The Habitats sub-goal includes coral reef habitats and rainforest habitats. A score is found for each habitat and then the average is taken to give an overall status score.
+The Habitats sub-goal includes coral reef habitats and rainforest habitats. A score is calculated for each habitat and then the habitat scores are averaged, with area weighting, to obtain an overall status score.   
 <br>   
 *Coral Reefs*   
 
 Four zones were used to calculate the coral reef status: back reef, reef crest, fore reef, and lagoon. 
 
-Original raw data included 10 different zones, as shown in the map in Figure 4.1A. The following zones were grouped together to form the four reef zones of interest, as shown on the map in Figure 4.1B:    
+Original raw data included 10 different zones, as shown in the map in Figure 4.1A. The following zones were grouped together to form the four reef zones, as shown on the map in Figure 4.1B:    
 
  - Back Reef: Not grouped with any other zone   
  - Reef Crest: Reef Crest and Fore Reef  
@@ -185,8 +191,9 @@ Original raw data included 10 different zones, as shown in the map in Figure 4.1
 <center>
 ![coral_zones_raw](images/coral_zones_raw.png){width=70%} ![coral_zones_reclass](images/coral_zones_reclassified.png){width=70%}  
 </center>
-***Figure 4.1 Coral zones.** Map A (top) displays coral zones as shown in the raw data and map B (bottom) shows the coral zones as they have been reclassified for this assessment.* <br>     
-The fore reef is reassigned to part of the reef crest to better reflect the position of those data points on the reef. The Bank/Shelf and Bank/Shelf Escarpment are then grouped together and renamed as the fore reef with an additional designation to differentiate the western fore reef and the eastern fore reef. Based on a map of Palmyra, the longitude line 162.075 will be used to divide the fore reef into western and eastern. These groupings follow the zones delineated by NOAA in the Coral Reef Ecosystems Monitoring Report for the Pacific Remote Islands Marine National Monument, available [here](https://repository.library.noaa.gov/view/noaa/23421).  
+***Figure 4.1 Coral zones.** Map A (top) displays coral zones as shown in the raw data and map B (bottom) shows the coral zones reclassified for this assessment.*
+<br>     
+The fore reef is reassigned to part of the reef crest to better reflect the position of those data points on the reef. The Bank/Shelf and Bank/Shelf Escarpment are then grouped together and renamed as the fore reef with an additional designation to differentiate the western fore reef and the eastern fore reef. Based on a map of Palmyra, the longitude line 162.075 was used to divide the fore reef into western and eastern. These groupings follow the zones delineated by NOAA in the Coral Reef Ecosystems Monitoring Report for the Pacific Remote Islands Marine National Monument, available [here](https://repository.library.noaa.gov/view/noaa/23421).  
  
 Coral condition is based on the percent of live coral cover in each of the zones. The reference point, or target live coral cover range, for each zone is:   
 
@@ -195,7 +202,7 @@ Coral condition is based on the percent of live coral cover in each of the zones
  - Fore Reef:  50-90% live coral cover     
  - Lagoon:     10-50% live coral cover       
 
-The western and eastern fore reef both have the same reference point.   
+The western and eastern fore reef both have the same reference point. Reference points were established based on input from scientists at The Nature Conservancy.    
 
 Coral reef status is first calculated for each zone $x_{zone}$. The status is calculated as the area of the reef zone falling within or above the reference point category divided by the total area of the reef zone (Equation 4.1):        
 
@@ -203,7 +210,7 @@ $$
 x_{zone}~=~\frac { A_{ref} } { A_{total} },  ~~(Eq~4.1) 
 $$  
 
-Where $A_{ref}$ is the area of the reef zone falling within or above the reference point category and $A_{total}$ is the total area of the reef zone. For the status calculation we adjust the area of the lagoon to include only the area of the lagoon where coral can reasonably grow. Other zones are not area adjusted due to incomplete knowledge and data. In the future adjusting the area of all zones to include only the area where coral can be expected to grow would strengthen this analysis.          
+Where $A_{ref}$ is the area of the reef zone falling within or above the reference point category and $A_{total}$ is the total area of the reef zone. For the status calculation we adjust the area of the lagoon to include only the area of the lagoon where coral can reasonably grow. Other zones are not area adjusted due to incomplete knowledge and data. Ideally the area of all zones would be adjusted to include only the area where coral can grow and thrive.            
 
 The overall status score $x_{coral}$ is calculated as the area weighted mean of the status score for each zone (Equation 4.2). Here we use the total area of the lagoon.   
 
@@ -214,7 +221,7 @@ where $A_{i}$ is the area of zone $i$ and $x_{i}$ is the status score for each z
 <br>   
 *Rainforests*   
 
-The rainforest condition is based on the land area of the rainforest. Invasive coconut palms (*Cocos nucifera*) are limiting the land area that can be occupied by native rainforests. Palmyra has planned coconut palm removal activities, which they hope will increase the land area of native forests.   
+The rainforest condition is based on the current land area of the rainforest relative to the total potential area of rainforest. Invasive coconut palms (*Cocos nucifera*) have replaced much of the  native rainforests, and there are planned coconut palm removal activities, which TNC hopes will increase the land area of native forests.   
 
 The raw data included four vegetation categories: native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifera* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis.   
 
@@ -245,11 +252,11 @@ $$
 <br>   
 *Coral Reefs* 
 
-The benthic habitat mapping project used to calculate the current status was the first study of its kind on Palmyra Atoll. As no similar studies have been done previously which estimate historic live coral cover across the different reef zones, an estimate of coral trend was derived from the OHI Global Assessment. The OHI global trend data are calculated as a linear trend in coral condition, on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](https://raw.githack.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the OHI Global Assessment, so instead it was estimated by averaging the trend in coral reef habitats for all countries in Micronesia.
+The benthic habitat mapping project used to calculate the current status was the first study of its kind on Palmyra Atoll. As no previous studies exist to estimate historic live coral cover across the different reef zones, an estimate of coral trend was derived using data from the 2019  OHI global assessment. The OHI global trend data are calculated as a linear trend in coral condition, on a per country basis across all available data from 1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral trend was available for Palmyra in the OHI global assessment, so we used  the average trend observed for coral reef habitats for all countries in Micronesia.
 <br>   
 *Rainforests* 
 
-The trend in rainforest condition is calculated as the rate of change in forest area per year from 2005-2019. The trend is the five year average change in rainforest area. The linear trend is calculated based on rainforest area in 2005, 2010, 2016, and 2019. 
+The trend in rainforest condition is the predicted change in forest area during a five year period. This was estimated using a linear regression model of forest area from 2005, 2010, 2016, and 2019.   
 <br>   
 **Data**   
 
@@ -290,28 +297,34 @@ Date Downloaded: July 8, 2020
 Citation: Burnett, M.W. *et al.* (2019). "Quantifying coconut palm extent on Pacific islands using spectral textural analysis of very high resolution imagery". *International Journal of Remote Sensing* 40(19): 7329-7355   
   [Available here](https://www.tandfonline.com/doi/epub/10.1080/01431161.2019.1594440?needAccess=true). 
 <br>     
-2001 Reference Point: The 2001 reference point comes from a satellite image of the island that is discussed in the 2011 Terrestrial Forest Management Plan.  
+<u>2001 Reference Point:</u>   
+The 2001 reference point comes from a satellite image of the island that is discussed in the 2011 Terrestrial Forest Management Plan.  
 
 Citation: Hathaway, S.A., McEachern K., & Fisher, R.N. (2011). "Terrestrial Forest Management Plan for Palmyra Atoll". U.S. Geological Survey Open-File Report 2011-1007.  
-  [Available here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf)  
+  [Available here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf)
 <br>     
-There have been no studies using the same methodology to track the area of forests and coconut palm on the island over time. Therefore, data to calculate the trend in rainforest condition are estimated from three additional studies that included some estimate of percent cover of coconut palms and total land area.    
-
-2005: The 2005 data was obtained from Alex Wegmann at The Nature Conservancy on July 31, 2020. Shapefiles were compiled as part of Alex Wegmann's PhD dissertation.  
-
-2010: The 2010 data is estimated from a study on invasive rats that quantified the percent of land area on each islet occupied by *Cocos nucifera* (Table 1).    
+There have been no studies using the same methodology to track the area of forests and coconut palm on the island over time. Therefore, data to calculate the trend in rainforest condition are estimated from three additional studies that included some estimate of percent cover of coconut palms and total land area.
+<br>   
+<u>2005 Data:</u>      
+The 2005 data was obtained from Alex Wegmann at The Nature Conservancy on July 31, 2020. Shapefiles were compiled as part of Alex Wegmann's PhD dissertation.
+<br>   
+<u>2010 Data:</u>   
+The 2010 data is estimated from a study on invasive rats that quantified the percent of land area on each islet occupied by *Cocos nucifera* (Table 1).    
 
 Citation: Lafferty, K.D. et al. (2010). "Stomach nematodes (*Mastophorus muris*) in rats (*Rattus rattus*) are associated with coconut (*Cocos nucifera*) habitat at Palmyra Atoll. *Journal of Parasitology* 96(1): 16-20.   
-  [Available here](https://bioone.org/journals/Journal-of-Parasitology/volume-96/issue-1/GE-2180.1/Stomach-Nematodes-Mastophorus-muris-in-Rats-Rattus-rattus-Are-Associated/10.1645/GE-2180.1.full)   
-  
-2016: The 2016 data is estimated using a U.S. Geological Survey vegetation community mapping project for Palmyra Atoll. Vegetation maps were completed in October 2016 and published in June 2019. Data is available for download [here](https://www.sciencebase.gov/catalog/item/5c66fc5be4b0fe48cb3aca49).   
+  [Available here](https://bioone.org/journals/Journal-of-Parasitology/volume-96/issue-1/GE-2180.1/Stomach-Nematodes-Mastophorus-muris-in-Rats-Rattus-rattus-Are-Associated/10.1645/GE-2180.1.full)
+<br>     
+<u>2016 Data:</u>   
+The 2016 data is estimated using a U.S. Geological Survey vegetation community mapping project for Palmyra Atoll. Vegetation maps were completed in October 2016 and published in June 2019. Data is available for download [here](https://www.sciencebase.gov/catalog/item/5c66fc5be4b0fe48cb3aca49).   
 
 Date Downloaded: July 2, 2020  
 
 Citation: Struckhoff, M.A., 2019, Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.  
 <br>   
 
-#### Species (SPP)
+#### Species 
+
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 95.16</span>
 
 The Species sub-goal aims to assess the average condition of species in Palmyra. Both marine and terrestrial species are included in this sub-goal.    
  
@@ -321,20 +334,20 @@ A list of species occurring in Palmyra was created using IUCN range maps and sup
 
 The reference point for the Species sub-goal is all species have an IUCN status of "Least Concern".   
 
-Threat weights, were assigned based on the IUCN threat categories status of each species, following the weighting schemes developed by Butchart *et al* (2007) (Table 4.1). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include the Data Deficient classification as assessed species following previously published guidelines for a mid-point approach (Schipper *et al.* 2008; Hoffmann *et al.* 2010).
+Threat weights, were assigned based on the IUCN threat categories status of each species, following the weighting schemes developed by Butchart *et al* (2007) (Table 4.1). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include Data Deficient species.   We assessed species following previously published guidelines (Schipper *et al.* 2008; Hoffmann *et al.* 2010).   
 <br>   
-***Table 4.1. Weights for assessment of species status based on IUCN risk categories.***
+***Table 4.1. Risk scores for assessment of species status based on IUCN risk categories.***
 
-| Risk Category   | IUCN code | Weight|
-|-----------------|-----------|-------|
-| Least Concern   |     LC    |  0.0  |  
-| Near Threatened |     NT    |  0.2  |
-| Vulnerable      |     VU    |  0.4  |
-| Endangered      |     EN    |  0.6  |
-| Critically Endangered | CR  |  0.8  |
-| Extinct         |     EX    |  1.0  |   
+| Risk Category   | IUCN code | Risk Score |
+|-----------------|-----------|------------|
+| Least Concern   |     LC    |  0.0       |  
+| Near Threatened |     NT    |  0.2       |
+| Vulnerable      |     VU    |  0.4       |
+| Endangered      |     EN    |  0.6       |
+| Critically Endangered | CR  |  0.8       |
+| Extinct         |     EX    |  1.0       |   
   
-The species fall within 10 different taxonomic classes and to avoid overweighting, the status is first calculated for each class as the average of the extinction risk scores. An overall extinction risk status is then found by averaging the extinction risk score of all 10 classes. Finally, the status $x_{spp}$ is rescaled so a risk factor of 0.75 is equal to zero (Equation 4.7):      
+The species fall within 10 different taxonomic classes and to avoid overweighting species with many species, status was first calculated for each class as the average of the extinction risk scores. An overall extinction risk status was estimated by averaging the extinction risk score of all 10 classes. Finally, the status $x_{spp}$ is rescaled so a risk factor of 0.75 is equal to zero (Equation 4.7):      
 
 $$
 x_{spp}~=~ \frac { (0.75~-~risk_{avg}) } {0.75}, ~~~~(Eq ~4.7)
