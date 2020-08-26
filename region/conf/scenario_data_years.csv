@@ -62,6 +62,20 @@ hs_carbon_storage_status_placeholder, 2017,2020
 hs_carbon_storage_status_placeholder, 2018,2020
 hs_carbon_storage_status_placeholder, 2019,2020
 hs_carbon_storage_status_placeholder, 2020,2020
+hs_coastal_protection_status, 2014, 2020
+hs_coastal_protection_status, 2015, 2020
+hs_coastal_protection_status, 2016, 2020
+hs_coastal_protection_status, 2017, 2020
+hs_coastal_protection_status, 2018, 2020
+hs_coastal_protection_status, 2019, 2020
+hs_coastal_protection_status, 2020, 2020
+hs_coastal_protection_trend, 2014, 2020
+hs_coastal_protection_trend, 2015, 2020
+hs_coastal_protection_trend, 2016, 2020
+hs_coastal_protection_trend, 2017, 2020
+hs_coastal_protection_trend, 2018, 2020
+hs_coastal_protection_trend, 2019, 2020
+hs_coastal_protection_trend, 2020, 2020
 ico_status,2014,2014
 ico_status,2015,2015
 ico_status,2016,2016
