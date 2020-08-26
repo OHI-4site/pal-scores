@@ -221,11 +221,11 @@ where $A_{i}$ is the area of zone $i$ and $x_{i}$ is the status score for each z
 <br>   
 *Rainforests*   
 
-The rainforest condition is based on the current land area of the rainforest relative to the total potential area of rainforest. Invasive coconut palms (*Cocos nucifera*) have replaced much of the  native rainforests, and there are planned coconut palm removal activities, which TNC hopes will increase the land area of native forests.   
+The rainforest condition is based on the current land area of the rainforest relative to the total potential area of rainforest. Invasive coconut palms (*Cocos nucifera*) have replaced much of the native rainforests, but since purchasing the island in 2000 TNC is restoring native forest through ongoing coconut palm removal activities.          
 
 The raw data included four vegetation categories: native forests, *Scaevola*, non-vegetated areas, and *Cocos nucifera* (coconut palm). The native forest and *Scaevola* categories were grouped together to find the total forest land area. Non-vegetated areas were excluded from the analysis.   
 
-The rainforest habitat status $x_{forest}$ is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed (Equation 4.3). The reference point is the rainforest and coconut palm area in 2001.    
+The rainforest habitat status $x_{forest}$ is calculated based on the area of rainforest currently present compared to the area of rainforest that would exist once 95% of the historic area of coconut palm has been removed (Equation 4.3). The historic area is the area of the rainforest in 2001, which is the closest estimate available to the extent of the rainforest when TNC first purchased the island in 2000.    
 
 $$
 x_{forest}~=~ \frac { A_{current} } { A_{potential} }, ~~(Eq ~4.3) 
@@ -990,7 +990,7 @@ $$
 { p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.20)
 $$
 
-where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions. Additional information on the methods used to calculate the pressure score can be found in the [OHI Global Methods](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#532_pressure). 
+where γ is the relative weight for ecological vs. social pressures and equals 0.5 for this assessment. Currently, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions. Additional information on the methods used to calculate the pressure score can be found in the [OHI Global Methods](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#532_pressure).
 <br>   
 ***Table 4.6. Pressure data and categories.** Description of the stressor data layers used to calculate overall pressure for each goal of the Palmyra assessment. Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories.*   
 
@@ -1015,20 +1015,63 @@ where γ is the relative weight for ecological vs. social pressures and equals 0
 
 ### Ecological Pressures 
 
-We assessed five broad categories of ecological stressors: climate change, fishing pressure, habitat destruction, alien species introductions, and water pollution. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. 
+We assessed five broad categories of ecological stressors: climate change, fishing pressure, habitat destruction, alien species introductions, and water pollution. The five categories are intended to capture known pressures to the social-ecological system associated with each goal. The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress. The methods for deriving the pressure layers are briefly described below.   
 
 *Climate Change*
 
+Four stressors are considered as climate change pressures: ocean acidification, sea level rise, sea surface temperature, and ultraviolet radiation. 
+
+<u>Ocean Acidification</u> 
+
+Ocean acidification pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](https://cdn.rawgit.com/OHI-Science/ohiprep/master/globalprep/prs_oa/v2017/create_oa_layer.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.   
+
+<u>Sea Level Rise</u> 
+
+Sea level rise pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](https://ohi-science.org/ohiprep_v2019/globalprep/prs_slr/v2019/slr_layer_prep_v2.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.        
+
+<u>Sea Surface Temperature</u> 
+
+Sea surface temperature pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](http://ohi-science.org/ohiprep_v2020/globalprep/prs_sst/v2018/sst_layer_prep.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.     
+
+<u>Ultraviolet Radiation</u> 
+
+Ultraviolet radiation pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](http://ohi-science.org/ohiprep_v2020/globalprep/prs_uv/v2020/uv_dataprep.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.
+<br>   
+Data Sources:   
+
+ - Feely, R.A., S.C. Doney, and S.R. Cooley. 2009. Ocean acidification: Present conditions and future changes in a high-CO2 world. Oceanography 22(4):36–47   
+ - AVISO [Monthly mean Maps of Sea Level Anomaly](https://www.aviso.altimetry.fr/data/products/sea-surface-height-products/global/gridded-sea-level-anomalies-mean-and-climatology.html)   
+ - Saha, Korak; Zhao, Xuepeng; Zhang, Huai-min; Casey, Kenneth S.; Zhang, Dexin; Zhang, Yongsheng; Baker-Yeboah, Sheekela; Relph, John M.; Krishnan, Ajay; Ryan, Thomas (2018). The Coral Reef Temperature Anomaly Database (CoRTAD) Version 6 - Global, 4 km Sea Surface Temperature and Related Thermal Stress Metrics for 1982 to 2017. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.25921/ffw7-cs39. Accessed: July 23, 2020.   
+ - Jari Hovila, Antii Arola, and Johanna Tamminen (2014), OMI/Aura Surface UVB Irradiance and Erythemal Dose Daily L2 Global Gridded 0.25 degree x 0.25 degree V3, NASA Goddard Space Flight Center, Goddard Earth Sciences Data and Information Services Center (GES DISC), Accessed [June 22, 2020] DOI:10.5067/Aura/OMI/DATA2028.
+<br>   
 
 *Fishing Pressures* 
 
+Fishing pressures typically include bycatch from artisinal and commercial fishing and target harvest, generally of cetaceans and marine turtles. There is no commercial fishing permitted in the waters around Palmyra Atoll. Recreational fishing for bone fish is catch and release and only about 20 days of fishing occur in any given year. Limited amounts of sustenance fishing is permitted on Palmyra Atoll, which amounts to approximately 10 days of fishing per year. The risk of bycatch from these activities is very low. However, any time there is fishing there is a potential for bycatch. Since the amount of fishing over the years is relatively consistent, we will assume the same amount of fishing pressure from 2014 - 2020. Fishing pressure is estimated for recreational and sustenance fishing as the percentage of fishing days per year. The overall pressure score is the average of these two scores.
+<br>   
 *Habitat Destruction*
 
+Given that there are no activities contributing to habitat destruction permitted on the island or in the offshore area, this pressure score is zero.
+<br>   
 *Alien Species* 
+
+As there is no comprehensive database of alien species, a list of 18 invasive species were determined from three primary sources. In each year, each species was identified as present or absent. The pressure score is the total number of species present in each year over the total number of invasive species (18). Presence/absence data isn't available for all species before 2010 so the years for our data will span 2010 - 2020.
+<br>   
+Data Sources:  
+
+ * Global Invasive Species Database (http://www.issg.org/database). 
+ * Hathaway, S.A. and Fisher, R.N. (2010). Biosecurity plan for Palmyra Atoll: U.S. Geological Survey Open-File
+Report 2010-1097, 80 p.   
+   Available [here](https://pubs.usgs.gov/of/2010/1097/pdf/of20101097.pdf).  
+ * Knapp, I.S., Godwin, L.S., Smith, J.E., Williams, C.J., and Bell, J.J. (2011). Records of non-indigenous marine species at Palmyra Atoll in the U.S. Line Islands. *Marine Biodiversity Records* 4:E30. doi:10.1017/S1755267211000078  
+   Available [here](https://www.cambridge.org/core/journals/marine-biodiversity-records/article/records-of-nonindigenous-marine-species-at-palmyra-atoll-in-the-us-line-islands/5D8929D7A0894E2CFF06FBD2AE7792C3).
+<br>   
 
 *Pollution*
 
-The intensity of each stressor within the Palmyra region is scaled from 0 to 1, with 1 indicating the highest stress.  We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.7). Where appropriate we based these rankings on the global assessment which used peer reviewed literature to establish rank scores. In other cases, like for Research and Resource Access Opportunities we used our collective judgment and input from our partners at The Nature Conservancy.
+Two stressors are included in the pollution pressure: marine debris and soil contamination. Each pressure layer is found using 1 - status score.
+<br>   
+We determined the rank sensitivity of each goal/sub-goal to each stressor (or, when possible, an element of the goal, such as a specific habitat). We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or ‘no’ (score = NA) impact (Table 4.7). Where appropriate we based these rankings on the global assessment which used peer reviewed literature to establish rank scores. In other cases, like for Research and Resource Access Opportunities we used our collective judgment.
 <br>   
 
 ***Table 4.7 Pressure matrix.** Rank sensitivity of each goal (or, goal element) to each stressor.*  
