@@ -133,17 +133,16 @@ CS <- function(layers) {
 
   ## Non-weighting simple method
   # Calculate status
-  cs_status <- AlignDataYears(layer_nm = 'hs_carbon_storage_status', layers_obj = layers) %>%
+  cs_status <- AlignDataYears(layer_nm = 'hs_carbon_storage_status_placeholder', layers_obj = layers) %>%
     filter(scenario_year == scen_year) %>%
-    mutate(status = status * 100) %>%
     mutate(dimension = 'status') %>%
     dplyr::select(region_id, dimension, score = status)
 
-  # Calculate trend
-  cs_trend <- AlignDataYears(layer_nm = 'hab_rainforest_trend', layers_obj = layers) %>%
-    filter(scenario_year == scen_year) %>%
-    mutate(dimension = "trend") %>%
-    dplyr::select(region_id, dimension, score = trend)
+  # Calculate trend - create NA layer
+  cs_trend <- data.frame(
+    region_id = 1,
+    dimension = 'trend',
+    score = NA)
 
   # Calculate score
   cs_score <- cs_status %>%
