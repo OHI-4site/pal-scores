@@ -24,7 +24,6 @@ PlotFlower <- function(region_plot     = NA,
                        year_plot       = NA,
                        assessment_name = "OHI Assessment",
                        dir_fig_save    = here("region/reports/figures")) {
-
   ## scores data ----
   scores <- read.csv(here("region/scores.csv")) %>%
     mutate(goal = as.character(goal))
@@ -200,7 +199,7 @@ PlotFlower <- function(region_plot     = NA,
 
 
   ## loop through to save flower plot for each region ----
-  for (region in region_plots) { # region = 301
+  for (region in region_plots) {  region = 1
 
     ## filter region info, setup to plot ----
     plot_df <- score_df %>%
