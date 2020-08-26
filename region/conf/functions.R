@@ -223,19 +223,78 @@ CP <- function(layers) {
 
   scen_year <- layers$data$scenario_year
 
-  ## Non-weighting simple method
-  # Calculate status
-  cp_status <- AlignDataYears(layer_nm = 'hs_coastal_protection_status', layers_obj = layers) %>%
-    filter(scenario_year == scen_year) %>%
-    mutate(status = status * 100) %>%
-    mutate(dimension = 'status') %>%
-    dplyr::select(region_id, dimension, score = status)
+  # Layers for coastal protection
+  extent_lyrs <-
+    c(
+      'hab_coral_extent',
+      'hab_rainforest_extent'
+    )
 
-  # Calculate trend
-  cp_trend <- AlignDataYears(layer_nm = 'hab_coral_trend', layers_obj = layers) %>%
+  trend_lyrs <-
+    c(
+      'hab_coral_trend',
+      'hab_rainforest_trend'
+    )
+
+  # Health layers are status for corals and rainforest
+  health_coral <- AlignDataYears(layer_nm = 'hab_coral_status', layers_obj = layers) %>%
     filter(scenario_year == scen_year) %>%
-    mutate(dimension = "trend") %>%
-    dplyr::select(region_id, dimension, score = trend)
+    group_by(region_id) %>%
+    summarize(status = weighted.mean(status, area_km)) %>%  # Area weighted average of zone scores
+    mutate(habitat = "coral") %>%
+    dplyr::select(region_id, habitat, health = status)
+
+  health_rainforest <- AlignDataYears(layer_nm = 'hab_rainforest_status', layers_obj = layers) %>%
+    dplyr::filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, health = status)
+
+
+  # get data together:
+  extent <- AlignManyDataYears(extent_lyrs) %>%
+    dplyr::filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, extent = km2) %>%
+    dplyr::mutate(habitat = as.character(habitat))
+
+  health <-  health_coral %>%
+    rbind(health_rainforest)
+
+
+  trend <- AlignManyDataYears(trend_lyrs) %>%
+    dplyr::filter(scenario_year == scen_year) %>%
+    dplyr::select(region_id, habitat, trend) %>%
+    dplyr::mutate(habitat = as.character(habitat))
+
+  ## Join data layers
+  cp_data <-  extent %>%
+    dplyr::full_join(health, by = c("region_id", "habitat")) %>%
+    dplyr::full_join(trend, by = c("region_id", "habitat"))
+
+  ## Set ranks for each habitat
+  habitat.rank <- c(
+    'coral' = 3,
+    'rainforest' = 4
+  )
+
+  ## Calculate status
+  cp_status <- cp_data %>%
+    dplyr::mutate(rank = habitat.rank[habitat]) %>%
+    dplyr::group_by(region_id) %>%
+    dplyr::summarize(score = pmin(1, sum(rank * health * extent, na.rm = TRUE) /
+                                    (sum(
+                                      extent * rank, na.rm = TRUE
+                                    ))) * 100) %>%
+    dplyr::mutate(dimension = 'status') %>%
+    ungroup()
+
+  ## Calculate Trend
+  cp_trend <- cp_data %>%
+    dplyr::mutate(rank = habitat.rank[habitat]) %>%
+    dplyr::group_by(region_id) %>%
+    dplyr::summarize(
+      score = sum(rank * trend * extent, na.rm = TRUE) / (sum(extent * rank, na.rm =
+                                                                TRUE)),
+      dimension = 'trend'
+    )
 
   # Calculate score
   cp_score <- cp_status %>%
