@@ -378,7 +378,7 @@ data_layers(goal="SPP", dimension=c("pressure"))
 _Resilience_
 <br>   
 ```{r spp-data-r, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("resilience"))
+data_layers(goal="SPP", dimension=c("resilience"))
 ```
 <br> 
 **Data Citations**   
@@ -547,108 +547,50 @@ The Habitat Services goal measures additional services provided by habitats on P
 
 ####  Carbon Storage
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 39.92</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = NA</span> 
 
-The Carbon Storage sub-goal measures the health of carbon storing habitats. In Palmyra, the only Carbon Storage habitat is the terrestrial rainforest. We use data on habitat extent in the same manner as Biodiversity: Habitats sub-goal. Since only one habitat is included, there are no Carbon Storage weights used in the calculation.  
+The Carbon Storage sub-goal measures the health of carbon storing habitats. Highly productive coastal wetland ecosystems (e.g., mangroves, salt marshes, seagrass beds) have substantially larger areal carbon burial rates than terrestrial forests, and "Blue Carbon" has been suggested as an alternate, more manageable carbon sequestration approach. The rapid destruction of these coastal habitats may release large amounts of buried carbon back into the ocean-atmosphere system. Our focus here, therefore, is on coastal habitats because they have large amounts of stored carbon that would rapidly be released with further habitat destruction and have the highest per-area sequestration rates of any habitat on the planet. Although they are threatened, these habitats are amenable to management, conservation, and restoration efforts. We refer to this goal as carbon storage but intend its meaning to include sequestration.   
 
-**Current Status**   
-
-The Carbon Storage subgoal is based on the percent cover of native tree species on the island relative to nonnative tree species.   
-
-The following tree species are included in the mapping project raw data and we have designated if they are native or nonnative (Table 4.5). Category designations were assigned based on species lists found in Tables 1 and 2 of the U.S. Geological Survey 2011 Terrestrial Forest Management Plan for Palmyra Atoll, found [here](https://permanent.fdlp.gov/gpo119875/ofr20111007.pdf).
-<br>   
-***Table 4.5. Tree species classifications.***   
-
-| Species                      | Classification | 
-|------------------------------|----------------| 
-| *Araucaria*                  | Nonnative      |  
-| *Artocarpus altilis*         | Nonnative      |
-| *Barringtonia asiatica*      | Native         |
-| *Calophyllum inophyllum*     | Nonnative      |  
-| *Casuarina equisetifolia*    | Nonnative      |    
-| *Coccoloba uvifera*          | Nonnative      |
-| *Cocos nucifera*             | Nonnative      | 
-| *Cordia subcordata*          | Native         |  
-| *Guettarda speciosa*         | Native         | 
-| *Heliotropium foertherianum* | Native         | 
-| *Hernandia nymphaeifolia*    | Native         |    
-| *Hibiscus tiliaceus*         | Nonnative      | 
-| *Ipomoea*                    | Native         |     
-| *Nephrolepis*                | Nonnative      |
-| *Pandanus tectorius*         | Native         |  
-| *Phymatosorus scolopendria*  | Native         |
-| *Pisonia grandis*            | Native         |
-| *Premna serratifolia*        | Native         | 
-| *Scaevola taccada*           | Native         |
-| *Terminalia catappa*         | Nonnative      |   
- 
-Unknown tree species and standing water were excluded from the analysis, as were *Ipomoea* and *Nephrolepis* since they are not trees.      
-
-The reference point for Carbon Storage is to have 95% of the forest area dominated by native tree species (and < 5% nonnative trees).      
- 
-Current status $x_{cs}$ is calculated as the current percent of forest dominated by native trees in year (y) over the reference point percentage (Equation 4.11):       
-
-$$
-x_{cs}~=~ \frac {percent~cover_{y} } {percent~cover_{ref} }~,  ~~~(Eq ~4.11)
-$$
-<br>   
-**Trend**   
-
-The Carbon Storage trend will use the same data as the rainforest condition trend calculated for the Biodiversity: Habitats sub-goal. 
-
-There is a lack of historic data categorizing forests as native or nonnative to the level of detail used in the Carbon Storage status calculation. Therefore, the best estimate for trend is based on the trend in the condition and extent of rainforest habitats. If rainforests are healthy and growing in extent, there are better opportunities for carbon storage. For details on the methodology for calculating rainforest trend refer to the Biodiversity: Habitats sub-goal.
-<br>   
-**Data**  
-
-_Status and trend_
-<br>   
-```{r cs-data-st, results="asis", echo=FALSE}
-data_layers(goal="CS", dimension=c("status", "trend"))
-```
-<br>   
-_Pressure_
-<br>   
-```{r cs-data-p, results="asis", echo=FALSE}
-data_layers(goal="CS", dimension=c("pressure"))
-```
-<br>   
-_Resilience_
-<br>   
-```{r cs-data-r, results="asis", echo=FALSE}
-data_layers(goal="CS", dimension=c("resilience"))
-```
-<br>    
-
-**Data Citations**   
-
-Data for the Carbon Storage status come from tree cover surveys completed as part of the U.S. Geological Survey vegetation community mapping project for Palmyra Atoll. Vegetation maps were completed in October 2016 and published in June 2019. The data is available for download [here](https://www.sciencebase.gov/catalog/item/5c66fc5be4b0fe48cb3aca49).    
-
-Date Downloaded: July 7, 2020       
-
-Citation: Struckhoff, M.A., 2019, Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.  
-<br>   
+Lacking data on the carbon storage abilities of the native rainforest, we only included this goal as a placeholder. However, if future data on carbon storage becomes available, this goal can be updated.   
 
 #### Coastal Protection
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 46.77</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 46.79</span> 
 
-The Coastal Protection sub-goal measures the health of habitats that contribute to coastal protection from storm surge, flooding, and sea level rise. In Palmyra, the only Coastal Protection habitat are coral reefs.   
+The Coastal Protection sub-goal measures the health of habitats that contribute to coastal protection from storm surge, flooding, and sea level rise. In Palmyra we are considering both the coral reefs and the native rainforest.    
 
 **Current Status**   
 
-The Coastal Protection current status is calculated as the current condition of coral reef habitat relative to the reference point. We calculate status using the method from the  Biodiversity: Habitats sub-goal.   
+The Coastal Protection current status is calculated as the current condition of coastal protection habitat relative to the reference point.
 
-The Coastal Protection status $x_{cp}$ is calculated as the relative health of the habitats that provide coastal protection weighted by their area and protectiveness rank (Equation 4.12):        
+The status of this goal, $x_{cp}$, was calculated to be a function of the relative health of the habitats, $k$, weighted by their area and protectiveness rank (Table 4.5), such that:
 
 $$
-x_{cp}~=~ \frac { (C~*~A~*~w) } { (A~*~w) }~, ~~~(Eq ~4.12) 
-$$   
+x_{cp} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (h }_{ k } } \times { w }_{ k }\times { A }_{ k }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { (w }_{ k }\times { A }_{ k }) }  }, ~~(Eq. ~4.11)
+$$
 
-Where $C$ is the condition of coral habitats as defined above, $A$ is the area of coral reef habitat, and $w$ is the protectiveness rank for coral reefs. Coral reefs are the only habitat included in the Coastal Protection sub-goal for Palmyra, so the protectiveness rank and area cancels out, leaving the current status for Coastal Protection equivalent to the coral reef condition calculated in the Biodiversity: Habitats sub-goal.
+where, $w$ is the rank weight of the habitat’s protective ability, $A$ is the area within a region for each $k$ habitat type, and $h$ is a measure of each habitat's condition:
+
+$$
+h = \frac { C_{ c } }{ { C }_{ r } }, ~~(Eq ~4.12)
+$$
+
+where, $C_c$ is current condition and $C_r$ is reference condition. Descriptions for how $C_c$ was calculated for both rainforest and coral habitats are outlined above in the Biodiversity: Habitats sub-goal.   
+
+The rainforest habitat extent was calculated using data from a vegetation study in 2019. The extent of coral habitat was defined as the total area of benthic habitat derived from the Palmyra Benthic Habitat Mapping Project in 2011.          
+
+Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work (Tallis *et al* 2011). Although this work does not include native atoll forest as a category, we ranked it equal to mangroves or salt marshes given they occupy similar shoreline regions.     
+
+***Table 4.5. Coastal protectiveness ranks** Scores range from 1-4, with 4 being the most protective (Tallis *et al* 2011).*
+
+Habitat | Protectiveness rank ($w$) |
+------- | --------------------------|
+Rainforest | 4 |
+Coral reefs | 3 |
 <br>   
 **Trend**   
 
-The Coastal Protection trend uses the same data and approach used to calculate the coral condition trend calculated for the Biodiversity: Habitats sub-goal.
+The trend for this goal used the same metrics as the Biodiversity: Habitats sub-goal trend. We used the same data and approach used to calculate the coral condition trend and rainforest trend for the Biodiversity: Habitats sub-goal. An overall trend is then found using the same approach as the current status (Equation 4.11), where the trend is a function of the trend, extent, and protectiveness rank.
 <br>   
 **Data**   
 
@@ -661,13 +603,13 @@ data_layers(goal="CP", dimension=c("status", "trend"))
 _Pressure_
 <br>   
 ```{r cp-data-p, results="asis", echo=FALSE}
-#data_layers(goal="CP", dimension=c("pressure"))
+data_layers(goal="CP", dimension=c("pressure"))
 ```
 <br>   
 _Resilience_
 <br>   
 ```{r cp-data-r, results="asis", echo=FALSE}
-#data_layers(goal="CP", dimension=c("resilience"))
+data_layers(goal="CP", dimension=c("resilience"))
 ```
 <br>    
 
@@ -677,7 +619,16 @@ Coral reef extent and condition data are the same data used in the coral habitat
 
 Date Downloaded: June 30, 2020
 
-Citation: U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Center for Coastal Ocean Sciences. (2011). Palmyra Habitat Maps [Data file]. Retrieved from https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/   
+Citation: U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Center for Coastal Ocean Sciences. (2011). Palmyra Habitat Maps [Data file]. Retrieved from https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/
+<br>   
+*Rainforest Extent and Condition*
+
+Rainforest extent and condition use the same data as the rainforest habitat status layer.   
+  
+The data come from Table A1 downloaded on July 8, 2020 from [here](https://www.tandfonline.com/doi/figure/10.1080/01431161.2019.1594440?scroll=top&needAccess=true).   
+Citation: Burnett, M.W. *et al.* (2019). "Quantifying coconut palm extent on Pacific islands using spectral textural analysis of very high resolution imagery". *International Journal of Remote Sensing* 40(19): 7329-7355   
+  [Available here](https://www.tandfonline.com/doi/epub/10.1080/01431161.2019.1594440?needAccess=true)
+<br>      
 
 ### Research 
 
@@ -927,7 +878,7 @@ where $v_{y}$ is the number of private visiting vessels in year (y), $v_{ref,y}$
 <br>
 **Trend**   
 
-The trend describes the change in private visiting vessels over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change in the number of visting vessels from 2014 to 2020.
+The trend describes the change in private visiting vessels over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change in the number of visiting vessels from 2014 to 2020.
 <br>   
 **Data**  
 
