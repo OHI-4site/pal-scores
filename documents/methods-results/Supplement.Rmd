@@ -1134,7 +1134,7 @@ One gap in knowledge is related to the carbon sequestration potential of atoll r
 
 ## Alignment 
 
-The Palmyra and Tetiaroa projects aligned methods and reference points where possible. Specifically, the Species, Iconic Species, and Coastal Protection goals used the same methods. However, island attributes, management priorities, and data availability made alignment across the entire assessment infeasible. The Palmyra assessment included a Research goal which was not included in the Tetiaroa assessment. Due to differences in available data, methods for the following goals are not the same across the two assessments: Lasting Special Places, Tourism and Recreation, and Habitats (both coral and native forest). The Clean Waters and Resource Access Opportunities goals were not calculated for the Tetiaroa assessment due to lack of avialable data, and the Carbon Storage goal was not calculated for either assessment.      
+The Palmyra and Tetiaroa projects aligned methods and reference points where possible. Specifically, the Species, Iconic Species, and Coastal Protection goals used the same methods. However, island attributes, management priorities, and data availability made alignment across the entire assessment unfeasible. The Palmyra assessment included a Research goal which was not included in the Tetiaroa assessment. Due to differences in available data, methods for the following goals are not the same across the two assessments: Tourism and Recreation and Habitats (both coral and native forest). The methods for Lasting Special Places differed as well, due to differences in management goals for each islands' stakeholders. The Clean Waters and Resource Access Opportunities goals were not calculated for the Tetiaroa assessment due to lack of available data, and the Carbon Storage goal was not calculated for either assessment.         
 
 # Acknowledgements
 
@@ -1142,7 +1142,7 @@ Thank you to Alex Wegmann and Nicholas Wolff at The Nature Conservancy for their
 
 # References / Citations 
 
-AVISO. (2018). Satellite alimetry data: Mean sea level rise. Satellite alimetry satelite altimetry data. URL https://www.aviso.altimetry.fr/en/data/products/ocean-indicators-products/mean-sea-level.html [accessed 1 August 2020].  
+AVISO. (2018). Satellite alimetry data: Mean sea level rise. Satellite alimetry satellite altimetry data. URL https://www.aviso.altimetry.fr/en/data/products/ocean-indicators-products/mean-sea-level.html [accessed 1 August 2020].  
 
 Barnosky, A.D., Matzke, N., Tomiya, S., Wogan, G.O.U., Swartz, B., Quental, T.B., Marshall, C., McGuire, J.L., Lindsey, E.L., Maguire, K.C., Mersey, B. & Ferrer, E.A. (2011). Has the earth’s sixth mass extinction already arrived? *Nature*, **471**: 51–57.   
 
