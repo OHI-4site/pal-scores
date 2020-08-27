@@ -57,6 +57,8 @@ cat(paste(st_layers$info, collapse="\n\n"))
 ***
 Effective management of marine systems requires quantitative assessments of ocean health. To assess the ocean condition of Palmyra Atoll a collaborative effort was undertaken between The Nature Conservancy’s (TNC) Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). The Ocean Health Index (OHI) framework was used to assess Palmyra Atoll. Palmyra is a mostly uninhabited island in the Line Islands Archipelago halfway between Hawaii and American Samoa. The island is a National Wildlife Refuge administered by the U.S. Fish and Wildlife Services and was purchased by The Nature Conservancy in 2000. Specifically, we assessed the performance of 7 goals: Biodiversity, Clean Waters, Habitat Services, Research, Resource Access Opportunities, Sense of Place, and Tourism and Recreation. Using best available data and locally relevant reference points, each goal was scored on a scale of 0-100. Goal scores were then averaged to obtain an overall health score for the island. The overall score for Palmyra was 81, with goal scores ranging from 43 for the Habitat Services goal to 100 for the Research, Resource Access Opportunities, and Tourism and Recreation goals.      
 
+The Palmyra OHI+ [Github repository](https://github.com/OHI-4site/pal-prep) contains all the data and scripts used to conduct the Palmyra assessment. Future researchers can use this resource to build upon this assessment as better data become available and goal models evolve to better assess the status of the marine and terrestrial environments around Palmyra. Furthermore, the repository promotes transparent and open research, as well as more streamlined collaboration (Stewart Lowndes *et al.*, 2017).
+
 # Applying the Ocean Health Index (OHI) to Palmyra
 
 The Ocean Health Index (OHI) is a scientific framework used to measure how healthy oceans are. Understanding the state of our oceans is a first step towards ensuring they will continue to benefit humans now and in the future. The Ocean Health Index was originally launched in 2012, with assessments conducted every year thereafter, to assess the condition of our global oceans.  The global assessment describes how well 220 countries (and some territorial regions) are  sustainably managing 10 goals which represent the full suite of benefits that people want and need from the ocean. These goals include: Artisanal Fishing Opportunity, Biodiversity, Carbon Storage, Clean Waters, coastal Livelihoods and Economies, Coastal Protection, Food Provision, Natural Products, Sense of Place, and Tourism and Recreation.    
@@ -66,57 +68,38 @@ Each goal is scored from 0 to 100, and the full suite of goal scores are average
 In addition to the global assessment, OHI assessments have been completed at smaller regional scales for over 36 countries and regions, referred to as OHI+ assessments.  For more information about the philosophy of the Ocean Health Index and model development see http://ohi-science.org/ohi-global/.    
 
 To assess the condition of Palmyra Atoll’s ocean resources, an OHI+ assessment was conducted as part of a collaboration between The Nature Conservancy’s Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). Here we report the conclusions from our analysis, and describe how we modified the goal models to reflect locally relevant management concerns.    
-
-**Add NCEAS logo?**   
-
-<div class = "row">
-<div class = "col-md-2">
-<br><br>![OHI logo](images/ohi-logo.jpg)
-</div>
-
-<div class = "col-md-2">
-<br><br>![TNC logo](images/tnc-logo.svg)
-</div>
-
-<div class = "col-md-4">
-<br><br>![U of H logo](images/uhm-logo.png)
-</div>
-
-<div class = "col-md-2">
-<br><br>![Tetiaroa Society](images/TS-logo.png)
-</div>
-
-<div class = "col-md-2">
-<br><br>![CRIOBE logo](images/CRIOBE-logo.jpg)
-</div>
-</div>  
-
-***
+<br>   
+<center>
+![logos](images/logos.png)
+</center>
 
 # Palmyra Atoll 
 
 ## Location
 
-Palmyra Atoll is located in the Northern Line Islands in the west-central Pacific Ocean, 960 miles (1,545 km) southwest of Honolulu, Hawaii. Palmyra consists of around 50 islands in the shape of a horse shoe surrounding two lagoons. The atoll has a combined area of 4 square miles (10 square km) and has an average elevation of 6 feet (2 meters) above sea level, although vegetation rises to a height of 75-90 feet (23-27 meters). A platform of coral and hard sand surrounds the islands and lagoons. The lagoons are separated by arms of the platform reef, and reach depths of 120-160 feet (37-49 meters) (https://www.britannica.com/place/Palmyra-Atoll, https://www.doi.gov/oia/islands/palmyraatoll).
+Palmyra Atoll is located in the Northern Line Islands in the west-central Pacific Ocean, 960 miles (1,545 km) southwest of Honolulu, Hawai'i. Palmyra is comprised of a number of islets and while estimates of the atoll's size vary, studies approximate the land area at about 250 hectares (Hathaway *et al.*, 2011). Most of the islets are heavily vegetated and have an average elevation of 6 feet (2 meters) above sea level. The islets are arranged in a horseshoe pattern around four lagoons surrounded by coral reef. The terrestrial ecosystem supports what have been considered some of the best remaining protected *Pisonia grandis* forest and large colonies of sea birds, including the second largest colony of red-footed boobies (*Sula sula*) in the world, as well as significant numbers of migratory shore birds (Hathaway *et al.*, 2011).   
 
 <center>
 ![Source: [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Palmyra_Atoll_in_United_States.svg).](images/Palmyra_Atoll_map.png){width=56%} ![Source: [The Nature Conservancy](https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/).](images/Aerial-Palmyra-Atoll.jpg){width=43%}
 </center>
+***Figure 2.1. Palmyra Atoll.** Palmyra Atoll's location in the west-central Pacific is shown relative to the rest of the world (left) and a close up satellite image of the island (right).   
+Sources: Wikimedia Commons 2011, The Nature Conservancy, 2020*
+<br> 
 
 ## History
 
-Palmyra Atoll was sighted in 1798 by an American ship, which did not land; but in 1802, the American ship Palmyra made landfall. The atoll was annexed by the Kingdom of Hawaii in 1862 and by Britain in 1889. In 1898 the United States annexed Palmyra as part of the Hawaiian Islands territory (https://www.britannica.com/place/Palmyra-Atoll).    
+Palmyra Atoll was first sighted in 1798 by an American ship; however, the atoll was not discovered and named until 1802 when the American ship *Palmyra* made landfall. The atoll was annexed by the Kingdom of Hawai'i in 1862 and by Britain in 1889. In 1898 the United States annexed Palmyra as part of the Hawaiian Islands territory (Tikkanen, 2010).       
 
-In the 1940s, the U.S. Navy stationed 6,000 sailors in the atoll. They dredged a seaplane runway which merged the atoll’s two western lagoons into one, and a causeway was built on the remaining reef. The sailors also joined three of the islands into one and built a runway about one mile long, which the U.S. Air Force used until 1961 (https://www.doi.gov/oia/islands/palmyraatoll).   
+In the 1940s, the U.S. Navy stationed 6,000 sailors in the atoll. They dredged a seaplane runway which merged the atoll’s two western lagoons into one, and a causeway was built on the remaining reef. The sailors also joined three of the islands into one and built a runway about one mile long, which the U.S. Air Force used until 1961 (U.S. Department of Interior [DOI], 2020).   
 
-The Nature Conservancy (TNC) purchased Palmyra Atoll in December 2000 from the Fullard-Leo family to protect its unique ecosystem and establish a center for scientific investigation (https://www.nature.org/en-us/about-us/where-we-work/united-states/hawaii/stories-in-hawaii/palmyra-175-years-of-science/). It was declared a U.S. National Wildlife Refuge in January 2001, and includes submerged lands and associated waters out to 12 nautical miles from the atoll (https://www.fws.gov/refuge/Palmyra_Atoll/about.html). Palmyra was designated part of the Pacific Remote Islands Marine National Monument on January 6, 2009, which includes Palmyra Atoll National Wildlife Refuge within its boundaries, and protects it further out to 50 nautical miles (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/).   
+The Nature Conservancy (TNC) purchased Palmyra Atoll in December 2000 from the Fullard-Leo family to protect its unique ecosystem and establish a center for scientific investigation (Wegmann, 2020). It was declared a U.S. National Wildlife Refuge in January 2001, and includes submerged lands and associated waters out to 12 nautical miles from the atoll (U.S. Fish and Wildlife Service [USFWS], 2017). Palmyra was designated part of the Pacific Remote Islands Marine National Monument on January 6, 2009, which includes Palmyra Atoll National Wildlife Refuge within its boundaries, and protects it further out to 50 nautical miles (The Nature Conservancy [TNC], 2020).      
 
 
 ## Natural History
 
-Palmyra’s native vegetation supports one of the largest remaining undisturbed stands of Pisonia beach forest in the Pacific, including native varieties of ferns and shrubs. The atoll’s rich intertidal sand and mudflats provide attractive resting and feeding grounds for migratory seabirds and shorebirds. Sooty terns, red- and white-tailed tropicbirds, several species of boobies, great frigate birds, and white terns are some of the common bird species that nest on Palmyra. The second largest red-footed booby colony in the world is found on the atoll, and more than 200 bristle-thighed curlews, whose worldwide population estimate is only 6,000 individuals, spend their winters on Palmyra. Palmyra’s waters are home to stony corals, giant clams, and over 400 species of fish, and are frequented by Pacific bottle-nosed dolphins, spinner dolphins, and melon-headed whales. Threatened green and endangered hawksbill turtles are also found within the lagoon and waters surrounding the atoll. Large populations of the world’s largest land invertebrate, the coconut crab, inhabit Palmyra’s forests along with other crabs (https://www.fws.gov/refuge/Palmyra_Atoll/wildlife_and_habitat/index.html).   
+Palmyra’s native vegetation supports one of the largest remaining undisturbed stands of Pisonia beach forest in the Pacific, including native varieties of ferns and shrubs. The atoll’s rich intertidal sand and mudflats provide attractive resting and feeding grounds for migratory seabirds and shorebirds. Sooty terns, red- and white-tailed tropicbirds, several species of boobies, great frigate birds, and white terns are some of the common bird species that nest on Palmyra. The second largest red-footed booby colony in the world is found on the atoll, and more than 200 bristle-thighed curlews, whose worldwide population estimate is only 6,000 individuals, spend their winters on Palmyra. Palmyra’s waters are home to stony corals, giant clams, and over 400 species of fish, and are frequented by Pacific bottle-nosed dolphins, spinner dolphins, and melon-headed whales. Threatened green and endangered hawksbill turtles are also found within the lagoon and waters surrounding the atoll. Large populations of the world’s largest land invertebrate, the coconut crab, inhabit Palmyra’s forests along with other crabs (USFWS, 2016).          
 
-Rainforest once dominated the atoll, but copra farming, black rats, and deforestation by the U.S. military during World War II reduced Palmyra’s rainforest to a few patches. Thick groves of introduced coconut palms took its place, which are ill-suited for seabirds. There was a resurgence of native bird and plant life after rats were eradicated from Palmyra in 2011, and a major native rainforest restoration project is now underway. The aim of this project is to flip forest dominance and restore ecological balance to the atoll, which will maximize the seabird-driven nutrient cycle and increase terrestrial and marine ecosystem resilience to climate change impacts (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/).   
+Rainforest once dominated the atoll, but copra farming, black rats, and deforestation by the U.S. military during World War II reduced Palmyra’s rainforest to a few patches. Thick groves of introduced coconut palms took its place, which are ill-suited for seabirds. There was a resurgence of native bird and plant life after rats were eradicated from Palmyra in 2011, and a major native rainforest restoration project is now underway. The aim of this project is to flip forest dominance and restore ecological balance to the atoll, which will maximize the seabird-driven nutrient cycle and increase terrestrial and marine ecosystem resilience to climate change impacts (TNC, 2020).      
 
 ***
 
@@ -128,7 +111,7 @@ There is room for some improvement, however. The Habitat, Coastal Protection, an
 
 <br>   
 ![flower_plot](images/flower_Palmyra.png)
-***Figure 3.1 OHI+ Palmyra Results.** Each goal and sub-goal of the Palmyra Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.*
+***Figure 3.1 OHI+ Palmyra Results.** Each goal and sub-goal of the Palmyra Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. Scores of 'NA' are shown in grey. The overall index score is shown in the center of the plot.*
 <br>   
 ***Table 3.1. Results for each goal and sub-goal in the Palmyra OHI+ assessment.** Goal, and sub-goal, scores, as well as current status and predicted future status. Where 'Status' is the current status relative to the reference point; 'Future' is the likely future status based on the trend, pressures, and resilience; and 'Score' is the final goal or sub-goal score reflected in Figure 3.1.*   
 <br>   
@@ -159,7 +142,7 @@ kable(scores, align = "l")
 
 ## Goals Included in Palmyra OHI+ Assessment:
 
-Given that Palmyra is a nearly uninhabited island, several of the OHI goals were not relevant to this region (e.g., Livelihoods and Economies). Furthermore, one of the stated goals of The Nature Conservancy for Palmyra is to serve as a “platform for applied conservation science” (https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/), which resulted in the creation of a new goal, Research, which captures the degree to which Palmyra provides access to research opportunities. Given these considerations, we modified the OHI framework to include the following goals (Table 3.1): Sense of Place (comprised of Lasting Special Places and Iconic species sub-goals), Resource Access Opportunities (a modified version of Artisanal Opportunities in the original framework), Research (not included in the original framework), Tourism & Recreation, Biodiversity (comprised of Species Condition and Habitat sub-goals), Clean Waters, and Habitat Services (Coastal Protection and Carbon Storage sub-goals).  
+Given that Palmyra is a nearly uninhabited island, several of the OHI goals were not relevant to this region (e.g., Livelihoods and Economies). Furthermore, one of the stated goals of The Nature Conservancy for Palmyra is to serve as a “platform for applied conservation science” (TNC, 2020), which resulted in the creation of a new goal, Research, which captures the degree to which Palmyra provides access to research opportunities. Given these considerations, we modified the OHI framework to include the following goals (Table 3.1): Sense of Place (comprised of Lasting Special Places and Iconic species sub-goals), Resource Access Opportunities (a modified version of Artisanal Opportunities in the original framework), Research (not included in the original framework), Tourism & Recreation, Biodiversity (comprised of Species Condition and Habitat sub-goals), Clean Waters, and Habitat Services (Coastal Protection and Carbon Storage sub-goals).  
 
 ### Biodiversity
 
@@ -171,7 +154,7 @@ People value biodiversity for its existence value. This goal assesses the conser
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 47.85</span> 
 
-The Habitats sub-goal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This sub-goal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (https://www.islandconservation.org/palmyra-atoll/). Given the importance of this ecosystem, and the tight linkage between land and ocean environments, both terrestrial and marine habitats are included in this assessment.     
+The Habitats sub-goal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This sub-goal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (Island Conservation, 2020). Given the importance of this ecosystem, and the tight linkage between land and ocean environments, both terrestrial and marine habitats are included in this assessment.     
 
 **Current Status**  
 
@@ -233,7 +216,7 @@ $$
 
 The current rainforest area ($A_{current}$) km^2^ is based on the Burnett, M.W. *et al.* 2019 study where forest is defined as the total area of the *Scaevola* and native forest categories.    
 
-The potential rainforest area ($A_{potential}$) km^2^ is based on a 2001 satellite image showing approximately 43% of the islands are dominated by coconut plantations and 48.2% of the islands are dominated by other vegetation communities as discussed in the [USGS Terrestrial Management Plan](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf). The remaining 8.8% is assumed to be non-vegetated and is excluded from this analysis. The total land area ($A_{total}$) used in these calculations (2.46 km^2^) was derived from a study completed in 2000 (referenced in Burnett *et al* 2019), which is the closest land estimate we could obtain to the 2001 satellite image. The potential rainforest area is calculated as the land area added once 95% of the historic palm plantations are removed plus the original 48.2% of land area that was dominated by rainforests (Equations 4.4 - 4.6).     
+The potential rainforest area ($A_{potential}$) km^2^ is based on a 2001 satellite image showing approximately 43% of the islands are dominated by coconut plantations and 48.2% of the islands are dominated by other vegetation communities as discussed in the USGS Terrestrial Management Plan (Hathaway *et al.*, 2011). The remaining 8.8% is assumed to be non-vegetated and is excluded from this analysis. The total land area ($A_{total}$) used in these calculations (2.46 km^2^) was derived from a study completed in 2000 (referenced in Burnett *et al* 2019), which is the closest land estimate we could obtain to the 2001 satellite image. The potential rainforest area is calculated as the land area added once 95% of the historic palm plantations are removed plus the original 48.2% of land area that was dominated by rainforests (Equations 4.4 - 4.6).     
 
 $$
 A_{potential}~=~A_{added}~+~A_{original} , ~~(Eq ~4.4)
@@ -1145,6 +1128,21 @@ The temporal dimension assesses how well data matches the timescale needs of the
 
 # References / Citations 
 
-Do I need to include data citations again if they are already in each data prep section? 
+Hathaway, S.A., McEachern, K., and Fisher, R.N. (2011). Terrestrial forest management plan for Palmyra Atoll: U.S. Geological Survey Open-File Report 2011–1007, 78 p.  Available [here](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf)   
 
- - Citations for intro and natural history stuff    
+Island Conservation. (2020, August 5). *Palmyra Atoll Restoration Project, USA*. Retrieved from https://www.islandconservation.org/palmyra-atoll/   
+
+Stewart Lowndes, J.S., Best, B.D., Scarborough, C., Afflerbach, J.C., Frazier, M.R., O'Hara, C.C., Jiang, N., and Halpern, B.S. (2017). Our path to better science in less time using open data science tools. *Nature Ecology & Evolution* 1, 0160   
+DOI: 10.1038/s41559-017-0160   
+
+The Nature Conservancy. (2020, August 5). *Places We Protect: Palmyra Atoll*. Retrieved from https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/   
+
+Tikkanen, A. (2010). Palmyra Atoll. In Encyclopedia Britannica. Retrieved from Encyclopedia Britannica database https://www.britannica.com/place/Palmyra-Atoll     
+
+U.S. Department of Interior. (2020, August 5). *Palmyra Atoll*. Retrieved from https://www.doi.gov/oia/islands/palmyraatoll    
+
+U.S. Fish and Wildlife Service. (2016, January 14). *Palmyra Atoll: Wildlife & Habitat*. Retrieved from https://www.fws.gov/refuge/Palmyra_Atoll/wildlife_and_habitat/index.html   
+
+U.S. Fish and Wildlife Service. (2017, April 11). *Palmyra Atoll: About the Refuge*. Retrieved from https://www.fws.gov/refuge/Palmyra_Atoll/about.html    
+
+Wegmann, A. (2020, August 5). *175 Years of Science*. Retrieved from  https://www.nature.org/en-us/about-us/where-we-work/united-states/hawaii/stories-in-hawaii/palmyra-175-years-of-science/   
