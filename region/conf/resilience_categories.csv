@@ -4,6 +4,7 @@ res_cc_mgmt,ecological,regulatory,climate_change,0.5
 res_fp_mgmt,ecological,regulatory,fishing_pressure,1
 res_fp_reg,ecological,regulatory,fishing_pressure,1
 res_hd_reg,ecological,regulatory,habitat_destruction,1
+res_po_mgmt,ecological,regulatory,pollution,1
 res_sp_mgmt,ecological,regulatory,alien_species,1
 res_sp_reg,ecological,regulatory,alien_species,1
 res_hd_mgmt,social,social,social,1
