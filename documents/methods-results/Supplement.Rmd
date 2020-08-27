@@ -523,7 +523,7 @@ Citation: National Oceanic and Atmospheric Administration. (1999). Sediment Qual
 
 ### Habitat Services
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 43.35</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 46.79</span> 
 
 The Habitat Services goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Carbon Storage and Coastal Protection.
 <br>   
@@ -617,12 +617,12 @@ Citation: Burnett, M.W. *et al.* (2019). "Quantifying coconut palm extent on Pac
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 100</span> 
 
-This goal attempts to capture the aspects of the marine and terrestrial environment that support scientific research on Palmyra Atoll. Healthy ecosystems on the island support research and advance scientific understanding. The research goal is based on three equally weighted layers: employment, research funding, and scientific publications.
+This goal attempts to capture the aspects of the marine and terrestrial environment that support scientific research on Palmyra Atoll. Healthy ecosystems on the island support research and advance scientific understanding. The research goal is based on two equally weighted layers: employment and scientific publications.
 <br>   
 
 **Current Status**   
 
-Current status for the research goal is the average of the layer scores for: employment, research funding, and scientific publications.
+Current status for the research goal is the average of the layer scores for employment and scientific publications.
 <br>   
 *Employment*  
 
@@ -634,9 +634,7 @@ $$
 
 Where $FTE_{y}$ is the number of full-time equivalent positions in year (y) and $FTE_{ref}$ is the FTE positions reference point.
 <br>   
-*Research Funding*   
 
-<br>   
 *Scientific Publications*   
 
 The publications layer is calculated based on the number of scientific studies published about resources on Palmyra each year. The reference point is 10 annual publications. Status scores $x_{sci}$ are re-scaled to 0-1 by dividing the number of scientific publications by the reference point (Equation 4.14):     
@@ -648,8 +646,6 @@ $$
 Where $pubs_{y}$ is the number of scientific publications in year (y) and $pubs_{ref}$ is the number of publications reference point.
 <br>   
 **Trend**   
-
-*Employment*   
 
 The trend describes the change in research status over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change research status from 2014 to 2020.
 <br>   
@@ -1058,6 +1054,7 @@ Each resilience category is composed of 1 or more data layers (Table 4.8) with v
 | Measure of habitat destruction regulations | ecological  | ecosystem     | regulatory  | 1 |
 | Measure of alien species regulations | ecological  | ecosystem     | regulatory  | 1 |
 | Measure of alien species management  | ecological  | ecosystem     | regulatory  | 1 |
+| Measure of pollution management      | ecological  | ecosystem     | regulatory  | 1 |
 | Measure of terrestrial and marine habitat management  | social  | social    | social  | 1 |
 <br>  
 Resilience layers are only marked in Table 4.10 for goals or goal elements where the corresponding ecological pressure rank is 2 or 3 (refer to Table 4.8). Where the ecological pressures were ranked 1 (refer to Table 4.8), resilience is not counted for that particular goal or goal element. For example, all invasive species pressures were given a rank of 1, therefore, although the two resilience layers are included in the assessment, neither are designated as a resilience for any of the goals or goal elements affected by invasive species.  
@@ -1081,7 +1078,7 @@ Regulatory resilience describes the institutional measures (e.g., rules, regulat
 
 Regulation layers are based on if there are established rules to prevent ecological pressures. For alien species, we use the presence of rules to prevent the introduction and spread of invasive species from boats, vessels, and cargo. Fishing and habitat regulations are based on the establishment of protected areas. For fishing resilience, we use the presence of marine protected areas and for habitats, we consider both terrestrial protected areas and marine protected areas. Due to the lack of permanent residents, pollution and climate change don't have localized rules and therefore aren't considered as resilience layers.   
 
-Management layers are derived for climate change, habitats, fishing, and alien species based on evaluation of three questions:   
+Management layers are derived for climate change, habitats, fishing, pollution, and alien species based on evaluation of three questions:   
 
  1. Is there a management plan?    
  2. Does there exist some sort of monitoring or tracking of the effects of the management plan?   
@@ -1095,7 +1092,7 @@ Social integrity is intended to describe those processes internal to a community
 
 ## Weaknesses
 
-This OHI+ assessment incorporates 36 layers, constructed from dozens of datasets to calculate status, pressures, and resilience for each goal. The scores calculated in this assessment could be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. In each dimension, a dataset was scored 0.0, 0.5, 1.0, or 'NA' if the dimension is not relevant to the dataset (Figure 4.4).     
+This OHI+ assessment incorporates 36 layers, constructed from dozens of datasets to calculate status, pressures, and resilience for each goal. The scores calculated in this assessment could be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). A 'NA' value is assigned if the criteria is not applciable to a particular dataset. Full dimensions and methods are described in O’Hara *et al.* 2020 and are loosely based upon methods in Fritz *et al.* 2019.       
 
 The spatial dimension evaluates the spatial scale of the data.   
  
@@ -1120,11 +1117,17 @@ The temporal dimension assesses how well data matches the timescale needs of the
 
 # Future
 
-- Table describing datasets that would be ideal to collect for future iterations of the OHI assessment.
-- sedimentation / soil contamination
-- repeated forest surveys - either extent of native vegetation vs. coconut palm or repeated individual woody strands assessments 
-- repeated coral surveys - live coral cover across the reef, estimates of the extent where coral can reasonably grow in areas that are degraded   
-- more localized ocean acifidication, sst, slr   
+In addition to identifying ways existing data could be improved upon, we also identified various data gaps, which if filled would improve the accuracy of results. These suggestions address the lack of time series studies, the need for more localized climate data, and other knowledge gaps.   
+
+While Palmyra is a hub for research, there are not many repeated studies or time series studies conducted on the island. This is particularly relevant to habitat studies but also applies to studies on soil contamination and other pollutants. The rainforest mapping study from 2016 and the benthic habitat mapping project (for coral reefs) in 2011 both provide a good source of data to understand the composition and extent of these habitats. However, no similar studies have been done in the past or since which can provide a comparison of these habitats over time. Estimates of trend were therefore derived from rough estimates of rainforest extent as referenced in a number of papers and global estimates (for coral). The accuracy of these scores would be improved by the repetition of studies covering the same spatial extent and recording the same measurements. Further, estimates were made for coral reefs based on area weighting. While it is known that coral cannot likely grow everywhere in back reef and fore reef, not enough information was known to make accurate estimates. Studies determining the spatail extent of each zone that is considered suitable habitat for coral growth would improve the methods for this layer and may also increase the coral habitat score. For pollution, the 2010 soil contamination study provides a good baseline for the current condition of contaminants. As restoration activities are planned to remediate soils, it will be important to repeat this study, looking at the same sites, for the same contaminants and measuring them in the same way in order to provide an accurate estimate of how much soil contamination has been improved.   
+
+All of the climate change pressures (ocean acidification, sea level rise, sea surface temperature, and ultraviolet radiation) are estimated based on global data. While these datasets are updated regularly and fairly comprehensive the resolution of the data does not provide the most accurate estimate of change over time in Palmyra. The entire region falls generally within one cell of this global data, meaning the island and the surrounding 3 nautical mile area are attributed a single value. Establishing more localized sites around the atoll to measure similar climate paramaters would provide more resolution and allow for investigation into which areas are experiencing the most rapid changes.   
+
+One major gap in knowledge is related to the carbon sequestration potential of atoll rainforests. While this is an important habitat service being provided, there was not enough data to calculate a meaningful score resulting in a score of NA for this assessment. Habitat Services is the lowest scoring of the 7 goals and having knowledge of carbon accounting on the atoll may provide valuable insights for future assessments. Secondly, many of the resilience layers were based on verbal data or the establishment of management plans for things like invasive species and habitats. Tracking how effective these plans are and how management actions may be updated or adapted, even if the plans are not, would allow for a more accurate representation of the resilience these provide.    
+
+# Acknowledgements
+
+Thank you to Alex Wegmann and Nicholas Wolff at The Nature Conservancy for their collaboration and expertise throughout this project. We would also like to thank the members of the NCEAS Ocean Health Index team for their guidance and support. Special thanks to Alex Wegmann, Tim Calver, Chad Wiggins, and Katie Davis from The Nature Conservancy for providing photos used in this report.   
 
 # References / Citations 
 
