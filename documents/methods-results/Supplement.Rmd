@@ -302,7 +302,7 @@ The 2016 data is estimated using a U.S. Geological Survey vegetation community m
 
 Date Downloaded: July 2, 2020  
 
-Citation: Struckhoff, M.A., 2019, Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.  
+Citation: Struckhoff, M.A., (2019). Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.  
 <br>   
 
 #### Species 
@@ -562,15 +562,14 @@ where, $C_c$ is current condition and $C_r$ is reference condition. Descriptions
 
 The rainforest habitat extent was calculated using data from a vegetation study in 2019. The extent of coral habitat was defined as the total area of benthic habitat derived from the Palmyra Benthic Habitat Mapping Project in 2011.          
 
-Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work (Tallis *et al* 2011). Although this work does not include native atoll forest as a category, we ranked it equal to mangroves or salt marshes given they occupy similar shoreline regions.     
-
-***Table 4.5. Coastal protectiveness ranks** Scores range from 1-4, with 4 being the most protective (Tallis *et al* 2011).*
+Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work (Tallis *et al* 2011). Although this work does not include native atoll forest as a category, we ranked it equal to mangroves or salt marshes given they occupy similar shoreline regions. 
+<br>   
+***Table 4.5. Coastal protectiveness ranks** Scores range from 1-4, with 4 being the most protective (Tallis et al 2011).*
 
 Habitat | Protectiveness rank ($w$) |
 ------- | --------------------------|
 Rainforest | 4 |
 Coral reefs | 3 |
-<br>   
 **Trend**   
 
 The trend for this goal used the same metrics as the Biodiversity: Habitats sub-goal trend. We used the same data and approach used to calculate the coral condition trend and rainforest trend for the Biodiversity: Habitats sub-goal. An overall trend is then found using the same approach as the current status (Equation 4.11), where the trend is a function of the trend, extent, and protectiveness rank.
@@ -970,9 +969,9 @@ Ultraviolet radiation pressure scores are found using the same methods as the OH
 Data Sources:   
 
  - Feely, R.A., S.C. Doney, and S.R. Cooley. 2009. Ocean acidification: Present conditions and future changes in a high-CO2 world. Oceanography 22(4):36–47   
- - AVISO [Monthly mean Maps of Sea Level Anomaly](https://www.aviso.altimetry.fr/data/products/sea-surface-height-products/global/gridded-sea-level-anomalies-mean-and-climatology.html)   
- - Saha, Korak; Zhao, Xuepeng; Zhang, Huai-min; Casey, Kenneth S.; Zhang, Dexin; Zhang, Yongsheng; Baker-Yeboah, Sheekela; Relph, John M.; Krishnan, Ajay; Ryan, Thomas (2018). The Coral Reef Temperature Anomaly Database (CoRTAD) Version 6 - Global, 4 km Sea Surface Temperature and Related Thermal Stress Metrics for 1982 to 2017. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.25921/ffw7-cs39. Accessed: July 23, 2020.   
- - Jari Hovila, Antii Arola, and Johanna Tamminen (2014), OMI/Aura Surface UVB Irradiance and Erythemal Dose Daily L2 Global Gridded 0.25 degree x 0.25 degree V3, NASA Goddard Space Flight Center, Goddard Earth Sciences Data and Information Services Center (GES DISC), Accessed [June 22, 2020] DOI:10.5067/Aura/OMI/DATA2028.
+ - AVISO. (2018). Satellite alimetry data: Mean sea level rise. Satellite alimetry satelite altimetry data. URL https://www.aviso.altimetry.fr/en/data/products/ocean-indicators-products/mean-sea-level.html [accessed 1 August 2020]   
+ - Saha, K., Zhao, X., Zhang, H., Casey, K.S., Zhang, D., Zhang, Y., Baker-Yeboah, S., Relph, J.M., Krishnan, A., and Ryan, T. (2018). The Coral Reef Temperature Anomaly Database (CoRTAD) Version 6 - Global, 4 km Sea Surface Temperature and Related Thermal Stress Metrics for 1982 to 2017. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.25921/ffw7-cs39. Accessed: July 23, 2020.       
+ - Jari Hovila, A.A. (2014). OMUVBd: OMI/aura surface UVB irradiance and erythemal dose daily l3 global gridded 1.0 degree x 1.0 degree v3. NASA goddard space flight center, goddard earth sciences data and information services center (GES DISC). URL http://disc.sci.gsfc.nasa.gov/datacollection/OMUVBd_V003.html Accessed [June 22, 2020] DOI:10.5067/Aura/OMI/DATA2028.
 <br>   
 
 *Fishing Pressures* 
@@ -1086,6 +1085,12 @@ Management layers are derived for climate change, habitats, fishing, pollution, 
  
 A score of one is given for every "Yes" response, a zero given for a "No" response, and 0.5 given if management plans or monitoring programs are "In Development". The overall resilience layer score is the sum over three. Since the inverse of the habitat management resilience is used for a social pressure, we will consider this a social resilience instead of an ecological one.    
 
+Data sources to inform management layers were derived from:   
+
+ - Biosecurity Plan
+ - Climate Change Plan 
+ - Terrestrial Management Plan 
+ 
 ### Social Resilience 
 
 Social integrity is intended to describe those processes internal to a community that affect its resilience. It is a function of a wide range of aspects of social structure. Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms. As Palmyra is sparsely populated, many of these social resilience aren't applicable. For this assessment we consider social resilience to be based on general management of Palmyra's ecosystems. We used a lack of management as a social pressure and will use the inverse of this score as our resilience layer. The management layer was derived using the same method as the ecological management resilience layers discussed above.    
@@ -1117,13 +1122,19 @@ The temporal dimension assesses how well data matches the timescale needs of the
 
 # Future
 
+## Recommendations
+
 In addition to identifying ways existing data could be improved upon, we also identified various data gaps, which if filled would improve the accuracy of results. These suggestions address the lack of time series studies, the need for more localized climate data, and other knowledge gaps.   
 
-While Palmyra is a hub for research, there are not many repeated studies or time series studies conducted on the island. This is particularly relevant to habitat studies but also applies to studies on soil contamination and other pollutants. The rainforest mapping study from 2016 and the benthic habitat mapping project (for coral reefs) in 2011 both provide a good source of data to understand the composition and extent of these habitats. However, no similar studies have been done in the past or since which can provide a comparison of these habitats over time. Estimates of trend were therefore derived from rough estimates of rainforest extent as referenced in a number of papers and global estimates (for coral). The accuracy of these scores would be improved by the repetition of studies covering the same spatial extent and recording the same measurements. Further, estimates were made for coral reefs based on area weighting. While it is known that coral cannot likely grow everywhere in back reef and fore reef, not enough information was known to make accurate estimates. Studies determining the spatail extent of each zone that is considered suitable habitat for coral growth would improve the methods for this layer and may also increase the coral habitat score. For pollution, the 2010 soil contamination study provides a good baseline for the current condition of contaminants. As restoration activities are planned to remediate soils, it will be important to repeat this study, looking at the same sites, for the same contaminants and measuring them in the same way in order to provide an accurate estimate of how much soil contamination has been improved.   
+While Palmyra is a hub for research, there are not many repeated studies or time series studies conducted on the island. This is particularly relevant to habitat studies but also applies to studies on soil contamination and other pollutants. The rainforest mapping study from 2016 and the benthic habitat mapping study from 2011 both provide a good source of data to understand the composition and extent of these habitats. However, no similar studies have been done in the past or since which can provide a comparison of these habitats over time. Estimates of trend were therefore derived from rough estimates of rainforest extent as referenced in a number of papers and global estimates (for coral). The accuracy of these scores would be improved by the repetition of studies covering the same spatial extent and recording the same measurements. Further, estimates were made for coral reefs based on area weighting. While it is known that coral cannot likely grow everywhere in back reef and fore reef, not enough information was known to make accurate estimates. Studies determining the spatial extent of each zone that is considered suitable habitat for coral growth would improve the methods for this layer and may also increase the coral habitat score. For pollution, the 2010 soil contamination study provides a good baseline for the current condition of contaminants. As restoration activities are planned to remediate soils, it will be important to repeat this study, looking at the same sites, for the same contaminants and measuring them in the same way in order to provide an accurate estimate of how much soil contamination has been improved.   
 
 All of the climate change pressures (ocean acidification, sea level rise, sea surface temperature, and ultraviolet radiation) are estimated based on global data. While these datasets are updated regularly and fairly comprehensive the resolution of the data does not provide the most accurate estimate of change over time in Palmyra. The entire region falls generally within one cell of this global data, meaning the island and the surrounding 3 nautical mile area are attributed a single value. Establishing more localized sites around the atoll to measure similar climate paramaters would provide more resolution and allow for investigation into which areas are experiencing the most rapid changes.   
 
-One major gap in knowledge is related to the carbon sequestration potential of atoll rainforests. While this is an important habitat service being provided, there was not enough data to calculate a meaningful score resulting in a score of NA for this assessment. Habitat Services is the lowest scoring of the 7 goals and having knowledge of carbon accounting on the atoll may provide valuable insights for future assessments. Secondly, many of the resilience layers were based on verbal data or the establishment of management plans for things like invasive species and habitats. Tracking how effective these plans are and how management actions may be updated or adapted, even if the plans are not, would allow for a more accurate representation of the resilience these provide.    
+One gap in knowledge is related to the carbon sequestration potential of atoll rainforests. While this is an important habitat service being provided, there was not enough data to calculate a meaningful score resulting in a score of NA for this assessment. The carbon accounting project currently underway on the atoll may provide valuable insights for future assessments. Secondly, many of the resilience layers were based on verbal data or the establishment of management plans for things like invasive species and habitats. Tracking how effective these plans are and how management actions may be updated or adapted, would allow for a more accurate representation of the resilience these provide.      
+
+## Alignment 
+
+The Palmyra and Tetiaroa projects aligned methods and reference points where possible. Specifically, the Species, Iconic Species, and Coastal Protection goals used the same methods. However, island attributes, management priorities, and data availability made alignment across the entire assessment infeasible. The Palmyra assessment included a Research goal which was not included in the Tetiaroa assessment. Due to differences in available data, methods for the following goals are not the same across the two assessments: Lasting Special Places, Tourism and Recreation, and Habitats (both coral and native forest). The Clean Waters and Resource Access Opportunities goals were not calculated for the Tetiaroa assessment due to lack of avialable data, and the Carbon Storage goal was not calculated for either assessment.      
 
 # Acknowledgements
 
@@ -1131,21 +1142,75 @@ Thank you to Alex Wegmann and Nicholas Wolff at The Nature Conservancy for their
 
 # References / Citations 
 
+AVISO. (2018). Satellite alimetry data: Mean sea level rise. Satellite alimetry satelite altimetry data. URL https://www.aviso.altimetry.fr/en/data/products/ocean-indicators-products/mean-sea-level.html [accessed 1 August 2020].  
+
+Barnosky, A.D., Matzke, N., Tomiya, S., Wogan, G.O.U., Swartz, B., Quental, T.B., Marshall, C., McGuire, J.L., Lindsey, E.L., Maguire, K.C., Mersey, B. & Ferrer, E.A. (2011). Has the earth’s sixth mass extinction already arrived? *Nature*, **471**: 51–57.   
+
+Burnett, M.W., White, T.D., McCauley, D.J., De Leo, G.A., and Micheli, F. (2019). "Quantifying coconut palm extent on Pacific islands using spectral textural analysis of very high resolution imagery". *International Journal of Remote Sensing* **40(19)**: 7329-7355   
+  
+Butchart, S.H., Resit Akçakaya, H., Chanson, J., Baillie, J.E., Collen, B., Quader, S., Turner, W.R., Amin, R., Stuart, S.N. & Hilton-Taylor, C. (2007). Improvements to the red list index (D. Lusseau, Ed.). *PLoS ONE*, **2**: e140. 
+
+Feely, R.A., S.C. Doney, and S.R. Cooley. (2009). Ocean acidification: Present conditions and future changes in a high-CO2 world. *Oceanography* **22(4)**: 36–47     
+
+Fritz, S., See, L., Carlson, T., Haklay, M., Oliver, J.L., Fraisl, D., Mondardini, R., Brocklehurst, M., Shanley, L.A., Schade, S., Wehn, U., Abrate, T., Anstee, J., Arnold, S., Billot, M., Campbell, J., Espey, J., Gold, M., Hager, G., He, S., Hepburn, L., Hsu, A., Long, D., Maso, D., McCallum, I., Muniafu, M., Moorthy, I., Obersteiner, M., Parker, A.J., Weisspflug, M., and West, S. (2019). Citizen science and the United Nations Sustainable Development Goals. *Nature Sustainability*, **2**: 922–930   
+
+Global Invasive Species Database. (2020, August 5). Retrieved from http://www.issg.org/database     
+
+Hathaway, S.A. and Fisher, R.N. (2010). Biosecurity plan for Palmyra Atoll: U.S. Geological Survey Open-File
+Report 2010-1097, 80 p. Available [here](https://pubs.usgs.gov/of/2010/1097/pdf/of20101097.pdf)        
+
 Hathaway, S.A., McEachern, K., and Fisher, R.N. (2011). Terrestrial forest management plan for Palmyra Atoll: U.S. Geological Survey Open-File Report 2011–1007, 78 p.  Available [here](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf)   
+
+Hoffmann, M., Hilton-Taylor, C., Angulo, A., Bohm, M., Brooks, T.M., Butchart, S.H.M., Carpenter, K.E., Chanson, J., Collen, B., Cox, N.A., Darwall, W.R.T., Dulvy, N.K., Harrison, L.R., Katariya, V., Pollock, C.M., Quader, S., Richman, N.I., Rodrigues, A.S.L., Tognelli, M.F., Vie, J.-C., Aguiar, J.M., Allen, D.J., Allen, G.R., Amori, G., Ananjeva, N.B., Andreone, F., Andrew, P., Ortiz, A.L.A., Baillie, J.E.M., Baldi, R., Bell, B.D., Biju, S.D., Bird, J.P., Black-Decima, P., Blanc, J.J., Bolanos, F., Bolivar-G., W., Burfield, I.J., Burton, J.A., Capper, D.R., Castro, F., Catullo, G., Cavanagh, R.D., Channing, A., Chao, N.L., Chenery, A.M., Chiozza, F., Clausnitzer, V., Collar, N.J., Collett, L.C., Collette, B.B., Fernandez, C.F.C., Craig, M.T., Crosby, M.J., Cumberlidge, N., Cuttelod, A., Derocher, A.E., Diesmos, A.C., Donaldson, J.S., Duckworth, J.W., Dutson, G., Dutta, S.K., Emslie, R.H., Farjon, A., Fowler, S., Freyhof, J., Garshelis, D.L., Gerlach, J., Gower, D.J., Grant, T.D., Hammerson, G.A., Harris, R.B., Heaney, L.R., Hedges, S.B., Hero, J.-M., Hughes, B., Hussain, S.A., Icochea M., J., Inger, R.F., Ishii, N., Iskandar, D.T., Jenkins, R.K.B., Kaneko, Y., Kottelat, M., Kovacs, K.M., Kuzmin, S.L., La Marca, E., Lamoreux, J.F., Lau, M.W.N., Lavilla, E.O., Leus, K., Lewison, R.L., Lichtenstein, G., Livingstone, S.R., Lukoschek, V., Mallon, D.P., McGowan, P.J.K., McIvor, A., Moehlman, P.D., Molur, S., Alonso, A.M., Musick, J.A., Nowell, K., Nussbaum, R.A., Olech, W., Orlov, N.L., Papenfuss, T.J., Parra-Olea, G., Perrin, W.F., Polidoro, B.A., Pourkazemi, M., Racey, P.A., Ragle, J.S., Ram, M., Rathbun, G., Reynolds, R.P., Rhodin, A.G.J., Richards, S.J., Rodriguez, L.O., Ron, S.R., Rondinini, C., Rylands, A.B., Sadovy de Mitcheson, Y., Sanciangco, J.C., Sanders, K.L., Santos-Barrera, G., Schipper, J., Self-Sullivan, C., Shi, Y., Shoemaker, A., Short, F.T., Sillero-Zubiri, C., Silvano, D.L., Smith, K.G., Smith, A.T., Snoeks, J., Stattersfield, A.J., Symes, A.J., Taber, A.B., Talukdar, B.K., Temple, H.J., Timmins, R., Tobias, J.A., Tsytsulina, K., Tweddle, D., Ubeda, C., Valenti, S.V., Paul van Dijk, P., Veiga, L.M., Veloso, A., Wege, D.C., Wilkinson, M., Williamson, E.A., Xie, F., Young, B.E., Akcakaya, H.R., Bennun, L., Blackburn, T.M., Boitani, L., Dublin, H.T., Fonseca, G.A.B. da, Gascon, C., Lacher, T.E., Mace, G.M., Mainka, S.A., McNeely, J.A., Mittermeier, R.A., Reid, G.M., Rodriguez, J.P., Rosenberg, A.A., Samways, M.J., Smart, J., Stein, B.A. & Stuart, S.N. (2010). The impact of conservation on the status of the world’s vertebrates. *Science*, **330**: 1503–1509.   
 
 Island Conservation. (2020, August 5). *Palmyra Atoll Restoration Project, USA*. Retrieved from https://www.islandconservation.org/palmyra-atoll/   
 
-Stewart Lowndes, J.S., Best, B.D., Scarborough, C., Afflerbach, J.C., Frazier, M.R., O'Hara, C.C., Jiang, N., and Halpern, B.S. (2017). Our path to better science in less time using open data science tools. *Nature Ecology & Evolution* 1, 0160   
-DOI: 10.1038/s41559-017-0160   
+International Union for Conservation of Nature and Natural Resources (IUCN). (2020). IUCN Red List of Threatened Species. Version 2020-1 <www.iucnredlist.org>.   
+
+Jari Hovila, A.A. (2014). OMUVBd: OMI/aura surface UVB irradiance and erythemal dose daily l3 global gridded 1.0 degree x 1.0 degree v3. NASA goddard space flight center, goddard earth sciences data and information services center (GES DISC). URL http://disc.sci.gsfc.nasa.gov/datacollection/OMUVBd_V003.html Accessed [June 22, 2020] DOI:10.5067/Aura/OMI/DATA2028     
+
+Knapp, I.S., Godwin, L.S., Smith, J.E., Williams, C.J., and Bell, J.J. (2011). Records of non-indigenous marine species at Palmyra Atoll in the U.S. Line Islands. *Marine Biodiversity Records* **4**:E30. doi:10.1017/S1755267211000078  Available [here](https://www.cambridge.org/core/journals/marine-biodiversity-records/article/records-of-nonindigenous-marine-species-at-palmyra-atoll-in-the-us-line-islands/5D8929D7A0894E2CFF06FBD2AE7792C3)   
+   
+Lafferty, K.D. et al. (2010). "Stomach nematodes (*Mastophorus muris*) in rats (*Rattus rattus*) are associated with coconut (*Cocos nucifera*) habitat at Palmyra Atoll. *Journal of Parasitology* **96(1)**: 16-20. Available [here](https://bioone.org/journals/Journal-of-Parasitology/volume-96/issue-1/GE-2180.1/Stomach-Nematodes-Mastophorus-muris-in-Rats-Rattus-rattus-Are-Associated/10.1645/GE-2180.1.full)   
+
+MacDonald, D.D., Ingersol, C.G., and Berger, T.A. (2000). Development and Evaluation of Consensus-Based Sediment Quality Guidelines for Freshwater Contamination. *Archives of Environmental Contamination and Toxicology.* **39**: 20-31. DOI: 10.1007/s002440010075  Available [here](https://link.springer.com/content/pdf/10.1007/s002440010075.pdf)     
+
+National Oceanic and Atmospheric Administration. (1999). Sediment Quality Guidelines developed for the National Status and Trend Program.  
+
+O'Hara, C.C., Scarborough, C., Hunter, K.L., Afflerbach, J.C., Bodtker, K., Frazier, M., Stewart Lowndes, J.S., Perry, R.I., and Halpern, B.S. (2020). Changes in ocean health in British Columbia from 2001 to 2016. *PLOS ONE*, **15(1)**: e0227502. https://doi.org/10.1371/journal.pone.0227502    
+
+Saha, K., Zhao, X., Zhang, H., Casey, K.S., Zhang, D., Zhang, Y., Baker-Yeboah, S., Relph, J.M., Krishnan, A., and Ryan, T. (2018). The Coral Reef Temperature Anomaly Database (CoRTAD) Version 6 - Global, 4 km Sea Surface Temperature and Related Thermal Stress Metrics for 1982 to 2017. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.25921/ffw7-cs39. [Accessed 13 July 2020].        
+
+Schipper, J., Chanson, J.S., Chiozza, F., Cox, N.A., Hoffmann, M., Katariya, V., Lamoreux, J., Rodrigues, A.S.L., Stuart, S.N., Temple, H.J., Baillie, J., Boitani, L., Lacher, T.E., Mittermeier, R.A., Smith, A.T., Absolon, D., Aguiar, J.M., Amori, G., Bakkour, N., Baldi, R., Berridge, R.J., Bielby, J., Black, P.A., Blanc, J.J., Brooks, T.M., Burton, J.A., Butynski, T.M., Catullo, G., Chapman, R., Cokeliss, Z., Collen, B., Conroy, J., Cooke, J.G., Fonseca, G.A.B. da, Derocher, A.E., Dublin, H.T., Duckworth, J.W., Emmons, L., Emslie, R.H., Festa-Bianchet, M., Foster, M., Foster, S., Garshelis, D.L., Gates, C., Gimenez-Dixon, M., Gonzalez, S., Gonzalez-Maya, J.F., Good, T.C., Hammerson, G., Hammond, P.S., Happold, D., Happold, M., Hare, J., Harris, R.B., Hawkins, C.E., Haywood, M., Heaney, L.R., Hedges, S., Helgen, K.M., Hilton-Taylor, C., Hussain, S.A., Ishii, N., Jefferson, T.A., Jenkins, R.K.B., Johnston, C.H., Keith, M., Kingdon, J., Knox, D.H., Kovacs, K.M., Langhammer, P., Leus, K., Lewison, R., Lichtenstein, G., Lowry, L.F., Macavoy, Z., Mace, G.M., Mallon, D.P., Masi, M., McKnight, M.W., Medellin, R.A., Medici, P., Mills, G., Moehlman, P.D., Molur, S., Mora, A., Nowell, K., Oates, J.F., Olech, W., Oliver, W.R.L., Oprea, M., Patterson, B.D., Perrin, W.F., Polidoro, B.A., Pollock, C., Powel, A., Protas, Y., Racey, P., Ragle, J., Ramani, P., Rathbun, G., Reeves, R.R., Reilly, S.B., Reynolds, J.E., Rondinini, C., Rosell-Ambal, R.G., Rulli, M., Rylands, A.B., Savini, S., Schank, C.J., Sechrest, W., Self-Sullivan, C., Shoemaker, A., Sillero-Zubiri, C., De Silva, N., Smith, D.E., Srinivasulu, C., Stephenson, P.J., Strien, N. van, Talukdar, B.K., Taylor, B.L., Timmins, R., Tirira, D.G., Tognelli, M.F., Tsytsulina, K., Veiga, L.M., Vie, J.-C., Williamson, E.A., Wyatt, S.A., Xie, Y. & Young, B.E. (2008). The status of the world’s land and marine mammals: Diversity, threat, and knowledge. *Science*, **322**: 225–230.   
+
+Stewart Lowndes, J.S., Best, B.D., Scarborough, C., Afflerbach, J.C., Frazier, M.R., O'Hara, C.C., Jiang, N., and Halpern, B.S. (2017). Our path to better science in less time using open data science tools. *Nature Ecology & Evolution* **1**, 0160 DOI: 10.1038/s41559-017-0160     
+
+Struckhoff, M.A., Papoulias, D.M., Orazio, C.E., Annis, M.L., Shaver, D.K. and Tillitt, D.E., (2017). Geospatial data of elemental contamination at Palmyra Atoll, 2008 and 2010: U.S. Geological Survey data release, https://doi.org/10.5066/F74F1P00   
+
+Struckhoff, M.A., Orazio, C.E., Tillitt, D.E., Shaver, D.K., and Papoulias, D.M. (2018). Mapping elemental contamination on Palmyra Atoll National Wildlife Refuge. *Marine Pollution Bulletin*, **128**: 97-105. https://doi.org/10.1016/j.marpolbul.2017.12.065.     
+
+Struckhoff, M.A., (2019). Woody species crown and vegetation community data, Palmyra Atoll, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9GMPVIO.    
+
+The Nature Conservancy. (2019). Climate Adaptation + Resilience Laboratory at Palmyra Atoll. Version 3.   
 
 The Nature Conservancy. (2020, August 5). *Places We Protect: Palmyra Atoll*. Retrieved from https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/palmyra-atoll/   
 
+Tallis, H.T., Ricketts, T., Guerry, A., Wood, S., Sharp, R., Nelson, E., Ennaanay, D., Wolny, S., Olwero, N., Vigerstol, K. & others. (2011). InVEST 2.2.1 user’s guide. The Natural Capital Project, Stanford University.   
+
 Tikkanen, A. (2010). Palmyra Atoll. In Encyclopedia Britannica. Retrieved from Encyclopedia Britannica database https://www.britannica.com/place/Palmyra-Atoll     
 
+TRC. (2004). Inventory of coastal areas of local or regional significance in the taranaki region. Taranaki Regional Council, Stratford.   
+
 U.S. Department of Interior. (2020, August 5). *Palmyra Atoll*. Retrieved from https://www.doi.gov/oia/islands/palmyraatoll    
+
+U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Center for Coastal Ocean Sciences. (2011). Palmyra Habitat Maps [Data file]. Retrieved from https://products.coastalscience.noaa.gov/collections/benthic/e58palmyra/   
 
 U.S. Fish and Wildlife Service. (2016, January 14). *Palmyra Atoll: Wildlife & Habitat*. Retrieved from https://www.fws.gov/refuge/Palmyra_Atoll/wildlife_and_habitat/index.html   
 
 U.S. Fish and Wildlife Service. (2017, April 11). *Palmyra Atoll: About the Refuge*. Retrieved from https://www.fws.gov/refuge/Palmyra_Atoll/about.html    
 
 Wegmann, A. (2020, August 5). *175 Years of Science*. Retrieved from  https://www.nature.org/en-us/about-us/where-we-work/united-states/hawaii/stories-in-hawaii/palmyra-175-years-of-science/   
+
+
+
+
