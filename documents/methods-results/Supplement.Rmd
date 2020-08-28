@@ -1,5 +1,7 @@
 ---
-title: 'Palmyra OHI+ Assessment 2020: Methods and Results'
+title: 'Palmyra OHI+ Assessment 2020' 
+subtitle: 'Methods and Results' 
+author: 'Sara Orofino'
 output: 
   html_document:
     code_folding: show
