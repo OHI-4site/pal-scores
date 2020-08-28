@@ -110,9 +110,9 @@ Rainforest once dominated the atoll, but copra farming, black rats, and deforest
 
 # Summary Results
 
-The health of the Palmyra atoll is critical to The Nature Conservancy’s core mission to protect endangered marine wilderness and to support research and conservation science.  Palmyra had an overall Ocean Health Index score of 81 (Figure 3.1 and Table 3.1), suggesting the region’s marine and coastal resources are in fairly good condition (Figure 3.1).   Seven goals/sub-goals scored above a 90, with four goals receiving perfect scores (Lasting Special Places, Research, Resource Access Opportunities, and Tourism and Recreation). The designation of the island and offshore areas as fully protected reflects The Nature Conservancy’s commitment to protecting the health of Palmyra's ecosystems. Furthermore,  the population and  visitors allowed on the island are restricted, and fishing and tourism activities are well regulated and managed.   
+The health of the Palmyra atoll is critical to The Nature Conservancy’s core mission to protect endangered marine wilderness and to support research and conservation science.  Palmyra had an overall Ocean Health Index score of 81 (Figure 3.1 and Table 3.1), suggesting the region’s marine and coastal resources are in fairly good condition (Figure 3.1).   Seven goals/sub-goals scored above a 90, with four goals receiving perfect scores (Lasting Special Places, Research, Resource Access Opportunities, and Tourism and Recreation). The designation of the island and offshore areas as fully protected reflects The Nature Conservancy’s commitment to protecting the health of Palmyra's ecosystems. Furthermore, the population and visitors allowed on the island are restricted, and fishing and tourism activities are well regulated and managed.   
 
-There is room for some improvement, however. The Habitat, Coastal Protection, and Carbon Storage sub-goals scored lower than 50. These sub-goals are closely linked because they depend on the healthy habitats, specifically the condition of coral reefs (Coastal Protection) and rainforests (Carbon Storage). While Palmyra is often lauded for having pristine coral reefs, there is significant degradation of the back reef and the lagoon which negatively impact the coral habitat score and thus the coastal protection score. Without a concerted effort to restore live coral in the back reef and the lagoon the coral habitat score is likely to remain fairly constant over time. Coconut palm plantations have a significant negative impact on the native rainforest and while management plans to remove these palms and replant native tree species exists, they are not far along. This is the largest contributing factor to the low score for rainforest habitats and thus the carbon storage score. As replacement of coconut palms continues on the island, both of these scores are expected to steadily increase over time.        
+There is room for some improvement, however. The Habitat and Coastal Protection sub-goals scored lower than 50. These sub-goals are closely linked because they depend on the healthy habitats, specifically the condition of coral reefs and rainforests. While Palmyra is often lauded for having pristine coral reefs, there is significant degradation of the back reef and the lagoon which negatively impact the coral habitat score and thus the coastal protection score. Without a concerted effort to restore live coral in the back reef and the lagoon the coral habitat score is likely to remain fairly constant over time. Coconut palm plantations have a significant negative impact on the native rainforest and while management plans to remove these palms and replant native tree species exists, they are not far along. This is the largest contributing factor to the low score for rainforest habitats, which also effects the coastal protection score. As replacement of coconut palms continues on the island, both of these scores are expected to steadily increase over time.        
 
 <br>   
 ![flower_plot](images/flower_Palmyra.png)
@@ -128,6 +128,7 @@ goals <- read_csv(here("region/conf/goals.csv")) %>%
 scores <- read_csv(here("region/scores.csv")) %>% 
   filter(dimension == "score" | dimension == "future" | dimension == "status") %>% 
   dplyr::select(goal,dimension,score) %>% 
+  mutate(score = round(score,0)) %>% 
   pivot_wider(id_cols ="goal", names_from = "dimension", values_from = "score") %>% 
   filter(goal != "Index") %>% 
   inner_join(.,goals, by = "goal") %>% 
@@ -151,13 +152,13 @@ Given that Palmyra is a nearly uninhabited island, several of the OHI goals were
 
 ### Biodiversity
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 71.51</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 72</span>
 
 People value biodiversity for its existence value. This goal assesses the conservation status of species based on the best available data through two sub-goals: Species and Habitats. Species were assessed because they are what one typically thinks of in relation to biodiversity. Because only a small proportion of marine species worldwide have been mapped and assessed, we also assessed habitats as part of this goal, and considered them a proxy for the condition of the broad suite of species that depend on them. We calculate each of these sub-goals separately and weight them equally when calculating the overall goal score.   
 
 #### Habitats (HAB)
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 47.85</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 48</span> 
 
 The Habitats sub-goal measures the average condition of habitats present on the island that provide critical habitat for a broad range of species. This sub-goal is considered a proxy for the condition of the broad suite of species on Palmyra. The atoll currently supports one of the best remaining coastal strand forests in the world (Island Conservation, 2020). Given the importance of this ecosystem, and the tight linkage between land and ocean environments, both terrestrial and marine habitats are included in this assessment.     
 
@@ -248,6 +249,8 @@ The trend in rainforest condition is the predicted change in forest area during 
 <br>   
 **Data**   
 
+The following data layers are used to calculate the score for the Habitats sub-goal:   
+
 _Status and trend_
 <br>   
 ```{r hab-data-st, results="asis", echo=FALSE}
@@ -312,7 +315,7 @@ Citation: Struckhoff, M.A., (2019). Woody species crown and vegetation community
 
 #### Species 
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 95.16</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 95</span>
 
 The Species sub-goal aims to assess the average condition of species in Palmyra. Both marine and terrestrial species are included in this sub-goal.    
  
@@ -351,6 +354,8 @@ The species trend is calculated using data the IUCN provides for current and pas
 <br>   
 **Data**
 
+The following data layers are used to calculate the score for the Species sub-goal:  
+
 _Status and trend_
 <br>   
 ```{r spp-data-st, results="asis", echo=FALSE}
@@ -382,7 +387,7 @@ Additional species lists were provided by Alex Wegmann at The Nature Conservancy
 
 ### Clean Waters
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 58.57</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 59</span> 
 
 People value marine waters that are free of pollution and debris for aesthetic and health reasons. Although Palmyra has a limited population, people are sensitive to pollution and debris in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. Due to limited data availability, this goal includes two sources of pollution - marine debris and soil contamination. The main source of pollution on the island is marine debris from fishing aggregation devices (FADs) and the military history of the island has left a legacy of soil contamination. The overall Clean Waters score is the geometric mean of these two layer scores. This goal scores highest when the contamination level is zero.
 <br>   
@@ -480,6 +485,8 @@ The trend describes the change in clean water status over a 5 year period. This 
 <br>   
 **Data**
 
+The following data layers are used to calculate the score for the Clean Waters goal:  
+
 _Status and trend_
 <br>   
 ```{r cw-data-st, results="asis", echo=FALSE}
@@ -528,7 +535,7 @@ Citation: National Oceanic and Atmospheric Administration. (1999). Sediment Qual
 
 ### Habitat Services
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 46.79</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 47</span> 
 
 The Habitat Services goal measures additional services provided by habitats on Palmyra in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Carbon Storage and Coastal Protection.
 <br>   
@@ -543,7 +550,7 @@ Lacking data on the carbon storage abilities of the native rainforest, we only i
 
 #### Coastal Protection
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 46.79</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 47</span> 
 
 The Coastal Protection sub-goal measures the health of habitats that contribute to coastal protection from storm surge, flooding, and sea level rise. In Palmyra we are considering both the coral reefs and the native rainforest.    
 
@@ -580,6 +587,8 @@ Coral reefs | 3 |
 The trend for this goal used the same metrics as the Biodiversity: Habitats sub-goal trend. We used the same data and approach used to calculate the coral condition trend and rainforest trend for the Biodiversity: Habitats sub-goal. An overall trend is then found using the same approach as the current status (Equation 4.11), where the trend is a function of the trend, extent, and protectiveness rank.
 <br>   
 **Data**   
+
+The following data layers are used to calculate the score for the Coastal Protection sub-goal:  
 
 _Status and trend_
 <br>   
@@ -655,6 +664,8 @@ The trend describes the change in research status over a 5 year period. This val
 <br>   
 **Data**   
 
+The following data layers are used to calculate the score for the Research goal:  
+
 _Status and trend_
 <br>   
 ```{r rs-data-st, results="asis", echo=FALSE}
@@ -705,6 +716,8 @@ The trend describes the change in sustenance fishing over a 5 year period. This 
 <br>   
 **Data**   
 
+The following data layers are used to calculate the score for the Resource Access Opportunities goal:  
+
 _Status and trend_
 <br>   
 ```{r rao-data-st, results="asis", echo=FALSE}
@@ -729,13 +742,13 @@ Data to inform this layer were obtained via email from Alex Wegmann at The Natur
 
 ### Sense of Place
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 96.74</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 97</span> 
 
 This goal attempts to capture the aspects of the coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. While there are only a small handful of residents on Palmyra, the island's pristine ecosystems are valued by scientists, researchers, and conservationists, among others, including the general public. This goal is calculated using two equally weighted sub-goals: iconic species and lasting special places.        
 
 #### Iconic Species
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 93.48</span> 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 93</span> 
 
 Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., tourist attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihood or extractive reason).   
 
@@ -758,6 +771,8 @@ where for each IUCN threat category $i$, $S_{i}$ is the number of assessed speci
 The trend describes the change in iconic species status over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating the change in species extinction risk from 2014 to 2020.
 <br>   
 **Data**   
+
+The following data layers are used to calculate the score for the Iconic Species sub-goal:  
 
 _Status and trend_
 <br>   
@@ -821,6 +836,8 @@ The trend describes the change in offshore and inland protected areas over a 5 y
 <br>   
 **Data**   
 
+The following data layers are used to calculate the score for the Lasting Special Places sub-goal:  
+
 _Status and trend_
 <br>   
 ```{r lsp-data-st, results="asis", echo=FALSE}
@@ -864,6 +881,8 @@ where $v_{y}$ is the number of private visiting vessels in year (y), $v_{ref,y}$
 The trend describes the change in private visiting vessels over a 5 year period. This value was estimated using the slope estimate (and multiplying it by 5) from a linear model estimating yearly change in the number of visiting vessels from 2014 to 2020.
 <br>   
 **Data**  
+
+The following data layers are used to calculate the score for the Tourism and Recreation goal:  
 
 _Status and trend_
 <br>   
