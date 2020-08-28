@@ -1085,11 +1085,15 @@ Management layers are derived for climate change, habitats, fishing, pollution, 
  
 A score of one is given for every "Yes" response, a zero given for a "No" response, and 0.5 given if management plans or monitoring programs are "In Development". The overall resilience layer score is the sum over three. Since the inverse of the habitat management resilience is used for a social pressure, we will consider this a social resilience instead of an ecological one.    
 
-Data sources to inform management layers were derived from:   
+Data Sources:   
 
- - Biosecurity Plan
- - Climate Change Plan 
- - Terrestrial Management Plan 
+ * Hathaway, S.A., McEachern, K., and Fisher, R.N. (2011). Terrestrial forest management plan for Palmyra Atoll: U.S. Geological Survey Open-File Report 2011–1007, 78 p.  Available [here](https://pubs.usgs.gov/of/2011/1007/pdf/ofr20111007.pdf)    
+ * Hathaway, S.A. and Fisher, R.N. (2010). Biosecurity plan for Palmyra Atoll: U.S. Geological Survey Open-File
+Report 2010-1097, 80 p. Available [here](https://pubs.usgs.gov/of/2010/1097/pdf/of20101097.pdf)     
+ * The Nature Conservancy. (2019). Climate Adaptation + Resilience Laboratory at Palmyra Atoll. Version 3.   
+ 
+Fishing and pollution management layers were informed with data obtained through conversations with Alex Wegmann at The Nature Conservancy on August 25, 2020.   
+ 
  
 ### Social Resilience 
 
