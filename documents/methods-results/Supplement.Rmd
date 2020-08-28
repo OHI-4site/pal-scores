@@ -101,7 +101,12 @@ Palmyra’s native vegetation supports one of the largest remaining undisturbed 
 
 Rainforest once dominated the atoll, but copra farming, black rats, and deforestation by the U.S. military during World War II reduced Palmyra’s rainforest to a few patches. Thick groves of introduced coconut palms took its place, which are ill-suited for seabirds. There was a resurgence of native bird and plant life after rats were eradicated from Palmyra in 2011, and a major native rainforest restoration project is now underway. The aim of this project is to flip forest dominance and restore ecological balance to the atoll, which will maximize the seabird-driven nutrient cycle and increase terrestrial and marine ecosystem resilience to climate change impacts (TNC, 2020).      
 
-***
+<br>   
+<center>
+![logos](images/photos2.png)
+</center>
+*Photos courtesy of Alex Wegmann and Tim Calver at The Nature Conservancy.*
+<br>   
 
 # Summary Results
 
@@ -1142,7 +1147,7 @@ The Palmyra and Tetiaroa projects aligned methods and reference points where pos
 
 # Acknowledgements
 
-Thank you to Alex Wegmann and Nicholas Wolff at The Nature Conservancy for their collaboration and expertise throughout this project. We would also like to thank the members of the NCEAS Ocean Health Index team for their guidance and support. Special thanks to Alex Wegmann, Tim Calver, Chad Wiggins, and Katie Davis from The Nature Conservancy for providing photos used in this report.   
+Thank you to Alex Wegmann and Nicholas Wolff at The Nature Conservancy for their collaboration and expertise throughout this project. We would also like to thank the members of the NCEAS Ocean Health Index team for their guidance and support. Special thanks to Alex Wegmann, Tim Calver, Chad Wiggins, and Katie Davis from The Nature Conservancy for providing photos for this report.   
 
 # References / Citations 
 
