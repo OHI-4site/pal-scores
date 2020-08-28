@@ -55,7 +55,7 @@ cat(paste(st_layers$info, collapse="\n\n"))
 ```
 
 ***
-Effective management of marine systems requires quantitative assessments of ocean health. To assess the ocean condition of Palmyra Atoll a collaborative effort was undertaken between The Nature Conservancy’s (TNC) Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). The Ocean Health Index (OHI) framework was used to assess Palmyra Atoll. Palmyra is a mostly uninhabited island in the Line Islands Archipelago halfway between Hawaii and American Samoa. The island is a National Wildlife Refuge administered by the U.S. Fish and Wildlife Services and was purchased by The Nature Conservancy in 2000. Specifically, we assessed the performance of 7 goals: Biodiversity, Clean Waters, Habitat Services, Research, Resource Access Opportunities, Sense of Place, and Tourism and Recreation. Using best available data and locally relevant reference points, each goal was scored on a scale of 0-100. Goal scores were then averaged to obtain an overall health score for the island. The overall score for Palmyra was 81, with goal scores ranging from 43 for the Habitat Services goal to 100 for the Research, Resource Access Opportunities, and Tourism and Recreation goals.      
+Effective management of marine systems requires quantitative assessments of ocean health. To assess the ocean condition of Palmyra Atoll a collaborative effort was undertaken between The Nature Conservancy’s (TNC) Palmyra 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). The Ocean Health Index (OHI) framework was used to assess Palmyra Atoll. Palmyra is a mostly uninhabited island in the Line Islands Archipelago halfway between Hawaii and American Samoa. The island is a National Wildlife Refuge administered by the U.S. Fish and Wildlife Service and was purchased by The Nature Conservancy in 2000. Specifically, we assessed the performance of 7 goals: Biodiversity, Clean Waters, Habitat Services, Research, Resource Access Opportunities, Sense of Place, and Tourism and Recreation. Using best available data and locally relevant reference points, each goal was scored on a scale of 0-100. Goal scores were then averaged to obtain an overall health score for the island. The overall score for Palmyra was 81, with goal scores ranging from 43 for the Habitat Services goal to 100 for the Research, Resource Access Opportunities, and Tourism and Recreation goals.      
 
 The Palmyra OHI+ [Github repository](https://github.com/OHI-4site/pal-prep) contains all the data and scripts used to conduct the Palmyra assessment. Future researchers can use this resource to build upon this assessment as better data become available and goal models evolve to better assess the status of the marine and terrestrial environments around Palmyra. Furthermore, the repository promotes transparent and open research, as well as more streamlined collaboration (Stewart Lowndes *et al.*, 2017).
 
@@ -344,7 +344,7 @@ $$
 x_{spp}~=~ \frac { (0.75~-~risk_{avg}) } {0.75}, ~~~~(Eq ~4.7)
 $$   
 
-Where $risk_avg$ is the average extinction risk score, found by averaging the mean extinction risk score of all 10 classes. 
+Where $risk_{avg}$ is the average extinction risk score, found by averaging the mean extinction risk score of all 10 classes. 
 
 This assigns a score of 0 when 75% species are extinct, a level comparable to the five documented mass extinctions (Barnosky *et al.* 2011) and would constitute a catastrophic loss of biodiversity.
 <br>    
@@ -406,7 +406,7 @@ $$
 
 Where $fad_{y}$ is the yearly number of recorded FAD groundings and $fad_{ref}$ is the reference point number of 6 annual FAD groundings.  
 
-$x_{debris}$ is higher with greater levels of marine debris. $x_{debris}$ is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of $x_{debris}$,    1 - $x_{debris}$.
+$x_{debris}$ is higher with greater levels of marine debris. $x_{debris}$ is used as a pressure layer. The final status for the Clean Waters marine debris layer is the inverse of $x_{debris}$,    1 - $x_{debris}$.
 <br>   
 *Soil Contamination*   
 
@@ -477,7 +477,7 @@ x_{cont}~=~\frac { \displaystyle\sum _{ i=1 }^{ N }{ { A }_{ i }{ x }_{ i } } } 
 $$
 where $A_i$ is the area and $x_i$ is the status of contamination for each site $i$ as calculated in Equation 4.9.     
 
-This gives high $x_{cont}$ values to years with greater levels of contamination. $x_{cont}$ is used as a pressure layer. The final status layer for the Clean Waters goal is the inverse of this$x_{cont}$,  1 - $x_{cont}$.
+This gives high $x_{cont}$ values to years with greater levels of contamination. $x_{cont}$ is used as a pressure layer. The final status for the Clean Waters soil contamination layer is the inverse of this$x_{cont}$,  1 - $x_{cont}$.
 <br>   
 **Trend**
 <br>   
@@ -656,7 +656,7 @@ $$
 x_{sci}~=~ \frac { pubs_{y} } { pubs_{ref} },  ~~(Eq ~4.14)
 $$  
 
-Where $pubs_{y}$ is the number of scientific publications in year (y) and $pubs_{ref}$ is the number of publications reference point.
+Where $pubs_{y}$ is the number of scientific publications in year $y$, and $pubs_{ref}$ is the number of publications reference point.
 <br>   
 **Trend**   
 
@@ -937,7 +937,7 @@ The typical marine-related jobs, which are included in the Livelihoods and Econo
 
 ## Pressures 
 
-The pressure score, p, describes the cumulative pressures acting on a goal which suppress the goal score. Pressure scores range from 0 to 1, they are calculated for each goal and include both ecological (pE) and social pressures (pS) (Table 4.6, Figure 4.2), such that:   
+The pressure score, p, describes the cumulative pressures acting on a goal which suppress the goal score. Pressure scores range from 0 to 1, they are calculated for each goal and include both ecological ($p_E$) and social pressures ($p_S$) (Table 4.6, Figure 4.2), such that:   
 
 $$
 { p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S } ~~(Eq.~4.20)
@@ -1154,7 +1154,7 @@ The temporal dimension assesses how well data matches the timescale needs of the
 
 In addition to identifying ways existing data could be improved upon, we also identified various data gaps, which if filled would improve the accuracy of results. These suggestions address the lack of time series studies, the need for more localized climate data, and other knowledge gaps.   
 
-While Palmyra is a hub for research, there are not many repeated studies or time series studies conducted on the island. This is particularly relevant to habitat studies but also applies to studies on soil contamination and other pollutants. The rainforest mapping study from 2016 and the benthic habitat mapping study from 2011 both provide a good source of data to understand the composition and extent of these habitats. However, no similar studies have been done in the past or since which can provide a comparison of these habitats over time. Estimates of trend were therefore derived from rough estimates of rainforest extent as referenced in a number of papers and global estimates (for coral). The accuracy of these scores would be improved by the repetition of studies covering the same spatial extent and recording the same measurements. Further, estimates were made for coral reefs based on area weighting. While it is known that coral cannot likely grow everywhere in back reef and fore reef, not enough information was known to make accurate estimates. Studies determining the spatial extent of each zone that is considered suitable habitat for coral growth would improve the methods for this layer and may also increase the coral habitat score. For pollution, the 2010 soil contamination study provides a good baseline for the current condition of contaminants. As restoration activities are planned to remediate soils, it will be important to repeat this study, looking at the same sites, for the same contaminants and measuring them in the same way in order to provide an accurate estimate of how much soil contamination has been improved.   
+While Palmyra is a hub for research, there are not many repeated studies or time series studies conducted on the island. This is particularly relevant to habitat studies but also applies to studies on soil contamination and other pollutants. The rainforest mapping study from 2016 and the benthic habitat mapping study from 2011 both provide a good source of data to understand the composition and extent of these habitats. However, no similar studies have been done in the past or since which could provide a comparison of these habitats over time. Estimates of trend were therefore derived from rough estimates of rainforest extent as referenced in a number of papers and global estimates (for coral). The accuracy of these scores would be improved by the repetition of studies covering the same spatial extent and recording the same measurements. Further, estimates were made for coral reefs based on area weighting. While it is known that coral cannot likely grow everywhere in back reef and fore reef, not enough information was known to make accurate estimates. Studies determining the spatial extent of each zone that is considered suitable habitat for coral growth would improve the methods for this layer and may also increase the coral habitat score. For pollution, the 2010 soil contamination study provides a good baseline for the current condition of contaminants. As restoration activities are planned to remediate soils, it will be important to repeat this study, looking at the same sites, for the same contaminants and measuring them in the same way in order to provide an accurate estimate of how much soil contamination has been improved.   
 
 All of the climate change pressures (ocean acidification, sea level rise, sea surface temperature, and ultraviolet radiation) are estimated based on global data. While these datasets are updated regularly and fairly comprehensive the resolution of the data does not provide the most accurate estimate of change over time in Palmyra. The entire region falls generally within one cell of this global data, meaning the island and the surrounding 3 nautical mile area are attributed a single value. Establishing more localized sites around the atoll to measure similar climate parameters would provide more resolution and allow for investigation into which areas are experiencing the most rapid changes.   
 
